@@ -167,7 +167,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar with Gradient Background */}
-          <div className="mt-5 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between text-white/50 items-center gap-2 text-[9px] uppercase tracking-widest relative">
+          <div className="mt-5 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between text-white items-center gap-2 text-[10px] uppercase tracking-widest relative">
             <p>&copy; {new Date().getFullYear()} Vestigo Risk Solutions. CREATED BY ROHAN MOGA</p>
             <div className="flex gap-4">
               <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
