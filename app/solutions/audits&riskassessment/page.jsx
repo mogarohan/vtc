@@ -33,7 +33,7 @@ export default function IndustryRiskPage() {
       title: "Risk Evaluation",
       icon: <BarChart3 size={22} />,
       desc: "Classifying financial and legal impacts.",
-      ghostImg: "/steps/evaluation-ghost.png",
+      ghostImg: "/steps/f.png",
     },
     {
       num: "04",
