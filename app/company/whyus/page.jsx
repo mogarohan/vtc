@@ -32,7 +32,7 @@ export default function CompanyOverview() {
       
       {/* 1. PREMIUM DARK HERO SECTION */}
      {/* 1. PREMIUM DARK HERO SECTION WITH BACKGROUND IMAGE */}
-<section className="relative mt-20 h-[85vh] flex items-center justify-center overflow-hidden">
+<section className="relative mt-0 h-[85vh] flex items-center justify-center overflow-hidden">
   
   {/* Background Image Container */}
   <div className="absolute inset-0 z-0">

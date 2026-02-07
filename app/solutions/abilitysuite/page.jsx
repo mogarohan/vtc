@@ -48,7 +48,7 @@ const AbilitySuite = () => {
     <main ref={containerRef} className="min-h-screen bg-white overflow-hidden">
       
       {/* 1. PREMIUM DARK HERO SECTION (Matched to Company/Solutions) */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0F172A] pt-32 pb-40">
+      <section className="relative min-h-[90vh] -mt-30 flex items-center justify-center overflow-hidden bg-[#0F172A] pt-32 pb-40">
         {/* Animated Background Gradients */}
         <div className="absolute inset-0 z-0">
           <motion.div 

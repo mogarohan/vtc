@@ -49,7 +49,7 @@ export default function CompanyOverview() {
     <main ref={containerRef} className="bg-white overflow-hidden font-sans">
       
       {/* 1. HERO SECTION (Dark Premium with Animated Orbs) */}
-      <section className="relative h-[85vh] flex items-center justify-center overflow-hidden bg-[#0F172A]">
+      <section className="relative h-[85vh] -mt-30 flex items-center justify-center overflow-hidden bg-[#0F172A]">
        
     {/* Dark Overlay - Text visibility ke liye zaroori hai */}
     <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-[0px]" />
@@ -159,15 +159,19 @@ export default function CompanyOverview() {
                <Target className="text-blue-400 mb-8" size={48} />
                <h3 className="text-4xl font-black text-white mb-6 uppercase tracking-tighter">Our Mission</h3>
                <p className="text-slate-400 text-lg leading-relaxed font-medium">
-                 To build a protective future for global enterprises. We deliver excellence in every claim through transparent and expedited settlements.
-               </p>
+                Safeguarding Your Future Growth
+
+To transform the insurance experience for organizations by delivering intelligent, technology-driven solutions backed by expert advisory ensuring every business is boldly protected, confidently growing, and always assured.
+
+We provide actionable risk insights that empower organizations to proactively mitigate exposures, converting potential challenges into opportunities for sustained growth and long-term profitability.</p>
             </div>
             <div className="p-14 rounded-[4rem] bg-blue-600 shadow-3xl shadow-blue-900/50 hover:bg-blue-500 transition-colors">
                <Eye className="text-white mb-8" size={48} />
                <h3 className="text-4xl font-black text-white mb-6 uppercase tracking-tighter">Our Vision</h3>
                <p className="text-blue-50 text-lg leading-relaxed font-medium">
-                 To set the global benchmark for digital insurance. We aim to be the most trusted partner in navigating high-stakes business risks.
-               </p>
+                 Pioneering India's Risk Advisory Landscape
+To be the trusted leader in Business Insurance, delivering cutting-edge, innovative & tech powered solutions that every business organization can scale with certainity, security & confidence.
+We are committed to setting new industry benchmarks through continuous innovation, deep expertise, and an unwavering commitment to our clients success and lasting resilience.</p>
             </div>
          </div>
       </section>

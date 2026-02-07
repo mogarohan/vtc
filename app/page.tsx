@@ -123,8 +123,11 @@ export default function HomePage() {
             <div className="p-10 bg-slate-900 rounded-3xl text-white relative">
               <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
               <p className="text-slate-300">
-                To transform the insurance experience for organizations by delivering
-                intelligent, technology-driven solutions backed by expert advisory.
+                Safeguarding Your Future Growth
+
+To transform the insurance experience for organizations by delivering intelligent, technology-driven solutions backed by expert advisory ensuring every business is boldly protected, confidently growing, and always assured.
+
+We provide actionable risk insights that empower organizations to proactively mitigate exposures, converting potential challenges into opportunities for sustained growth and long-term profitability.
               </p>
               <ShieldCheck className="absolute -bottom-8 -right-8 w-32 h-32 opacity-10" />
             </div>
@@ -132,8 +135,9 @@ export default function HomePage() {
             <div className="p-10 bg-blue-600 rounded-3xl text-white relative">
               <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
               <p className="text-blue-100">
-                To pioneer India’s risk advisory landscape through innovation,
-                expertise, and trust.
+               Pioneering India's Risk Advisory Landscape
+To be the trusted leader in Business Insurance, delivering cutting-edge, innovative & tech powered solutions that every business organization can scale with certainity, security & confidence.
+We are committed to setting new industry benchmarks through continuous innovation, deep expertise, and an unwavering commitment to our clients success and lasting resilience.
               </p>
               <BarChart3 className="absolute -bottom-3 -right-8 w-32 h-32 opacity-10" />
             </div>
@@ -142,53 +146,74 @@ export default function HomePage() {
       </section>
 
       {/* ================= SERVICES ================= */}
-      <section className="pt-1 py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="pt-1 py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6">
 
-          <div className="text-center mb-20">
-            <h4 className="text-blue-600 tracking-widest mb-3 font-semibold">
-              WHAT WE OFFER
-            </h4>
-            <h2 className="text-slate-900 text-5xl font-bold">
-              Financial Expertise
-            </h2>
-          </div>
+    <div className="text-center mb-16">
+      <h4 className="text-blue-600 tracking-widest mb-3 font-semibold">
+        WHAT WE OFFER
+      </h4>
+      <h2 className="text-slate-900 text-4xl md:text-5xl font-bold">
+        Financial Expertise
+      </h2>
+    </div>
 
-          <div className="flex h-[520px] gap-4">
-            {SERVICES.map((item, index) => (
-              <Link
-                key={item.id}
-                href={item.href}
-                onMouseEnter={() => setActiveService(index)}
-                className={`relative overflow-hidden rounded-3xl cursor-pointer 
-                transition-all duration-700 shadow-lg
-                ${activeService === index ? "flex-[4]" : "flex-[1]"}`}
+    {/* container */}
+    <div className="flex flex-col md:flex-row md:h-[520px] gap-4">
+      {SERVICES.map((item, index) => {
+        const isActive = activeService === index;
+
+        return (
+          <Link
+            key={item.id}
+            href={item.href}
+            onMouseEnter={() => setActiveService(index)}
+            className={`
+              group relative overflow-hidden rounded-3xl cursor-pointer
+              transition-all duration-700 shadow-lg
+              w-full
+              md:flex ${isActive ? "md:flex-[4]" : "md:flex-[1]"}
+            `}
+          >
+            {/* image */}
+            <img
+              src={item.img}
+              alt={item.title}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+
+            {/* overlay */}
+            <div className="absolute inset-0 bg-black/40"></div>
+
+            {/* content */}
+            <div className="relative z-10 h-full flex flex-col justify-end p-6 md:p-10 text-white min-h-[260px] md:min-h-0">
+              <span className="text-blue-300 text-4xl md:text-5xl font-bold mb-3">
+                {item.id}
+              </span>
+
+              <h3 className="text-2xl md:text-3xl font-bold mb-2">
+                {item.title}
+              </h3>
+
+              {/* desc */}
+              <p
+                className={`
+                  text-gray-100 max-w-md
+                  transition-all duration-500
+                  md:${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}
+                `}
               >
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/30"></div>
+                {item.desc}
+              </p>
+            </div>
+          </Link>
+        );
+      })}
+    </div>
 
-                <div className="relative z-10 h-full flex flex-col justify-end p-10 text-white">
-                  <span className="text-blue-300 text-5xl font-bold mb-4">
-                    {item.id}
-                  </span>
-                  <h3 className="text-3xl font-bold mb-3">
-                    {item.title}
-                  </h3>
-                  {activeService === index && (
-                    <p className="text-gray-100 max-w-md">
-                      {item.desc}
-                    </p>
-                  )}
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+  </div>
+</section>
+
 
       {/* ================= INDUSTRIES ================= */}
       <section className="pt-1 py-32 bg-slate-50">
@@ -222,23 +247,47 @@ export default function HomePage() {
       <div className="lg:w-1/2 space-y-10">
         {INDUSTRIES.map((item, i) => (
           <Link
-            key={i}
-            href={item.href}
-            className="flex gap-8 bg-white rounded-3xl shadow-lg p-8 hover:shadow-2xl transition-all"
-          >
-            <div className="w-40 h-40 rounded-2xl overflow-hidden">
-              <img src={item.img} alt={item.title} className="w-full h-full object-cover" />
-            </div>
+  key={i}
+  href={item.href}
+  className="
+    flex flex-col md:flex-row gap-6
+    bg-white rounded-3xl shadow-lg p-6 md:p-8
+    hover:shadow-2xl transition-all
+  "
+>
+  {/* IMAGE */}
+  <div className="
+    w-full md:w-40
+    aspect-[4/3] md:aspect-square
+    rounded-2xl overflow-hidden
+  ">
+    <img
+      src={item.img}
+      alt={item.title}
+      className="w-full h-full object-cover md:object-cover object-contain"
+    />
+  </div>
 
-            <div>
-              <span className="text-blue-600 font-bold text-xl">{item.num}</span>
-              <h3 className="text-2xl font-bold mt-2 mb-3">{item.title}</h3>
-              <p className="text-slate-600 mb-4">{item.text}</p>
-              <span className="inline-flex items-center gap-2 text-blue-600 font-semibold">
-                Learn More <ArrowRight size={16} />
-              </span>
-            </div>
-          </Link>
+  {/* CONTENT */}
+  <div className="flex-1">
+    <span className="text-blue-600 font-bold text-lg md:text-xl">
+      {item.num}
+    </span>
+
+    <h3 className="text-xl md:text-2xl font-bold mt-2 mb-2">
+      {item.title}
+    </h3>
+
+    <p className="text-slate-600 mb-4">
+      {item.text}
+    </p>
+
+    <span className="inline-flex items-center gap-2 text-blue-600 font-semibold">
+      Learn More <ArrowRight size={16} />
+    </span>
+  </div>
+</Link>
+ 
         ))}
       </div>
 

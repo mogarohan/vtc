@@ -23,20 +23,20 @@ const LifeInsurance = () => {
 
   const plans = [
     {
-      title: "Term Life Insurance",
-      desc: "Maximum coverage at affordable premiums, ensuring your family's financial future remains secure.",
+      title: "Term & Whole Life Cover",
+      desc: "Flexible protection matching your life stage and financial commitments.",
       icon: <Umbrella className="w-10 h-10 text-blue-500" />,
       features: ["Pure Protection", "Tax Benefits", "High Sum Assured"]
     },
     {
-      title: "Whole Life Plan",
-      desc: "Lifetime protection with a savings component that builds cash value for your retirement.",
+      title: "Critical Illness Protection",
+      desc: "Lump sum payments upon diagnosis of serious medical conditions.",
       icon: <Heart className="w-10 h-10 text-red-500" />,
       features: ["Lifetime Cover", "Cash Value", "Guaranteed Returns"]
     },
     {
-      title: "Child Future Plan",
-      desc: "Create a robust financial foundation for your children's higher education and marriage milestones.",
+      title: "Income Protection",
+      desc: "Replacement earnings if illness or injury prevents you working",
       icon: <Users className="w-10 h-10 text-purple-500" />,
       features: ["Wealth Creation", "Premium Waiver", "Fixed Milestones"]
     }
@@ -46,7 +46,7 @@ const LifeInsurance = () => {
     <main ref={containerRef} className="min-h-screen bg-white">
       
       {/* 1. PREMIUM DARK HERO SECTION - Fixed Height & Padding */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0F172A] pt-32 pb-40">
+      <section className="relative min-h-[90vh] -mt-30 flex items-center justify-center overflow-hidden bg-[#0F172A] pt-32 pb-40">
         {/* Animated Background Gradients */}
         <div className="absolute inset-0 z-0">
           <motion.div 
@@ -77,8 +77,7 @@ const LifeInsurance = () => {
           </h1>
           
           <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
-            Vestigo stands by you at every stage of life. We provide the financial 
-            independence your family deserves, ensuring peace of mind even in your absence.
+            Secure your family's financial future with comprehensive life insurance coverage designed to protect those who matter most. Beyond basic death benefits, we structure sophisticated protection strategies incorporating income replacement, estate planning, and wealth preservation objectives.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">

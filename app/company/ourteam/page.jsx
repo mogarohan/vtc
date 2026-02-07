@@ -27,28 +27,29 @@ export default function OurTeam() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   /* ================= LEADERSHIP DATA ================= */
-  const leadership = [
-    {
-      name: 'Bhavit Acharya',
-      role: 'Director & Principal Officer',
-      experience: 'Over 16 years of experience in insurance advisory and claims',
-      desc: `Bhavit Acharya brings over 16 years of hands-on experience across insurance advisory, 
-      policy interpretation, and claims coordination. His policy-first and client-centric approach 
-      ensures solutions are practical, defensible, and effective at the time of a claim.`,
-      image: '/member1.jpg',
-      linkedin: '#'
-    },
-    {
-      name: 'Riya Shah',
-      role: 'Director',
-      experience: 'Over 10 years of experience in client acquisition and relationship management',
-      desc: `Riya Shah focuses on building long-term partnerships rooted in trust and clarity. 
-      She remains actively involved beyond onboarding, ensuring continuity, responsiveness, 
-      and confidence throughout the client journey.`,
-      image: '/member2.png',
-      linkedin: '#'
-    }
-  ];
+//   const leadership = [
+//     {
+//       name: 'Bhavit Acharya',
+//       role: 'Director & Principal Officer',
+//       experience: 'Over 16 years of experience in insurance advisory and claims',
+//       desc: `Bhavit Acharya brings over 16 years of hands-on experience across insurance advisory, policy interpretation, and claims coordination. His approach is firmly policy-first and client-centric, ensuring that insurance solutions are aligned with regulatory requirements as well as real-world loss scenarios.
+// Known for his technical depth across insurance products and industry risk structures, Bhavit brings clarity to complex coverage decisions. His understanding of policy intent and operational realities enables clients to structure protection that is practical, defensible, and effective at the time of a claim.
+// He remains closely involved in complex advisory matters and critical claim engagements, providing clients with dependable guidance when outcomes matter most.
+// `,
+//       image: '/member1.jpg',
+//       linkedin: '#'
+//     },
+//     {
+//       name: 'Riya Shah',
+//       role: 'Director',
+//       experience: 'Over 10 years of experience in client acquisition and relationship management',
+//       desc: `Riya Shah brings over 10 years of experience in client acquisition and relationship development, with a strong focus on building long-term partnerships rooted in trust and clarity. She works closely with organizations to understand their business context and expectations, ensuring engagements begin with alignment and confidence.
+// Riya remains actively involved beyond the initial relationship, emphasizing clear communication, responsiveness, and continuity of care—so clients feel supported, informed, and assured throughout their association with Vestigo.
+// `,
+//       image: '/member2.png',
+//       linkedin: '#'
+//     }
+//   ];
 
   /* ================= CORE VALUES ================= */
     const values = [
@@ -83,12 +84,11 @@ export default function OurTeam() {
         <div className="absolute inset-0 bg-black/30" />
 
         <motion.div style={{ y, opacity }} className="relative z-10 text-center px-6">
-          <p className="text-xl md:text-2xl mt-80 mr-170 text-white max-w-3xl mx-auto leading-relaxed">
-            Insurance is not about paperwork — it is about standing by clients
-            when outcomes matter.
+          <p className="text-xl md:text-2xl mt-80 mr-170 text-black max-w-3xl mx-auto leading-relaxed">
+            Vestigo is guided by leadership that combines deep insurance expertise, disciplined judgment, and genuine responsibility toward clients. Our founders remain closely involved in advisory and client engagements, ensuring that every decision reflects clarity, preparedness, and long-term trust.
           </p>
 
-          <div className="mt-10 flex justify-center">
+          <div className="mt-3 flex justify-center">
             <Link
               href="/contacts"
               className="bg-blue-600 hover:bg-blue-500 mr-170 text-white px-8 py-4 rounded-2xl font-semibold flex items-center gap-2"
@@ -103,10 +103,9 @@ export default function OurTeam() {
       <section className="py-24 px-6 max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-slate-900 mb-6">Our Team</h2>
         <p className="text-gray-600 leading-relaxed max-w-4xl mx-auto">
-          At Vestigo, our team works with a clear sense of responsibility—because
-          insurance is not about paperwork, it is about standing by clients when
-          outcomes matter. We remain engaged across the entire insurance journey,
-          ensuring continuity, clarity, and dependable support.
+          At Vestigo, our team works with a clear sense of responsibility—because insurance is not about paperwork, it is about standing by clients when outcomes matter.
+We take the time to understand each client’s business, risks, and expectations, so that our advice is thoughtful, practical, and dependable. Our teams remain engaged across the entire insurance journey, ensuring continuity, clarity, and support not just at placement, but through claims and critical moments.
+
         </p>
       </section>
 
@@ -140,14 +139,15 @@ export default function OurTeam() {
               <p className="text-blue-600 font-medium mb-1">
                 Director & Principal Officer
               </p>
-              <p className="text-sm text-gray-500 mb-5">
-                16+ years in insurance advisory & claims
+              <p className="text-sm text-gray-500 mb-5"><b>
+                16+ years in insurance advisory & claims</b>
               </p>
 
               <p className="text-gray-600 leading-relaxed mb-5">
-                Bhavit brings deep experience in insurance advisory, policy
-                interpretation, and claims coordination. His disciplined
-                approach ensures clients are protected when it matters most.
+                Bhavit Acharya brings over 16 years of hands-on experience across insurance advisory, policy interpretation, and claims coordination. His approach is firmly policy-first and client-centric, ensuring that insurance solutions are aligned with regulatory requirements as well as real-world loss scenarios.
+Known for his technical depth across insurance products and industry risk structures, Bhavit brings clarity to complex coverage decisions. His understanding of policy intent and operational realities enables clients to structure protection that is practical, defensible, and effective at the time of a claim.
+He remains closely involved in complex advisory matters and critical claim engagements, providing clients with dependable guidance when outcomes matter most.
+
               </p>
 
               <div className="flex gap-3">
@@ -175,14 +175,14 @@ export default function OurTeam() {
               <p className="text-blue-600 font-medium mb-1">
                 Director
               </p>
-              <p className="text-sm text-gray-500 mb-5">
-                10+ years in client acquisition & relationship management
+              <p className="text-sm text-gray-500 mb-5"><b>
+                10+ years in client acquisition & relationship management</b>
               </p>
 
               <p className="text-gray-600 leading-relaxed mb-5">
-                Riya focuses on building long-term partnerships rooted in
-                clarity and trust. She stays involved beyond onboarding to
-                ensure confidence and continuity for every client.
+                Riya Shah brings over 10 years of experience in client acquisition and relationship development, with a strong focus on building long-term partnerships rooted in trust and clarity. She works closely with organizations to understand their business context and expectations, ensuring engagements begin with alignment and confidence.
+Riya remains actively involved beyond the initial relationship, emphasizing clear communication, responsiveness, and continuity of care—so clients feel supported, informed, and assured throughout their association with Vestigo.
+
               </p>
 
               <div className="flex gap-3 justify-end">

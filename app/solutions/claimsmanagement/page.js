@@ -46,7 +46,7 @@ const ClaimsManagement = () => {
     <main ref={containerRef} className="min-h-screen bg-white overflow-hidden">
       
       {/* 1. PREMIUM DARK HERO SECTION (Matched to Company/Solutions) */}
-      <section className="relative h-[80vh] flex items-center justify-center overflow-hidden bg-[#0F172A]">
+      <section className="relative h-[80vh] -mt-20 flex items-center justify-center overflow-hidden bg-[#0F172A]">
         {/* Animated Background Gradients */}
         <div className="absolute inset-0 z-0">
           <motion.div 

@@ -99,18 +99,18 @@ export default function EmployeeBenefitsPage() {
                <span className="uppercase tracking-[0.4em] text-[10px] font-bold text-blue-200">Workforce Intelligence</span>
             </div>
             <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] mb-8">
-              Empowering <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-300">Your People</span>
+              Employee Benefits <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-300">Insurance</span>
             </h1>
             <p className="text-sm text-blue-100/70 max-w-sm leading-relaxed font-medium mb-10">
-              Transforming corporate culture through bespoke health and security programs.
+              Attract and Retain Top Talent with Comprehensive Coverage.
             </p>
             <div className="flex gap-12 border-t border-white/10 pt-8">
               <StatCounter target={94} label="Talent Retention" />
               <StatCounter target={88} label="Employee Satisfaction" />
             </div>
           </motion.div>
-          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="relative z-30 -mb-24 hidden lg:block">
-            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" className="rounded-[4rem] shadow-2xl border-8 border-white/5 grayscale hover:grayscale-0 transition-all duration-700 w-[450px]" alt="Team" />
+          <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="relative z-30 -mb-3 hidden lg:block">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800&auto=format&fit=crop" className="rounded-[4rem] shadow-2xl border-8 border-white/5 grayscale hover:grayscale-0 transition-all duration-700 w-[800px]" alt="Team" />
           </motion.div>
         </div>
         <div className="absolute inset-0 bg-[#070B7F] z-10" style={{ clipPath: 'polygon(0 0, 58% 0, 42% 100%, 0% 100%)' }} />
@@ -124,10 +124,10 @@ export default function EmployeeBenefitsPage() {
         </div>
         <div className="container mx-auto px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { title: "Group Health", icon: <Stethoscope className="w-10 h-10 text-pink-500"/>, desc: "High-tier medical, dental, and vision networks." },
-            { title: "Financial Security", icon: <Wallet className="w-10 h-10 text-blue-500" />, desc: "Structured retirement and savings management." },
-            { title: "Mental Wellness", icon: <Smile className="w-10 h-10 text-purple-500"/>, desc: "Scalable psychological support frameworks." },
-            { title: "Life Protection", icon: <Umbrella className="w-10 h-10 text-orange-500" />, desc: "Security for employees and their families." },
+            { title: "Group Health", icon: <Stethoscope className="w-10 h-10 text-pink-500"/>, desc: "Comprehensive medical coverage ensures your employees have access to quality healthcare, enhancing their well-being and reducing absenteeism." },
+            { title: "Gratuity Insurance", icon: <Wallet className="w-10 h-10 text-blue-500" />, desc: "Safeguards end-of-service benefits, providing financial stability for employees upon their departure and fulfilling employer obligations." },
+            { title: "Group Life Insurance", icon: <Smile className="w-10 h-10 text-purple-500"/>, desc: "Provides essential financial protection for employees' families in unforeseen circumstances, offering peace of mind and security." },
+            { title: "Group Personal Accident", icon: <Umbrella className="w-10 h-10 text-orange-500" />, desc: "24/7 accident coverage protects your workforce against unexpected events, demonstrating care and promoting a secure working environment." },
           ].map((item, idx) => (
             <motion.div 
               key={idx}

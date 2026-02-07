@@ -1,61 +1,128 @@
-import React from 'react';
-import { Building2, ShieldCheck, Factory, Truck, Briefcase, Zap } from 'lucide-react';
+'use client';
 
-const CommercialInsurance = () => {
+import React from 'react';
+import Link from 'next/link';
+import {
+  Building2,
+  ShieldCheck,
+  Truck,
+  Briefcase,
+  Sparkles,
+  ArrowRight,
+} from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+
+const CommercialInsuranceClient = () => {
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 300], [0, 80]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0.9]);
+
   const services = [
-    { title: "General Liability", desc: "Third-party claims aur property damage se apne business ko secure karein.", icon: <ShieldCheck className="w-10 h-10 text-blue-600" /> },
-    { title: "Property Insurance", desc: "Aapke office, warehouse aur physical assets ki poori suraksha.", icon: <Building2 className="w-10 h-10 text-blue-600" /> },
-    { title: "Workers Compensation", desc: "Employees ki safety aur medical recovery ke liye behtar coverage.", icon: <Briefcase className="w-10 h-10 text-blue-600" /> },
-    { title: "Commercial Auto", desc: "Business vehicles aur logistics fleet ke liye specialized insurance.", icon: <Truck className="w-10 h-10 text-blue-600" /> },
+    {
+      title: 'Property & Liability',
+      desc: 'Protect your business from third-party claims and property damage.',
+      icon: <ShieldCheck className="w-10 h-10 text-blue-600" />,
+    },
+    {
+      title: 'Business Interruption',
+      desc: 'Complete coverage for your office, warehouse, and physical assets.',
+      icon: <Building2 className="w-10 h-10 text-blue-600" />,
+    },
+    {
+      title: 'Cyber Risk',
+      desc: 'Specialized insurance for business Digital threat protection.',
+      icon: <Briefcase className="w-10 h-10 text-blue-600" />,
+    },
+    {
+      title: 'Fleet & Transport',
+      desc: 'Comprehensive coverage for commercial vehicles and logistics.',
+      icon: <Truck className="w-10 h-10 text-blue-600" />,
+    },
   ];
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-[#f8fafc] py-24 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-700 text-sm font-medium mb-6">
-            <Zap size={16} /> Business Excellence
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-            Comprehensive <span className="text-blue-600">Commercial Insurance</span> Solutions
+      {/* HERO SECTION */}
+      <section className="relative h-[80vh] -mt-20 flex items-center justify-center overflow-hidden bg-[#0F172A]">
+        {/* Animated Background */}
+        <div className="absolute inset-0 z-0">
+          <motion.div
+            animate={{ scale: [1, 1.2, 1], x: [0, 50, 0] }}
+            transition={{ duration: 10, repeat: Infinity }}
+            className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px]"
+          />
+          <motion.div
+            animate={{ scale: [1, 1.3, 1], x: [0, -50, 0] }}
+            transition={{ duration: 15, repeat: Infinity }}
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-indigo-600/20 rounded-full blur-[100px]"
+          />
+        </div>
+
+        <motion.div style={{ y, opacity }} className="relative z-10 text-center px-6">
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 backdrop-blur-md"
+          >
+            <Sparkles size={16} /> FAST & TRANSPARENT
+          </motion.div>
+
+          <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter">
+            Commercial{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+              Insurance
+            </span>
           </h1>
-          <p className="text-lg text-slate-600 max-w-3xl">
-            Vestigo aapke business ko har tarah ke risks se bachata hai. Chota startup ho ya badi enterprise, humare paas har scale ke liye customized insurance plans hain.
+
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+           Protect your business assets, operations, and people with comprehensive commercial coverage designed for today's complex risk landscape. We understand that your enterprise faces unique challenges—from property damage and liability claims to business interruption and cyber threats.
           </p>
-        </div>
-      </section>
 
-      {/* Services Grid */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((item, index) => (
-              <div key={index} className="group p-8 border border-slate-100 rounded-2xl hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300">
-                <div className="mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-3">{item.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
+          <div className="mt-10 flex justify-center">
+            <Link
+              href="/contacts"
+              className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20"
+            >
+              Initiate a Claim <ArrowRight size={18} />
+            </Link>
           </div>
+        </motion.div>
+      </section>
+
+      {/* SERVICES */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {services.map((item, index) => (
+            <div
+              key={index}
+              className="group p-8 border border-slate-100 rounded-2xl hover:border-blue-200 hover:shadow-xl hover:shadow-blue-500/5 transition-all"
+            >
+              <div className="mb-6 group-hover:scale-110 transition-transform">
+                {item.icon}
+              </div>
+              <h3 className="text-xl font-bold text-slate-800 mb-3">
+                {item.title}
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                {item.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Trust Section / Why Us */}
+      {/* CALL TO ACTION */}
       <section className="py-20 px-6 border-t border-slate-50">
         <div className="max-w-4xl mx-auto bg-slate-900 rounded-3xl p-12 text-center text-white relative overflow-hidden">
-          <div className="relative z-10">
-            <h2 className="text-3xl font-bold mb-6">Apne Business ko Aaj hi Secure Karein</h2>
-            <p className="text-slate-400 mb-10">Hamare experts aapke business model ko samajh kar sabse sahi plan suggest karenge.</p>
-            <button className="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-blue-600 hover:text-white transition-all">
-              Free Consultation Lein
-            </button>
-          </div>
-          {/* Decorative element */}
+          <h2 className="text-3xl font-bold mb-6">
+            Secure Your Business Today
+          </h2>
+          <p className="text-slate-400 mb-10">
+            Our commercial insurance specialists work directly with leading underwriters to secure competitive terms whilst ensuring comprehensive protection. We analyse your specific exposures, negotiate favourable policy conditions, and provide ongoing risk management support to minimise vulnerabilities.
+          </p>
+          <button className="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-blue-600 hover:text-white transition-all">
+            Get a Free Consultation
+          </button>
           <div className="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl"></div>
         </div>
       </section>
@@ -63,4 +130,4 @@ const CommercialInsurance = () => {
   );
 };
 
-export default CommercialInsurance;
+export default CommercialInsuranceClient;
