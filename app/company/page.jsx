@@ -1,262 +1,249 @@
-  'use client';
+'use client';
 
-  import React, { useRef } from 'react';
-  import { motion, useScroll, useTransform } from 'framer-motion';
-  import {
-    Target,
-    Eye,
-    TrendingUp,
-    ShieldCheck,
-    Zap,
-    Headphones,
-    Trophy,
-    Users,
-    ChevronRight,
-    Sparkles,
-    Building2,
-    Globe,
-    ArrowRight,
-    Handshake
-  } from 'lucide-react';
-  import Link from 'next/link';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import {
+  Target,
+  Eye,
+  TrendingUp,
+  ShieldCheck,
+  Zap,
+  Trophy,
+  Users,
+  Building2,
+  Globe,
+  ArrowRight,
+  Handshake,
+  Sparkles,
+} from 'lucide-react';
+import Link from 'next/link';
 
-  export default function CompanyOverview() {
-    const containerRef = useRef(null);
+/* ================= DATA ================= */
+const partners = [
+  { src: '/p1.jpeg', name: 'Infra Market' },
+  { src: '/p2.jpeg', name: 'Shiva' },
+  { src: '/p3.jpeg', name: 'Nitco Limited' },
+  { src: '/p4.png', name: 'Satishbel' },
+  { src: '/p5.png', name: 'Jayant Agro' },
+  { src: '/p6.jpeg', name: 'Royal Castor' },
+  { src: '/p7.png', name: 'Shalimar Paints' },
+];
 
-    const { scrollYProgress } = useScroll({
-      target: containerRef,
-      offset: ['start start', 'end start'],
-    });
+const team = [
+  { name: 'Senior Risk Advisor', role: '15+ Years Experience' },
+  { name: 'Claims Specialist', role: 'Complex Claims Handling' },
+  { name: 'Policy Auditor', role: 'Cost Optimisation Expert' },
+  { name: 'Client Partner', role: 'Relationship & Strategy' },
+];
 
-    const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
-    const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+export default function CompanyOverview() {
+  const containerRef = useRef(null);
 
-    const stats = [
-      { label: 'Years Experience', value: '15+', icon: <Trophy size={20} /> },
-      { label: 'Clients Globally', value: '500+', icon: <Users size={20} /> },
-      { label: 'Expert Advisors', value: '50+', icon: <Building2 size={20} /> },
-      { label: 'Global Presence', value: '10+', icon: <Globe size={20} /> },
-    ];
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end start'],
+  });
 
-    return (
-      <main ref={containerRef} className="bg-white overflow-hidden">
+  const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
-        {/* ================= HERO ================= */}
-        <section className="relative min-h-[85vh] flex items-center justify-center bg-[#0F172A]">
-          <div className="absolute inset-0">
-            <motion.div
-              animate={{ scale: [1, 1.15, 1] }}
-              transition={{ duration: 12, repeat: Infinity }}
-              className="absolute top-1/4 left-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-blue-600/20 rounded-full blur-[100px]"
-            />
-            <motion.div
-              animate={{ scale: [1, 1.25, 1] }}
-              transition={{ duration: 16, repeat: Infinity }}
-              className="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-80 sm:h-80 bg-indigo-600/20 rounded-full blur-[100px]"
-            />
+  const stats = [
+    { label: 'Years Experience', value: '15+', icon: <Trophy size={20} /> },
+    { label: 'Clients Globally', value: '500+', icon: <Users size={20} /> },
+    { label: 'Expert Advisors', value: '50+', icon: <Building2 size={20} /> },
+    { label: 'Global Presence', value: '10+', icon: <Globe size={20} /> },
+  ];
+
+  return (
+    <main ref={containerRef} className="bg-white overflow-hidden">
+
+      {/* ================= HERO ================= */}
+      <section className="relative min-h-[85vh] flex items-center justify-center bg-[#0F172A] px-6 py-20 md:py-0">
+        <div className="absolute inset-0">
+          <motion.div
+            animate={{ scale: [1, 1.15, 1] }}
+            transition={{ duration: 12, repeat: Infinity }}
+            className="absolute top-1/4 left-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-blue-600/20 rounded-full blur-[100px]"
+          />
+          <motion.div
+            animate={{ scale: [1, 1.25, 1] }}
+            transition={{ duration: 16, repeat: Infinity }}
+            className="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-80 sm:h-80 bg-indigo-600/20 rounded-full blur-[100px]"
+          />
+        </div>
+
+        <motion.div
+          style={{ y, opacity }}
+          className="relative z-10 text-center px-4 sm:px-6"
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-xs sm:text-sm font-bold mb-6 backdrop-blur-md">
+            <Sparkles size={14} />
+            SECURING YOUR FUTURE
           </div>
 
-          <motion.div
-            style={{ y, opacity }}
-            className="relative z-10 text-center px-4 sm:px-6"
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-xs sm:text-sm font-bold mb-6 backdrop-blur-md">
-              <Sparkles size={14} />
-              SECURING YOUR FUTURE
+          <h1 className="text-3xl sm:text-6xl md:text-7xl font-black text-white mb-6 tracking-tight leading-tight">
+            Building <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Resilience</span><br />
+            Through Risk Intelligence
+          </h1>
+
+          <p className="text-sm sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
+            Vestigo insurance nathi, pan tamara sapnao mate nu ek safety shield che.
+            We turn uncertainty into opportunity through trust & technology.
+          </p>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              href="/contacts"
+              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-transform hover:scale-105"
+            >
+              Start Your Journey <ArrowRight size={18} />
+            </Link>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* ================= STATS ================= */}
+      <section className="relative z-20 -mt-10 sm:-mt-16 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+          {stats.map((stat, i) => (
+            <div
+              key={i}
+              className="bg-[#F0F9FF] p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-sm border border-blue-100 flex flex-col items-center text-center hover:-translate-y-1 transition-all hover:bg-white hover:shadow-lg"
+            >
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white flex items-center justify-center text-blue-600 mb-3 shadow-sm">
+                {stat.icon}
+              </div>
+              <div className="text-2xl sm:text-4xl font-black text-slate-900">
+                {stat.value}
+              </div>
+              <div className="text-[9px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest">
+                {stat.label}
+              </div>
             </div>
+          ))}
+        </div>
+      </section>
 
-            <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white mb-6 tracking-tight">
-              We Build{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                Resilience
-              </span>
-            </h1>
+      {/* ================= WHY CHOOSE US ================= */}
+      <section className="py-16 md:py-28 px-6 bg-slate-50">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div>
+            <span className="text-blue-600 font-bold tracking-widest uppercase text-sm">
+              Why Choose Vestigo
+            </span>
 
-            <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              Vestigo insurance nathi, pan tamara sapnao mate nu ek safety shield che.
-              We turn uncertainty into opportunity through trust & technology.
+            <h2 className="text-3xl md:text-5xl font-black text-slate-900 mt-3 mb-6 leading-tight">
+              Strategic Risk Consulting <br className="hidden md:block" />
+              <span className="text-blue-600">That Actually Protects.</span>
+            </h2>
+
+            <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-8">
+              Insurance alone doesn’t prevent losses — <strong>risk intelligence does.</strong> 
+              Vestigo helps organizations identify, reduce, and control risks before they turn into financial losses.
             </p>
 
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link
-                href="/company/whoweare"
-                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2"
-              >
-                Learn Who We Are <ArrowRight size={18} />
-              </Link>
-            </div>
-          </motion.div>
-        </section>
+            <ul className="space-y-4 text-slate-700 text-base md:text-lg">
+              <li className="flex gap-3">
+                <ShieldCheck className="text-blue-600 shrink-0 mt-1" />
+                Proactive risk mapping to avoid financial losses
+              </li>
+              <li className="flex gap-3">
+                <TrendingUp className="text-blue-600 shrink-0 mt-1" />
+                30% average reduction in claims frequency
+              </li>
+              <li className="flex gap-3">
+                <Target className="text-blue-600 shrink-0 mt-1" />
+                Business continuity and operational assurance
+              </li>
+              <li className="flex gap-3">
+                <Zap className="text-blue-600 shrink-0 mt-1" />
+                Optimised coverage via expert policy audits
+              </li>
+            </ul>
+          </div>
 
-        {/* ================= STATS ================= */}
-        <section className="relative z-20 -mt-16 px-4 sm:px-6">
-          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
-            {stats.map((stat, i) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            {[
+              { title: "Risk Identification", icon: <Eye />, desc: "Uncover hidden operational vulnerabilities" },
+              { title: "Risk Control", icon: <ShieldCheck />, desc: "Implement loss-prevention strategies" },
+              { title: "Claims Advocacy", icon: <Handshake />, desc: "Expert-led, fair claim settlements" },
+              { title: "Cost Optimisation", icon: <TrendingUp />, desc: "Save 10–20% via policy audits" },
+            ].map((item, i) => (
               <div
                 key={i}
-                className="bg-white p-6 sm:p-8 rounded-[2rem] shadow-lg border border-slate-100 flex flex-col items-center text-center hover:-translate-y-1 transition"
+                className="bg-[#E0F2FE] p-6 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] border border-blue-100 hover:shadow-xl hover:-translate-y-1 transition-all hover:bg-white"
               >
-                <div className="w-11 h-11 rounded-xl bg-slate-50 flex items-center justify-center text-blue-600 mb-3">
-                  {stat.icon}
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white text-blue-600 flex items-center justify-center mb-4 shadow-sm">
+                  {item.icon}
                 </div>
-                <div className="text-3xl sm:text-4xl font-black text-slate-900">
-                  {stat.value}
-                </div>
-                <div className="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-widest">
-                  {stat.label}
-                </div>
+                <h4 className="font-bold text-lg text-slate-900 mb-2">{item.title}</h4>
+                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-      {/* WHY CHOOSE US – STRATEGIC ADVANTAGE */}
-  <section className="py-28 px-6 bg-slate-50">
-    <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-
-      {/* LEFT CONTENT */}
-      <div>
-        <span className="text-blue-600 font-bold tracking-widest uppercase text-sm">
-          Why Choose Vestigo
-        </span>
-
-        <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-3 mb-6 leading-tight">
-          Strategic Risk Consulting <br />
-          <span className="text-blue-600">That Actually Protects.</span>
-        </h2>
-
-        <p className="text-lg text-slate-600 leading-relaxed mb-8">
-          Insurance alone doesn’t secure a business.  
-          <strong> Understanding risk does.</strong>  
-          Vestigo helps organizations identify, reduce, and control risks
-          before they turn into financial losses.
-        </p>
-
-        <ul className="space-y-4 text-slate-700 text-lg">
-          <li className="flex gap-3">
-            <ShieldCheck className="text-blue-600 mt-1" />
-            Avoid crippling financial losses through proactive risk mapping
-          </li>
-          <li className="flex gap-3">
-            <TrendingUp className="text-blue-600 mt-1" />
-            Reduce claims frequency and severity by up to 30%
-          </li>
-          <li className="flex gap-3">
-            <Target className="text-blue-600 mt-1" />
-            Ensure uninterrupted business operations & continuity
-          </li>
-          <li className="flex gap-3">
-            <Zap className="text-blue-600 mt-1" />
-            Optimise coverage & premiums with expert policy audits
-          </li>
-        </ul>
-
-        <Link
-          href="/company/whyus"
-          className="inline-flex items-center gap-2 mt-10 font-bold text-blue-600 group"
-        >
-          Discover Our Risk Approach
-          <ArrowRight className="group-hover:translate-x-1 transition-transform" />
-        </Link>
-      </div>
-
-      {/* RIGHT VISUAL CARDS */}
-      <div className="grid sm:grid-cols-2 gap-6">
-        {[
-          {
-            title: "Risk Identification",
-            desc: "Uncover hidden operational & financial vulnerabilities",
-            icon: <Eye />,
-          },
-          {
-            title: "Risk Control",
-            desc: "Implement practical loss-prevention strategies",
-            icon: <ShieldCheck />,
-          },
-          {
-            title: "Claims Advocacy",
-            desc: "Faster, fairer and expert-led claim settlements",
-            icon: <Handshake />,
-          },
-          {
-            title: "Cost Optimisation",
-            desc: "Save 10–20% through structured policy audits",
-            icon: <TrendingUp />,
-          },
-        ].map((item, i) => (
-          <div
-            key={i}
-            className="bg-white p-8 rounded-[2rem] border border-slate-200 hover:shadow-xl hover:-translate-y-1 transition-all"
-          >
-            <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
-              {item.icon}
-            </div>
-            <h4 className="font-bold text-lg text-slate-900 mb-2">
-              {item.title}
-            </h4>
-            <p className="text-slate-500 text-sm leading-relaxed">
-              {item.desc}
-            </p>
-          </div>
-        ))}
-      </div>
-
-    </div>
-  </section>
-
-        {/* ================= MISSION / VISION ================= */}
-        <section className="py-20 sm:py-28 bg-[#0F172A] px-4 sm:px-6">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-6">
-            <div className="p-8 sm:p-12 rounded-[2.5rem] bg-white/5 border border-white/10">
-              <Target className="text-blue-400 mb-5" size={36} />
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                Our Mission
-              </h3>
-              <p className="text-slate-400 text-base sm:text-lg">
-                To safeguard future growth by delivering intelligent insurance
-                advisory with transparency, trust, and excellence.
-              </p>
-            </div>
-
-            <div className="p-8 sm:p-12 rounded-[2.5rem] bg-blue-600">
-              <Eye className="text-white mb-5" size={36} />
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
-                Our Vision
-              </h3>
-              <p className="text-blue-100 text-base sm:text-lg">
-                To be the most trusted partner in enterprise risk advisory across
-                India and beyond.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* ================= CTA ================= */}
-        <section className="py-20 sm:py-32 px-4 sm:px-6">
-          <div className="max-w-5xl mx-auto bg-gradient-to-br from-blue-600 to-indigo-700 rounded-[2.5rem] sm:rounded-[4rem] p-10 sm:p-16 text-center text-white">
-            <h2 className="text-3xl sm:text-5xl font-bold mb-6">
-              Start Your Journey With Us
-            </h2>
-            <p className="text-blue-100 text-base sm:text-lg mb-8">
-              Discover why 500+ clients trust Vestigo for risk protection and
-              long-term resilience.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link
-                href="/company/whoweare"
-                className="bg-white text-blue-600 px-8 py-4 rounded-2xl font-bold"
+      {/* ================= OUR TEAM ================= */}
+      <section className="py-16 md:py-28 px-6 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8 md:mb-12">Our Expert Team</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            {team.map((member, i) => (
+              <div
+                key={i}
+                className="p-6 sm:p-8 bg-[#F0F9FF] rounded-[2rem] sm:rounded-[2.5rem] border border-blue-50 hover:bg-white hover:shadow-lg transition-all"
               >
-                Who We Are
-              </Link>
-              <Link
-                href="/contacts"
-                className="bg-white/10 border border-white/20 px-8 py-4 rounded-2xl font-bold"
-              >
-                Contact Specialists
-              </Link>
-            </div>
+                <Users className="mx-auto text-blue-600 mb-4" />
+                <h4 className="font-bold text-slate-900">{member.name}</h4>
+                <p className="text-xs sm:text-sm text-slate-500 mt-2">{member.role}</p>
+              </div>
+            ))}
           </div>
-        </section>
-      </main>
-    );
-  }
+        </div>
+      </section>
+
+      {/* ================= OUR PARTNERS (STATIC GRID) ================= */}
+      <section className="py-16 md:py-28 px-6 bg-[#F5F9FF]">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-center text-3xl md:text-4xl font-black text-slate-900 mb-10 md:mb-16">
+            Trusted by Leading Organizations
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
+            {partners.map((p, i) => (
+              <div key={i} className="flex flex-col items-center group">
+                <div className="bg-white h-[90px] sm:h-[110px] w-full max-w-[220px] rounded-2xl border border-blue-100 shadow-sm flex items-center justify-center p-4 sm:p-6 group-hover:shadow-md transition-shadow">
+                  <img src={p.src} alt={p.name} className="max-h-full max-w-full object-contain" />
+                </div>
+                <span className="mt-3 sm:mt-4 text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest text-center">
+                  {p.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ================= FINAL CTA ================= */}
+      <section className="py-16 md:py-32 px-6 bg-white">
+        <div className="max-w-6xl mx-auto bg-gradient-to-br from-blue-600 to-indigo-800 rounded-[2.5rem] sm:rounded-[4rem] p-10 sm:p-20 text-center text-white relative overflow-hidden shadow-2xl">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-[120px] -mr-40 -mt-40" />
+          <h2 className="text-3xl sm:text-6xl font-black mb-6 sm:mb-8 leading-tight">
+            Let’s Build Resilience <br className="hidden sm:block" /> Together
+          </h2>
+          <p className="text-blue-100 text-base sm:text-xl mb-8 sm:mb-12 max-w-2xl mx-auto font-medium">
+            Discover why 500+ clients trust Vestigo for risk protection and long-term business continuity.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+            <Link
+              href="/contacts"
+              className="bg-white text-blue-600 px-8 py-4 sm:px-12 sm:py-5 rounded-2xl font-bold text-base sm:text-lg hover:scale-105 transition-transform shadow-xl"
+            >
+              Talk to Experts
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
