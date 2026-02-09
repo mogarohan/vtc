@@ -152,6 +152,7 @@ const NAV_DATA = [
     ],
   },
   { name: 'Insights', href: '/blogs' },
+  { name: 'Careers', href: '/careers' },
   
 ];
 
