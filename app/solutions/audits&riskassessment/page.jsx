@@ -51,34 +51,16 @@ export default function IndustryRiskPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      {/* ================= HERO / METHODOLOGY SECTION ================= */}
-      <section className="relative overflow-hidden py-24">
-
-        {/* 🔥 ANIMATED BACKGROUND */}
-        <div className="absolute inset-0 -z-10">
-          {/* Base gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#EEF4FF] via-white to-[#0F172A]" />
-
-          {/* Moving glow blobs */}
-          <motion.div
-            animate={{ x: [0, 80, 0], y: [0, -60, 0] }}
-            transition={{ duration: 18, repeat: Infinity }}
-            className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[120px]"
-          />
-          <motion.div
-            animate={{ x: [0, -80, 0], y: [0, 60, 0] }}
-            transition={{ duration: 22, repeat: Infinity }}
-            className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-cyan-400/20 rounded-full blur-[120px]"
-          />
-        </div>
+      <section className="relative overflow-hidden py-20 md:py-24">
+        {/* BACKGROUND */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#EEF4FF] via-white to-[#0F172A]" />
 
         {/* HEADER */}
-        <div className="text-center mb-28 relative z-10">
+        <div className="text-center mb-16 md:mb-28 px-4">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl font-black uppercase tracking-tighter text-[#070B7F]"
+            className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter text-[#070B7F]"
           >
             Audits <br />
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text">
@@ -87,89 +69,89 @@ export default function IndustryRiskPage() {
           </motion.p>
         </div>
 
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
+          {/* DESKTOP TIMELINE */}
+          <div className="absolute hidden md:block left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-blue-600 via-cyan-400 to-transparent -translate-x-1/2" />
 
-          {/* CENTER LINE */}
-          <div
-            className="absolute hidden md:block left-1/2 top-0 bottom-0 w-[2px]
-            bg-gradient-to-b from-blue-600 via-cyan-400 to-transparent
-            shadow-[0_0_20px_rgba(34,211,238,0.6)] -translate-x-1/2"
-          />
-
-          <div className="flex flex-col gap-24 relative z-10">
+          <div className="flex flex-col gap-20 md:gap-24">
             {processSteps.map((step, i) => (
               <motion.div
                 key={i}
-                initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
+                initial={{ opacity: 0, x: i % 2 === 0 ? -40 : 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className={`flex items-center justify-between w-full
-                  ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}
-                  flex-col gap-10`}
+                transition={{ duration: 0.6 }}
+                className={`flex flex-col items-center gap-10 ${
+                  i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
               >
-                {/* LEFT CARD */}
-                <div className="w-full md:w-[45%]">
-                  <motion.div
-                    whileHover={{ y: -10 }}
-                    className="bg-white p-10 rounded-[3rem] shadow-2xl border border-slate-100 relative group"
-                  >
-                    <div className="flex justify-between items-start mb-6">
-                      <div className="text-blue-600 bg-blue-50 p-3 rounded-2xl group-hover:bg-blue-600 group-hover:text-white transition">
+                {/* LEFT SECTION */}
+                <div className="w-full md:w-[45%] flex flex-col items-center">
+                  
+                  {/* MOBILE NUMBER – TOP CENTER WITH GAP */}
+                  <div className="md:hidden mb-6 relative">
+                    <div className="w-14 h-14 bg-[#070B7F] rounded-2xl flex items-center justify-center text-white font-black shadow-xl">
+                      {step.num}
+                    </div>
+                    <div className="absolute inset-0 bg-cyan-400/30 rounded-full blur-xl -z-10" />
+                  </div>
+
+                  {/* CARD */}
+                  <div className="bg-white w-full p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-xl border border-slate-100">
+                    <div className="flex items-center gap-4 mb-4">
+                      <div className="text-blue-600 bg-blue-50 p-3 rounded-2xl">
                         {step.icon}
                       </div>
-                      <span className="text-4xl font-black text-slate-100">
-                        {step.num}
-                      </span>
+                      <h3 className="text-xl md:text-2xl font-black uppercase text-[#070B7F]">
+                        {step.title}
+                      </h3>
                     </div>
 
-                    <h3 className="text-2xl font-black uppercase tracking-tight text-[#070B7F] mb-4">
-                      {step.title}
-                    </h3>
+                    {/* DESKTOP NUMBER */}
+                    <span className="hidden md:block absolute top-8 right-10 text-4xl font-black text-slate-100">
+                      {step.num}
+                    </span>
 
-                    <p className="text-xs text-slate-500 font-semibold leading-relaxed">
+                    <p className="text-sm text-slate-500 font-semibold leading-relaxed">
                       {step.desc}
                     </p>
+                  </div>
 
-                    <div className="absolute bottom-0 left-0 h-1.5 bg-gradient-to-r from-blue-600 to-cyan-400 w-0 group-hover:w-full transition-all duration-500" />
-                  </motion.div>
+                  {/* MOBILE IMAGE */}
+                  <div className="md:hidden mt-6 w-full">
+                    <div className="bg-white rounded-[1.75rem] overflow-hidden shadow-lg border border-slate-100">
+                      <img
+                        src={step.ghostImg}
+                        alt={step.title}
+                        className="w-full h-[180px] object-cover"
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                {/* CENTER NODE */}
-                <div className="relative flex items-center justify-center">
-                  <motion.div
-                    whileInView={{ scale: [0, 1.2, 1] }}
-                    transition={{ duration: 0.5 }}
-                    className="w-16 h-16 bg-[#070B7F] rounded-[1.25rem]
-                      flex items-center justify-center text-white
-                      shadow-[0_0_30px_rgba(7,11,127,0.4)]
-                      border-4 border-white z-20"
-                  >
-                    <span className="text-lg font-black">{step.num}</span>
-                  </motion.div>
-
-                  <div className="absolute w-20 h-20 bg-cyan-400/30 rounded-full animate-ping -z-10" />
+                {/* DESKTOP CENTER NODE */}
+                <div className="hidden md:flex flex-col items-center">
+                  <div className="relative">
+                    <div className="w-16 h-16 bg-[#070B7F] rounded-[1.25rem] flex items-center justify-center text-white shadow-xl border-4 border-white z-10">
+                      <span className="text-lg font-black">{step.num}</span>
+                    </div>
+                    <div className="absolute inset-0 bg-cyan-400/30 rounded-full blur-xl -z-10" />
+                  </div>
                 </div>
 
-                {/* RIGHT IMAGE */}
+                {/* DESKTOP IMAGE */}
                 <div className="hidden md:block w-[45%]">
                   <div
                     className={`flex ${
                       i % 2 === 0 ? "justify-start" : "justify-end"
                     } px-16`}
                   >
-                    <div className="relative group">
-                      <div className="absolute -inset-6 bg-gradient-to-br from-blue-500/20 via-cyan-400/10 to-transparent rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
-
-                      <div className="relative bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100 transform transition-all duration-700 group-hover:-translate-y-4 group-hover:scale-[1.03]">
-                        <img
-                          src={step.ghostImg}
-                          alt={step.title}
-                          className="w-[280px] h-[200px] object-cover select-none"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#070B7F]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <div className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 w-0 group-hover:w-full transition-all duration-700" />
-                      </div>
+                    <div className="bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-100">
+                      <img
+                        src={step.ghostImg}
+                        alt={step.title}
+                        className="w-[280px] h-[200px] object-cover"
+                      />
                     </div>
                   </div>
                 </div>
