@@ -189,7 +189,7 @@ export default function CompanyOverview() {
             <Link href="/company/whoweare" className="bg-white text-blue-600 px-10 py-4 rounded-2xl font-bold shadow-xl hover:bg-blue-50 transition-all">
               Who We Are
             </Link>
-            <Link href="/contacts" className="bg-blue-900/30 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-2xl font-bold hover:bg-white/10 transition-all">
+            <Link href="/contact" className="bg-blue-900/30 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-2xl font-bold hover:bg-white/10 transition-all">
               Contact Specialists
             </Link>
           </div>

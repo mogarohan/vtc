@@ -291,7 +291,7 @@ export default function Header() {
 
             <div className="p-6 bg-slate-50">
               <Link 
-                href="/contacts" 
+                href="/contact" 
                 onClick={() => setIsMobileOpen(false)}
                 className="w-full bg-[#1C2A7D] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2"
               >

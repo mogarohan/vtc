@@ -90,7 +90,7 @@ export default function OurTeam() {
 
           <div className="mt-3 flex justify-center">
             <Link
-              href="/contacts"
+              href="/contact"
               className="bg-blue-600 hover:bg-blue-500 mr-170 text-white px-8 py-4 rounded-2xl font-semibold flex items-center gap-2"
             >
               Connect with Us <ArrowRight size={18} />

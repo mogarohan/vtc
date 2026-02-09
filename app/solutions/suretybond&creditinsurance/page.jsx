@@ -74,7 +74,7 @@ const SuretyBondPage = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-             <Link href="/contacts" className="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-indigo-600/20">
+             <Link href="/contact" className="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-indigo-600/20">
                 Apply for Bond <ArrowRight size={18} />
              </Link>
           </div>
@@ -145,7 +145,7 @@ const SuretyBondPage = () => {
           
           <div className="relative z-10">
             <Link 
-              href="/contacts" 
+              href="/contact" 
               className="inline-flex items-center gap-3 bg-indigo-600 text-white px-12 py-5 rounded-2xl font-bold hover:bg-indigo-500 transition-all shadow-xl"
             >
               Speak to a Specialist <ArrowRight size={20} />

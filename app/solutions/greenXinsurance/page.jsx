@@ -135,7 +135,7 @@ const GreenInsurance = () => {
 
           <div className="relative z-10">
             <Link 
-              href="/contacts" 
+              href="/contact" 
               className="inline-block bg-emerald-600 text-white px-12 py-5 rounded-2xl font-bold hover:bg-emerald-500 transition-all shadow-xl"
             >
               Request Partnership

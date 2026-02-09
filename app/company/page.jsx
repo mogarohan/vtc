@@ -93,7 +93,7 @@ export default function CompanyOverview() {
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href="/contacts"
+              href="/contact"
               className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-transform hover:scale-105"
             >
               Start Your Journey <ArrowRight size={18} />
@@ -236,7 +236,7 @@ export default function CompanyOverview() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
             <Link
-              href="/contacts"
+              href="/contact"
               className="bg-white text-blue-600 px-8 py-4 sm:px-12 sm:py-5 rounded-2xl font-bold text-base sm:text-lg hover:scale-105 transition-transform shadow-xl"
             >
               Talk to Experts

@@ -178,10 +178,10 @@ export default function IndustriesHome() {
             Apne operations ko digitize karein aur productivity ko nayi oonchaiyon par le jayein.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="/contacts" className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 rounded-full font-bold transition-all shadow-xl shadow-blue-600/20 text-center flex items-center justify-center gap-3">
+            <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 rounded-full font-bold transition-all shadow-xl shadow-blue-600/20 text-center flex items-center justify-center gap-3">
               Start Free Trial <FontAwesomeIcon icon={faArrowRight} />
             </Link>
-            <Link href="/contacts" className="bg-slate-900 hover:bg-slate-800 text-white px-12 py-4 rounded-full font-bold transition-all text-center">
+            <Link href="/contact" className="bg-slate-900 hover:bg-slate-800 text-white px-12 py-4 rounded-full font-bold transition-all text-center">
               Talk to Specialist
             </Link>
           </div>

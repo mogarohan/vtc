@@ -95,7 +95,7 @@ const BfsisSuite = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-             <Link href="/contacts" className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20">
+             <Link href="/contact" className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20">
                 Get Enterprise Quote <ArrowRight size={18} />
              </Link>
           </div>

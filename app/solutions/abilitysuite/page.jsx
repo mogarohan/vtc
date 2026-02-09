@@ -83,7 +83,7 @@ const AbilitySuite = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-             <Link href="/contacts" className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20">
+             <Link href="/contact" className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20">
                 Request a Demo <ArrowRight size={18} />
              </Link>
           </div>
@@ -180,7 +180,7 @@ const AbilitySuite = () => {
           </p>
           <div className="relative z-10">
             <Link 
-              href="/contacts" 
+              href="/contact" 
               className="inline-flex items-center gap-3 bg-blue-600 text-white px-12 py-5 rounded-2xl font-bold hover:bg-blue-500 transition-all shadow-xl"
             >
               Get Started <ArrowRight size={20} />

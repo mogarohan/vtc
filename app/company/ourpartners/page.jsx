@@ -211,7 +211,7 @@ export default function Partners() {
             Join our growing ecosystem and build the future together.
           </p>
           <Link
-            href="/contacts"
+            href="/contact"
             className="inline-block bg-white text-blue-600 px-10 py-5 rounded-2xl font-bold hover:scale-105 transition shadow-xl"
           >
             Request Partnership

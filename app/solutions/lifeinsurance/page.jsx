@@ -168,7 +168,7 @@ const LifeInsurance = () => {
           <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tighter uppercase">Start Your Legacy Today</h2>
           <p className="text-blue-100 text-lg mb-12 max-w-2xl mx-auto">Don't leave your family's future to chance. Consult with our expert advisors to find a life cover that truly protects.</p>
           <div className="relative z-10">
-            <Link href="/contacts" className="bg-white text-blue-600 px-12 py-5 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-xl">Consult an Expert</Link>
+            <Link href="/contact" className="bg-white text-blue-600 px-12 py-5 rounded-2xl font-bold text-lg hover:bg-blue-50 transition-all transform hover:scale-105 shadow-xl">Consult an Expert</Link>
           </div>
         </div>
       </section>

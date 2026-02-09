@@ -179,7 +179,7 @@ export default function CompanyOverview() {
             Discover why over 500+ corporations rely on Vestigo for strategic risk management and global insurance solutions.
           </p>
           <div className="flex flex-wrap justify-center gap-6 relative z-10">
-            <Link href="/contacts" className="w-full sm:w-auto bg-white text-blue-700 px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-2xl hover:bg-blue-50 transition-all">
+            <Link href="/contact" className="w-full sm:w-auto bg-white text-blue-700 px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-2xl hover:bg-blue-50 transition-all">
               Consult a Specialist
             </Link>
           </div>
