@@ -27,32 +27,32 @@ export default function OurTeam() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   /* ================= LEADERSHIP DATA ================= */
-//   const leadership = [
-//     {
-//       name: 'Bhavit Acharya',
-//       role: 'Director & Principal Officer',
-//       experience: 'Over 16 years of experience in insurance advisory and claims',
-//       desc: `Bhavit Acharya brings over 16 years of hands-on experience across insurance advisory, policy interpretation, and claims coordination. His approach is firmly policy-first and client-centric, ensuring that insurance solutions are aligned with regulatory requirements as well as real-world loss scenarios.
-// Known for his technical depth across insurance products and industry risk structures, Bhavit brings clarity to complex coverage decisions. His understanding of policy intent and operational realities enables clients to structure protection that is practical, defensible, and effective at the time of a claim.
-// He remains closely involved in complex advisory matters and critical claim engagements, providing clients with dependable guidance when outcomes matter most.
-// `,
-//       image: '/member1.jpg',
-//       linkedin: '#'
-//     },
-//     {
-//       name: 'Riya Shah',
-//       role: 'Director',
-//       experience: 'Over 10 years of experience in client acquisition and relationship management',
-//       desc: `Riya Shah brings over 10 years of experience in client acquisition and relationship development, with a strong focus on building long-term partnerships rooted in trust and clarity. She works closely with organizations to understand their business context and expectations, ensuring engagements begin with alignment and confidence.
-// Riya remains actively involved beyond the initial relationship, emphasizing clear communication, responsiveness, and continuity of care—so clients feel supported, informed, and assured throughout their association with Vestigo.
-// `,
-//       image: '/member2.png',
-//       linkedin: '#'
-//     }
-//   ];
+  //   const leadership = [
+  //     {
+  //       name: 'Bhavit Acharya',
+  //       role: 'Director & Principal Officer',
+  //       experience: 'Over 16 years of experience in insurance advisory and claims',
+  //       desc: `Bhavit Acharya brings over 16 years of hands-on experience across insurance advisory, policy interpretation, and claims coordination. His approach is firmly policy-first and client-centric, ensuring that insurance solutions are aligned with regulatory requirements as well as real-world loss scenarios.
+  // Known for his technical depth across insurance products and industry risk structures, Bhavit brings clarity to complex coverage decisions. His understanding of policy intent and operational realities enables clients to structure protection that is practical, defensible, and effective at the time of a claim.
+  // He remains closely involved in complex advisory matters and critical claim engagements, providing clients with dependable guidance when outcomes matter most.
+  // `,
+  //       image: '/member1.jpg',
+  //       linkedin: '#'
+  //     },
+  //     {
+  //       name: 'Riya Shah',
+  //       role: 'Director',
+  //       experience: 'Over 10 years of experience in client acquisition and relationship management',
+  //       desc: `Riya Shah brings over 10 years of experience in client acquisition and relationship development, with a strong focus on building long-term partnerships rooted in trust and clarity. She works closely with organizations to understand their business context and expectations, ensuring engagements begin with alignment and confidence.
+  // Riya remains actively involved beyond the initial relationship, emphasizing clear communication, responsiveness, and continuity of care—so clients feel supported, informed, and assured throughout their association with Vestigo.
+  // `,
+  //       image: '/member2.png',
+  //       linkedin: '#'
+  //     }
+  //   ];
 
   /* ================= CORE VALUES ================= */
-    const values = [
+  const values = [
     {
       title: 'Transparency',
       desc: 'Clear, honest, and jargon-free communication at every stage.',
@@ -103,14 +103,14 @@ export default function OurTeam() {
       <section className="py-24 px-6 max-w-6xl mx-auto text-center">
         <h2 className="text-4xl font-bold text-slate-900 mb-6">Our Team</h2>
         <p className="text-gray-600 leading-relaxed max-w-4xl mx-auto">
-          At Vestigo, our team works with a clear sense of responsibility—because insurance is not about paperwork, it is about standing by clients when outcomes matter.
-We take the time to understand each client’s business, risks, and expectations, so that our advice is thoughtful, practical, and dependable. Our teams remain engaged across the entire insurance journey, ensuring continuity, clarity, and support not just at placement, but through claims and critical moments.
+          At Vestigo, our team   with a clear sense of responsibility—because insurance is not about paperwork, it is about standing by clients when outcomes matter.
+          We take the time to understand each client’s business, risks, and expectations, so that our advice is thoughtful, practical, and dependable. Our teams remain engaged across the entire insurance journey, ensuring continuity, clarity, and support not just at placement, but through claims and critical moments.
 
         </p>
       </section>
 
       {/* ================= LEADERSHIP ================= */}
-        <section className="py-20 px-6">
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto relative">
 
           {/* Vertical Line */}
@@ -145,8 +145,8 @@ We take the time to understand each client’s business, risks, and expectations
 
               <p className="text-gray-600 leading-relaxed mb-5">
                 Bhavit Acharya brings over 16 years of hands-on experience across insurance advisory, policy interpretation, and claims coordination. His approach is firmly policy-first and client-centric, ensuring that insurance solutions are aligned with regulatory requirements as well as real-world loss scenarios.
-Known for his technical depth across insurance products and industry risk structures, Bhavit brings clarity to complex coverage decisions. His understanding of policy intent and operational realities enables clients to structure protection that is practical, defensible, and effective at the time of a claim.
-He remains closely involved in complex advisory matters and critical claim engagements, providing clients with dependable guidance when outcomes matter most.
+                Known for his technical depth across insurance products and industry risk structures, Bhavit brings clarity to complex coverage decisions. His understanding of policy intent and operational realities enables clients to structure protection that is practical, defensible, and effective at the time of a claim.
+                He remains closely involved in complex advisory matters and critical claim engagements, providing clients with dependable guidance when outcomes matter most.
 
               </p>
 
@@ -181,7 +181,7 @@ He remains closely involved in complex advisory matters and critical claim engag
 
               <p className="text-gray-600 leading-relaxed mb-5">
                 Riya Shah brings over 10 years of experience in client acquisition and relationship development, with a strong focus on building long-term partnerships rooted in trust and clarity. She works closely with organizations to understand their business context and expectations, ensuring engagements begin with alignment and confidence.
-Riya remains actively involved beyond the initial relationship, emphasizing clear communication, responsiveness, and continuity of care—so clients feel supported, informed, and assured throughout their association with Vestigo.
+                Riya remains actively involved beyond the initial relationship, emphasizing clear communication, responsiveness, and continuity of care—so clients feel supported, informed, and assured throughout their association with Vestigo.
 
               </p>
 
