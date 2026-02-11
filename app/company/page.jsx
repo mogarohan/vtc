@@ -58,49 +58,61 @@ export default function CompanyOverview() {
     <main ref={containerRef} className="bg-white overflow-hidden">
 
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[85vh] flex items-center justify-center bg-[#0F172A] px-6 py-20 md:py-0">
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{ scale: [1, 1.15, 1] }}
-            transition={{ duration: 12, repeat: Infinity }}
-            className="absolute top-1/4 left-1/4 w-72 h-72 sm:w-96 sm:h-96 bg-blue-600/20 rounded-full blur-[100px]"
-          />
-          <motion.div
-            animate={{ scale: [1, 1.25, 1] }}
-            transition={{ duration: 16, repeat: Infinity }}
-            className="absolute bottom-1/4 right-1/4 w-64 h-64 sm:w-80 sm:h-80 bg-indigo-600/20 rounded-full blur-[100px]"
-          />
-        </div>
+<section className="relative min-h-[85vh] bg-[#020617] overflow-hidden">
 
-        <motion.div
-          style={{ y, opacity }}
-          className="relative z-10 text-center px-4 sm:px-6"
-        >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-xs sm:text-sm font-bold mb-6 backdrop-blur-md">
-            <Sparkles size={14} />
-            SECURING YOUR FUTURE
-          </div>
+  {/* ================= RIGHT : VIDEO FULL COVER ================= */}
+  <div className="hidden md:block absolute inset-y-0 right-0 w-1/2">
 
-          <h1 className="text-3xl sm:text-6xl md:text-7xl font-black text-white mb-6 tracking-tight leading-tight">
-            Building <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Resilience</span><br />
-            Through Risk Intelligence
-          </h1>
+    <video
+      className="absolute inset-0 w-full h-full object-cover"
+      src="/hero2.mp4"
+      autoPlay
+      loop
+      muted
+      playsInline
+    />
 
-          <p className="text-sm sm:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Vestigo insurance nathi, pan tamara sapnao mate nu ek safety shield che.
-            We turn uncertainty into opportunity through trust & technology.
-          </p>
+    {/* LEFT FADE FOR TEXT READABILITY */}
+    <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#020617] via-[#020617]/70 to-transparent" />
+  </div>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-transform hover:scale-105"
-            >
-              Start Your Journey <ArrowRight size={18} />
-            </Link>
-          </div>
-        </motion.div>
-      </section>
+  {/* ================= CONTENT ================= */}
+  <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 min-h-[85vh] items-center px-6 py-20 md:py-0">
+
+    {/* LEFT TEXT */}
+    <motion.div style={{ y, opacity }} className="max-w-xl">
+      <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-blue-400/30 bg-blue-500/10 text-blue-400 text-xs font-bold">
+        <Sparkles size={14} />
+        SECURING YOUR FUTURE
+      </div>
+
+      <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+        Building{" "}
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+          Resilience
+        </span>
+        <br />
+        Through Risk Intelligence
+      </h1>
+
+      <p className="text-sm sm:text-lg text-slate-300 leading-relaxed mb-8">
+        Vestigo insurance nathi, pan tamara sapnao mate nu ek safety shield che.
+        We turn uncertainty into opportunity through trust & technology.
+      </p>
+
+      <Link
+        href="/contact"
+        className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold transition-transform hover:scale-105"
+      >
+        Start Your Journey <ArrowRight size={18} />
+      </Link>
+    </motion.div>
+
+    {/* EMPTY RIGHT GRID (VIDEO IS ABSOLUTE) */}
+    <div />
+  </div>
+</section>
+
 
       {/* ================= STATS ================= */}
       <section className="relative z-20 -mt-10 sm:-mt-16 px-4 sm:px-6">
