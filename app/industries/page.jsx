@@ -56,7 +56,7 @@ export default function IndustriesHome() {
     playsInline
     className="absolute inset-0 w-full h-full object-cover"
   >
-    <source src="/hero5.mp4" type="video/mp4" />
+    <source src="/hero6.mp4" type="video/mp4" />
   </video>
 
   {/* Dark Overlay Pattern */}
@@ -69,23 +69,26 @@ export default function IndustriesHome() {
   ></div>
 
   {/* Content */}
-  <div className="relative z-10 max-w-3xl mx-auto flex flex-col mt-80 ml-8 lg:flex-row items-center gap-12">
-    <div className="flex-1 text-left">
-      <p className="text-xl text-white  leading-relaxed mt-40">
-        Vestigo Enterprise Suite provides specialized technology stacks for the
-        world’s most demanding industrial sectors. Efficiency, digitized.
-      </p>
+  <div className="relative z-10 max-w-3xl mx-auto flex flex-col mt-140 mr-50 ml-50 lg:flex-row items-center gap-12">
+  <div className="flex-1 text-left bg-white p-10 rounded-xl shadow-2xl">
+    
+    <p className="text-xl text-blue-700 leading-relaxed">
+      Vestigo Enterprise Suite provides specialized technology stacks for the
+      world’s most demanding industrial sectors. Efficiency, digitized.
+    </p>
 
-      <div className="flex flex-wrap gap-4 mt-10">
-        <Link
-          href="/industries"
-          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg shadow-blue-500/20 flex items-center gap-3"
-        >
-          Explore Solutions <FontAwesomeIcon icon={faArrowRight} />
-        </Link>
-      </div>
+    <div className="flex flex-wrap gap-4 mt-10">
+      <Link
+        href="/solutions"
+        className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg shadow-blue-500/20 flex items-center gap-3"
+      >
+        Explore Solutions <FontAwesomeIcon icon={faArrowRight} />
+      </Link>
     </div>
+
   </div>
+</div>
+
 </section>
 
 
