@@ -46,22 +46,48 @@ export default function IndustriesHome() {
     <div className="min-h-screen bg-white font-sans text-slate-900">
 
       {/* 1. Hero Section */}
-      <section className="relative h-[95vh] flex items-center justify-center overflow-hidden bg-cover bg-center bg-no-repeat" 
-        style={{ backgroundImage: "url('/product.jpeg')" }}>
-        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#3b82f6 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
-        <div className="max-w-3xl mx-auto flex flex-col mr-170 ml-8 lg:flex-row items-center gap-12">
-          <div className="flex-1 text-left">
-            <p className="text-xl text-white mt-50 mr-40 leading-relaxed">
-              Vestigo Enterprise Suite provides specialized technology stacks for the world s most demanding industrial sectors. Efficiency, digitized.
-            </p>
-            <div className="flex flex-wrap gap-4 mt-10">
-              <Link href="/industries" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg shadow-blue-500/20 flex items-center gap-3">
-                Explore Solutions <FontAwesomeIcon icon={faArrowRight} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="relative h-[95vh] flex items-center justify-center overflow-hidden">
+  
+  {/* Background Video */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src="/hero5.mp4" type="video/mp4" />
+  </video>
+
+  {/* Dark Overlay Pattern */}
+  <div
+    className="absolute inset-0 opacity-30"
+    style={{
+      backgroundImage: "radial-gradient(#3b82f6 1px, transparent 1px)",
+      backgroundSize: "40px 40px",
+    }}
+  ></div>
+
+  {/* Content */}
+  <div className="relative z-10 max-w-3xl mx-auto flex flex-col mt-80 ml-8 lg:flex-row items-center gap-12">
+    <div className="flex-1 text-left">
+      <p className="text-xl text-white  leading-relaxed mt-40">
+        Vestigo Enterprise Suite provides specialized technology stacks for the
+        world’s most demanding industrial sectors. Efficiency, digitized.
+      </p>
+
+      <div className="flex flex-wrap gap-4 mt-10">
+        <Link
+          href="/industries"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg shadow-blue-500/20 flex items-center gap-3"
+        >
+          Explore Solutions <FontAwesomeIcon icon={faArrowRight} />
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* 2. Featured Sectors */}
       <section className="py-24 px-6 bg-white">
