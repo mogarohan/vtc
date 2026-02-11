@@ -58,22 +58,24 @@ export default function CompanyOverview() {
     <main ref={containerRef} className="bg-white overflow-hidden">
 
       {/* ================= HERO ================= */}
-<section className="relative min-h-[85vh] bg-[#020617] overflow-hidden">
+      <section className="relative min-h-[85vh] bg-[#020617] overflow-hidden">
 
-  {/* ================= RIGHT : VIDEO FULL COVER ================= */}
-  <div className="hidden md:block absolute inset-y-0 right-0 w-1/2">
+  {/* ================= RIGHT : VIDEO (SAFE & NOT CUT) ================= */}
+  <div className="hidden md:flex absolute inset-y-0 right-0 w-[48%] items-center justify-center">
 
-    <video
-      className="absolute inset-0 w-full h-full object-cover"
-      src="/hero2.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-    />
+    <div className="relative w-full h-[70%]">
+      <video
+        className="w-full h-full object-contain"
+        src="/hero2.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+      />
+    </div>
 
-    {/* LEFT FADE FOR TEXT READABILITY */}
-    <div className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-[#020617] via-[#020617]/70 to-transparent" />
+    {/* Soft feather overlay (VERY SUBTLE) */}
+    <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#020617] to-transparent" />
   </div>
 
   {/* ================= CONTENT ================= */}
@@ -108,11 +110,9 @@ export default function CompanyOverview() {
       </Link>
     </motion.div>
 
-    {/* EMPTY RIGHT GRID (VIDEO IS ABSOLUTE) */}
     <div />
   </div>
 </section>
-
 
       {/* ================= STATS ================= */}
       <section className="relative z-20 -mt-10 sm:-mt-16 px-4 sm:px-6">
