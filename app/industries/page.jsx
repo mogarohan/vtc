@@ -69,7 +69,7 @@ export default function IndustriesHome() {
   ></div>
 
   {/* Content */}
-  <div className="relative z-10 max-w-3xl mx-auto flex flex-col mt-140 mr-50 ml-50 lg:flex-row items-center gap-12">
+  <div className="relative z-10 max-w-3xl mx-auto flex flex-col mt-100 mr-50 ml-50 lg:flex-row items-center gap-12">
   <div className="flex-1 text-left bg-white p-10 rounded-xl shadow-2xl">
     
     <p className="text-xl text-blue-700 leading-relaxed">
