@@ -7,20 +7,20 @@ const slides = [
     tag: "🔍 The Spirit of Vestigo",
     title: "Uncover, Explore, ",
     highlight: "and Protect.",
-    desc: "We track and trace risks before they reach you using intelligent insurance tech to ensure certainty."
+    desc: "We track and trace risks before they reach you using intelligent insurance tech to ensure certainty.",
   },
   {
     tag: "🛡️ Strategic Security",
     title: "Deep Insights, ",
     highlight: "Corporate Shield.",
-    desc: "Tailored insurance solutions built by deeply understanding your specific industry needs."
+    desc: "Tailored insurance solutions built by deeply understanding your specific industry needs.",
   },
   {
     tag: "📈 Asset Growth",
     title: "Stability for ",
     highlight: "Your Future.",
-    desc: "Focus on scaling your enterprise while we manage the complexities of risk and liability."
-  }
+    desc: "Focus on scaling your enterprise while we manage the complexities of risk and liability.",
+  },
 ];
 
 export default function Hero() {
@@ -41,9 +41,9 @@ export default function Hero() {
       {/* 1. Video Background Layer */}
       <div className="absolute inset-0 z-0">
         {/* Dark overlay to pop the white text */}
-        <div className="absolute inset-0 bg-black/20 z-10" /> 
+        <div className="absolute inset-0 bg-black/20 z-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-[#020420]/80 via-transparent to-[#020420] z-10" />
-        
+
         <video
           autoPlay
           loop
@@ -51,13 +51,13 @@ export default function Hero() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/Hero1.mp4" type="video/mp4" />
+          <source src="/Hero3.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
 
       {/* 2. Content Layer */}
-      <div className="relative z-20 h-full container mx-auto px-6 flex flex-col items-center justify-center text-center">
+      <div className="relative z-20 h-full container mx-auto px-6 flex flex-col items-center justify-end pb-24 text-center">
         <div className="max-w-4xl">
           <AnimatePresence mode="wait">
             <motion.div
@@ -71,12 +71,15 @@ export default function Hero() {
               <span className="inline-block text-[#93C5FD] font-black uppercase tracking-[0.4em] text-[12px] mb-6">
                 {slides[index].tag}
               </span>
-              
+
               {/* Main Headline: Pure White for maximum contrast */}
-              <h1 className="text-4xl lg:text-7xl font-black text-[#FFFFFF] leading-[1.1] mb-6 uppercase tracking-tighter">
-                {slides[index].title} 
+              <h1 className="text-2xl lg:text-4xl font-black text-[#FFFFFF] leading-[1.2] mb-6 uppercase tracking-tight">
+                {slides[index].title}
                 {/* Highlight Keywords: Vibrant Action Blue */}
-                <span className="text-blue-500"> {slides[index].highlight}</span>
+                <span className="text-blue-500">
+                  {" "}
+                  {slides[index].highlight}
+                </span>
               </h1>
 
               {/* Body Text: Light Gray for readability without strain */}
@@ -87,16 +90,19 @@ export default function Hero() {
           </AnimatePresence>
 
           <div className="flex flex-wrap gap-6 justify-center">
-            <motion.button 
+            <motion.button
               whileHover={{ scale: 1.05, backgroundColor: "#4F55FF" }}
               whileTap={{ scale: 0.95 }}
               className="px-10 py-4 bg-[#070B7F] text-white text-xs font-black uppercase tracking-widest rounded-full shadow-2xl transition-all"
             >
               Get Started
             </motion.button>
-            
-            <motion.button 
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.15)" }}
+
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "rgba(255,255,255,0.15)",
+              }}
               whileTap={{ scale: 0.95 }}
               className="px-10 py-4 border-2 border-[#FFFFFF] text-[#FFFFFF] text-xs font-black uppercase tracking-widest rounded-full backdrop-blur-md transition-all"
             >

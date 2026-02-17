@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import {
   Target,
   Eye,
@@ -15,25 +15,26 @@ import {
   ArrowRight,
   Handshake,
   Sparkles,
-} from 'lucide-react';
-import Link from 'next/link';
+} from "lucide-react";
+import Link from "next/link";
 
 /* ================= DATA ================= */
 const partners = [
-  { src: '/p1.jpeg', name: 'Infra Market' },
-  { src: '/p2.jpeg', name: 'Shiva' },
-  { src: '/p3.jpeg', name: 'Nitco Limited' },
-  { src: '/p4.png', name: 'Satishbel' },
-  { src: '/p5.png', name: 'Jayant Agro' },
-  { src: '/p6.jpeg', name: 'Royal Castor' },
-  { src: '/p7.png', name: 'Shalimar Paints' },
+  { src: "/p1.jpeg", name: "Infra Market" },
+  { src: "/p2.jpeg", name: "Shiva" },
+  { src: "/p3.jpeg", name: "Nitco Limited" },
+  { src: "/p4.png", name: "Satishbgol" },
+  { src: "/p5.png", name: "Jayant Agro" },
+  { src: "/p6.jpeg", name: "Royal Castor" },
+  { src: "/p7.png", name: "Shalimar Paints" },
+  { src: "/p8.png", name: "Apicore" },
 ];
 
 const team = [
-  { name: 'Senior Risk Advisor', role: '15+ Years Experience' },
-  { name: 'Claims Specialist', role: 'Complex Claims Handling' },
-  { name: 'Policy Auditor', role: 'Cost Optimisation Expert' },
-  { name: 'Client Partner', role: 'Relationship & Strategy' },
+  { name: "Senior Risk Advisor", role: "15+ Years Experience" },
+  { name: "Claims Specialist", role: "Complex Claims Handling" },
+  { name: "Policy Auditor", role: "Cost Optimisation Expert" },
+  { name: "Client Partner", role: "Relationship & Strategy" },
 ];
 
 export default function CompanyOverview() {
@@ -41,84 +42,70 @@ export default function CompanyOverview() {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ['start start', 'end start'],
+    offset: ["start start", "end start"],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
   const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   const stats = [
-    { label: 'Years Experience', value: '15+', icon: <Trophy size={20} /> },
-    { label: 'Clients Globally', value: '500+', icon: <Users size={20} /> },
-    { label: 'Expert Advisors', value: '50+', icon: <Building2 size={20} /> },
-    { label: 'Global Presence', value: '10+', icon: <Globe size={20} /> },
+    { label: "Years Experience", value: "15+", icon: <Trophy size={20} /> },
+    { label: "Clients Globally", value: "500+", icon: <Users size={20} /> },
+    { label: "Expert Advisors", value: "50+", icon: <Building2 size={20} /> },
+    { label: "Global Presence", value: "10+", icon: <Globe size={20} /> },
   ];
 
   return (
     <main ref={containerRef} className="bg-white overflow-hidden">
-
       {/* ================= HERO ================= */}
-<section className="relative min-h-[85vh] bg-[#020617] overflow-hidden">
+      <section className="relative min-h-[85vh] bg-[#020617] overflow-hidden">
+        {/* ================= VIDEO ================= */}
+        <div className="absolute top-0 left-0 w-full h-[45vh] md:h-full md:w-1/2 md:left-auto md:right-0 z-0">
+          <video
+            className="w-full h-full object-cover"
+            src="/hero1.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
 
-  {/* ================= VIDEO ================= */}
-  <div className="absolute top-0 left-0 w-full h-[45vh] md:h-full md:w-1/2 md:left-auto md:right-0 z-0">
-
-    <video
-      className="w-full h-full object-cover"
-      src="/hero3.mp4"
-      autoPlay
-      loop
-      muted
-      playsInline
-    />
-
-    {/* Desktop fade */}
-    <div className="hidden md:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#020617] to-transparent" />
-  </div>
-
-  {/* ================= CONTENT ================= */}
-  <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 min-h-[85vh] px-6">
-
-    {/* LEFT TEXT */}
-    <div className="flex items-end md:items-center pt-[45vh] md:pt-0">
-      <motion.div style={{ y, opacity }} className="max-w-xl pb-12 md:pb-0">
-
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-blue-400/30 bg-blue-500/10 text-blue-400 text-xs font-bold">
-          <Sparkles size={14} />
-          SECURING YOUR FUTURE
+          {/* Desktop fade */}
+          <div className="hidden md:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#020617] to-transparent" />
         </div>
 
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
-          Building{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-            Resilience
-          </span>
-          <br />
-          Through Risk Intelligence
-        </h1>
+        {/* ================= CONTENT ================= */}
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 min-h-[85vh] px-6">
+          {/* LEFT TEXT */}
+          <div className="flex items-end md:items-center pt-[45vh] md:pt-0">
+            <motion.div
+              style={{ y, opacity }}
+              className="max-w-xl pb-12 md:pb-0"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-blue-400/30 bg-blue-500/10 text-blue-400 text-xs font-bold">
+                <Sparkles size={14} />
+                SECURING YOUR FUTURE
+              </div>
 
-        <p className="text-sm sm:text-lg text-slate-300 leading-relaxed mb-8">
-          Vestigo insurance nathi, pan tamara sapnao mate nu ek safety shield che.
-          We turn uncertainty into opportunity through trust & technology.
-        </p>
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+                Building{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                  Resilience
+                </span>
+                <br />
+                Through Risk Intelligence
+              </h1>
 
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold transition-transform hover:scale-105"
-        >
-          Start Your Journey <ArrowRight size={18} />
-        </Link>
+              <p className="text-sm sm:text-lg text-slate-300 leading-relaxed mb-8">
+                Advisory shaped by insight. Protection guided by foresight.
+              </p>
+            </motion.div>
+          </div>
 
-      </motion.div>
-    </div>
-
-    {/* RIGHT EMPTY COLUMN (FOR VIDEO SPACE) */}
-    <div className="hidden md:block" />
-  </div>
-</section>
-
-
-
+          {/* RIGHT EMPTY COLUMN (FOR VIDEO SPACE) */}
+          <div className="hidden md:block" />
+        </div>
+      </section>
 
       {/* ================= STATS ================= */}
       <section className="relative z-20 -mt-10 sm:-mt-16 px-4 sm:px-6">
@@ -156,8 +143,10 @@ export default function CompanyOverview() {
             </h2>
 
             <p className="text-base md:text-lg text-slate-600 leading-relaxed mb-8">
-              Insurance alone doesn’t prevent losses — <strong>risk intelligence does.</strong> 
-              Vestigo helps organizations identify, reduce, and control risks before they turn into financial losses.
+              Insurance alone doesn’t prevent losses —{" "}
+              <strong>risk intelligence does.</strong>
+              Vestigo helps organizations identify, reduce, and control risks
+              before they turn into financial losses.
             </p>
 
             <ul className="space-y-4 text-slate-700 text-base md:text-lg">
@@ -182,10 +171,26 @@ export default function CompanyOverview() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {[
-              { title: "Risk Identification", icon: <Eye />, desc: "Uncover hidden operational vulnerabilities" },
-              { title: "Risk Control", icon: <ShieldCheck />, desc: "Implement loss-prevention strategies" },
-              { title: "Claims Advocacy", icon: <Handshake />, desc: "Expert-led, fair claim settlements" },
-              { title: "Cost Optimisation", icon: <TrendingUp />, desc: "Save 10–20% via policy audits" },
+              {
+                title: "Risk Identification",
+                icon: <Eye />,
+                desc: "Uncover hidden operational vulnerabilities",
+              },
+              {
+                title: "Risk Control",
+                icon: <ShieldCheck />,
+                desc: "Implement loss-prevention strategies",
+              },
+              {
+                title: "Claims Advocacy",
+                icon: <Handshake />,
+                desc: "Expert-led, fair claim settlements",
+              },
+              {
+                title: "Cost Optimisation",
+                icon: <TrendingUp />,
+                desc: "Save 10–20% via policy audits",
+              },
             ].map((item, i) => (
               <div
                 key={i}
@@ -194,8 +199,12 @@ export default function CompanyOverview() {
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white text-blue-600 flex items-center justify-center mb-4 shadow-sm">
                   {item.icon}
                 </div>
-                <h4 className="font-bold text-lg text-slate-900 mb-2">{item.title}</h4>
-                <p className="text-slate-500 text-sm leading-relaxed">{item.desc}</p>
+                <h4 className="font-bold text-lg text-slate-900 mb-2">
+                  {item.title}
+                </h4>
+                <p className="text-slate-500 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -205,7 +214,9 @@ export default function CompanyOverview() {
       {/* ================= OUR TEAM ================= */}
       <section className="py-16 md:py-28 px-6 bg-white">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8 md:mb-12">Our Expert Team</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8 md:mb-12">
+            Our Expert Team
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
             {team.map((member, i) => (
               <div
@@ -214,7 +225,9 @@ export default function CompanyOverview() {
               >
                 <Users className="mx-auto text-blue-600 mb-4" />
                 <h4 className="font-bold text-slate-900">{member.name}</h4>
-                <p className="text-xs sm:text-sm text-slate-500 mt-2">{member.role}</p>
+                <p className="text-xs sm:text-sm text-slate-500 mt-2">
+                  {member.role}
+                </p>
               </div>
             ))}
           </div>
@@ -231,7 +244,11 @@ export default function CompanyOverview() {
             {partners.map((p, i) => (
               <div key={i} className="flex flex-col items-center group">
                 <div className="bg-white h-[90px] sm:h-[110px] w-full max-w-[220px] rounded-2xl border border-blue-100 shadow-sm flex items-center justify-center p-4 sm:p-6 group-hover:shadow-md transition-shadow">
-                  <img src={p.src} alt={p.name} className="max-h-full max-w-full object-contain" />
+                  <img
+                    src={p.src}
+                    alt={p.name}
+                    className="max-h-full max-w-full object-contain"
+                  />
                 </div>
                 <span className="mt-3 sm:mt-4 text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-widest text-center">
                   {p.name}
@@ -250,7 +267,8 @@ export default function CompanyOverview() {
             Let’s Build Resilience <br className="hidden sm:block" /> Together
           </h2>
           <p className="text-blue-100 text-base sm:text-xl mb-8 sm:mb-12 max-w-2xl mx-auto font-medium">
-            Discover why 500+ clients trust Vestigo for risk protection and long-term business continuity.
+            Discover why 500+ clients trust Vestigo for risk protection and
+            long-term business continuity.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
             <Link

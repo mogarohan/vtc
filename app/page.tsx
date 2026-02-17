@@ -1,14 +1,10 @@
-'use client';
+"use client";
 
 import React, { useState, useRef } from "react";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
 import { motion, useInView } from "framer-motion";
-import {
-  ShieldCheck,
-  BarChart3,
-  ArrowRight,
-} from "lucide-react";
+import { ShieldCheck, BarChart3, ArrowRight } from "lucide-react";
 
 import Hero from "./components/Hero";
 
@@ -53,77 +49,107 @@ const SERVICES = [
 /* ================= INDUSTRIES ================= */
 
 const INDUSTRIES = [
-  { num: "01", title: "Automotive", text: "Insurance solutions for automotive businesses.", img: "automotive.png", href: "/industries/automobile" },
-  { num: "02", title: "BFSI", text: "Banking, financial services and insurance advisory.", img: "bfsi.png", href: "/industries/BFSI" },
-  { num: "03", title: "IT & Tech", text: "Protecting digital and technology businesses.", img: "it-tech.png", href: "/industries/it" },
-  { num: "04", title: "Engineering", text: "Coverage for engineering and manufacturing firms.", img: "engineering.png", href: "/industries/engineering" },
-  { num: "05", title: "Green Energy", text: "Risk solutions for renewable energy projects.", img: "green-energy.png", href: "/industries/greenenergy" },
-  { num: "06", title: "Chemical & Pharma", text: "Insurance for chemical and pharmaceutical sectors.", img: "chemical-pharma.png", href: "/industries/chemical&pharmaceuticals" },
-  { num: "07", title: "Hospitality", text: "Protecting hotels, resorts and restaurants.", img: "hospitality.png", href: "/industries/hospitality" },
-  { num: "08", title: "SME & MSME", text: "Tailored solutions for small and medium enterprises.", img: "sme-msme.png", href: "/industries/SME&MSME" },
+  {
+    num: "01",
+    title: "Automotive",
+    text: "Insurance solutions for automotive businesses.",
+    img: "automotive.png",
+    href: "/industries/automobile",
+  },
+  {
+    num: "02",
+    title: "BFSI",
+    text: "Banking, financial services and insurance advisory.",
+    img: "bfsi.png",
+    href: "/industries/BFSI",
+  },
+  {
+    num: "03",
+    title: "IT & Tech",
+    text: "Protecting digital and technology businesses.",
+    img: "it-tech.png",
+    href: "/industries/it",
+  },
+  {
+    num: "04",
+    title: "Engineering",
+    text: "Coverage for engineering and manufacturing firms.",
+    img: "engineering.png",
+    href: "/industries/engineering",
+  },
+  {
+    num: "05",
+    title: "Green Energy",
+    text: "Risk solutions for renewable energy projects.",
+    img: "green-energy.png",
+    href: "/industries/greenenergy",
+  },
+  {
+    num: "06",
+    title: "Chemical & Pharma",
+    text: "Insurance for chemical and pharmaceutical sectors.",
+    img: "chemical-pharma.png",
+    href: "/industries/chemical&pharmaceuticals",
+  },
+  {
+    num: "07",
+    title: "Hospitality",
+    text: "Protecting hotels, resorts and restaurants.",
+    img: "hospitality.png",
+    href: "/industries/hospitality",
+  },
+  {
+    num: "08",
+    title: "SME & MSME",
+    text: "Tailored solutions for small and medium enterprises.",
+    img: "sme-msme.png",
+    href: "/industries/SME&MSME",
+  },
 ];
 
 export default function HomePage() {
   const [activeService, setActiveService] = useState(0);
-  const statsRef = useRef(null);
-  const isStatsInView = useInView(statsRef, { once: true });
 
   return (
     <main className={poppins.className}>
-
       {/* ================= HERO ================= */}
       <Hero />
 
       {/* ================= STATS ================= */}
-      <section className="py-16 md:py-24 bg-white"> {/* Desktop padding py-32 se py-24 kiya */}
+      <section className="py-12 md:py-16 bg-white">
+        {" "}
+        {/* Desktop padding py-32 se py-24 kiya */}
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-
           {/* LEFT */}
           <div>
             <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
-              Thoughtful Risk Advisory <br />
+              Empowering Businesses Through <br />
               <span className="text-blue-600 underline underline-offset-8">
-                for Growing Businesses
+                Strategic Risk Advisory
               </span>
             </h2>
 
             <p className="text-base md:text-lg text-slate-600 mb-10">
-              We empower organizations with intelligent, technology-driven insurance
-              and risk advisory solutions—helping businesses stay protected,
-              confident, and ready for sustainable growth.
+              Vestigo Insurance Advisors empowers businesses with expert risk
+              consulting, comprehensive inspections, and policy audits. Since
+              2025, we’ve delivered tailored, cost-effective solutions to
+              optimize coverage, ensure compliance, and unlock business
+              resilience.
             </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6" ref={statsRef}>
-              {[
-                { label: "Industry Experience", value: "15+ Years" },
-                { label: "Businesses Served", value: "500+" },
-                { label: "Claims Success Rate", value: "99.2%" },
-                { label: "Risk Experts", value: "50+" },
-              ].map((stat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isStatsInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: i * 0.1 }}
-                  className="p-6 rounded-3xl bg-slate-50 hover:bg-blue-600 transition-all text-center group"
-                >
-                  <div className="text-2xl md:text-3xl font-black text-blue-600 group-hover:text-white">
-                    {stat.value}
-                  </div>
-                  <div className="text-[10px] md:text-xs uppercase tracking-widest text-slate-500 group-hover:text-blue-100">
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
 
           {/* RIGHT */}
           <div className="space-y-6">
             <div className="p-8 md:p-10 bg-slate-900 rounded-3xl text-white relative overflow-hidden">
-              <h3 className="text-xl md:text-2xl font-bold mb-4">Our Mission</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-4">
+                Our Mission
+              </h3>
               <p className="text-slate-300 text-sm md:text-base relative z-10">
-                Safeguarding Your Future Growth. To transform the insurance experience for organizations by delivering intelligent, technology-driven solutions backed by expert advisory ensuring every business is boldly protected, confidently growing, and always assured.
+                Safeguarding Your Future Growth. To transform the insurance
+                experience for organizations by delivering intelligent,
+                technology-driven solutions backed by expert advisory ensuring
+                every business is boldly protected, confidently growing, and
+                always assured.
               </p>
               <ShieldCheck className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 opacity-10" />
             </div>
@@ -131,7 +157,10 @@ export default function HomePage() {
             <div className="p-8 md:p-10 bg-blue-600 rounded-3xl text-white relative overflow-hidden">
               <h3 className="text-xl md:text-2xl font-bold mb-4">Our Vision</h3>
               <p className="text-blue-100 text-sm md:text-base relative z-10">
-                Pioneering India's Risk Advisory Landscape. To be the trusted leader in Business Insurance, delivering cutting-edge, innovative & tech powered solutions that every business organization can scale with certainty, security & confidence.
+                Pioneering India&apos;s Risk Advisory Landscape. To be the
+                trusted leader in Business Insurance, delivering cutting-edge,
+                innovative & tech powered solutions that every business
+                organization can scale with certainty, security & confidence.
               </p>
               <BarChart3 className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 opacity-10" />
             </div>
@@ -140,9 +169,13 @@ export default function HomePage() {
       </section>
 
       {/* ================= SERVICES ================= */}
-      <section className="py-8 md:py-12 bg-white"> {/* Gap kam karne ke liye yahan py-20 ko py-12 kiya */}
+      <section className="py-6 md:py-10 bg-white">
+        {" "}
+        {/* Gap kam karne ke liye yahan py-20 ko py-12 kiya */}
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-10 md:text-left md:mb-10"> {/* Margin bottom 16 se 10 kiya */}
+          <div className="text-center mb-10 md:text-left md:mb-10">
+            {" "}
+            {/* Margin bottom 16 se 10 kiya */}
             <h4 className="text-blue-600 tracking-widest mb-2 font-semibold text-sm">
               WHAT WE OFFER
             </h4>
@@ -180,11 +213,13 @@ export default function HomePage() {
                     <h3 className="text-xl md:text-3xl font-bold mb-2">
                       {item.title}
                     </h3>
-                    <p className={`
+                    <p
+                      className={`
                         text-sm md:text-base text-gray-100 max-w-md
                         transition-all duration-500
                         ${isActive ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-4"}
-                      `}>
+                      `}
+                    >
                       {item.desc}
                     </p>
                   </div>
@@ -196,10 +231,9 @@ export default function HomePage() {
       </section>
 
       {/* ================= INDUSTRIES ================= */}
-      <section className="py-16 md:py-32 bg-[#f0f9ff]"> 
+      <section className="py-10 md:py-20 bg-[#f0f9ff]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col lg:flex-row lg:gap-20 items-start">
-
             <div className="w-full lg:w-1/2 lg:sticky lg:top-32 self-start space-y-6 mb-12 lg:mb-0">
               <span className="text-sky-600 tracking-widest font-semibold uppercase text-sm">
                 Industries We Serve
@@ -233,11 +267,13 @@ export default function HomePage() {
                     hover:bg-white hover:shadow-2xl transition-all border border-sky-100
                   "
                 >
-                  <div className="
+                  <div
+                    className="
                     w-full md:w-32 lg:w-40
                     aspect-video md:aspect-square
                     rounded-2xl overflow-hidden bg-white
-                  ">
+                  "
+                  >
                     <img
                       src={item.img}
                       alt={item.title}
@@ -265,13 +301,12 @@ export default function HomePage() {
                 </Link>
               ))}
             </div>
-
           </div>
         </div>
       </section>
 
       {/* ================= CTA ================= */}
-      <section className="py-16 md:py-32 px-6">
+      <section className="py-10 md:py-20 px-6">
         <div className="max-w-7xl mx-auto bg-slate-900 rounded-[2rem] md:rounded-[4rem] p-10 md:p-24 text-center text-white">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-10">
             Ready to secure your journey?
@@ -284,7 +319,6 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-
     </main>
   );
 }
