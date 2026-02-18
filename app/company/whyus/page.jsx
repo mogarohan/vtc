@@ -30,7 +30,7 @@ export default function CompanyOverview() {
   */}
   <div className="relative z-0 w-full h-auto">
     <img 
-      src="/Why.jpeg" 
+      src="/WHY.png" 
       alt="About Us Background"
       /* 'w-full h-auto' ensures the image scales perfectly 
          to the width of the phone without cutting anything.
