@@ -63,7 +63,7 @@ export default function CompanyOverview() {
         <div className="absolute top-0 left-0 w-full h-[45vh] md:h-full md:w-1/2 md:left-auto md:right-0 z-0">
           <video
             className="w-full h-full object-cover"
-            src="/hero1.mp4"
+            src="/Hero1.mp4"
             autoPlay
             loop
             muted

@@ -37,39 +37,64 @@ const AutomobileInsurancePage = () => {
     {
       title: "Production Disruption",
       desc: "Fire, machinery breakdown, assembly line failures, and equipment malfunctions can halt operations, leading to significant financial losses and reputational damage.",
+<<<<<<< HEAD
       image:
         "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+=======
+      image: "/key/1.jpeg"
+>>>>>>> 1177749af215a5298a40939785b8b965f8267945
     },
     {
       title: "Supply Chain Vulnerability",
       desc: "Component shortages, logistics delays, and over-reliance on single vendors expose businesses to significant risks, impacting production schedules and market delivery.",
+<<<<<<< HEAD
       image:
         "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
+=======
+      image: "/key/2.jpeg"
+>>>>>>> 1177749af215a5298a40939785b8b965f8267945
     },
     {
       title: "Product Liability",
       desc: "Defects in vehicles or engineered components, unexpected safety failures, and product recall costs pose major financial and legal challenges.",
+<<<<<<< HEAD
       image:
         "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80&w=800",
+=======
+      image: "/key/3.jpeg"
+>>>>>>> 1177749af215a5298a40939785b8b965f8267945
     },
     {
       title: "Cyber & Technology",
       desc: "The increasing connectivity of vehicles and manufacturing systems introduces new vulnerabilities, including data breaches, intellectual property theft, and operational cyberattacks.",
+<<<<<<< HEAD
       image:
         "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800",
+=======
+      image: "/key/4.jpeg"
+>>>>>>> 1177749af215a5298a40939785b8b965f8267945
     },
     {
       title: "Environmental Compliance",
       desc: "Evolving emissions regulations, complex waste management challenges, and potential pollution liabilities demand strict adherence and robust risk management.",
+<<<<<<< HEAD
       image:
         "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&q=80&w=800",
+=======
+      image: "/key/5.jpeg"
+>>>>>>> 1177749af215a5298a40939785b8b965f8267945
     },
     {
       title: "Intellectual Property",
       desc: "Protecting innovative designs, manufacturing processes, and proprietary technologies from theft, patent infringement, and trade secret breaches is paramount.",
+<<<<<<< HEAD
       image:
         "https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=800",
     },
+=======
+      image: "/key/6.jpeg"
+    }
+>>>>>>> 1177749af215a5298a40939785b8b965f8267945
   ];
 
   const protections = [

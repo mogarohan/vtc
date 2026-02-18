@@ -128,17 +128,29 @@ export default function Solutions() {
 
   return (
     <main className="min-h-screen bg-[#F8FAFC] overflow-hidden">
-      <section
-        className="flex h-[70vh] flex items-center overflow-hidden bg-cover bg-no-repeat"
-        style={{ backgroundImage: "url('/services.jpeg')" }}
-      >
-        {/* Background Glow Effect - Creates depth on the blue background */}
-        {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-600/20 rounded-full blur-[120px] -z-0" /> */}
+      <section className="relative h-[95vh] flex items-center justify-center overflow-hidden">
+  
+  {/* Background Video */}
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="absolute inset-0 w-full h-full object-cover"
+  >
+    <source src="/video5.mp4" type="video/mp4" />
+  </video>
 
-        <div className="ml-40 max-w-1x0 mx-auto relative z-10 mb-15 ">
-          {/* --- GLASSMORPISM PILL FILTER --- */}
-        </div>
-      </section>
+  {/* Dark Overlay Pattern */}
+  <div
+    className="absolute inset-0 opacity-30"
+    style={{
+      backgroundImage: "radial-gradient(#3b82f6 1px, transparent 1px)",
+      backgroundSize: "40px 40px",
+    }}
+  ></div>
+
+</section>
 
       {/* --- GRID SECTION --- */}
       <section className="max-w-7xl mx-auto px-5 pt-14 pb-10">
