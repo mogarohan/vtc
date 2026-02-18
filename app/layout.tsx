@@ -21,7 +21,7 @@ export default function RootLayout({
       <Header />
 
         {/* ✅ HEADER SPACER – REQUIRED */}
-        <div className="h-[100px]" />
+        <div className="h-[80px]" />
 
         {/* <Navbar /> 
         <div className="flex flex-col min-h-screen ">   */}

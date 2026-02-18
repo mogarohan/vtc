@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { 
   Target, Eye, ShieldCheck, Zap, 
-  Headphones, Trophy, Users, ChevronRight, 
+  Headphones, Trophy, Users, ChevronRight, BarChart3,
   Sparkles, Building2, Globe, ArrowRight, Handshake
 } from 'lucide-react';
 import Link from 'next/link';
@@ -49,38 +49,29 @@ export default function CompanyOverview() {
     <main ref={containerRef} className="bg-white overflow-hidden font-sans">
       
       {/* 1. HERO SECTION (Dark Premium Theme Restored) */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#0F172A] py-20 md:py-0">
-        
-    <div className="absolute inset-0 bg-slate-900/70 backdrop-blur-[0px]" />
+       <section className="relative w-full flex items-center justify-center overflow-hidden">
+  
+  {/* 1. Removed fixed height on mobile (h-[85vh]) 
+    2. Added 'aspect-auto' to let the image define the space
+  */}
+  <div className="relative z-0 w-full h-auto">
+    <img 
+      src="/who.jpeg" 
+      alt="About Us Background"
+      /* 'w-full h-auto' ensures the image scales perfectly 
+         to the width of the phone without cutting anything.
+      */
+      className="w-full h-auto md:h-[85vh] md:object-cover brightness-[0.9]" 
+    />
+    
+    {/* Overlay: ensures it stays pinned to the image area */}
+    <div className="absolute  bg-slate-950/40 backdrop-blur-[10px]" />
+  </div>
 
-  <motion.div style={{ y, opacity }} className="relative z-10 text-center px-6">
-    <motion.div 
-      initial={{ scale: 0.8, opacity: 0 }} 
-      animate={{ scale: 1, opacity: 1 }} 
-      className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-[10px] md:text-sm font-bold mb-6 backdrop-blur-md"
-    >
-      <Sparkles size={16} /> SECURING YOUR FUTURE SINCE 2010
-    </motion.div>
-    
-    <h1 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-tight">
-      We Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Resilience.</span>
-    </h1>
-    
-    <p className="text-base md:text-xl text-slate-200 max-w-2xl mx-auto leading-relaxed">
-      Vestigo is not just insurance its a safety shield for your dreams. 
-      We turn uncertainty into opportunity through trust and technology.
-    </p>
-    
-    <div className="mt-10 flex flex-wrap justify-center gap-4">
-       <Link href="/company/whoweare" className="w-full sm:w-auto bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg shadow-blue-600/20">
-          Learn Who We Are <ArrowRight size={18} />
-       </Link>
-    </div>
-  </motion.div>
 </section>
 
       {/* 2. STATS/FEATURES GRID (Specific Sky Blue Cards) */}
-      <section className="relative z-20 -mt-16 md:-mt-24 px-6 mb-10 md:mb-20">
+      <section className="relative z-20 -mt-5 md:-mt-10 px-6 mb-10 md:mb-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, i) => (
             <motion.div 
@@ -113,7 +104,7 @@ export default function CompanyOverview() {
       </section>
 
       {/* 3. WHY US SECTION (Sky Blue Accents on Icons) */}
-      <section className="py-20 md:py-32 px-6 bg-white">
+      <section className="py-20 md:py-5 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
           <motion.div initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
             <span className="text-blue-600 font-black tracking-[0.2em] uppercase text-xs">The Advantage</span>
@@ -152,24 +143,35 @@ export default function CompanyOverview() {
          <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/5 blur-[120px] rounded-full" />
          <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
             <div className="p-8 md:p-14 rounded-[2.5rem] md:rounded-[4rem] bg-white/5 border border-white/10 backdrop-blur-xl hover:bg-white/10 transition-colors">
-               <Target className="text-blue-400 mb-8" size={40} />
-               <h3 className="text-3xl md:text-4xl font-black text-white mb-6 uppercase tracking-tighter">Our Mission</h3>
+            <div className="flex items-center gap-4 mb-6">
+               <Target className="text-blue-400" size={40} />
+                <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">
+                  Our Mission
+                </h3>
+              </div>
                <p className="text-slate-400 text-base md:text-lg leading-relaxed font-medium">
                 Safeguarding Your Future Growth. To transform the insurance experience for organizations by delivering intelligent, technology-driven solutions backed by expert advisory ensuring every business is boldly protected, confidently growing, and always assured.
                 We provide actionable risk insights that empower organizations to proactively mitigate exposures, converting potential challenges into opportunities for sustained growth and long-term profitability.</p>
+               
+                <ShieldCheck className="absolute -bottom-3 -right-6 w-24 h-24 md:w-50 md:h-50 opacity-10" />
+           
             </div>
             <div className="p-8 md:p-14 rounded-[2.5rem] md:rounded-[4rem] bg-blue-600 shadow-3xl shadow-blue-900/50 hover:bg-blue-500 transition-colors">
-               <Eye className="text-white mb-8" size={40} />
-               <h3 className="text-3xl md:text-4xl font-black text-white mb-6 uppercase tracking-tighter">Our Vision</h3>
+                <div className="flex items-center gap-4 mb-6">
+               <Eye className="text-white" size={40} />
+               <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">
+               Our Vision</h3>
+               </div>
                <p className="text-blue-50 text-base md:text-lg leading-relaxed font-medium">
                  Pioneering India's Risk Advisory Landscape. To be the trusted leader in Business Insurance, delivering cutting-edge, innovative & tech powered solutions that every business organization can scale with certainity, security & confidence.
                  We are committed to setting new industry benchmarks through continuous innovation, deep expertise, and an unwavering commitment to our clients success and lasting resilience.</p>
+                <BarChart3 className="absolute -bottom-3 ml-82 mb-23 w-24 h-24 md:w-50 md:h-50 opacity-10" />
             </div>
          </div>
       </section>
 
       {/* 5. CTA SECTION (Original Dark Gradient) */}
-      <section className="py-20 md:py-32 px-6">
+      <section className="py-20 md:py-10 px-6">
         <div className="max-w-6xl mx-auto bg-gradient-to-br from-blue-700 to-indigo-900 rounded-[3rem] md:rounded-[5rem] p-10 md:p-20 text-center text-white relative overflow-hidden shadow-3xl">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20" />
           <h2 className="text-4xl md:text-7xl font-black mb-8 relative z-10 tracking-tighter uppercase leading-tight md:leading-none">

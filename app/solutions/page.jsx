@@ -241,7 +241,7 @@ export default function Solutions() {
       </section>
 
       {/* --- INTERACTIVE CTA SECTION --- */}
-      <section className="py-20 px-6">
+      <section className="py-5 px-6">
         <motion.div 
           whileInView={{ opacity: 1, scale: 1 }}
           initial={{ opacity: 0, scale: 0.95 }}

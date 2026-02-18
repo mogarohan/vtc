@@ -61,7 +61,7 @@ export default function Footer() {
 
         {/* --- 2. MAIN LINKS CONTENT --- */}
         <div className="relative z-5 mt-0 max-w-7xl mx-auto  py-6 px-3">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 items-start">
             {/* Logo & About */}
             <div className="lg:col-span-1 space-y-4">
               <Image
@@ -281,7 +281,7 @@ export default function Footer() {
                 Services
                 <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
               </h3>
-              <ul className="space-y-2 text-[15px]">
+              <ul className="space-y-1 text-[15px]">
                 <li>
                   <Link
                     href="/solutions"
@@ -323,10 +323,10 @@ export default function Footer() {
                 Contact Us
                 <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
               </h3>
-              <ul className="space-y-3 text-[15px]">
+              <ul className="space-y-3 text-[13px]">
                 <li>
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+91 97261 60360"
                     className="group flex items-center gap-2 hover:text-white transition-all"
                   >
                     <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-[#4169E1] transition-all border border-white/10 flex-shrink-0">
@@ -335,12 +335,12 @@ export default function Footer() {
                         className="text-[#4169E1] group-hover:text-white"
                       />
                     </div>
-                    <span className="font-medium">+1 234 567 890</span>
+                    <span className="font-medium">+91 97261 60360</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    href="mailto:info@vestigo.com"
+                    href="mailto:info@vestigoinsurance.com"
                     className="group flex items-center gap-2 hover:text-white transition-all"
                   >
                     <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-[#4169E1] transition-all border border-white/10 flex-shrink-0">
@@ -349,8 +349,8 @@ export default function Footer() {
                         className="text-[#4169E1] group-hover:text-white"
                       />
                     </div>
-                    <span className="font-medium truncate">
-                      info@vestigo.com
+                    <span className="font-medium truncate mr-2">
+                      info@vestigoinsurance.com
                     </span>
                   </a>
                 </li>
@@ -362,7 +362,7 @@ export default function Footer() {
                     />
                   </div>
                   <span className="font-medium text-slate-300 group-hover:text-white transition-colors">
-                    123 Business Ave, New York, NY
+                    Ahemdabad  Vadodara  Surendranagar  Siddhpur | Mumbai
                   </span>
                 </li>
               </ul>

@@ -94,7 +94,7 @@ const PharmaChemicalSuite = () => {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
-             <Link href="/contact" className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20">
+             <Link href="/contact " className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20">
                 Talk to a Consultant <ArrowRight size={18} />
              </Link>
              <button className="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-2xl font-bold hover:bg-white/10 transition-all backdrop-blur-sm">

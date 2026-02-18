@@ -130,7 +130,7 @@ export default function CompanyOverview() {
       </section>
 
       {/* ================= WHY CHOOSE US ================= */}
-      <section className="py-16 md:py-28 px-6 bg-slate-50">
+      <section className="py-16 md:py-20 px-6 bg-slate-50">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div>
             <span className="text-blue-600 font-bold tracking-widest uppercase text-sm">
@@ -212,7 +212,7 @@ export default function CompanyOverview() {
       </section>
 
       {/* ================= OUR TEAM ================= */}
-      <section className="py-16 md:py-28 px-6 bg-white">
+      <section className="py-16 md:py-10 px-6 bg-white">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-8 md:mb-12">
             Our Expert Team
@@ -235,7 +235,7 @@ export default function CompanyOverview() {
       </section>
 
       {/* ================= OUR PARTNERS (STATIC GRID) ================= */}
-      <section className="py-16 md:py-28 px-6 bg-[#F5F9FF]">
+      <section className="py-16 md:py-15 px-6 bg-[#F5F9FF]">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-center text-3xl md:text-4xl font-black text-slate-900 mb-10 md:mb-16">
             Trusted by Leading Organizations
@@ -260,7 +260,7 @@ export default function CompanyOverview() {
       </section>
 
       {/* ================= FINAL CTA ================= */}
-      <section className="py-16 md:py-32 px-6 bg-white">
+      <section className="py-16 md:py-10 px-6 bg-white">
         <div className="max-w-6xl mx-auto bg-gradient-to-br from-blue-600 to-indigo-800 rounded-[2.5rem] sm:rounded-[4rem] p-10 sm:p-20 text-center text-white relative overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-[120px] -mr-40 -mt-40" />
           <h2 className="text-3xl sm:text-6xl font-black mb-6 sm:mb-8 leading-tight">
