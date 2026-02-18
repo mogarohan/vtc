@@ -35,8 +35,24 @@ export default function Footer() {
   ];
 
   return (
-    <div className="w-full flex flex-col">
-      <footer className="relative w-full text-slate-300 overflow-hidden bg-[url(/f3.jpeg)] bg-center bg-no-repeat bg-contain">
+    <div className="w-full">
+      {/* Footer height ko min-h-[400px] ya content ke hisaab se auto rakha hai */}
+      <footer className="relative w-full text-slate-300 overflow-hidden min-h-[300px] flex flex-col justify-end">
+        
+        {/* --- BACKGROUND LAYER FIX --- */}
+        <div className="absolute inset-0 z-0">
+          <picture>
+            <source media="(min-width: 768px)" srcSet="/f3.jpeg" />
+            <img
+              src="/m.jpeg"
+              alt="Footer Background"
+              /* CHANGE: Yahan object-cover aur h-full w-full lagaya hai */
+              className="w-full h-full object-cover brightness-[0.7]"
+            />
+          </picture>
+        </div>
+        {/* Aapka Content Yahan */}
+        <div className="relative z-10">{/* Text or Logo */}</div>
         {/* --- DARK OVERLAY + BOTTOM GRADIENT --- */}
         {/* <div className="absolute inset-0 z-0 bg-black/20 backdrop-blur-[1px]" /> */}
 
@@ -44,22 +60,7 @@ export default function Footer() {
         <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-100" />
 
         {/* --- 1. CTA SECTION --- */}
-        <div className="relative z-10 w-full min-h-[100px] py-5 flex items-center justify-center text-center px-6 ">
-          {/* <div className="px-6 w-full max-w-1xl md:text-3x1 flex flex-col items-center justify-center">
-    
-    <h2 className="text-white text-3xl font-black uppercase tracking-tight mb-2 leading-tight">
-      Protect your business with the <br /> right insurance strategy
-    </h2>
-    
-    <p className="text-white/70 text-sm mb-5 font-light">
-      Schedule a no-obligation consultation with our experts today
-    </p>
-
-    <button className="bg-[#4169E1] hover:bg-blue-700 text-white font-bold py-2.5 px-8 rounded-lg transition-all uppercase text-[10px] tracking-widest shadow-lg transform hover:scale-105 active:scale-95">
-      Request Your Consultation
-    </button>
-  </div> */}
-        </div>
+        <div className="relative z-10 w-full min-h-[100px] py-5 flex items-center justify-center text-center px-6 "></div>
 
         {/* --- TAGLINE (CENTERED) --- */}
         <motion.div
@@ -68,39 +69,21 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
           className="relative z-10 text-center py-6"
-        >
-          <p className="text-white text-sm md:text-base tracking-wide font-medium">
-            Simplifying Insurance, Amplifying Trust
-          </p>
-
-          <div className="w-16 h-0.5 bg-[#4169E1] mx-auto mt-2 rounded-full" />
-        </motion.div>
+        ></motion.div>
 
         {/* --- 2. MAIN LINKS CONTENT --- */}
-        <div className="relative z-5 mt-0 max-w-7xl mx-auto  py-6 px-3">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 items-start">
-            {/* Logo & About */}
-            <div className="lg:col-span-1 space-y-4">
-              <div className="flex gap-2 pt-1">
-                {socialLinks.map((social) => (
-                  <Link
-                    key={social.name}
-                    href={social.href}
-                    className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-slate-300 hover:bg-[#4169E1] hover:text-white transition-all duration-300 border border-white/10"
-                  >
-                    {social.icon}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Company */}
+        <div className="relative z-5 mt-0 pl-15 max-w-7xl mx-auto  py-10 px-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5   items-start">
+            {/* Company Section */}
             <div className="lg:col-span-1">
-              <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block">
-                Company
-                <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
-              </h3>
-              <ul className="space-y-2 text-[15px]">
+              <Link href="/company/whoweare" className="lg:pointer-events-none">
+                <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block">
+                  Company
+                  <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
+                </h3>
+              </Link>
+              {/* Desktop par dikhega, Mobile par hidden */}
+              <ul className="hidden lg:block space-y-2 text-[15px]">
                 <li>
                   <Link
                     href="/company/whoweare"
@@ -136,13 +119,16 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Industries Works */}
+            {/* Industries Works Section */}
             <div className="lg:col-span-2">
-              <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 lg:ml-20 relative inline-block">
-                Industries Works
-                <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-x-2 text-[11px]">
+              <Link href="/industries" className="lg:pointer-events-none">
+                <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 lg:ml-20 relative inline-block">
+                  Industries Works
+                  <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
+                </h3>
+              </Link>
+              {/* Desktop par grid dikhega, Mobile par hidden */}
+              <div className="hidden lg:grid grid-cols-4 gap-x-2 text-[11px]">
                 <ul className="space-y-2 text-[15px]">
                   <li>
                     <Link
@@ -282,13 +268,16 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Services */}
+            {/* Services / Solutions Section */}
             <div className="lg:col-span-1">
-              <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block">
-                Services
-                <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
-              </h3>
-              <ul className="space-y-1 text-[15px]">
+              <Link href="/solutions" className="lg:pointer-events-none">
+                <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block">
+                  Services
+                  <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
+                </h3>
+              </Link>
+              {/* Desktop par dikhega, Mobile par hidden */}
+              <ul className="hidden lg:block space-y-1 text-[15px]">
                 <li>
                   <Link
                     href="/solutions"
@@ -356,7 +345,7 @@ export default function Footer() {
                         className="text-[#4169E1] group-hover:text-white"
                       />
                     </div>
-                    <span className="font-medium truncate mr-2">
+                    <span className="font-medium truncate ">
                       info@vestigoinsurance.com
                     </span>
                   </a>
@@ -377,12 +366,32 @@ export default function Footer() {
           </div>
 
           {/* Bottom Bar with Gradient Background */}
-          <div className="mt-5 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between text-white items-center gap-2 text-[10px] uppercase tracking-widest relative">
-            <p>
+          <div className="mt-5 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-white text-[10px] uppercase tracking-widest relative">
+            {/* Left Section: Copyright - Added text-center for mobile */}
+            <p className="text-center md:text-left">
               &copy; {new Date().getFullYear()} Vestigo Insurance Advisor.
-              CREATED BY TECHSTROTA
+              <br className="md:hidden" />
+              <span className="md:ml-2">CREATED BY TECHSTROTA</span>
             </p>
-            <div className="flex gap-4">
+
+            {/* Center Section: Social Links - Already centered by flex-col items-center on parent */}
+            <div className="flex gap-5 items-center justify-center">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
+                  title={link.name}
+                >
+                  {link.icon}
+                </a>
+              ))}
+            </div>
+
+            {/* Right Section: Links - Changed to justify-center for mobile */}
+            <div className="flex justify-center md:justify-end gap-4">
               <Link
                 href="/privacy"
                 className="hover:text-white transition-colors"
