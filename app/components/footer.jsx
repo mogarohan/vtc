@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 import {
   Facebook,
   Instagram,
@@ -33,10 +35,10 @@ export default function Footer() {
   ];
 
   return (
-    <div className="w-full flex flex-col bg-[url(/footer2.jpeg)] bg-cover bg-center bg-no-repeat overflow-hidden">
-      <footer className="relative w-full text-slate-300 overflow-hidden min-h-fit">
+    <div className="w-full flex flex-col">
+      <footer className="relative w-full text-slate-300 overflow-hidden bg-[url(/f3.jpeg)] bg-center bg-no-repeat bg-contain">
         {/* --- DARK OVERLAY + BOTTOM GRADIENT --- */}
-        <div className="absolute inset-0 z-0 bg-black/20 backdrop-blur-[1px]" />
+        {/* <div className="absolute inset-0 z-0 bg-black/20 backdrop-blur-[1px]" /> */}
 
         {/* Niche wala gradient layer */}
         <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-100" />
@@ -59,21 +61,26 @@ export default function Footer() {
   </div> */}
         </div>
 
+        {/* --- TAGLINE (CENTERED) --- */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="relative z-10 text-center py-6"
+        >
+          <p className="text-white text-sm md:text-base tracking-wide font-medium">
+            Simplifying Insurance, Amplifying Trust
+          </p>
+
+          <div className="w-16 h-0.5 bg-[#4169E1] mx-auto mt-2 rounded-full" />
+        </motion.div>
+
         {/* --- 2. MAIN LINKS CONTENT --- */}
         <div className="relative z-5 mt-0 max-w-7xl mx-auto  py-6 px-3">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 items-start">
             {/* Logo & About */}
             <div className="lg:col-span-1 space-y-4">
-              <Image
-                src="/logo.svg"
-                alt="Vestigo Logo"
-                width={110}
-                height={30}
-                className=""
-              />
-              <p className="text-[13px] leading-relaxed pr-2 text-slate-300">
-                &quot;Simplifying Insurance, Amplifying Trust&quot;
-              </p>
               <div className="flex gap-2 pt-1">
                 {socialLinks.map((social) => (
                   <Link
@@ -362,7 +369,7 @@ export default function Footer() {
                     />
                   </div>
                   <span className="font-medium text-slate-300 group-hover:text-white transition-colors">
-                    Ahemdabad  Vadodara  Surendranagar  Siddhpur | Mumbai
+                    Ahemdabad Vadodara Surendranagar Siddhpur | Mumbai
                   </span>
                 </li>
               </ul>

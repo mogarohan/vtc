@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import {
   Search,
@@ -11,6 +11,8 @@ import {
 } from "lucide-react";
 
 export default function IndustryRiskPage() {
+  const containerRef = useRef(null);
+
   const processSteps = [
     {
       num: "01",
@@ -50,17 +52,15 @@ export default function IndustryRiskPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-white">
-      <section className="relative overflow-hidden py-20 md:py-24">
-        {/* BACKGROUND */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#EEF4FF] via-white to-[#0F172A]" />
-
+    <main ref={containerRef} className="min-h-screen bg-white overflow-hidden">
+      {/* 1. PREMIUM DARK HERO SECTION (Matched to Company/Solutions) */}
+      <section className="relative h-[80vh] -mt-20 flex items-center justify-center overflow-hidden bg-[#0F172A]">
         {/* HEADER */}
         <div className="text-center mb-16 md:mb-28 px-4">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter text-[#070B7F]"
+            className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter text-white"
           >
             Audits <br />
             <span className="bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text">
@@ -68,6 +68,11 @@ export default function IndustryRiskPage() {
             </span>
           </motion.p>
         </div>
+      </section>
+
+      <section className="relative overflow-hidden py-20 md:py-24">
+        {/* BACKGROUND */}
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#EEF4FF] via-white to-[#0F172A]" />
 
         <div className="container mx-auto px-4 sm:px-6 relative">
           {/* DESKTOP TIMELINE */}
@@ -87,7 +92,6 @@ export default function IndustryRiskPage() {
               >
                 {/* LEFT SECTION */}
                 <div className="w-full md:w-[45%] flex flex-col items-center">
-                  
                   {/* MOBILE NUMBER – TOP CENTER WITH GAP */}
                   <div className="md:hidden mb-6 relative">
                     <div className="w-14 h-14 bg-[#070B7F] rounded-2xl flex items-center justify-center text-white font-black shadow-xl">

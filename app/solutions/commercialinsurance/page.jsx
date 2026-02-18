@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 import {
   Building2,
   ShieldCheck,
@@ -9,8 +9,8 @@ import {
   Briefcase,
   Sparkles,
   ArrowRight,
-} from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+} from "lucide-react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const CommercialInsuranceClient = () => {
   const { scrollY } = useScroll();
@@ -19,24 +19,19 @@ const CommercialInsuranceClient = () => {
 
   const services = [
     {
-      title: 'Property & Liability',
-      desc: 'Protect your business from third-party claims and property damage.',
+      title: "Property & Liability",
+      desc: "Comprehensive protection for physical assets and third-party liabilities.",
       icon: <ShieldCheck className="w-10 h-10 text-blue-600" />,
     },
     {
-      title: 'Business Interruption',
-      desc: 'Complete coverage for your office, warehouse, and physical assets.',
+      title: "Business Interruption",
+      desc: "Revenue continuity coverage to protect cash flow during unexpected disruptions.",
       icon: <Building2 className="w-10 h-10 text-blue-600" />,
     },
     {
-      title: 'Cyber Risk',
-      desc: 'Specialized insurance for business Digital threat protection.',
+      title: "Cyber Risk",
+      desc: "Protection against data breaches, cyber extortion, and digital operational threats.",
       icon: <Briefcase className="w-10 h-10 text-blue-600" />,
-    },
-    {
-      title: 'Fleet & Transport',
-      desc: 'Comprehensive coverage for commercial vehicles and logistics.',
-      icon: <Truck className="w-10 h-10 text-blue-600" />,
     },
   ];
 
@@ -58,7 +53,10 @@ const CommercialInsuranceClient = () => {
           />
         </div>
 
-        <motion.div style={{ y, opacity }} className="relative z-10 text-center px-6">
+        <motion.div
+          style={{ y, opacity }}
+          className="relative z-10 text-center px-6"
+        >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -68,14 +66,18 @@ const CommercialInsuranceClient = () => {
           </motion.div>
 
           <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter">
-            Commercial{' '}
+            Commercial{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
               Insurance
             </span>
           </h1>
 
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-           Protect your business assets, operations, and people with comprehensive commercial coverage designed for today's complex risk landscape. We understand that your enterprise faces unique challenges—from property damage and liability claims to business interruption and cyber threats.
+            Protect your business assets, operations, and people with
+            comprehensive commercial coverage designed for today&apos;s complex
+            risk landscape. We understand that your enterprise faces unique
+            challenges—from property damage and liability claims to business
+            interruption and cyber threats.
           </p>
 
           <div className="mt-10 flex justify-center">
@@ -90,8 +92,8 @@ const CommercialInsuranceClient = () => {
       </section>
 
       {/* SERVICES */}
-      <section className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <section className="py-16 px-6 bg-white">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((item, index) => (
             <div
               key={index}
@@ -112,13 +114,17 @@ const CommercialInsuranceClient = () => {
       </section>
 
       {/* CALL TO ACTION */}
-      <section className="py-20 px-6 border-t border-slate-50">
+      <section className="py-10 px-6 border-t border-slate-50">
         <div className="max-w-4xl mx-auto bg-slate-900 rounded-3xl p-12 text-center text-white relative overflow-hidden">
           <h2 className="text-3xl font-bold mb-6">
             Secure Your Business Today
           </h2>
           <p className="text-slate-400 mb-10">
-            Our commercial insurance specialists work directly with leading underwriters to secure competitive terms whilst ensuring comprehensive protection. We analyse your specific exposures, negotiate favourable policy conditions, and provide ongoing risk management support to minimise vulnerabilities.
+            Our commercial insurance specialists work directly with leading
+            underwriters to secure competitive terms whilst ensuring
+            comprehensive protection. We analyse your specific exposures,
+            negotiate favourable policy conditions, and provide ongoing risk
+            management support to minimise vulnerabilities.
           </p>
           <button className="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-blue-600 hover:text-white transition-all">
             Get a Free Consultation
