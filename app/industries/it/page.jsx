@@ -1,53 +1,92 @@
-'use client';
-import React, { useState } from 'react';
-import { 
-  Cpu, Code2, Cloud, ShieldCheck, Terminal, 
-  Database, Laptop, ArrowRight, Zap, Globe 
-} from 'lucide-react';
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import {
+  Cpu,
+  Code2,
+  Cloud,
+  ShieldCheck,
+  ShieldAlert,
+  Terminal,
+  Laptop,
+  ArrowRight,
+  Zap,
+  Globe,
+  Database,
+  Clock,
+  Scale,
+  FileWarning,
+} from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 export default function ITFieldPage() {
   const itSectors = [
-    { 
-      name: "Software Development", 
-      Icon: Code2, 
-      desc: "Custom enterprise applications and scalable microservices architecture." 
+    {
+      name: "Cyber Attacks",
+      Icon: ShieldAlert,
+      desc: "Ransomware, phishing, malware, and advanced persistent threats pose severe operational, financial, and reputational risks.",
     },
-    { 
-      name: "Cloud Infrastructure", 
-      Icon: Cloud, 
-      desc: "Secure AWS/Azure migration and managed server-less deployments." 
+    {
+      name: "Data Breach",
+      Icon: Database,
+      desc: "Unauthorized access, data leaks, and privacy violations can trigger regulatory penalties and client litigation..",
     },
-    { 
-      name: "Cyber Security", 
-      Icon: ShieldCheck, 
-      desc: "Zero-trust security protocols and real-time threat detection systems." 
-    }
+    {
+      name: "System Downtime",
+      Icon: Clock,
+      desc: "Outages of critical systems, cloud services, or data centres disrupt operations and client delivery commitments.",
+    },
+    {
+      name: "Professional Liability",
+      Icon: FileWarning,
+      desc: "Errors, omissions, or service failures can result in contractual disputes and claims from clients.",
+    },
+    {
+      name: "Regulatory Exposure",
+      Icon: Scale,
+      desc: "Compliance with evolving Indian and global data protection laws requires constant oversight and risk management.",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-white font-mono text-slate-900 selection:bg-cyan-100">
-      
       {/* 1. HERO SECTION: The Digital Frontier */}
-      <section className="relative bg-slate-950 pt-32 pb-24 px-6 overflow-hidden">
+      <section className="relative bg-slate-950 pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-5 sm:px-6 overflow-hidden">
         {/* Binary/Matrix Style Pattern Overlay */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none" 
-             style={{ backgroundImage: `radial-gradient(#06b6d4 1px, transparent 1px)`, backgroundSize: '20px 20px' }}>
-        </div>
-        
+        <div
+          className="absolute inset-0 opacity-10 pointer-events-none"
+          style={{
+            backgroundImage: `radial-gradient(#06b6d4 1px, transparent 1px)`,
+            backgroundSize: "20px 20px",
+          }}
+        ></div>
+
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-[10px] font-bold mb-6 border border-cyan-500/20 uppercase tracking-[0.3em]">
             <Terminal size={14} /> System.init();
           </div>
-          
-          <h1 className="text-5xl md:text-8xl font-black text-white mb-8 leading-[1] tracking-tighter">
-            Architecting <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400 italic">Digital Value.</span>
+
+          <h1 className="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-8 leading-[1] tracking-tighter">
+            Navigating Risk in India’s <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400 italic">
+              IT & Technology Sector
+            </span>
           </h1>
-          
+
           <p className="text-lg text-slate-400 max-w-2xl mb-12 leading-relaxed font-sans">
-            We provide full-stack IT solutions designed for the modern era—from legacy system modernization to AI-driven automation.
+            India’s IT and technology sector is a global powerhouse,
+            contributing significantly to GDP and employing millions.
           </p>
-          
+
           <div className="flex flex-wrap gap-5">
             <button className="bg-blue-600 hover:bg-cyan-500 text-white px-8 py-4 rounded-sm font-bold transition-all flex items-center gap-3 shadow-lg shadow-blue-600/20">
               Start Project <ArrowRight size={18} />
@@ -59,82 +98,159 @@ export default function ITFieldPage() {
         </div>
       </section>
 
-      {/* 2. TECH STACK STRIP */}
-      <div className="bg-blue-600 py-6">
-        <div className="max-w-7xl mx-auto px-6 overflow-hidden">
-          <div className="flex justify-around items-center opacity-50 grayscale invert brightness-0 gap-8 animate-pulse">
-             <span className="font-black text-white text-xl">DOCKER</span>
-             <span className="font-black text-white text-xl">KUBERNETES</span>
-             <span className="font-black text-white text-xl">PYTHON</span>
-             <span className="font-black text-white text-xl">REACT</span>
-             <span className="font-black text-white text-xl">NODE.JS</span>
-          </div>
-        </div>
-      </div>
-
       {/* 3. IT VERTICALS: White Cards on Blue Shadow */}
-      <section className="py-32 px-6 bg-slate-50">
+      <section className="py-10 sm:py-14 px-5 sm:px-6 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="mb-20 text-center">
-            <h2 className="text-4xl font-black text-slate-900 mb-4 tracking-tighter uppercase">Core Capabilities</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tighter uppercase">
+              Key Risks & Hazards Facing Indian Tech Companies
+            </h2>
             <div className="h-1 w-16 bg-blue-600 mx-auto"></div>
           </div>
-          
-          <div className="grid md:grid-cols-3 gap-10">
-            {itSectors.map((sector, i) => {
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+            {/* First Row → 3 Cards */}
+            {itSectors.slice(0, 3).map((sector, i) => {
               const Icon = sector.Icon;
               return (
-                <div key={i} className="group p-10 bg-white border-l-4 border-blue-600 shadow-sm hover:shadow-2xl transition-all duration-500">
+                <div
+                  key={i}
+                  className="group p-10 bg-white border-l-4 border-blue-600 shadow-sm hover:shadow-2xl transition-all duration-500"
+                >
                   <div className="w-14 h-14 bg-slate-950 text-cyan-400 flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                     <Icon size={28} />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">{sector.name}</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-8 font-sans">{sector.desc}</p>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+                    {sector.name}
+                  </h3>
+                  <p className="text-slate-500 text-sm leading-relaxed mb-8 font-sans">
+                    {sector.desc}
+                  </p>
                   <div className="flex items-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-widest cursor-pointer group-hover:gap-4 transition-all">
                     System Specs <ArrowRight size={14} />
                   </div>
                 </div>
               );
             })}
+
+            {/* Second Row → Centered 2 Cards */}
+            <div className="md:col-span-3 flex flex-col sm:flex-row justify-center gap-6 sm:gap-10">
+              {itSectors.slice(3).map((sector, i) => {
+                const Icon = sector.Icon;
+                return (
+                  <div
+                    key={i + 3}
+                    className="group p-10 bg-white border-l-4 border-blue-600 shadow-sm hover:shadow-2xl transition-all duration-500 w-full max-w-md"
+                  >
+                    <div className="w-14 h-14 bg-slate-950 text-cyan-400 flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                      <Icon size={28} />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+                      {sector.name}
+                    </h3>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-8 font-sans">
+                      {sector.desc}
+                    </p>
+                    <div className="flex items-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-widest cursor-pointer group-hover:gap-4 transition-all">
+                      System Specs <ArrowRight size={14} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* 4. DATA VISUALIZATION SECTION */}
-      <section className="py-24 bg-white px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <div className="order-2 lg:order-1 relative">
-             <div className="bg-slate-950 p-8 rounded-lg shadow-2xl border border-slate-800 font-mono text-sm overflow-hidden">
-                <div className="flex gap-2 mb-4 border-b border-slate-800 pb-4">
-                  <div className="w-3 h-3 rounded-full bg-red-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500"></div>
-                </div>
-                <p className="text-cyan-400">root@vestigo:~$ <span className="text-white">deploy --cluster --prod</span></p>
-                <p className="text-slate-500 mt-2">Checking system integrity...</p>
-                <p className="text-green-500 mt-1">[OK] Firewall Active</p>
-                <p className="text-green-500 mt-1">[OK] Database Synced</p>
-                <p className="text-blue-400 mt-1 animate-pulse italic">Uploading assets to CDN...</p>
-             </div>
-             {/* Abstract Circuit Line */}
-             <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-blue-500/5 rounded-full blur-3xl"></div>
-          </div>
-          
-          <div className="order-1 lg:order-2">
-             <h2 className="text-4xl font-black text-slate-900 mb-8 leading-tight uppercase italic">
-               High-Performance <br />
-               <span className="text-blue-600 not-italic">Infrastructure.</span>
-             </h2>
-             <div className="space-y-6">
-               <div className="flex gap-4">
-                  <Database className="text-blue-600 shrink-0" />
-                  <p className="text-slate-600"><span className="font-bold text-slate-900 underline decoration-blue-200">99.99% Uptime SLA:</span> Enterprise-grade reliability for mission-critical apps.</p>
-               </div>
-               <div className="flex gap-4">
-                  <Globe className="text-blue-600 shrink-0" />
-                  <p className="text-slate-600"><span className="font-bold text-slate-900 underline decoration-blue-200">Global Edge:</span> Content delivery networks that bring data closer to your users.</p>
-               </div>
-             </div>
+      {/* ================= INSURANCE FRAMEWORK ================= */}
+      <section className="bg-[#F7F8FC] py-6 sm:py-10 md:py-12">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.h2
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="text-3xl font-bold text-[#1C2A7D] mb-12"
+          >
+            Comprehensive Insurance Protection Framework
+          </motion.h2>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              visible: { transition: { staggerChildren: 0.08 } },
+            }}
+            className="
+                grid grid-cols-1 sm:grid-cols-2 gap-8
+                lg:flex lg:flex-wrap lg:justify-center
+            "
+          >
+            {[
+              {
+                title: "Cyber Risk Insurance",
+                desc: "Protection against data breaches, cyber attacks, recovery costs, legal fees, and reputational damage.",
+              },
+              {
+                title: "Professional Indemnity",
+                desc: "Covers claims arising from professional errors, omissions, or negligence in services rendered. Essential for IT firms providing advisory or software development services.",
+              },
+              {
+                title: "Crime & Fidelity",
+                desc: "Guards against financial losses due to employee fraud, theft, or other dishonest acts. Protects company assets from internal and external criminal activities.",
+              },
+              {
+                title: "Property & Business Interruption",
+                desc: "Coverage for physical offices, data centres, critical equipment, and revenue loss following property damage or operational disruption events.",
+              },
+              {
+                title: "Employee-Related Covers",
+                desc: "Group health insurance, personal accident coverage, workmen's compensation, and statutory protection for your workforce across locations.",
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.title}
+                variants={fadeUp}
+                whileHover={{
+                  y: -10,
+                  rotateX: 6,
+                  scale: 1.03,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 18,
+                }}
+                className="
+                    bg-white border border-[#1C2A7D]/10
+                    rounded-2xl px-7 py-7
+                    shadow-[0_12px_30px_rgba(28,42,125,0.14)]
+                    hover:shadow-[0_28px_60px_rgba(28,42,125,0.28)]
+                    transition-transform
+                    [transform-style:preserve-3d]
+                    w-full sm:w-auto
+                    lg:w-[360px]
+                "
+              >
+                <h3 className="font-semibold text-[#1C2A7D] mb-2 text-lg">
+                  {item.title}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+
+          {/* NOTE */}
+          <div
+            className="mt-12 bg-[#E8D534]/20 border-l-4 border-[#E8D534]
+                          px-6 py-5 text-[#1C2A7D] font-medium"
+          >
+            Protecting your technology business requires more than standard
+            policies — it demands specialist insurance solutions designed for
+            the digital age and India&apos;s unique regulatory landscape.
           </div>
         </div>
       </section>
