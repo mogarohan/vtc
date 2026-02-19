@@ -1,13 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'export', // Enables the "out" folder
+  trailingSlash: true,
   images: {
+    unoptimized: true, // Required for static export
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: '127.0.0.1',
-        port: '8000',
+        protocol: 'https',
+        hostname: 'happy.techstrota.com',
         pathname: '/storage/**',
       },
     ],

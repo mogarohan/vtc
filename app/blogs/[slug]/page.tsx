@@ -1,4 +1,8 @@
-import Image from 'next/image';
+import { notFound } from 'next/navigation';
+
+export const dynamic = 'force-static';
+export const dynamicParams = false;
+export const revalidate = false;
 
 type Post = {
   id: number;
@@ -8,16 +12,30 @@ type Post = {
   image?: string | null;
 };
 
-async function getPost(slug: string): Promise<Post> {
+export async function generateStaticParams() {
   const res = await fetch(
-    `https://happy.techstrota.com/api/blogs/${slug}`,
-    { cache: 'no-store' }
+    'https://happy.techstrota.com/api/blogs',
+    { cache: 'force-cache' }
   );
 
   if (!res.ok) {
-    throw new Error('Failed to fetch blog');
+    throw new Error('Failed to fetch blog slugs');
   }
 
+  const posts = await res.json();
+
+  return posts.map((post: { slug: string }) => ({
+    slug: post.slug,
+  }));
+}
+
+async function getPost(slug: string): Promise<Post | null> {
+  const res = await fetch(
+    `https://happy.techstrota.com/api/blogs/${slug}`,
+    { cache: 'force-cache' }
+  );
+
+  if (!res.ok) return null;
   return res.json();
 }
 
@@ -26,25 +44,26 @@ export default async function BlogDetailPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  // ✅ unwrap params
   const { slug } = await params;
 
   const post = await getPost(slug);
 
+  if (!post) notFound();
+
   return (
-    <div className="max-w-4xl mx-auto px-6 pt-32 pb-16">
+    <div className="max-w-4xl mx-auto p-8">
       <h1 className="text-4xl font-bold mb-6">{post.title}</h1>
 
       {post.image && (
         <img
           src={post.image}
           alt={post.title}
-          className="w-full h-[420px] object-cover rounded-xl mb-8"
+          className="w-full h-auto rounded mb-6"
         />
       )}
 
       <div
-        className="prose prose-lg max-w-none"
+        className="prose max-w-none"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
     </div>

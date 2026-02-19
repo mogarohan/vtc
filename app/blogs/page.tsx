@@ -1,21 +1,23 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+// This forces the page to be treated as a static build
+export const dynamic = 'force-static';
+
 type Post = {
-  id: number
-  title: string
-  slug: string
-  content: string
-  thumbnail?: string | null
-  paragraph?: string
-  image?: string | null
-}
+  id: number;
+  title: string;
+  slug: string;
+  content: string;
+  thumbnail?: string | null;
+  paragraph?: string;
+  image?: string | null;
+};
 
 // 1. Function to fetch data from Laravel
 async function getPosts(): Promise<Post[]> {
-  const res = await fetch('https://happy.techstrota.com/api/blogs', {
-    cache: 'no-store',
-  });
+  // ✅ FIX: Removed { cache: 'no-store' } to allow static export
+  const res = await fetch('https://happy.techstrota.com/api/blogs');
 
   if (!res.ok) {
     throw new Error('Failed to fetch posts');
@@ -24,9 +26,8 @@ async function getPosts(): Promise<Post[]> {
   return res.json();
 }
 
-
 export default async function BlogPage() {
-  const posts = await getPosts(); // posts is already an array
+  const posts = await getPosts();
 
   return (
     <div className="max-w-6xl mx-auto p-8 pt-30">

@@ -165,8 +165,7 @@ export default function IndustriesHome() {
             <div>
                <h2 className="text-4xl font-bold mb-6">Built for the <br /><span className="text-blue-600">Global Economy</span></h2>
                <p className="text-slate-600 mb-8 leading-relaxed text-lg">
-                 Humaara platform global standards (ISO, GDPR, NIST) ko follow karta hai, taaki aapka business duniya mein kahin bhi scale kar sake.
-               </p>
+                 Our platform follows global standards (ISO, GDPR, NIST) to ensure your business can scale anywhere in the world.  </p>
                <div className="grid grid-cols-2 gap-8">
                   <div className="flex gap-4 items-start">
                     <div className="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-lg text-blue-600">
@@ -204,7 +203,7 @@ export default function IndustriesHome() {
         <div className="max-w-3xl mx-auto">
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8">Ready to modernize your Industry?</h2>
           <p className="text-slate-500 text-lg mb-12">
-            Apne operations ko digitize karein aur productivity ko nayi oonchaiyon par le jayein.
+            “Digitize your operations and take productivity to new heights.”
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 rounded-full font-bold transition-all shadow-xl shadow-blue-600/20 text-center flex items-center justify-center gap-3">
