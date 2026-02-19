@@ -14,6 +14,22 @@ import {
   Sparkles,
   ShoppingCart
 } from 'lucide-react';
+import Link from 'next/link';
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+
+      ease: 'easeOut',
+    },
+  },
+};
 
 const IndustrialMarketplace = () => {
   const containerRef = useRef(null);
@@ -26,153 +42,216 @@ const IndustrialMarketplace = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  const products = [
-    {
-      id: 1,
-      name: 'Variable Frequency Drive (VFD)',
-      price: '₹45,000',
-      spec: '5.5kW / 440V',
-      tag: 'Electrical',
-      image: '/products/vfd.jpg'
-    },
-    {
-      id: 2,
-      name: 'ISO Safety Harness Kit',
-      price: '₹2,800',
-      spec: 'Double Lanyard',
-      tag: 'Safety',
-      image: '/products/safety-harness.jpg'
-    },
-    {
-      id: 3,
-      name: 'Pneumatic Cylinder - 50mm',
-      price: '₹5,200',
-      spec: 'Stainless Steel',
-      tag: 'Automation',
-      image: '/products/pneumatic-cylinder.jpg'
-    },
-    {
-      id: 4,
-      name: 'Industrial Air Compressor',
-      price: '₹1,25,000',
-      spec: '10 HP / 300L',
-      tag: 'Machinery',
-      image: '/products/air-compressor.jpg'
-    }
-  ];
-
+  
   return (
     <main
       ref={containerRef}
-      className="min-h-screen bg-white text-slate-900 overflow-hidden"
+      className="bg-white text-slate-900 overflow-hidden"
     >
       {/* ================= HERO SECTION ================= */}
-      <section className="relative min-h-screen flex items-center justify-center bg-[#0F172A] pt-32 pb-80">
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{ scale: [1, 1.2, 1], x: [0, 50, 0] }}
-            transition={{ duration: 10, repeat: Infinity }}
-            className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[120px]"
-          />
-          <motion.div
-            animate={{ scale: [1, 1.3, 1], x: [0, -50, 0] }}
-            transition={{ duration: 15, repeat: Infinity }}
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-indigo-600/20 rounded-full blur-[120px]"
-          />
-        </div>
+      <section className="relative  flex items-center justify-center bg-[#0F172A] pt-20 pb-20">
+     
 
         <div className="relative z-10 text-center px-6 max-w-7xl">
           <motion.div style={{ y, opacity }}>
             <div className="inline-flex items-center gap-2 px-5 py-2 mb-8 border border-blue-400/20 rounded-full bg-blue-500/5 text-blue-400 text-xs font-black uppercase tracking-widest">
               <Sparkles size={14} />
-              Global Industrial Marketplace
+              The Speed Commerce Era
             </div>
 
-            <h1 className="text-6xl md:text-[7.5rem] font-black text-white leading-[1] uppercase">
-              Precision Parts.
+            <h1 className="text-6xl md:text-[5rem] font-black text-white leading-[1] uppercase">
+              Revolutionizing 
               <br />
               <span className="bg-gradient-to-r from-blue-400 to-cyan-300 text-transparent bg-clip-text">
-                Supply Chain.
+                Retail Delivery
               </span>
             </h1>
 
             <p className="text-xl text-slate-400 max-w-2xl mx-auto mt-8 mb-12">
-              Factory-direct procurement with GST billing and global logistics.
+              10-minute delivery revolution, dark store networks, hyperlocal fulfillment, AI-powered personalization, social commerce explosion, and seamless omnichannel experiences redefining consumer expectations globally.
             </p>
 
-            <div className="flex justify-center gap-6 flex-wrap">
-              <button className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-5 rounded-2xl font-black uppercase flex items-center gap-3">
-                Request Bulk Quote <ArrowRight size={20} />
-              </button>
-              <button className="bg-white/10 text-white px-10 py-5 rounded-2xl font-black uppercase">
-                Partner Portal
-              </button>
-            </div>
           </motion.div>
         </div>
       </section>
-
-      {/* ================= VALUE CARDS ================= */}
-      <section className="relative -mt-40 z-20 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
-          {[
-            { icon: <ShieldCheck />, label: 'ISO Certified' },
-            { icon: <FileText />, label: 'GST Ready' },
-            { icon: <Truck />, label: 'Fast Delivery' },
-            { icon: <Boxes />, label: 'Bulk Stock' }
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-[2.5rem] p-8 text-center shadow-xl"
-            >
-              <div className="text-blue-600 mb-4 flex justify-center">
-                {item.icon}
-              </div>
-              <h4 className="font-black uppercase text-sm">{item.label}</h4>
-            </div>
-          ))}
-        </div>
-      </section>
-
+<div className="max-w-6xl mx-auto px-6 text-center">
+      <h2 className="text-4xl lg:text-5xl font-black mt-8 text-slate-900 tracking-tighter uppercase leading-none">
+      Digital Commerce  {" "}
+      <span className="text-blue-600">Risks</span>
+    </h2>
+</div>
       {/* ================= PRODUCTS ================= */}
-      <section className="py-32 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-black uppercase mb-16">
-            Market Essentials
-          </h2>
+      <section className="bg-[#F7F8FC] py-10">
+              <div className="max-w-6xl mx-auto px-6">
+                <motion.h2
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  className="text-4xl font-black text-slate-900 mb-10"
+                ></motion.h2>
+      
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+                >
+                  {[
+  {
+    title: "Cyber & Data Breaches",
+    desc: "Customer data theft, payment fraud, ransomware, GDPR violations",
+    image: "/ecommerce/1.png",
+  },
+  {
+    title: "Product Liability",
+    desc: "Defective products, counterfeit goods, safety violations, recall costs",
+    image: "/ecommerce/2.png",
+  },
+  {
+    title: "Logistics & Transit Risks",
+    desc: "Last-mile delivery failures, goods damage, theft, vehicle accidents",
+    image: "/ecommerce/3.png",
+  },
+  {
+    title: "Business Interruption",
+    desc: "Platform downtime, server crashes, payment gateway failures, peak season disruptions",
+    image: "/ecommerce/4.png",
+  },
+  {
+    title: "Professional Indemnity",
+    desc: "Mis-selling, wrong product delivery, pricing errors, service failures",
+    image: "/ecommerce/5.png",
+  },
+  {
+    title: "Warehouse Operations",
+    desc: "Fire, inventory loss, equipment breakdown, worker injuries ",
+    image: "/ecommerce/6.png",
+  },
+]
+.map((item) => (
+                    <motion.div
+                      key={item.title}
+                      variants={fadeUp}
+                      whileHover={{ y: -8 }}
+                      transition={{ type: "spring", stiffness: 220, damping: 18 }}
+                      className="group bg-white rounded-2xl overflow-hidden
+                        flex flex-col
+                        border border-[#1C2A7D]/10
+                        shadow-[0_14px_35px_rgba(28,42,125,0.14)]
+                        hover:shadow-[0_28px_60px_rgba(28,42,125,0.25)]
+                        transition"
+                    >
+                      {/* IMAGE */}
+                      <div
+                        className="w-full min-h-[200px] bg-[#F7F8FC]
+                      flex items-center justify-center p-4"
+                      >
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          className="
+            max-h-[200px]
+            w-auto
+            object-contain
+            transition-transform
+            duration-500
+            group-hover:scale-[1.03]
+          "
+                        />
+                      </div>
+      
+                      <div className="p-5 mt-auto">
+                        <h3 className="text-lg font-semibold text-[#1C2A7D] text-center">
+                          {item.title}
+                        </h3>
+                      </div>
+                      <div className="p-1 mt-auto mb-2">
+                        <h3 className="text-lg font-semibold text-black text-center">
+                          {item.desc}
+                        </h3>
+                      </div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+            </section>
+<section className="w-full  bg-white py-10">
+  <div className="max-w-6xl mx-auto px-6 text-center">
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {products.map((p) => (
-              <motion.div
-                key={p.id}
-                whileHover={{ y: -10 }}
-                className="border rounded-[2.5rem] p-7 bg-white shadow-sm hover:shadow-xl flex flex-col"
-              >
-                <div className="h-56 bg-slate-50 rounded-[2rem] mb-6 relative overflow-hidden">
-                  <Image
-                    src={p.image}
-                    alt={p.name}
-                    fill
-                    className="object-contain p-6 group-hover:scale-110 transition-transform duration-700"
-                  />
-                </div>
+    {/* HEADING */}
+    <h2 className="text-4xl lg:text-5xl font-black mb-16 text-slate-900 tracking-tighter uppercase leading-none">
+      E-Commerce Protection {" "}
+      <span className="text-blue-600">Suite</span>
+    </h2>
 
-                <h3 className="font-bold text-lg">{p.name}</h3>
-                <p className="text-xs text-slate-400 uppercase mb-6">
-                  {p.spec}
-                </p>
-
-                <div className="mt-auto flex justify-between items-center pt-6 border-t">
-                  <span className="text-2xl font-black">{p.price}</span>
-                  <button className="bg-blue-600 text-white p-4 rounded-2xl">
-                    <ShoppingCart size={22} />
-                  </button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+    {/* CARDS GRID */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-4xl mx-auto text-left">
+      
+      {/* Card 1 */}
+      <div className="flex gap-6 items-start">
+        <div className="bg-blue-100 p-4 rounded-2xl">
+         
         </div>
-      </section>
+        <h4 className="font-bold text-xl text-slate-800">
+          Cyber Liability & Data Breach
+        </h4>
+      </div>
+
+      {/* Card 2 */}
+      <div className="flex gap-6 items-start">
+        <div className="bg-blue-100 p-4 rounded-2xl">
+         
+        </div>
+        <h4 className="font-bold text-xl text-slate-800">
+          Product Liability Insurance
+        </h4>
+      </div>
+
+      {/* Card 3 */}
+      <div className="flex gap-6 items-start">
+        <div className="bg-blue-100 p-4 rounded-2xl">
+         
+        </div>
+        <h4 className="font-bold text-xl text-slate-800">
+         Marine & Transit Coverage
+        </h4>
+      </div>
+
+      {/* Card 4 */}
+      <div className="flex gap-6 items-start">
+        <div className="bg-blue-100 p-4 rounded-2xl">
+          
+        </div>
+        <h4 className="font-bold text-xl text-slate-800">
+          Business Interruption Insurance
+        </h4>
+      </div>
+
+      {/* Card 5 – Centered Single */}
+     <div className="flex gap-6 items-start">
+        <div className="bg-blue-100 p-4 rounded-2xl">
+         
+        </div>
+        <h4 className="font-bold text-xl text-slate-800">
+         Professional Indemnity
+        </h4>
+      </div>
+
+      {/* Card 4 */}
+      <div className="flex gap-6 items-start">
+        <div className="bg-blue-100 p-4 rounded-2xl">
+          
+        </div>
+        <h4 className="font-bold text-xl text-slate-800">
+          Property & Stock Insurance
+        </h4>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* ================= RFQ ================= */}
       <section className="py-32 px-6 bg-slate-50">

@@ -11,24 +11,44 @@ import {
   Zap,
   BarChart,
   CheckCircle2,
+  Flame,
+  Settings,
+  ShieldAlert,
+  ClipboardCheck,
+  LockKeyhole,
 } from "lucide-react";
 
 export default function PackagingPage() {
   const services = [
     {
-      title: "Eco-Friendly Solutions",
-      Icon: Recycle,
-      desc: "100% biodegradable and recyclable materials that meet global sustainability standards.",
+      title: "Fire & Explosion Risk",
+      Icon: Flame,
+      desc: "Flammable materials, chemical adhesives, printing inks, and high-speed machinery create significant fire hazards that can devastate production facilities.",
     },
     {
-      title: "Precision Corrugated",
-      Icon: Box,
-      desc: "Structural engineering tailored to maximize product protection while minimizing material waste.",
+      title: "Machinery Breakdown",
+      Icon: Settings,
+      desc: "Printing presses, die-cutting machines, filling lines, and automated packaging systems are prone to mechanical failures causing production delays and revenue loss.",
     },
     {
-      title: "Logistics Intelligence",
+      title: "Supply Chain Disruption",
       Icon: Truck,
-      desc: "Packaging designed to optimize palletization and significantly reduce freight costs.",
+      desc: "Dependence on paper, plastic resin, aluminum, and glass suppliers, combined with logistics challenges, threatens timely delivery and customer commitments.",
+    },
+     {
+      title: "Product Contamination",
+      Icon: ShieldAlert,
+      desc: "Defective packaging can lead to product spoilage, contamination incidents, costly recalls, and damage to client relationships and brand reputation.",
+    },
+     {
+      title: "Regulatory Compliance",
+      Icon: ClipboardCheck,
+      desc: "Evolving food-contact regulations, recycling mandates, labeling requirements, and sustainability certifications demand continuous adaptation and investment.",
+    },
+     {
+      title: "Intellectual Property",
+      Icon: LockKeyhole,
+      desc: "Proprietary designs, printing techniques, and innovative packaging solutions require protection from counterfeiting, patent infringement, and trade secret theft.",
     },
   ];
 
@@ -50,14 +70,14 @@ export default function PackagingPage() {
               <Package size={14} /> Material Engineering 4.0
             </div>
             <h1 className="text-5xl md:text-8xl font-black text-blue-900 mb-8 leading-[1.05] tracking-tighter">
-              Structural <br />
-              <span className="text-blue-600 italic">Protection.</span>
+              Packaging Industry<br />
+              <span className="text-blue-600 italic">Insurance Solutions</span>
             </h1>
-            <p className="text-xl text-slate-500 max-w-xl mb-10 leading-relaxed font-light">
-              We bridge the gap between high-strength durability and
-              environmental responsibility. Your product deserves a shell that
-              reflects your quality.
-            </p>
+            <p className="text-xl text-slate-500 max-w-xl mb-10 leading-relaxed font-bold">
+              Protecting the Backbone of Global Commerce. </p>
+              <p className="text-xl mb-10">
+              The packaging industry is essential to modern supply chains, ensuring product safety, shelf appeal, and logistics efficiency across food, pharmaceuticals, consumer goods, and e-commerce. With growing demand for sustainable materials, smart packaging technologies, and rapid delivery systems, manufacturers face increasing complexity. Rising raw material costs, stringent food-safety regulations, and the shift toward recyclable and biodegradable solutions create both opportunities and operational challenges.
+           </p>
             <div className="flex flex-wrap justify-center lg:justify-start gap-4">
               <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-xl font-bold transition-all flex items-center gap-2 shadow-2xl shadow-blue-200">
                 Get Custom Specs <ArrowRight size={18} />
@@ -92,7 +112,7 @@ export default function PackagingPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
             <h2 className="text-4xl md:text-5xl font-black text-blue-900 mb-4 tracking-tight">
-              Our Core Framework
+              Key Threats
             </h2>
             <div className="h-2 w-24 bg-blue-600 mx-auto rounded-full"></div>
           </div>
@@ -111,12 +131,10 @@ export default function PackagingPage() {
                   <h3 className="text-2xl font-bold text-blue-900 mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-slate-500 text-lg leading-relaxed mb-8 font-light">
+                  <p className="text-slate-500 text-lg leading-relaxed mb-8 font-bold">
                     {service.desc}
                   </p>
-                  <div className="flex items-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-widest cursor-pointer group-hover:gap-4 transition-all underline underline-offset-8">
-                    Review Specifications <ArrowRight size={14} />
-                  </div>
+                  
                 </div>
               );
             })}
@@ -154,17 +172,18 @@ export default function PackagingPage() {
 
           <div>
             <h2 className="text-5xl font-black text-blue-900 mb-8 leading-[1.1]">
-              Engineered for <br />
+              Comprehensive <br />
               <span className="text-blue-600 underline decoration-blue-200 underline-offset-[12px]">
-                Circularity.
+                Protection
               </span>
             </h2>
             <div className="space-y-4">
               {[
-                "100% Post-Consumer Recycled Fiber",
-                "Water-Based Non-Toxic Adhesives",
-                "Stack-Weight Optimization Algorithms",
-                "Zero-Waste Production Facilities",
+                "Property & Business Interruption",
+                "Product Liability & Recall",
+                "Environmental Impairment",
+                "Marine & Transit",
+                "Machinery Breakdown",
               ].map((item, i) => (
                 <div
                   key={i}

@@ -9,28 +9,36 @@ import {
   HandCoins,
   BarChart4,
   Globe2,
+  Layers,
   Rocket,
   CheckCircle2,
+  FileText,
+
 } from "lucide-react";
 
 export default function MSMEPage() {
   const supportSectors = [
-    {
-      title: "Business Scaling",
-      Icon: Rocket,
-      desc: "Strategic consulting and digital tools to help small businesses transition into medium enterprises.",
-    },
-    {
-      title: "MSME Financing",
-      Icon: HandCoins,
-      desc: "Collateral-free loan assistance and government subsidy guidance for micro-units.",
-    },
-    {
-      title: "Compliance Support",
-      Icon: ShieldCheck,
-      desc: "Automated tax, GST, and regulatory filing systems designed specifically for SMEs.",
-    },
-  ];
+  {
+    title: "Package Policies",
+    Icon: Layers,
+    desc: "Bundled coverage solutions combining property, liability, and business interruption at competitive premiums designed for operational efficiency.",
+  },
+  {
+    title: "Professional Indemnity",
+    Icon: ShieldCheck,
+    desc: "Protect against claims arising from professional advice, errors, or omissions with tailored coverage for service-based businesses.",
+  },
+  {
+    title: "Trade Credit Insurance",
+    Icon: FileText,
+    desc: "Safeguard your cash flow against customer payment defaults and insolvency risks in challenging economic conditions.",
+  },
+  {
+    title: "Key Person Cover",
+    Icon: Users,
+    desc: "Financial protection if critical team members become unable to work, ensuring business continuity during unexpected challenges.",
+  },
+];
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
@@ -43,24 +51,16 @@ export default function MSMEPage() {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
           <div className="flex-1 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-6 border border-blue-200 uppercase tracking-widest">
-              <Briefcase size={14} /> Supporting Local Economy
+              <Briefcase size={14} />Tailored Protection for Growing Businesses
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-blue-900 mb-8 leading-[1.1] tracking-tight">
-              Small Business. <br />
-              <span className="text-blue-500 italic">Big Potential.</span>
+              SME & MSME <br />
+              <span className="text-blue-500 italic"> Insurance</span>
             </h1>
-            <p className="text-xl text-slate-500 max-w-xl mb-10 leading-relaxed font-light">
-              We provide the digital infrastructure and financial expertise that
-              MSMEs need to compete in a global marketplace.
+            <p className="text-xl text-slate-500 max-w-xl mb-10 leading-relaxed font-bold">
+             Small and medium enterprises form the backbone of our economy, yet often face disproportionate insurance challenges. We specialise in delivering cost-effective, comprehensive coverage that scales with your business ambitions.
             </p>
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold transition-all flex items-center gap-2 shadow-xl shadow-blue-200">
-                Start Growing <ArrowRight size={18} />
-              </button>
-              <button className="border-2 border-blue-100 text-blue-600 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition-all">
-                Check Eligibility
-              </button>
-            </div>
+           
           </div>
 
           <div className="flex-1 w-full max-w-md bg-blue-800 rounded-[3rem] p-12 relative shadow-2xl overflow-hidden group">
@@ -94,26 +94,9 @@ export default function MSMEPage() {
         </div>
       </section>
 
-      {/* 2. SME TRUST STRIP */}
-      <div className="bg-blue-50 py-12 border-y border-blue-100 px-6">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-around items-center gap-8 opacity-60">
-          <div className="flex items-center gap-2 font-bold text-blue-900">
-            <ShieldCheck /> ISO Certified
-          </div>
-          <div className="flex items-center gap-2 font-bold text-blue-900">
-            <Globe2 /> Global Standards
-          </div>
-          <div className="flex items-center gap-2 font-bold text-blue-900">
-            <HandCoins /> Trusted Finance
-          </div>
-          <div className="flex items-center gap-2 font-bold text-blue-900">
-            <Users /> Community Driven
-          </div>
-        </div>
-      </div>
-
+  
       {/* 3. CORE SUPPORT GRID */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-10 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-black text-blue-900 mb-4 tracking-tighter">
@@ -124,7 +107,7 @@ export default function MSMEPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-10">
+          <div className="grid md:grid-cols-2 gap-10">
             {supportSectors.map((sector, i) => {
               const Icon = sector.Icon;
               return (
@@ -141,9 +124,7 @@ export default function MSMEPage() {
                   <p className="text-slate-500 text-sm leading-relaxed mb-8">
                     {sector.desc}
                   </p>
-                  <button className="flex items-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-widest">
-                    Learn More <ArrowRight size={14} />
-                  </button>
+              
                 </div>
               );
             })}
@@ -155,10 +136,14 @@ export default function MSMEPage() {
       <section className="py-24 bg-blue-900 px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative z-10">
-            <h2 className="text-5xl font-black text-white mb-8 tracking-tighter italic">
-              From Micro <br /> To Massive.
+            <h2 className="text-5xl font-black text-black mb-8 tracking-tighter italic">
+              From Micro , To Massive.
             </h2>
-            <div className="space-y-4">
+            <p className="font-black text-white mb-8 tracking-tighter bold">
+              Our SME insurance programmes are specifically designed to address the unique vulnerabilities of smaller operations. Whether you're a retail establishment, professional service firm, or manufacturing unit, we structure policies that provide maximum protection without unnecessary complexity or expense.
+We negotiate with insurers who understand the SME sector, securing favourable terms and flexible payment structures. Our approach includes regular policy reviews to ensure your cover evolves alongside your business growth and changing risk profile.
+            </p>
+            {/* <div className="space-y-4">
               {[
                 "Digital Onboarding in 24 Hours",
                 "Access to Regional Hub Networks",
@@ -173,7 +158,7 @@ export default function MSMEPage() {
                   <p className="text-white font-medium">{item}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <div className="bg-white p-10 rounded-[3rem] shadow-3xl">

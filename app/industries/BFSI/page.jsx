@@ -13,6 +13,14 @@ import {
   Activity,
   PieChart,
   Sparkles,
+   ShieldAlert,
+  FileWarning,
+  Users,
+  Fingerprint,
+  PauseCircle,
+  ClipboardCheck,
+  Shield,
+  FileText,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -29,32 +37,44 @@ const BfsisSuite = () => {
   const y = useTransform(scrollYProgress, [0, 1], [0, 150]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
-  const modules = [
-    {
-      title: "Core Banking Engine",
-      desc: "A centralized system for high-volume, real-time transaction processing with multi-currency support.",
-      icon: <Building className="w-10 h-10 text-blue-600" />,
-      tag: "Core Banking",
-    },
-    {
-      title: "Claims Automation",
-      desc: "AI-driven insurance claims processing that reduces settlement turnaround time by up to 60%.",
-      icon: <ShieldCheck className="w-10 h-10 text-blue-600" />,
-      tag: "Insurance",
-    },
-    {
-      title: "Wealth Management",
-      desc: "Advanced portfolio analytics and automated advisory tools tailored for high-growth investment strategies.",
-      icon: <PieChart className="w-10 h-10 text-blue-600" />,
-      tag: "Investment",
-    },
-    {
-      title: "Digital Gateway",
-      desc: "Seamless UPI integration and secure mobile banking APIs engineered for the modern FinTech landscape.",
-      icon: <Smartphone className="w-10 h-10 text-blue-600" />,
-      tag: "FinTech",
-    },
-  ];
+const modules = [
+  {
+    title: "Cyber & Data Breaches",
+    desc: "Ransomware attacks, data theft, system compromises, and regulatory fines impacting digital and core banking environments.",
+    icon: <ShieldAlert className="w-10 h-10 text-blue-600" />,
+    tag: "Cyber Risk",
+  },
+  {
+    title: "Professional Indemnity",
+    desc: "Advisory errors, mis-selling incidents, and compliance failures leading to client claims and financial liabilities.",
+    icon: <FileWarning className="w-10 h-10 text-blue-600" />,
+    tag: "Advisory Risk",
+  },
+  {
+    title: "Directors & Officers",
+    desc: "Management decisions, shareholder disputes, and regulatory actions exposing leadership to personal liability.",
+    icon: <Users className="w-10 h-10 text-blue-600" />,
+    tag: "Management Risk",
+  },
+  {
+    title: "Crime & Fidelity",
+    desc: "Employee fraud, funds transfer fraud, and social engineering attacks causing direct financial losses.",
+    icon: <Fingerprint className="w-10 h-10 text-blue-600" />,
+    tag: "Financial Crime",
+  },
+  {
+    title: "Business Interruption",
+    desc: "System downtime, branch closures, and operational disruptions affecting service continuity and revenue.",
+    icon: <PauseCircle className="w-10 h-10 text-blue-600" />,
+    tag: "Operational Risk",
+  },
+  {
+    title: "Regulatory & Compliance",
+    desc: "Penalties, license revocation risks, and legal proceedings arising from regulatory non-compliance.",
+    icon: <ClipboardCheck className="w-10 h-10 text-blue-600" />,
+    tag: "Compliance",
+  },
+];
 
   return (
     <main
@@ -86,37 +106,28 @@ const BfsisSuite = () => {
             animate={{ scale: 1, opacity: 1 }}
             className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 backdrop-blur-md"
           >
-            <Sparkles size={16} /> BANK-GRADE FINANCIAL SOLUTIONS
+            <Sparkles size={16} /> Digital Transformation of Finance
           </motion.div>
 
           <h1 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[1.1]">
-            Securing the{" "}
+            Banking - {" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-              Future
+              Financial Services
             </span>{" "}
             <br />
-            of Digital Finance.
+            & Insurance Solutions
           </h1>
 
           <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
-            The Vestigo BFSI Suite automates banking, insurance, and fintech
-            operations end-to-end. A robust, SOC2-compliant ecosystem built on
-            cloud-native architecture.
+           Digital banking revolution, fintech disruption, regulatory evolution, open banking APIs, blockchain integration, and customer experience innovation reshaping financial services globally.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20"
-            >
-              Get Enterprise Quote <ArrowRight size={18} />
-            </Link>
-          </div>
+          
         </motion.div>
       </section>
 
       {/* 2. BFSI MODULES GRID - Floating overlap */}
-      <section className="relative z-20 -mt-24 py-14 px-6 bg-white">
+      <section className="relative z-20 -mt-24 py-10 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="mb-16">
             <h2 className="text-4xl font-black text-slate-900 mb-4 tracking-tighter uppercase">
@@ -125,7 +136,7 @@ const BfsisSuite = () => {
             <div className="h-1.5 w-20 bg-blue-600 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {modules.map((m, i) => (
               <motion.div
                 key={i}
@@ -151,104 +162,78 @@ const BfsisSuite = () => {
       </section>
 
       {/* 4. INTEGRATED ECOSYSTEM SECTION */}
-      <section className="py-10 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-          <div className="flex-1">
-            <h2 className="text-5xl font-black mb-8 text-slate-900 tracking-tighter uppercase leading-none">
-              Unified BFSI <br />
-              <span className="text-blue-600">Infrastructure</span>
-            </h2>
+<section className="w-full  bg-white py-10">
+  <div className="max-w-6xl mx-auto px-6 text-center">
 
-            <div className="space-y-10">
-              <div className="flex gap-6">
-                <div className="mt-1 bg-blue-100 p-3 rounded-2xl h-fit">
-                  <Lock className="text-blue-600 w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-xl text-slate-800 tracking-tight">
-                    Zero-Trust Security
-                  </h4>
-                  <p className="text-slate-600 leading-relaxed">
-                    Multi-layer encryption and biometric authentication to
-                    safeguard institutional data assets.
-                  </p>
-                </div>
-              </div>
+    {/* HEADING */}
+    <h2 className="text-4xl lg:text-5xl font-black mb-16 text-slate-900 tracking-tighter uppercase leading-none">
+      Financial Institution{" "}
+      <span className="text-blue-600">Protection</span>
+    </h2>
 
-              <div className="flex gap-6">
-                <div className="mt-1 bg-blue-100 p-3 rounded-2xl h-fit">
-                  <Activity className="text-blue-600 w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-xl text-slate-800 tracking-tight">
-                    Real-time Fraud Detection
-                  </h4>
-                  <p className="text-slate-600 leading-relaxed">
-                    AI-driven patterns identify and block suspicious
-                    transactions within milliseconds.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-6">
-                <div className="mt-1 bg-blue-100 p-3 rounded-2xl h-fit">
-                  <RefreshCw className="text-blue-600 w-6 h-6" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-xl text-slate-800 tracking-tight">
-                    Omni-Channel Sync
-                  </h4>
-                  <p className="text-slate-600 leading-relaxed">
-                    Seamless data synchronization across Mobile, Web, and Branch
-                    operations.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex-1 w-full p-12 bg-[#0F172A] rounded-[3rem] shadow-2xl relative">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="h-40 rounded-2xl bg-slate-800 border border-slate-700 p-6 flex flex-col justify-end">
-                <span className="text-3xl font-bold text-white">SOC2</span>
-                <span className="text-xs text-blue-400 font-bold uppercase tracking-widest">
-                  Compliant
-                </span>
-              </div>
-              <div className="h-40 rounded-2xl bg-blue-600 border border-blue-500 p-6 flex flex-col justify-end">
-                <span className="text-3xl font-bold text-white">4ms</span>
-                <span className="text-xs text-blue-100 font-bold uppercase tracking-widest">
-                  Latency
-                </span>
-              </div>
-              <div className="h-40 rounded-2xl bg-slate-800 border border-slate-700 p-6 flex flex-col justify-end col-span-2">
-                <div className="flex justify-between items-end">
-                  <div>
-                    <span className="text-3xl font-bold text-white uppercase tracking-tighter italic">
-                      Active
-                    </span>
-                    <p className="text-xs text-slate-400 font-bold uppercase tracking-widest">
-                      Node Security Status
-                    </p>
-                  </div>
-                  <div className="flex gap-1 mb-2">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                      <div
-                        key={i}
-                        className="w-1.5 h-6 bg-blue-500 rounded-full animate-pulse"
-                        style={{ animationDelay: `${i * 0.2}s` }}
-                      />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    {/* CARDS GRID */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-4xl mx-auto text-left">
+      
+      {/* Card 1 */}
+      <div className="flex gap-6 items-start">
+        <div className="bg-blue-100 p-4 rounded-2xl">
+          <Shield className="text-blue-600 w-6 h-6" />
         </div>
-      </section>
+        <h4 className="font-bold text-xl text-slate-800">
+          Cyber Liability & Data Breach
+        </h4>
+      </div>
+
+      {/* Card 2 */}
+      <div className="flex gap-6 items-start">
+        <div className="bg-blue-100 p-4 rounded-2xl">
+          <FileText className="text-blue-600 w-6 h-6" />
+        </div>
+        <h4 className="font-bold text-xl text-slate-800">
+          Professional Indemnity
+        </h4>
+      </div>
+
+      {/* Card 3 */}
+      <div className="flex gap-6 items-start">
+        <div className="bg-blue-100 p-4 rounded-2xl">
+          <Users className="text-blue-600 w-6 h-6" />
+        </div>
+        <h4 className="font-bold text-xl text-slate-800">
+          Directors & Officers Liability
+        </h4>
+      </div>
+
+      {/* Card 4 */}
+      <div className="flex gap-6 items-start">
+        <div className="bg-blue-100 p-4 rounded-2xl">
+          <Fingerprint className="text-blue-600 w-6 h-6" />
+        </div>
+        <h4 className="font-bold text-xl text-slate-800">
+          Bankers Blanket Bond
+        </h4>
+      </div>
+
+      {/* Card 5 – Centered Single */}
+      <div className="flex gap-6 items-start sm:col-span-2 justify-center">
+        <div className="flex gap-6">
+          <div className="bg-blue-100 p-4 rounded-2xl">
+            <PauseCircle className="text-blue-600 w-6 h-6" />
+          </div>
+          <h4 className="font-bold text-xl text-slate-800">
+            Business Interruption
+          </h4>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
       {/* 5. BFSI FOOTER CTA */}
-      <section className="py-24 px-6 bg-slate-950 text-white text-center border-t border-blue-600/30">
+      <section className="py-10 px-6 bg-slate-950 text-white text-center border-t border-blue-600/30">
         <h2 className="text-5xl font-black mb-6 italic tracking-tighter uppercase">
           Secure Your Digital Evolution
         </h2>

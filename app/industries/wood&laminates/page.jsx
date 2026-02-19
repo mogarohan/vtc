@@ -11,26 +11,47 @@ import {
   Zap,
   Trees,
   HardHat,
+    Flame,
+  Settings,
+  Truck,
+  Leaf,
+  BadgeX,
+  ClipboardCheck,
 } from "lucide-react";
 
 export default function WoodLaminationPage() {
   const products = [
-    {
-      title: "High-Pressure Laminates",
-      Icon: Layers,
-      desc: "Multi-layered decorative surfaces with superior wear and impact resistance.",
-    },
-    {
-      title: "Marine Grade Plywood",
-      Icon: Droplets,
-      desc: "Water-resistant core technology engineered for high-moisture environments.",
-    },
-    {
-      title: "Acoustic Wood Panels",
-      Icon: Maximize,
-      desc: "Perforated lamination designs optimized for sound absorption and structural aesthetics.",
-    },
-  ];
+  {
+    title: "Fire & Explosion Risk",
+    Icon: Flame,
+    desc: "Plastic extrusion heat, wood dust accumulation, chemical additives, and flammable materials create significant fire and explosion hazards throughout facilities.",
+  },
+  {
+    title: "Machinery Breakdown",
+    Icon: Settings,
+    desc: "Injection molding machines, extrusion lines, CNC woodworking equipment, and drying kilns represent major capital investments vulnerable to mechanical failures.",
+  },
+  {
+    title: "Supply Chain Disruption",
+    Icon: Truck,
+    desc: "Dependence on petroleum-based resins, recycled plastic feedstock, timber supplies, and chemical additives exposes operations to price volatility and availability issues.",
+  },
+  {
+    title: "Environmental Liability",
+    Icon: Leaf,
+    desc: "Plastic waste management, microplastic concerns, VOC emissions from wood processing, and chemical handling create regulatory and reputational risks.",
+  },
+  {
+    title: "Product Quality Issues",
+    Icon: BadgeX,
+    desc: "Defects in plastic components, wood warping, contamination, and structural failures can lead to customer claims, recalls, and contract disputes.",
+  },
+  {
+    title: "Regulatory Compliance",
+    Icon: ClipboardCheck,
+    desc: "Extended producer responsibility, recycling targets, forest certification standards, and emissions regulations require ongoing compliance investments.",
+  },
+];
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-blue-100">
@@ -49,23 +70,14 @@ export default function WoodLaminationPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-600 text-white text-[10px] font-black uppercase tracking-[0.2em] mb-6 shadow-lg shadow-blue-900/40">
               <HardHat size={14} /> Industrial Timber Solutions
             </div>
-            <h1 className="text-5xl md:text-8xl font-black text-white mb-8 leading-[1.1] tracking-tighter uppercase">
-              Surfaces <br />
-              <span className="text-blue-500 italic">Engineered.</span>
+            <h1 className="text-3x2 md:text-5xl font-black text-white mb-8 leading-[1.1] tracking-tighter uppercase">
+             Wood Industry <br />
+              <span className="text-blue-500 italic">Insurance Solutions</span>
             </h1>
-            <p className="text-lg text-slate-400 max-w-xl mb-12 leading-relaxed font-light">
-              We redefine timber through advanced lamination. Our boards combine
-              the natural strength of wood with the impenetrable durability of
-              high-tech polymers.
+            <p className="text-lg text-slate-400 max-w-xl mb-12 leading-relaxed font-bold">
+             The plastic and wood industries are undergoing significant transformation as they balance traditional manufacturing with sustainability imperatives. From bio-based plastics and recycled polymers to certified sustainable timber and engineered wood products, these sectors are innovating to meet environmental standards while maintaining performance and cost-effectiveness. 
             </p>
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-              <button className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-sm font-bold transition-all flex items-center gap-3 shadow-xl">
-                Technical Data Sheets <ArrowRight size={18} />
-              </button>
-              <button className="border border-slate-700 text-white px-10 py-4 rounded-sm font-bold hover:bg-white/5 transition-all">
-                Sample Request
-              </button>
-            </div>
+            
           </div>
 
           {/* Abstract Layered Graphic */}
@@ -117,12 +129,10 @@ export default function WoodLaminationPage() {
                   <h3 className="text-2xl font-bold text-blue-900 mb-4">
                     {item.title}
                   </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-8 font-light">
+                  <p className="text-slate-500 text-sm leading-relaxed mb-8 font-bold">
                     {item.desc}
                   </p>
-                  <div className="flex items-center gap-2 text-blue-600 font-black text-xs uppercase tracking-widest cursor-pointer group-hover:gap-4 transition-all">
-                    View Certifications <ArrowRight size={14} />
-                  </div>
+                  
                 </div>
               );
             })}

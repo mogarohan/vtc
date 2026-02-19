@@ -9,27 +9,50 @@ import {
   Wind,
   ShieldCheck,
   BarChart3,
+  Flame,
+ Leaf,
+  Truck,
+  ShieldAlert,
+  ClipboardCheck,
+  LockKeyhole,
   Waves,
+  Ship,
   Zap,
+  BadgeX,
 } from "lucide-react";
 
 export default function PaperMillPage() {
   const processes = [
     {
-      title: "Pulp Processing",
-      Icon: Droplets,
-      desc: "Advanced chemical and mechanical pulping with 90% water recovery rates.",
-    },
-    {
-      title: "High-Speed Press",
-      Icon: Settings,
-      desc: "Precision drying and pressing for consistent GSM and tensile strength.",
-    },
-    {
-      title: "Circular Fiber",
-      Icon: Recycle,
-      desc: "Post-consumer waste integration for sustainable high-grade paper output.",
-    },
+    title: "Fire & Explosion Risk",
+    Icon: Flame, // 🔥 fire, explosion, flammable hazard
+    desc: "Flammable materials, chemical adhesives, printing inks, and high-speed machinery create significant fire hazards that can devastate production facilities.",
+  },
+  {
+    title: "Machinery Breakdown",
+    Icon: Settings, // ⚙️ machines, mechanical failure
+    desc: "Printing presses, die-cutting machines, filling lines, and automated packaging systems are prone to mechanical failures causing production delays and revenue loss.",
+  },
+  {
+    title: "Supply Chain Disruption",
+    Icon: Truck, // 🚚 logistics, transport, delivery
+    desc: "Dependence on paper, plastic resin, aluminum, and glass suppliers, combined with logistics challenges, threatens timely delivery and customer commitments.",
+  },
+  {
+  title: "Environmental Liability",
+  Icon: Leaf, // 🌱 environment, sustainability, environmental risk
+  desc: "Water pollution, air emissions, chemical spills, and waste management issues expose businesses to regulatory penalties, cleanup costs, and reputational damage.",
+},
+  {
+    title: "Quality Control Failures",
+  Icon: BadgeX, // ❌ failed quality, defects, rejection
+  desc: "Defects in paper grades, laminate bonding failures, and contamination can lead to customer complaints, rejected shipments, and contract disputes.",
+},
+  {
+    title: "Intellectual Property",
+    Icon: LockKeyhole, // 🔐 protection, IP security
+    desc: "Proprietary designs, printing techniques, and innovative packaging solutions require protection from counterfeiting, patent infringement, and trade secret theft.",
+  },
   ];
 
   return (
@@ -51,15 +74,13 @@ export default function PaperMillPage() {
               <Factory size={14} /> Industrial Excellence
             </div>
             <h1 className="text-5xl md:text-8xl font-black text-white mb-8 leading-[1.1] tracking-tighter">
-              Pulp & Paper <br />
+              Paper Mills <br />
               <span className="text-blue-500 italic underline decoration-blue-900 decoration-8 underline-offset-4">
-                Redefined.
+                 Industry Solutions
               </span>
             </h1>
-            <p className="text-lg text-slate-400 max-w-xl mb-12 leading-relaxed font-light">
-              Engineering the future of fiber. Our mills combine high-capacity
-              output with zero-liquid discharge (ZLD) technologies for a
-              cleaner, stronger tomorrow.
+            <p className="text-lg text-slate-400 max-w-xl mb-12 leading-relaxed font-bold">
+               Paper mills manufacturers are at the forefront of the circular economy, producing essential materials for packaging, construction, furniture, and consumer products. The industry faces mounting pressure to adopt sustainable forestry practices, reduce water and energy consumption, and meet stringent environmental standards. Advanced pulping technologies, digital printing capabilities, and innovative laminate composites are transforming production, while raw material volatility and regulatory compliance add operational complexity.
             </p>
             <div className="flex flex-wrap gap-5">
               <button className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-sm font-bold transition-all flex items-center gap-3 shadow-xl shadow-blue-900/40">
@@ -89,11 +110,10 @@ export default function PaperMillPage() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-20">
             <div className="max-w-xl">
               <h2 className="text-4xl font-black text-slate-900 mb-4 tracking-tight uppercase">
-                Mill Engineering
+                Key Threats
               </h2>
               <p className="text-slate-500">
-                End-to-end automation for sustainable pulp and paper
-                manufacturing.
+                 Advanced pulping technologies, digital printing capabilities, and innovative laminate composites are transforming production, while raw material volatility and regulatory compliance add operational complexity.
               </p>
             </div>
             <div className="h-px flex-1 bg-slate-200 mb-4 mx-12 hidden md:block"></div>
@@ -116,9 +136,7 @@ export default function PaperMillPage() {
                   <p className="text-slate-500 text-sm leading-relaxed mb-8">
                     {proc.desc}
                   </p>
-                  <div className="flex items-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-widest cursor-pointer group-hover:gap-4 transition-all">
-                    Process Analytics <ArrowRight size={14} />
-                  </div>
+                  
                 </div>
               );
             })}
@@ -127,84 +145,67 @@ export default function PaperMillPage() {
       </section>
 
       {/* 4. ECO-MILL MONITORING SECTION */}
-      <section className="py-10 px-6 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
-          <div className="flex-1 order-2 lg:order-1 relative">
-            <div className="bg-slate-900 p-8 rounded-[2rem] border border-slate-800 shadow-2xl relative z-10">
-              <div className="flex justify-between items-center mb-8 border-b border-white/5 pb-4">
-                <h4 className="text-white font-bold text-sm">
-                  Live Resource Monitor
-                </h4>
-                <div className="flex gap-2">
-                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                  <div className="w-2 h-2 rounded-full bg-blue-500"></div>
-                </div>
-              </div>
-              <div className="space-y-6">
-                <div className="h-12 bg-white/5 rounded-lg flex items-center px-4 justify-between">
-                  <span className="text-xs text-slate-400">Steam Pressure</span>
-                  <span className="text-blue-400 font-mono text-xs italic">
-                    12.4 BAR [OK]
-                  </span>
-                </div>
-                <div className="h-12 bg-white/5 rounded-lg flex items-center px-4 justify-between">
-                  <span className="text-xs text-slate-400">
-                    Pulp Consistency
-                  </span>
-                  <span className="text-blue-400 font-mono text-xs italic">
-                    3.2% [NOMINAL]
-                  </span>
-                </div>
-                <div className="h-12 bg-blue-600 rounded-lg flex items-center px-4 justify-between shadow-lg">
-                  <span className="text-xs text-white font-bold">
-                    ZLD Status
-                  </span>
-                  <span className="text-white font-mono text-xs font-black">
-                    ACTIVE
-                  </span>
-                </div>
-              </div>
-            </div>
-            {/* Circular Fluid Motion Decor */}
-            <div className="absolute -top-10 -left-10 w-64 h-64 bg-blue-500/5 rounded-full blur-[100px] -z-0"></div>
-          </div>
+<section className="mb-5 bg-white overflow-hidden flex items-center justify-center">
+  <div className="w-full flex flex-col items-center text-center">
+    
+    {/* HEADING */}
+    <h2 className="text-5xl font-black text-slate-900 mb-12 leading-tight whitespace-nowrap">
+  Comprehensive{" "}
+  <span className="text-blue-600 italic underline decoration-blue-100 decoration-8 underline-offset-8">
+    Protection
+  </span>
+</h2>
 
-          <div className="flex-1 order-1 lg:order-2">
-            <h2 className="text-5xl font-black text-slate-900 mb-8 leading-tight">
-              Resource <br />
-              <span className="text-blue-600 italic underline decoration-blue-100 decoration-8 underline-offset-8">
-                Circularities.
-              </span>
-            </h2>
-            <div className="space-y-6">
-              <div className="flex gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 group hover:border-blue-400 transition-colors">
-                <div className="bg-blue-600 text-white p-3 rounded-xl h-fit shadow-lg shadow-blue-200">
-                  <Waves size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg">Zero-Liquid Discharge</h4>
-                  <p className="text-sm text-slate-500 mt-1">
-                    Closed-loop water systems that eliminate chemical runoff
-                    into local ecosystems.
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 group hover:border-blue-400 transition-colors">
-                <div className="bg-blue-600 text-white p-3 rounded-xl h-fit shadow-lg shadow-blue-200">
-                  <Wind size={24} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg">Heat Recovery (CHP)</h4>
-                  <p className="text-sm text-slate-500 mt-1">
-                    Harnessing excess steam for co-generation of electrical
-                    power for mill operations.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+
+    {/* GRID CARDS */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
+      
+      {/* Card 1 */}
+      <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-400 transition">
+        <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200">
+          <Waves size={24} />
         </div>
-      </section>
+        <h4 className="font-bold text-lg text-left">
+          Property & Business Interruption
+        </h4>
+      </div>
+
+      {/* Card 2 */}
+      <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-400 transition">
+        <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200">
+          <ShieldCheck size={24} />
+        </div>
+        <h4 className="font-bold text-lg text-left">
+          Product Liability & Recall
+        </h4>
+      </div>
+
+      {/* Card 3 */}
+      <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-400 transition">
+        <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200">
+          <Leaf size={24} />
+        </div>
+        <h4 className="font-bold text-lg text-left">
+          Environmental Impairment
+        </h4>
+      </div>
+
+      {/* Card 4 */}
+      <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-400 transition">
+        <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200">
+          <Ship size={24} />
+        </div>
+        <h4 className="font-bold text-lg text-left">
+          Marine & Transit
+        </h4>
+      </div>
+
+      {/* Card 5 – Full Width */}
+      
+
+    </div>
+  </div>
+</section>
     </div>
   );
 }
