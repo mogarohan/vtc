@@ -37,45 +37,39 @@ const AutomobileInsurancePage = () => {
     {
       title: "Production Disruption",
       desc: "Fire, machinery breakdown, assembly line failures, and equipment malfunctions can halt operations, leading to significant financial losses and reputational damage.",
-  
-      image: "/key/1.jpeg"
 
-    
+      image: "/key/1.jpeg",
     },
     {
       title: "Supply Chain Vulnerability",
       desc: "Component shortages, logistics delays, and over-reliance on single vendors expose businesses to significant risks, impacting production schedules and market delivery.",
 
-      image: "/key/2.jpeg"
-
+      image: "/key/2.jpeg",
     },
     {
       title: "Product Liability",
       desc: "Defects in vehicles or engineered components, unexpected safety failures, and product recall costs pose major financial and legal challenges.",
 
-      image: "/key/3.jpeg"
+      image: "/key/3.jpeg",
     },
     {
       title: "Cyber & Technology",
       desc: "The increasing connectivity of vehicles and manufacturing systems introduces new vulnerabilities, including data breaches, intellectual property theft, and operational cyberattacks.",
 
-      image: "/key/4.jpeg"
-
+      image: "/key/4.jpeg",
     },
     {
       title: "Environmental Compliance",
       desc: "Evolving emissions regulations, complex waste management challenges, and potential pollution liabilities demand strict adherence and robust risk management.",
 
-      image: "/key/5.jpeg"
-
+      image: "/key/5.jpeg",
     },
     {
       title: "Intellectual Property",
       desc: "Protecting innovative designs, manufacturing processes, and proprietary technologies from theft, patent infringement, and trade secret breaches is paramount.",
 
-      image: "/key/6.jpeg"
-    }
-
+      image: "/key/6.jpeg",
+    },
   ];
 
   const protections = [
@@ -88,14 +82,12 @@ const AutomobileInsurancePage = () => {
     {
       title: "Product Liability & Recall",
       icon: <Car size={28} />,
-      image:
-        "https://images.unsplash.com/photo-1553440592-56a85322f0ad?auto=format&fit=crop&q=80&w=600",
+      image: "/auto/a1.jpeg",
     },
     {
       title: "Professional Indemnity",
       icon: <UserCheck size={28} />,
-      image:
-        "https://images.unsplash.com/photo-1454165833767-131f3695382f?auto=format&fit=crop&q=80&w=600",
+      image: "/auto/a2.jpeg",
     },
     {
       title: "Cyber Insurance",
@@ -106,18 +98,17 @@ const AutomobileInsurancePage = () => {
     {
       title: "Marine & Transit",
       icon: <Anchor size={28} />,
-      image:
-        "https://images.unsplash.com/photo-1516216628859-9bccecad13ca?auto=format&fit=crop&q=80&w=600",
+      image: "/auto/a3.jpeg",
     },
   ];
 
   return (
     <div className="relative w-full bg-[#f0f9ff] text-slate-900 font-sans">
       {/* 1. HERO SECTION WITH IMAGE PARALLAX BACKGROUND */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=2000"
+            src="/automotive.png"
             className="w-full h-full object-cover opacity-20"
             alt="Hero Background"
           />
@@ -155,7 +146,7 @@ const AutomobileInsurancePage = () => {
       </section>
 
       {/* 2. INDUSTRY TRANSFORMATION - GLASS CARD INTRO */}
-      <section className="py-14 px-6 relative z-10">
+      <section className="py-5 px-3 relative z-10">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
@@ -242,7 +233,7 @@ const AutomobileInsurancePage = () => {
       </section>
 
       {/* 4. COMPREHENSIVE PROTECTION - PREMIUM GRID WITH IMAGE OVERLAYS */}
-      <section className="py-24 px-6 bg-[#e0f2fe] relative overflow-hidden">
+      <section className="py-10 px-6 bg-[#e0f2fe] relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex justify-between items-end mb-16">
             <div>
@@ -287,7 +278,7 @@ const AutomobileInsurancePage = () => {
       </section>
 
       {/* 5. CTA - DARK PREMIUM FINISH */}
-      <section className="py-32 px-6">
+      <section className="py-14 px-6">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}

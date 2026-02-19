@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import ReactElement from "react";
+import { motion } from "framer-motion";
 import {
   Waves,
   MapPin,
@@ -11,13 +13,24 @@ import {
   ShieldCheck,
   Compass,
   PhoneCall,
+  Users,
+  Wine,
 } from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
 
 const BlueHospitalityPage = () => {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100">
       {/* 1. HERO SECTION: Serene & Inviting */}
-      <section className="relative bg-[#020617] pt-32 pb-40 px-6 overflow-hidden">
+      <section className="relative bg-[#020617] pt-14 pb-20 px-6 overflow-hidden">
         {/* Soft Wave Pattern Overlay */}
         <div
           className="absolute inset-0 opacity-20"
@@ -32,18 +45,21 @@ const BlueHospitalityPage = () => {
 
         <div className="max-w-7xl mx-auto relative z-10 text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-500/10 text-blue-300 text-xs font-bold mb-8 border border-blue-400/20 uppercase tracking-[0.2em]">
-            <Star size={14} className="text-blue-400" /> Five-Star Blue Label
-            Experience
+            <Star size={14} className="text-blue-400" /> Redefining Guest
+            Experiences
           </div>
 
-          <h1 className="text-6xl md:text-9xl font-extralight text-white mb-8 leading-tight tracking-tighter">
-            The Art of <br />
-            <span className="text-blue-500 font-black italic">Serenity.</span>
+          <h1 className="text-6xl md:text-8xl font-bold italic text-white mb-8 ">
+            Hospitality & Tourism <br />
+            <span className="text-blue-500 font-black italic">
+              Insurance Solutions
+            </span>
           </h1>
 
           <p className="text-xl text-slate-300 max-w-2xl mx-auto mb-12 leading-relaxed font-light">
-            Discover a sanctuary where architectural precision meets the calming
-            essence of the ocean. Your journey into refined luxury begins here.
+            Post-pandemic recovery surge, experiential travel boom, boutique
+            hospitality growth, technology-enabled service, sustainability
+            focus, and wellness tourism driving unprecedented transformation.
           </p>
 
           <div className="flex flex-wrap justify-center gap-5">
@@ -58,12 +74,12 @@ const BlueHospitalityPage = () => {
       </section>
 
       {/* 3. EXPERIENCE GRID: Luxury Modules */}
-      <section className="py-16 px-6 bg-[#FCFDFF]">
+      <section className="py-14 px-6 bg-[#FCFDFF]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-20 gap-6 text-center md:text-left">
             <div className="max-w-xl">
               <h2 className="text-5xl font-black text-slate-900 mb-4 tracking-tight">
-                Curated <span className="text-blue-600">Industries.</span>
+                Hospitality <span className="text-blue-600">Sector Risks</span>
               </h2>
               <p className="text-slate-500 text-lg">
                 Bespoke hospitality solutions for every vertical of luxury
@@ -79,103 +95,143 @@ const BlueHospitalityPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
-                icon: <Bed />,
-                title: "Resort & Spa",
-                desc: "Ocean-front suites designed with minimalist aesthetics and maximum comfort.",
+                icon: <Bed className="w-8 h-8 stroke-[1.5]" />,
+                title: "Property Damage",
+                desc: "Fire, natural disasters, equipment breakdown, renovation risks",
               },
               {
-                icon: <Utensils />,
-                title: "Fine Dining",
-                desc: "Blue-ribbon culinary experiences curated by world-renowned chefs.",
+                icon: <Utensils className="w-8 h-8 stroke-[1.5]" />,
+                title: "Guest Liability",
+                desc: "Slip and fall, food poisoning, injury claims, medical emergencies",
               },
               {
-                icon: <Compass />,
-                title: "Travel & Tours",
-                desc: "Private excursions and maritime journeys across the blue horizon.",
+                icon: <Compass className="w-8 h-8 stroke-[1.5]" />,
+                title: "Business Interruption",
+                desc: "Seasonal disruptions, reputation damage, event cancellations",
+              },
+              {
+                icon: <ShieldCheck className="w-8 h-8 stroke-[1.5]" />,
+                title: "Cyber & Data",
+                desc: "Guest data breaches, booking system failures, payment fraud",
+              },
+              {
+                icon: <Wine className="w-8 h-8 stroke-[1.5]" />,
+                title: "Liquor Liability",
+                desc: "Over-service incidents, intoxication-related claim",
+              },
+              {
+                icon: <Users className="w-8 h-8 stroke-[1.5]" />,
+                title: "Employee Practices",
+                desc: "Staff injuries, employment disputes, workplace safety",
               },
             ].map((item, i) => (
               <div
                 key={i}
-                className="group p-12 rounded-[2.5rem] bg-white border border-slate-100 hover:border-blue-100 hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.1)] transition-all duration-700"
+                className="group p-12 rounded-[2.5rem] bg-white 
+                  border border-slate-200 shadow-sm
+                  hover:shadow-[0_40px_80px_-20px_rgba(37,99,235,0.12)]
+                  transition-all duration-700"
               >
-                <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tight">
+                {/* ICON */}
+                <div className="mb-6 text-blue-600">{item.icon}</div>
+
+                {/* TITLE */}
+                <h3 className="text-2xl font-black text-blue-900 mb-4 tracking-tight">
                   {item.title}
                 </h3>
-                <p className="text-slate-500 leading-relaxed mb-8 font-light text-lg">
+
+                {/* DESCRIPTION */}
+                <p className="text-slate-600 leading-relaxed font-light text-lg">
                   {item.desc}
                 </p>
-                <div className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm cursor-pointer border-b-2 border-transparent hover:border-blue-600 pb-1 transition-all uppercase tracking-widest">
-                  Discover <ArrowRight size={14} />
-                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+      {/* Heading */}
+      <div className="text-center mb-10">
+        <h2 className="text-4xl font-black text-slate-900 mb-4">
+          Complete Hospitality Coverage
+        </h2>
+        <div className="h-1.5 w-20 bg-blue-600 mx-auto rounded-full"></div>
+      </div>
 
-      {/* 4. HOSPITALITY SUB-INDUSTRIES SECTION */}
-      <section className="py-24 px-6 bg-slate-900 relative overflow-hidden">
-        {/* Subtle grid for a technical touch to hospitality */}
-        <div className="absolute inset-0 opacity-5 border-t border-blue-500 border-dashed"></div>
-
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-20">
-          <div className="flex-1">
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-8 leading-tight">
-              Integrated <br />
-              <span className="text-blue-500 underline decoration-white/10 underline-offset-8 italic">
-                Verticals.
-              </span>
-            </h2>
-
-            <div className="space-y-8">
-              <div className="flex gap-6 items-start border-b border-white/5 pb-8">
-                <div className="bg-blue-600 p-3 rounded-2xl text-white">
-                  <ShieldCheck size={24} />
+      <section className="py-5 px-6">
+        <div className="max-w-5xl mx-auto">
+          {/* Image Cards Grid */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+          >
+            {[
+              {
+                title: "Property & Business Interruption",
+                image: "/hospitality/h1.jpeg",
+              },
+              {
+                title: "General & Product Liability",
+                image: "/hospitality/h2.jpeg",
+              },
+              {
+                title: "Cyber & Data Protection",
+                image: "/hospitality/h3.jpeg",
+              },
+              {
+                title: "Liquor Liability",
+                image: "/hospitality/h4.jpeg",
+              },
+              {
+                title: "Workers Compensation",
+                image: "/hospitality/h5.jpeg",
+              },
+              {
+                title: "Equipment Breakdown",
+                image: "/hospitality/h6.jpeg",
+              },
+            ].map((item) => (
+              <motion.div
+                key={item.title}
+                variants={fadeUp}
+                whileHover={{ y: -10, scale: 1.03 }}
+                transition={{ type: "spring", stiffness: 220, damping: 18 }}
+                className="group bg-white rounded-2xl overflow-hidden
+                     border border-[#1C2A7D]/10
+                     shadow-[0_18px_45px_rgba(28,42,125,0.14)]
+                     hover:shadow-[0_30px_70px_rgba(28,42,125,0.25)]
+                     transition"
+              >
+                {/* IMAGE */}
+                <div
+                  className="w-full min-h-[200px] bg-[#F7F8FC]
+                flex items-center justify-center p-4"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="
+                      max-h-[200px]
+                      w-auto
+                      object-contain
+                      transition-transform
+                      duration-500
+                      group-hover:scale-[1.03]
+                    "
+                  />
                 </div>
-                <div>
-                  <h4 className="font-bold text-white text-xl">
-                    Wellness & Medi-Spa
-                  </h4>
-                  <p className="text-slate-400 mt-2 leading-relaxed">
-                    Combining medical precision with hospitality for ultimate
-                    recovery.
-                  </p>
-                </div>
-              </div>
 
-              <div className="flex gap-6 items-start border-b border-white/5 pb-8">
-                <div className="bg-blue-600 p-3 rounded-2xl text-white">
-                  <MapPin size={24} />
+                {/* CONTENT */}
+                <div className="p-5 text-center">
+                  <h3 className="font-semibold text-[#1C2A7D] text-lg">
+                    {item.title}
+                  </h3>
                 </div>
-                <div>
-                  <h4 className="font-bold text-white text-xl">
-                    Urban Business Hubs
-                  </h4>
-                  <p className="text-slate-400 mt-2 leading-relaxed">
-                    High-tech meeting environments within five-star urban
-                    settings.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex-1 w-full bg-blue-600 h-[500px] rounded-[3rem] relative overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 bg-gradient-to-tr from-black/60 to-transparent"></div>
-            <div className="absolute bottom-12 left-12">
-              <div className="flex gap-1 mb-4">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star key={i} size={14} className="text-white fill-white" />
-                ))}
-              </div>
-              <p className="text-white text-3xl font-black italic uppercase tracking-tighter">
-                The Blue Suite
-              </p>
-              <p className="text-blue-200 mt-2 font-light">
-                Available for Corporate Bookings
-              </p>
-            </div>
-          </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
     </div>

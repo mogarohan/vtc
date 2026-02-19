@@ -60,7 +60,7 @@ export default function ITFieldPage() {
   return (
     <div className="min-h-screen bg-white font-mono text-slate-900 selection:bg-cyan-100">
       {/* 1. HERO SECTION: The Digital Frontier */}
-      <section className="relative bg-slate-950 pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 px-5 sm:px-6 overflow-hidden">
+      <section className="relative bg-slate-950 pt-14 sm:pt-16 md:pt-20 pb-16 sm:pb-20 md:pb-24 px-5 sm:px-6 overflow-hidden">
         {/* Binary/Matrix Style Pattern Overlay */}
         <div
           className="absolute inset-0 opacity-10 pointer-events-none"
@@ -71,10 +71,6 @@ export default function ITFieldPage() {
         ></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/10 text-cyan-400 text-[10px] font-bold mb-6 border border-cyan-500/20 uppercase tracking-[0.3em]">
-            <Terminal size={14} /> System.init();
-          </div>
-
           <h1 className="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-8 leading-[1] tracking-tighter">
             Navigating Risk in India’s <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400 italic">
@@ -163,17 +159,14 @@ export default function ITFieldPage() {
       </section>
 
       {/* ================= INSURANCE FRAMEWORK ================= */}
-      <section className="bg-[#F7F8FC] py-6 sm:py-10 md:py-12">
+      <section className="bg-[#F7F8FC] py-6 sm:py-8 md:py-10">
         <div className="max-w-6xl mx-auto px-6">
-          <motion.h2
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="text-3xl font-bold text-[#1C2A7D] mb-12"
-          >
-            Comprehensive Insurance Protection Framework
-          </motion.h2>
+          <div className="mb-14 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-2 tracking-tighter uppercase">
+              Comprehensive Insurance Protection Framework
+            </h2>
+            <div className="h-1 w-32 bg-blue-600 mx-auto"></div>
+          </div>
 
           <motion.div
             initial="hidden"
@@ -245,8 +238,8 @@ export default function ITFieldPage() {
 
           {/* NOTE */}
           <div
-            className="mt-12 bg-[#E8D534]/20 border-l-4 border-[#E8D534]
-                          px-6 py-5 text-[#1C2A7D] font-medium"
+            className="mt-12 bg-[#0F172A] border-l-4 border-[#0F172A]
+                          px-6 py-5 text-white font-medium"
           >
             Protecting your technology business requires more than standard
             policies — it demands specialist insurance solutions designed for
