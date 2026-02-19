@@ -8,11 +8,15 @@ import {
   Truck,
   ShieldCheck,
   ArrowRight,
-  FileText,
   Boxes,
   ChevronRight,
   Sparkles,
-  ShoppingCart
+    ShieldAlert,
+  
+
+  PauseCircle,
+  FileText
+  
 } from 'lucide-react';
 import Link from 'next/link';
 const fadeUp = {
@@ -177,22 +181,22 @@ const IndustrialMarketplace = () => {
                 </motion.div>
               </div>
             </section>
-<section className="w-full  bg-white py-10">
+<section className="w-full bg-white py-10">
   <div className="max-w-6xl mx-auto px-6 text-center">
 
     {/* HEADING */}
     <h2 className="text-4xl lg:text-5xl font-black mb-16 text-slate-900 tracking-tighter uppercase leading-none">
-      E-Commerce Protection {" "}
+      E-Commerce Protection{" "}
       <span className="text-blue-600">Suite</span>
     </h2>
 
     {/* CARDS GRID */}
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-10 max-w-4xl mx-auto text-left">
-      
+
       {/* Card 1 */}
       <div className="flex gap-6 items-start">
         <div className="bg-blue-100 p-4 rounded-2xl">
-         
+          <ShieldAlert className="text-blue-600 w-6 h-6" />
         </div>
         <h4 className="font-bold text-xl text-slate-800">
           Cyber Liability & Data Breach
@@ -202,7 +206,7 @@ const IndustrialMarketplace = () => {
       {/* Card 2 */}
       <div className="flex gap-6 items-start">
         <div className="bg-blue-100 p-4 rounded-2xl">
-         
+          <ShieldCheck className="text-blue-600 w-6 h-6" />
         </div>
         <h4 className="font-bold text-xl text-slate-800">
           Product Liability Insurance
@@ -212,86 +216,48 @@ const IndustrialMarketplace = () => {
       {/* Card 3 */}
       <div className="flex gap-6 items-start">
         <div className="bg-blue-100 p-4 rounded-2xl">
-         
+          <Truck className="text-blue-600 w-6 h-6" />
         </div>
         <h4 className="font-bold text-xl text-slate-800">
-         Marine & Transit Coverage
+          Marine & Transit Coverage
         </h4>
       </div>
 
       {/* Card 4 */}
       <div className="flex gap-6 items-start">
         <div className="bg-blue-100 p-4 rounded-2xl">
-          
+          <PauseCircle className="text-blue-600 w-6 h-6" />
         </div>
         <h4 className="font-bold text-xl text-slate-800">
           Business Interruption Insurance
         </h4>
       </div>
 
-      {/* Card 5 – Centered Single */}
-     <div className="flex gap-6 items-start">
+      {/* Card 5 */}
+      <div className="flex gap-6 items-start">
         <div className="bg-blue-100 p-4 rounded-2xl">
-         
+          <FileText className="text-blue-600 w-6 h-6" />
         </div>
         <h4 className="font-bold text-xl text-slate-800">
-         Professional Indemnity
+          Professional Indemnity
         </h4>
       </div>
 
-      {/* Card 4 */}
+      {/* Card 6 */}
       <div className="flex gap-6 items-start">
         <div className="bg-blue-100 p-4 rounded-2xl">
-          
+          <Package className="text-blue-600 w-6 h-6" />
         </div>
         <h4 className="font-bold text-xl text-slate-800">
           Property & Stock Insurance
         </h4>
       </div>
+
     </div>
   </div>
 </section>
 
-
-      {/* ================= RFQ ================= */}
-      <section className="py-32 px-6 bg-slate-50">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
-          <div>
-            <h2 className="text-6xl font-black uppercase">
-              Enterprise <span className="text-blue-600">Procurement</span>
-            </h2>
-            <p className="text-xl text-slate-600 mt-8">
-              Upload BOM & get custom bulk pricing.
-            </p>
-          </div>
-
-          <div className="bg-white p-12 rounded-[3rem] shadow-xl">
-            <h4 className="font-black text-2xl mb-8 uppercase">
-              Submit RFQ
-            </h4>
-
-            <form className="space-y-6">
-              <input
-                className="w-full p-5 rounded-2xl bg-slate-50 border"
-                placeholder="Component Name"
-              />
-              <div className="grid grid-cols-2 gap-4">
-                <input
-                  className="p-5 rounded-2xl bg-slate-50 border"
-                  placeholder="Quantity"
-                />
-                <input
-                  className="p-5 rounded-2xl bg-slate-50 border"
-                  placeholder="Target Price"
-                />
-              </div>
-              <button className="w-full bg-[#0F172A] text-white py-6 rounded-[2rem] font-black uppercase flex justify-center items-center gap-2">
-                Request Quotation <ChevronRight />
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+      
     </main>
   );
 };
