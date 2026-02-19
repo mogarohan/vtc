@@ -9,7 +9,7 @@ import {
   Settings,
   CheckCircle2,
   ShieldCheck,
-    Flame,
+  Flame,
   Truck,
   ShieldAlert,
   PauseCircle,
@@ -23,37 +23,37 @@ import {
 
 export default function TextileIndustryPage() {
   const categories = [
-  {
-    title: "Fire & Property Damage",
-    Icon: Flame,
-    desc: "Fabric combustibility, machinery fires, warehouse blazes, and inventory losses impacting manufacturing facilities.",
-  },
-  {
-    title: "Supply Chain Disruption",
-    Icon: Truck,
-    desc: "Raw material shortages, shipping delays, and vendor failures affecting production continuity and delivery timelines.",
-  },
-  {
-    title: "Product Liability",
-    Icon: ShieldAlert,
-    desc: "Fabric defects, chemical reactions, safety standard violations, and product recalls impacting brand trust.",
-  },
-  {
-    title: "Business Interruption",
-    Icon: PauseCircle,
-    desc: "Production stoppages, seasonal demand fluctuations, and order cancellations leading to revenue loss.",
-  },
-  {
-    title: "Environmental Compliance",
-    Icon: Leaf,
-    desc: "Dye discharge, water pollution, waste handling, and adherence to chemical and environmental regulations.",
-  },
-  {
-    title: "Labor & Employment",
-    Icon: Users,
-    desc: "Worker safety, factory conditions, compliance audits, and wage or employment-related disputes.",
-  },
-];
+    {
+      title: "Fire & Property Damage",
+      Icon: Flame,
+      desc: "Fabric combustibility, machinery fires, warehouse blazes, and inventory losses impacting manufacturing facilities.",
+    },
+    {
+      title: "Supply Chain Disruption",
+      Icon: Truck,
+      desc: "Raw material shortages, shipping delays, and vendor failures affecting production continuity and delivery timelines.",
+    },
+    {
+      title: "Product Liability",
+      Icon: ShieldAlert,
+      desc: "Fabric defects, chemical reactions, safety standard violations, and product recalls impacting brand trust.",
+    },
+    {
+      title: "Business Interruption",
+      Icon: PauseCircle,
+      desc: "Production stoppages, seasonal demand fluctuations, and order cancellations leading to revenue loss.",
+    },
+    {
+      title: "Environmental Compliance",
+      Icon: Leaf,
+      desc: "Dye discharge, water pollution, waste handling, and adherence to chemical and environmental regulations.",
+    },
+    {
+      title: "Labor & Employment",
+      Icon: Users,
+      desc: "Worker safety, factory conditions, compliance audits, and wage or employment-related disputes.",
+    },
+  ];
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
       {/* 1. HERO SECTION: The Fabric of Innovation */}
@@ -76,9 +76,11 @@ export default function TextileIndustryPage() {
               <span className="text-blue-500 italic"> Insurance Solutions</span>
             </h1>
             <p className="text-lg text-slate-400 max-w-xl mb-12 leading-relaxed font-bold">
-              Fast fashion evolution, sustainable materials innovation, automation in manufacturing, direct-to-consumer models, circular economy adoption, and ethical sourcing reshaping global textile industry.
+              Fast fashion evolution, sustainable materials innovation,
+              automation in manufacturing, direct-to-consumer models, circular
+              economy adoption, and ethical sourcing reshaping global textile
+              industry.
             </p>
-            
           </div>
 
           {/* Abstract Thread Graphic */}
@@ -127,7 +129,6 @@ export default function TextileIndustryPage() {
                   <p className="text-slate-500 text-sm leading-relaxed mb-8">
                     {item.desc}
                   </p>
-                  
                 </div>
               );
             })}
@@ -136,67 +137,60 @@ export default function TextileIndustryPage() {
       </section>
 
       {/* 4. PRODUCTION FLOW SECTION */}
-  <section className="mb-5 bg-white overflow-hidden flex items-center justify-center">
-  <div className="w-full flex flex-col items-center text-center">
-    
-    {/* HEADING */}
-    <h2 className="text-5xl font-black text-slate-900 mb-12 leading-tight whitespace-nowrap">
-  Comprehensive{" "}
-  <span className="text-blue-600 italic underline decoration-blue-100 decoration-8 underline-offset-8">
-    Protection
-  </span>
-</h2>
+      <section className="mb-5 bg-white overflow-hidden flex items-center justify-center">
+        <div className="w-full flex flex-col items-center text-center">
+          {/* HEADING */}
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 mb-6 sm:mb-12 leading-tight">
+            Comprehensive{" "}
+            <span className="text-blue-600 italic underline decoration-blue-100 decoration-4 sm:decoration-8 underline-offset-4">
+              Protection
+            </span>
+          </h2>
 
+          {/* GRID CARDS */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
+            {/* Card 1 */}
+            <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-400 transition">
+              <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200">
+                <Waves size={24} />
+              </div>
+              <h4 className="font-bold text-lg text-left">
+                Property & Business Interruption
+              </h4>
+            </div>
 
-    {/* GRID CARDS */}
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
-      
-      {/* Card 1 */}
-      <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-400 transition">
-        <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200">
-          <Waves size={24} />
+            {/* Card 2 */}
+            <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-400 transition">
+              <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200">
+                <ShieldCheck size={24} />
+              </div>
+              <h4 className="font-bold text-lg text-left">
+                Product Liability & Recall
+              </h4>
+            </div>
+
+            {/* Card 3 */}
+            <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-400 transition">
+              <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200">
+                <Leaf size={24} />
+              </div>
+              <h4 className="font-bold text-lg text-left">
+                Environmental Impairment
+              </h4>
+            </div>
+
+            {/* Card 4 */}
+            <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-400 transition">
+              <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200">
+                <Ship size={24} />
+              </div>
+              <h4 className="font-bold text-lg text-left">Marine & Transit</h4>
+            </div>
+
+            {/* Card 5 – Full Width */}
+          </div>
         </div>
-        <h4 className="font-bold text-lg text-left">
-          Property & Business Interruption
-        </h4>
-      </div>
-
-      {/* Card 2 */}
-      <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-400 transition">
-        <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200">
-          <ShieldCheck size={24} />
-        </div>
-        <h4 className="font-bold text-lg text-left">
-          Product Liability & Recall
-        </h4>
-      </div>
-
-      {/* Card 3 */}
-      <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-400 transition">
-        <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200">
-          <Leaf size={24} />
-        </div>
-        <h4 className="font-bold text-lg text-left">
-          Environmental Impairment
-        </h4>
-      </div>
-
-      {/* Card 4 */}
-      <div className="flex items-center gap-4 p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-400 transition">
-        <div className="bg-blue-600 text-white p-3 rounded-xl shadow-lg shadow-blue-200">
-          <Ship size={24} />
-        </div>
-        <h4 className="font-bold text-lg text-left">
-          Marine & Transit
-        </h4>
-      </div>
-
-      {/* Card 5 – Full Width */}
-      
-
-    </div>
-  </div>
-</section>
+      </section>
     </div>
   );
 }

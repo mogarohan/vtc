@@ -98,15 +98,6 @@ const ClaimsManagement = () => {
             high-speed, error-free processing through automated digital
             workflows.
           </p>
-
-          <div className="mt-10 flex flex-wrap justify-center gap-4">
-            <Link
-              href="/contact"
-              className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20"
-            >
-              Initiate a Claim <ArrowRight size={18} />
-            </Link>
-          </div>
         </motion.div>
       </section>
 

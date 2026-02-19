@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Linkedin,
   Instagram,
@@ -17,90 +17,71 @@ import {
 import Link from "next/link";
 import Image from "next/image";
 
-// Animation Variants
 const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
+  initial: { opacity: 0, y: 25 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.6, ease: "easeOut" },
-};
-
-const staggerContainer = {
-  initial: {},
-  whileInView: { transition: { staggerChildren: 0.2 } },
+  transition: { duration: 0.5 },
 };
 
 export default function OurTeam() {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"],
-  });
-
-  const heroY = useTransform(scrollYProgress, [0, 1], [0, 300]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const values = [
     {
       title: "Transparency",
       desc: "Clear, honest, and jargon-free communication at every stage.",
-      icon: <Target className="w-6 h-6" />,
+      icon: <Target className="w-5 h-5" />,
       color: "bg-blue-50 text-blue-600",
     },
     {
       title: "Empathy",
       desc: "Standing by clients with care and responsibility when outcomes matter.",
-      icon: <Heart className="w-6 h-6" />,
+      icon: <Heart className="w-5 h-5" />,
       color: "bg-red-50 text-red-600",
     },
     {
       title: "Discipline",
       desc: "Preparedness, consistency, and structured execution across engagements.",
-      icon: <Users className="w-6 h-6" />,
+      icon: <Users className="w-5 h-5" />,
       color: "bg-green-50 text-green-600",
     },
   ];
 
   return (
-    <main ref={containerRef} className="bg-white selection:bg-blue-100">
-      {/* ================= HERO SECTION (Modern Split) ================= */}
-      <section className="relative w-full h-auto overflow-hidden bg-slate-950">
-        <div className="relative z-0 w-full h-auto">
-          <img
-            src="/team.jpeg"
-            alt="About Us Background"
-            className="w-full h-auto md:h-[85vh] md:object-cover brightness-[0.5]"
-          />
+    <main ref={containerRef} className="bg-white overflow-x-hidden">
+      {/* ================= HERO ================= */}
+      <section className="relative w-full h-[50vh] sm:h-[60vh] md:h-[85vh]">
+        <img
+          src="/team.jpeg"
+          alt="About Us Background"
+          className="absolute inset-0 w-full h-full object-cover brightness-[0.45]"
+        />
 
-          {/* Overlay: ensures it stays pinned to the image area */}
-          <div className="absolute bg-slate-950/40 backdrop-blur-[10px]" />
+        <div className="relative z-10 flex items-center h-full">
+          <div className="container mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="max-w-2xl"
+            >
+              <h1 className="text-white text-3xl sm:text-5xl md:text-6xl font-bold mb-4 leading-tight">
+                Guided by <span className="text-blue-300">Responsibility</span>
+              </h1>
 
-          {/* Text Content: Pinned to the Left side of the image */}
-          <div className="absolute inset-0 flex items-center z-10">
-            <div className="container mx-auto px-6">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="max-w-2xl"
-              >
-                <h1 className="text-white text-3xl sm:text-5xl md:text-7xl font-bold mb-6 tracking-tight">
-                  Guided by{" "}
-                  <span className="text-blue-300">Responsibility.</span>
-                </h1>
-                <p className="text-base sm:text-lg md:text-2xl text-white leading-relaxed font-bold border-l-4 border-blue-600 pl-4 md:pl-6">
-                  Vestigo is guided by leadership that combines deep insurance
-                  expertise, disciplined judgment, and genuine responsibility
-                  toward clients. Our founders remain closely involved in
-                  advisory and client engagements.
-                </p>
-              </motion.div>
-            </div>
+              <p className="text-white/90 text-sm sm:text-lg md:text-xl leading-relaxed border-l-4 border-blue-500 pl-4">
+                Vestigo is guided by leadership that combines deep insurance
+                expertise, disciplined judgment, and genuine responsibility
+                toward clients. Our founders remain closely involved in advisory
+                and client engagements.
+              </p>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* ================= MISSION & INTRO ================= */}
+      {/* ================= INTRO ================= */}
       <section className="py-10 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-12 gap-16 items-start">
@@ -153,7 +134,7 @@ export default function OurTeam() {
         </div>
       </section>
 
-      {/* ================= INTERACTIVE FEATURES ================= */}
+      {/* ================= FEATURES ================= */}
       <section className="py-20 relative overflow-hidden bg-gradient-to-b from-blue-50 to-white">
         {/* Optional: Decorative "Cloud" blobs for the background */}
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-200/30 blur-[100px] rounded-full" />
@@ -226,7 +207,7 @@ export default function OurTeam() {
         </div>
       </section>
 
-      {/* ================= LEADERSHIP (Premium Bio Cards) ================= */}
+      {/* ================= LEADERSHIP ================= */}
       <section className="py-5 px-6 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
@@ -353,7 +334,7 @@ export default function OurTeam() {
         </div>
       </section>
 
-      {/* ================= PHILOSOPHY BANNER ================= */}
+      {/* ================= PHILOSOPHY ================= */}
       <section className="bg-slate-950 py-20 px-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 blur-[120px] rounded-full" />
         <div className="max-w-5xl mx-auto text-center relative z-10">

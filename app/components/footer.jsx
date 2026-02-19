@@ -31,14 +31,12 @@ export default function Footer() {
       icon: <Linkedin size={18} />,
       href: "https://linkedin.com",
     },
-    { name: "Google", icon: <Globe size={18} />, href: "https://google.com" },
   ];
 
   return (
     <div className="w-full">
       {/* Footer height ko min-h-[400px] ya content ke hisaab se auto rakha hai */}
       <footer className="relative w-full text-slate-300 overflow-hidden min-h-[300px] flex flex-col justify-end">
-        
         {/* --- BACKGROUND LAYER FIX --- */}
         <div className="absolute inset-0 z-0">
           <picture>
@@ -76,7 +74,7 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5   items-start">
             {/* Company Section */}
             <div className="lg:col-span-1">
-              <Link href="/company/whoweare" className="lg:pointer-events-none">
+              <Link href="/company" className="lg:pointer-events-none">
                 <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block">
                   Company
                   <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
@@ -317,7 +315,7 @@ export default function Footer() {
             <div className="lg:col-span-1">
               <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block">
                 Contact Us
-                <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
+                <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-white hover:text-white"></span>
               </h3>
               <ul className="space-y-3 text-[13px]">
                 <li>
@@ -325,10 +323,10 @@ export default function Footer() {
                     href="tel:+91 97261 60360"
                     className="group flex items-center gap-2 hover:text-white transition-all"
                   >
-                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-[#4169E1] transition-all border border-white/10 flex-shrink-0">
+                    <div className="w-7 h-7 rounded-lg bg-[#4169E1] flex items-center justify-center group-hover:bg-white transition-all border border-[#4169E1] flex-shrink-0">
                       <Phone
                         size={10}
-                        className="text-[#4169E1] group-hover:text-white"
+                        className="text-white group-hover:text-[#4169E1]"
                       />
                     </div>
                     <span className="font-medium">+91 97261 60360</span>
@@ -339,10 +337,10 @@ export default function Footer() {
                     href="mailto:info@vestigoinsurance.com"
                     className="group flex items-center gap-2 hover:text-white transition-all"
                   >
-                    <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-[#4169E1] transition-all border border-white/10 flex-shrink-0">
+                    <div className="w-7 h-7 rounded-lg bg-[#4169E1] flex items-center justify-center group-hover:bg-white transition-all border border-[#4169E1] flex-shrink-0">
                       <Mail
                         size={10}
-                        className="text-[#4169E1] group-hover:text-white"
+                        className="text-white group-hover:text-[#4169E1]"
                       />
                     </div>
                     <span className="font-medium truncate ">
@@ -351,10 +349,10 @@ export default function Footer() {
                   </a>
                 </li>
                 <li className="group flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center group-hover:bg-[#4169E1] transition-all border border-white/10 flex-shrink-0">
+                  <div className="w-7 h-7 rounded-lg bg-[#4169E1] flex items-center justify-center group-hover:bg-white transition-all border border-[#4169E1] flex-shrink-0">
                     <MapPin
                       size={10}
-                      className="text-[#4169E1] group-hover:text-white"
+                      className="text-white group-hover:text-[#4169E1]"
                     />
                   </div>
                   <span className="font-medium text-slate-300 group-hover:text-white transition-colors">

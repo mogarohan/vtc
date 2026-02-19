@@ -1,17 +1,42 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 import {
   Search,
   AlertTriangle,
   BarChart3,
   Wrench,
   ShieldCheck,
+  ArrowRight,
+  Sparkles,
 } from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 },
+};
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
 
 export default function IndustryRiskPage() {
   const containerRef = useRef(null);
+
+  // Parallax Effect for the Hero
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   const processSteps = [
     {
@@ -55,19 +80,46 @@ export default function IndustryRiskPage() {
     <main ref={containerRef} className="min-h-screen bg-white overflow-hidden">
       {/* 1. PREMIUM DARK HERO SECTION (Matched to Company/Solutions) */}
       <section className="relative h-[80vh] -mt-20 flex items-center justify-center overflow-hidden bg-[#0F172A]">
-        {/* HEADER */}
-        <div className="text-center mb-16 md:mb-28 px-4">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black uppercase tracking-tighter text-white"
-          >
-            Audits <br />
-            <span className="bg-gradient-to-r from-blue-600 to-cyan-500 text-transparent bg-clip-text">
-              & <br /> Risk Assessment
-            </span>
-          </motion.p>
+        {/* Animated Background Gradients */}
+        <div className="absolute inset-0 z-0">
+          <motion.div
+            animate={{ scale: [1, 1.2, 1], x: [0, 50, 0] }}
+            transition={{ duration: 10, repeat: Infinity }}
+            className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px]"
+          />
+          <motion.div
+            animate={{ scale: [1, 1.3, 1], x: [0, -50, 0] }}
+            transition={{ duration: 15, repeat: Infinity }}
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-indigo-600/20 rounded-full blur-[100px]"
+          />
         </div>
+
+        <motion.div
+          style={{ y, opacity }}
+          className="relative z-10 text-center px-6"
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 backdrop-blur-md"
+          >
+            <Sparkles size={16} /> FAST & TRANSPARENT
+          </motion.div>
+
+          <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter">
+            Audit &{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+              Risk Assessment.
+            </span>
+          </h1>
+
+          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+            Effective insurance begins long before a claim occurs. Our risk
+            management consultants conduct thorough exposure analyses,
+            identifying vulnerabilities across your operations, supply chain,
+            and workforce.
+          </p>
+        </motion.div>
       </section>
 
       <section className="relative overflow-hidden py-20 md:py-24">
