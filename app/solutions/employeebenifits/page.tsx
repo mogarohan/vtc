@@ -56,8 +56,7 @@ export default function EmployeeBenefitsPage() {
       title: "Demographic Audit",
       icon: <Users2 size={22} />,
       desc: "Analyzing workforce age and location to define a baseline.",
-      image:
-        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800",
+      image: "/employee/8.png",
     },
     {
       id: "step-2",
@@ -65,8 +64,7 @@ export default function EmployeeBenefitsPage() {
       title: "Benefit Structuring",
       icon: <FilePlus size={22} />,
       desc: "Designing a competitive mix of health and wellness incentives.",
-      image:
-        "https://images.unsplash.com/photo-1454165833767-1296b34922e3?q=80&w=800",
+      image: "/employee/9.png",
     },
     {
       id: "step-3",
@@ -74,8 +72,7 @@ export default function EmployeeBenefitsPage() {
       title: "Provider Sourcing",
       icon: <SearchCheck size={22} />,
       desc: "Negotiating with top-tier providers for premium rates.",
-      image:
-        "https://images.unsplash.com/photo-1521791136064-7986c2923216?q=80&w=800",
+      image: "/employee/10.png",
     },
     {
       id: "step-4",
@@ -83,8 +80,7 @@ export default function EmployeeBenefitsPage() {
       title: "Digital Enrollment",
       icon: <Sparkles size={22} />,
       desc: "Launching seamless, tech-enabled onboarding.",
-      image:
-        "https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=800",
+      image: "/employee/11.png",
     },
     {
       id: "step-5",
@@ -92,15 +88,14 @@ export default function EmployeeBenefitsPage() {
       title: "Engagement Support",
       icon: <ShieldCheck size={22} />,
       desc: "Providing 24/7 claims advocacy and optimization.",
-      image:
-        "https://images.unsplash.com/photo-1600880212319-7524e2727928?q=80&w=800",
+      image: "/employee/12.png",
     },
   ];
 
   return (
     <main className="min-h-screen bg-white font-sans relative">
       {/* ---------------- HERO SECTION ---------------- */}
-      <section className="relative pt-24 min-h-[85vh] flex items-center overflow-hidden bg-[#070B7F]">
+      <section className="relative pt-10 min-h-[85vh] flex items-center overflow-hidden bg-[#070B7F]">
         <div className="container mx-auto px-6 md:px-12 z-20 relative py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
           {/* TEXT */}
           <motion.div

@@ -50,58 +50,59 @@ const LifeInsurance = () => {
   return (
     <main ref={containerRef} className="min-h-screen bg-white">
       {/* 1. PREMIUM DARK HERO SECTION - Fixed Height & Padding */}
-      <section className="relative min-h-[90vh] -mt-30 flex items-center justify-center overflow-hidden bg-[#0F172A] pt-32 pb-40">
-        {/* Animated Background Gradients */}
-        <div className="absolute inset-0 z-0">
+      <section className="relative pt-10 min-h-[90vh] flex items-center overflow-hidden bg-[#0F172A]">
+        {/* Content Container */}
+        <div className="container mx-auto px-6 md:px-12 z-20 relative py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+          {/* TEXT */}
           <motion.div
-            animate={{ scale: [1, 1.2, 1], x: [0, 50, 0] }}
-            transition={{ duration: 10, repeat: Infinity }}
-            className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px]"
-          />
-          <motion.div
-            animate={{ scale: [1, 1.3, 1], x: [0, -50, 0] }}
-            transition={{ duration: 15, repeat: Infinity }}
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-indigo-600/20 rounded-full blur-[100px]"
-          />
-        </div>
-
-        {/* Content Container - Added relative and z-10 */}
-        <motion.div
-          style={{ y, opacity }}
-          className="relative z-10 text-center px-6 max-w-7xl mx-auto"
-        >
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 backdrop-blur-md"
+            style={{ y, opacity }}
+            className="max-w-2xl text-white text-center md:text-left"
           >
-            <Sparkles size={16} /> LIFETIME PROTECTION
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 backdrop-blur-md"
+            >
+              <Sparkles size={16} /> LIFETIME PROTECTION
+            </motion.div>
+
+            <h1 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9] uppercase">
+              Secure Your <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                Family’s Future.
+              </span>
+            </h1>
+
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto md:mx-0 leading-relaxed mb-10">
+              Secure your family&apos;s financial future with comprehensive life
+              insurance coverage designed to protect those who matter most.
+              Beyond basic death benefits, we structure sophisticated protection
+              strategies incorporating income replacement, estate planning, and
+              wealth preservation objectives.
+            </p>
           </motion.div>
 
-          <h1 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[1.1]">
-            Secure Your <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-              Family’s Future.
-            </span>
-          </h1>
+          {/* IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="relative z-30 w-full md:w-auto"
+          >
+            <img
+              src="/family.png" // ← replace with your image
+              alt="Life Insurance"
+              className="rounded-[2.5rem] md:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-md md:max-w-none mx-auto transition-all duration-700"
+            />
+          </motion.div>
+        </div>
 
-          <p className="text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed mb-10">
-            Secure your family&apos;s financial future with comprehensive life
-            insurance coverage designed to protect those who matter most. Beyond
-            basic death benefits, we structure sophisticated protection
-            strategies incorporating income replacement, estate planning, and
-            wealth preservation objectives.
-          </p>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              href="#plans"
-              className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20"
-            >
-              Check Premiums <ArrowRight size={18} />
-            </Link>
-          </div>
-        </motion.div>
+        {/* Diagonal HERO SHAPE */}
+        <div
+          className="absolute inset-0 bg-[#020617] z-10"
+          style={{
+            clipPath: "polygon(0 0, 58% 0, 42% 100%, 0% 100%)",
+          }}
+        />
       </section>
 
       {/* 2. PLANS GRID (Floating Effect) - Fixed Margin */}

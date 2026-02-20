@@ -76,8 +76,7 @@ const AutomobileInsurancePage = () => {
     {
       title: "Property & Business Interruption",
       icon: <ShieldCheck size={28} />,
-      image:
-        "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=600",
+      image: "/auto/auto1.jpg",
     },
     {
       title: "Product Liability & Recall",
@@ -92,8 +91,7 @@ const AutomobileInsurancePage = () => {
     {
       title: "Cyber Insurance",
       icon: <Lock size={28} />,
-      image:
-        "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80&w=600",
+      image: "/auto/auto4.png",
     },
     {
       title: "Marine & Transit",
@@ -156,10 +154,7 @@ const AutomobileInsurancePage = () => {
             className="bg-white/70 backdrop-blur-xl p-4 md:p-16 rounded-[2rem] shadow-xl border border-white/50 flex flex-col md:flex-row items-center gap-10"
           >
             <div className="md:w-1/2 rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&q=80&w=1000"
-                alt="Electric Car Charging"
-              />
+              <img src="/auto/car.png" alt="Electric Car Charging" />
             </div>
             <div className="md:w-1/2">
               <div className="flex items-center gap-3 text-blue-600 mb-6">

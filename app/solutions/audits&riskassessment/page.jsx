@@ -79,8 +79,14 @@ export default function IndustryRiskPage() {
   return (
     <main ref={containerRef} className="min-h-screen bg-white overflow-hidden">
       {/* 1. PREMIUM DARK HERO SECTION (Matched to Company/Solutions) */}
-      <section className="relative h-[80vh] -mt-20 flex items-center justify-center overflow-hidden bg-[#0F172A]">
-        {/* Animated Background Gradients */}
+      <section className="relative pt-10 min-h-[80vh] flex items-center overflow-hidden bg-[#0F172A]">
+        {/* Background Shape */}
+        <div
+          className="absolute inset-0 bg-[#0F172A] z-10"
+          style={{ clipPath: "polygon(0 0, 60% 0, 40% 100%, 0% 100%)" }}
+        />
+
+        {/* Animated Background Glow */}
         <div className="absolute inset-0 z-0">
           <motion.div
             animate={{ scale: [1, 1.2, 1], x: [0, 50, 0] }}
@@ -94,32 +100,49 @@ export default function IndustryRiskPage() {
           />
         </div>
 
-        <motion.div
-          style={{ y, opacity }}
-          className="relative z-10 text-center px-6"
-        >
+        {/* Content Container */}
+        <div className="container mx-auto px-6 md:px-12 relative z-20 py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+          {/* TEXT */}
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 backdrop-blur-md"
+            style={{ y, opacity }}
+            className="max-w-2xl text-white text-center md:text-left"
           >
-            <Sparkles size={16} /> FAST & TRANSPARENT
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 backdrop-blur-md"
+            >
+              <Sparkles size={16} /> FAST & TRANSPARENT
+            </motion.div>
+
+            <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+              Audit &{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                Risk Assessment.
+              </span>
+            </h1>
+
+            <p className="text-lg text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed">
+              Effective insurance begins long before a claim occurs. Our risk
+              management consultants conduct thorough exposure analyses,
+              identifying vulnerabilities across your operations, supply chain,
+              and workforce.
+            </p>
           </motion.div>
 
-          <h1 className="text-6xl md:text-8xl font-black text-white mb-8 tracking-tighter">
-            Audit &{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-              Risk Assessment.
-            </span>
-          </h1>
-
-          <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            Effective insurance begins long before a claim occurs. Our risk
-            management consultants conduct thorough exposure analyses,
-            identifying vulnerabilities across your operations, supply chain,
-            and workforce.
-          </p>
-        </motion.div>
+          {/* IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="relative z-30 w-full md:w-auto"
+          >
+            <img
+              src="/risk_hero.jpeg" // ← replace with your actual image
+              alt="Risk Assessment"
+              className="rounded-[2.5rem] md:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-md md:max-w-none mx-auto transition-all duration-700"
+            />
+          </motion.div>
+        </div>
       </section>
 
       <section className="relative overflow-hidden py-20 md:py-24">
