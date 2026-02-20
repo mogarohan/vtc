@@ -1,6 +1,6 @@
 "use client";
-
-import { useState, useMemo } from "react";
+import { useRef, useEffect, useState } from "react";
+import { useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   ShieldCheck,
@@ -27,6 +27,28 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Solutions() {
+  const videoRef = useRef(null);
+  const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleEnded = () => {
+      setHasPlayedOnce(true);
+
+      video.muted = true; // ✅ mute after first play
+      video.loop = true; // ✅ enable loop
+      video.play(); // ✅ restart smoothly
+    };
+
+    video.addEventListener("ended", handleEnded);
+
+    return () => {
+      video.removeEventListener("ended", handleEnded);
+    };
+  }, []);
+
   const [activeCategory, setActiveCategory] = useState("All");
 
   const categories = ["All", "Corporate", "Health", "Logistics", "Industrial"];
@@ -128,42 +150,73 @@ export default function Solutions() {
 
   return (
     <main className="min-h-screen bg-[#F8FAFC] overflow-hidden">
-      <section className="relative h-[95vh] flex items-center justify-center overflow-hidden">
-  
-  {/* Background Video */}
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="absolute inset-0 w-full h-full object-cover"
-  >
-    <source src="/video5.mp4" type="video/mp4" />
-  </video>
+      <section
+        className="
+    relative h-[120vh] flex items-center justify-center overflow-hidden
+    
+    max-md:h-[29svh]
+    max-md:min-h-0          /* ✅ remove forced extra space */
+  "
+      >
+        {/* Background Video */}
+        <video
+          ref={videoRef}
+          autoPlay
+          playsInline
+          preload="auto"
+          muted={false} // ✅ allow audio first time
+          loop={false} // ✅ no loop initially
+          className="
+        absolute inset-0 w-full h-full
+        object-cover
+        max-md:object-contain
+        max-md:object-top
+      "
+        >
+          <source src="/solution.mp4" type="video/mp4" />
+        </video>
 
-  {/* Dark Overlay Pattern */}
-  <div
-    className="absolute inset-0 opacity-30"
-    style={{
-      backgroundImage: "radial-gradient(#3b82f6 1px, transparent 1px)",
-      backgroundSize: "40px 40px",
-    }}
-  ></div>
-
-</section>
+        {/* Overlay Pattern */}
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: "radial-gradient(#3b82f6 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
+      </section>
 
       {/* --- GRID SECTION --- */}
       <section className="max-w-7xl mx-auto px-5 pt-14 pb-10">
-        <div className="flex-center ml-70 gap-3 p-2 bg-white/5 backdrop-blur-md rounded-[2.5rem] w-fit border border-blue/10">
+        <div
+          className="
+    flex-center gap-3 p-2 bg-white/5 backdrop-blur-md 
+    rounded-[2.5rem] w-fit border border-blue/10
+    
+    ml-70                 /* Desktop unchanged */
+    
+    max-md:ml-0           /* Remove margin on mobile */
+    max-md:w-full
+    max-md:grid
+    max-md:grid-cols-2    /* 2×2 layout */
+    max-md:gap-2
+    max-md:justify-center
+  "
+        >
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`relative px-10 py-3 rounded-full text-sm font-bold transition-all duration-300 ${
-                activeCategory === cat
-                  ? "text-black"
-                  : "text-black hover:text-black"
-              }`}
+              className={`
+        relative px-10 py-3 rounded-full text-sm font-bold 
+        transition-all duration-300
+        
+        ${activeCategory === cat ? "text-black" : "text-black hover:text-black"}
+        
+        max-md:px-4        /* Better fit on mobile */
+        max-md:py-2.5
+        max-md:text-xs
+      `}
             >
               {activeCategory === cat && (
                 <motion.div
@@ -176,6 +229,7 @@ export default function Solutions() {
             </button>
           ))}
         </div>
+
         <motion.div
           layout
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10"

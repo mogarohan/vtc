@@ -25,8 +25,9 @@ const slides = [
 
 export default function Hero() {
   const [index, setIndex] = useState(0);
-  const totalVideoDuration = 10000; // 10 seconds
-  const slideDuration = totalVideoDuration / slides.length; // ~3333ms per slide
+
+  const totalVideoDuration = 10000;
+  const slideDuration = totalVideoDuration / slides.length;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -37,74 +38,62 @@ export default function Hero() {
   }, [slideDuration]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-[#020420]">
-      {/* 1. Video Background Layer */}
-      <div className="absolute inset-0 z-0">
-        {/* Dark overlay to pop the white text */}
-        <div className="absolute inset-0 bg-black/20 z-10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#020420]/80 via-transparent to-[#020420] z-10" />
+    <section className="relative w-full bg-[#020420]">
+      {/* ✅ MOBILE LAYOUT */}
+      <div className="block md:hidden">
+        {/* Video Top */}
+        <div className="relative w-full h-[45svh] overflow-hidden">
+          <div className="absolute inset-0 bg-black/30 z-10" />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/hero3.mp4" type="video/mp4" />
+          </video>
+        </div>
 
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/hero3.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      {/* 2. Content Layer */}
-      <div className="relative z-20 h-full container mx-auto px-6 flex flex-col items-center justify-end pb-24 text-center">
-        <div className="max-w-4xl">
+        {/* Content Below */}
+        <div className="px-5 py-10 text-center">
           <AnimatePresence mode="wait">
             <motion.div
-              key={`content-${index}`}
-              initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-              exit={{ opacity: 0, y: -30, filter: "blur(10px)" }}
-              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
             >
-              {/* Taglines: Soft Blue Tint for hierarchy */}
-              <span className="inline-block text-[#93C5FD] font-black uppercase tracking-[0.4em] text-[12px] mb-6">
+              <span className="inline-block text-[#93C5FD] font-black uppercase tracking-[0.3em] text-[10px] mb-4">
                 {slides[index].tag}
               </span>
 
-              {/* Main Headline: Pure White for maximum contrast */}
-              <h1 className="text-2xl lg:text-4xl font-black text-[#FFFFFF] leading-[1.2] mb-6 uppercase tracking-tight">
+              <h1 className="text-xl font-black text-white leading-snug uppercase mb-4">
                 {slides[index].title}
-                {/* Highlight Keywords: Vibrant Action Blue */}
                 <span className="text-blue-500">
                   {" "}
                   {slides[index].highlight}
                 </span>
               </h1>
 
-              {/* Body Text: Light Gray for readability without strain */}
-              <p className="text-lg text-[#D1D5DB] leading-relaxed max-w-2xl mx-auto mb-12 font-medium">
+              <p className="text-sm text-[#D1D5DB] leading-relaxed mb-8">
                 {slides[index].desc}
               </p>
             </motion.div>
           </AnimatePresence>
 
-          <div className="flex flex-wrap gap-6 justify-center">
+          <div className="flex flex-col gap-3">
             <motion.button
-              whileHover={{ scale: 1.05, backgroundColor: "#4F55FF" }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 bg-[#070B7F] text-white text-xs font-black uppercase tracking-widest rounded-full shadow-2xl transition-all"
+              className="py-3 bg-[#070B7F] text-white text-xs font-black uppercase tracking-widest rounded-full"
             >
               Get Started
             </motion.button>
 
             <motion.button
-              whileHover={{
-                scale: 1.05,
-                backgroundColor: "rgba(255,255,255,0.15)",
-              }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 border-2 border-[#FFFFFF] text-[#FFFFFF] text-xs font-black uppercase tracking-widest rounded-full backdrop-blur-md transition-all"
+              className="py-3 border border-white text-white text-xs font-black uppercase tracking-widest rounded-full"
             >
               View Solutions
             </motion.button>
@@ -112,21 +101,73 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* 3. Synced Progress Indicators */}
-      {/* <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-30 flex gap-4">
-        {slides.map((_, i) => (
-          <div key={i} className="h-1 w-16 bg-white/20 rounded-full overflow-hidden relative">
-            {index === i && (
-              <motion.div 
-                initial={{ width: 0 }}
-                animate={{ width: "100%" }}
-                transition={{ duration: slideDuration / 1000, ease: "linear" }}
-                className="absolute inset-0 bg-[#00D1FF]" // Electric Cyan progress bar
-              />
-            )}
+      {/* ✅ DESKTOP LAYOUT */}
+      <div className="hidden md:block relative min-h-screen overflow-hidden">
+        {/* Background Video */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-black/20 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#020420]/80 via-transparent to-[#020420] z-10" />
+
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-contain md:object-cover bg-black"
+          >
+            <source src="/hero3.mp4" type="video/mp4" />
+          </video>
+        </div>
+
+        {/* Content */}
+        <div className="relative z-20 h-screen container mx-auto px-6 flex flex-col items-center justify-end pb-24 text-center">
+          <div className="max-w-4xl">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`content-${index}`}
+                initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                exit={{ opacity: 0, y: -30, filter: "blur(10px)" }}
+                transition={{ duration: 0.8 }}
+              >
+                <span className="inline-block text-[#93C5FD] font-black uppercase tracking-[0.4em] text-[12px] mb-6">
+                  {slides[index].tag}
+                </span>
+
+                <h1 className="text-2xl lg:text-4xl font-black text-white leading-[1.2] mb-6 uppercase">
+                  {slides[index].title}
+                  <span className="text-blue-500">
+                    {" "}
+                    {slides[index].highlight}
+                  </span>
+                </h1>
+
+                <p className="text-lg text-[#D1D5DB] leading-relaxed max-w-2xl mx-auto mb-12">
+                  {slides[index].desc}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+
+            <div className="flex gap-6 justify-center">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-4 bg-[#070B7F] text-white text-xs font-black uppercase tracking-widest rounded-full"
+              >
+                Get Started
+              </motion.button>
+
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-4 border-2 border-white text-white text-xs font-black uppercase tracking-widest rounded-full"
+              >
+                View Solutions
+              </motion.button>
+            </div>
           </div>
-        ))}
-      </div> */}
+        </div>
+      </div>
     </section>
   );
 }
