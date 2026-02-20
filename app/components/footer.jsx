@@ -40,11 +40,16 @@ export default function Footer() {
         {/* --- BACKGROUND LAYER FIX --- */}
         <div className="absolute inset-0 z-0">
           <picture>
-            <source media="(min-width: 768px)" srcSet="/f3.jpeg" />
+            {/* Desktop */}
+            <source media="(min-width: 1024px)" srcSet="/f3.jpeg" />
+
+            {/* Tablet */}
+            <source media="(min-width: 768px)" srcSet="/tablet.jpeg" />
+
+            {/* Mobile */}
             <img
               src="/m.jpeg"
               alt="Footer Background"
-              /* CHANGE: Yahan object-cover aur h-full w-full lagaya hai */
               className="w-full h-full object-cover brightness-[0.7]"
             />
           </picture>
@@ -70,10 +75,12 @@ export default function Footer() {
         ></motion.div>
 
         {/* --- 2. MAIN LINKS CONTENT --- */}
-        <div className="relative z-5 mt-0 pl-15 max-w-7xl mx-auto  py-10 px-3">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5   items-start">
+        <div className="relative z-5 mt-0 max-w-7xl mx-auto py-10 px-6 md:px-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5  items-start">
+            {/* ---------- TABLET ONLY (md to lg) ---------- */}
+
             {/* Company Section */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 md:col-span-2 lg:col-span-1">
               <Link href="/company" className="lg:pointer-events-none">
                 <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block">
                   Company
@@ -118,14 +125,18 @@ export default function Footer() {
             </div>
 
             {/* Industries Works Section */}
-            <div className="lg:col-span-2">
-              <Link href="/industries" className="lg:pointer-events-none">
-                <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 lg:ml-20 relative inline-block">
+            <div className="lg:col-span-2 md:col-span-2 lg:col-span-2">
+              <Link
+                href="/industries"
+                className="lg:pointer-events-none md:text-left"
+              >
+                <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block lg:ml-20 md:ml-0">
                   Industries Works
                   <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
                 </h3>
               </Link>
-              {/* Desktop par grid dikhega, Mobile par hidden */}
+
+              {/* Desktop → grid | Tablet & Mobile → hidden */}
               <div className="hidden lg:grid grid-cols-4 gap-x-2 text-[11px]">
                 <ul className="space-y-2 text-[15px]">
                   <li>
@@ -161,6 +172,7 @@ export default function Footer() {
                     </Link>
                   </li>
                 </ul>
+
                 <ul className="space-y-2 text-[15px]">
                   <li>
                     <Link
@@ -195,6 +207,7 @@ export default function Footer() {
                     </Link>
                   </li>
                 </ul>
+
                 <ul className="space-y-2 text-[15px]">
                   <li>
                     <Link
@@ -229,6 +242,7 @@ export default function Footer() {
                     </Link>
                   </li>
                 </ul>
+
                 <ul className="space-y-2 text-[15px]">
                   <li>
                     <Link
@@ -267,7 +281,7 @@ export default function Footer() {
             </div>
 
             {/* Services / Solutions Section */}
-            <div className="lg:col-span-1">
+            <div className="lg:col-span-1 md:col-span-2 lg:col-span-1">
               <Link href="/solutions" className="lg:pointer-events-none">
                 <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block">
                   Services
@@ -315,7 +329,7 @@ export default function Footer() {
             <div className="lg:col-span-1">
               <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block">
                 Contact Us
-                <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-white hover:text-white"></span>
+                <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1] hover:text-white"></span>
               </h3>
               <ul className="space-y-3 text-[13px]">
                 <li>
@@ -356,7 +370,7 @@ export default function Footer() {
                     />
                   </div>
                   <span className="font-medium text-slate-300 group-hover:text-white transition-colors">
-                    Ahemdabad Vadodara Surendranagar Siddhpur | Mumbai
+                    Ahemdabad, Vadodara, Surendranagar, Siddhpur, Mumbai
                   </span>
                 </li>
               </ul>
@@ -366,10 +380,17 @@ export default function Footer() {
           {/* Bottom Bar with Gradient Background */}
           <div className="mt-5 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-white text-[10px] uppercase tracking-widest relative">
             {/* Left Section: Copyright - Added text-center for mobile */}
-            <p className="text-center md:text-left">
-              &copy; {new Date().getFullYear()} Vestigo Insurance Advisor.
-              <br className="md:hidden" />
-              <span className="md:ml-2">CREATED BY TECHSTROTA</span>
+            <p className="text-[14px] font-medium text-slate-300">
+              © 2026 Vestigo Insurance Advisor | Developed with{" "}
+              <span className="text-[#28A745]">🫶</span> by{" "}
+              <a
+                href="https://www.techstrota.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#28A745] transition-colors"
+              >
+                Techstrota
+              </a>
             </p>
 
             {/* Center Section: Social Links - Already centered by flex-col items-center on parent */}

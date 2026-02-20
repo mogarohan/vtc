@@ -120,21 +120,26 @@ const IndustrialMarketplace = () => {
                 key={item.title}
                 variants={fadeUp}
                 whileHover={{ y: -6 }}
-                className="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition"
+                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition"
               >
-                <div className="w-full h-[180px] bg-[#F7F8FC] flex items-center justify-center p-4">
+                <div className="w-full h-[320px] bg-[#F7F8FC] flex items-center justify-center ">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="max-h-[160px] object-contain transition-transform duration-500 group-hover:scale-105"
+                    className="
+                     w-full h-full
+                     object-cover
+                     transition-transform duration-500
+                     group-hover:scale-100
+                   "
                   />
                 </div>
 
                 <div className="p-5 text-center">
-                  <h3 className="text-lg font-semibold text-[#1C2A7D]">
+                  <h3 className="text-xl  font-semibold text-[#1C2A7D]">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-slate-600 mt-2">{item.desc}</p>
+                  <p className="text-lg text-slate-600 mt-2">{item.desc}</p>
                 </div>
               </motion.div>
             ))}

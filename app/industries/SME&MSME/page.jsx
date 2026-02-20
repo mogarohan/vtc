@@ -13,32 +13,31 @@ import {
   Rocket,
   CheckCircle2,
   FileText,
-
 } from "lucide-react";
 
 export default function MSMEPage() {
   const supportSectors = [
-  {
-    title: "Package Policies",
-    Icon: Layers,
-    desc: "Bundled coverage solutions combining property, liability, and business interruption at competitive premiums designed for operational efficiency.",
-  },
-  {
-    title: "Professional Indemnity",
-    Icon: ShieldCheck,
-    desc: "Protect against claims arising from professional advice, errors, or omissions with tailored coverage for service-based businesses.",
-  },
-  {
-    title: "Trade Credit Insurance",
-    Icon: FileText,
-    desc: "Safeguard your cash flow against customer payment defaults and insolvency risks in challenging economic conditions.",
-  },
-  {
-    title: "Key Person Cover",
-    Icon: Users,
-    desc: "Financial protection if critical team members become unable to work, ensuring business continuity during unexpected challenges.",
-  },
-];
+    {
+      title: "Package Policies",
+      Icon: Layers,
+      desc: "Bundled coverage solutions combining property, liability, and business interruption at competitive premiums designed for operational efficiency.",
+    },
+    {
+      title: "Professional Indemnity",
+      Icon: ShieldCheck,
+      desc: "Protect against claims arising from professional advice, errors, or omissions with tailored coverage for service-based businesses.",
+    },
+    {
+      title: "Trade Credit Insurance",
+      Icon: FileText,
+      desc: "Safeguard your cash flow against customer payment defaults and insolvency risks in challenging economic conditions.",
+    },
+    {
+      title: "Key Person Cover",
+      Icon: Users,
+      desc: "Financial protection if critical team members become unable to work, ensuring business continuity during unexpected challenges.",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
@@ -51,16 +50,19 @@ export default function MSMEPage() {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
           <div className="flex-1 text-center lg:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-6 border border-blue-200 uppercase tracking-widest">
-              <Briefcase size={14} />Tailored Protection for Growing Businesses
+              <Briefcase size={14} />
+              Tailored Protection for Growing Businesses
             </div>
             <h1 className="text-5xl md:text-7xl font-black text-blue-900 mb-8 leading-[1.1] tracking-tight">
               SME & MSME <br />
               <span className="text-blue-500 italic"> Insurance</span>
             </h1>
             <p className="text-xl text-slate-500 max-w-xl mb-10 leading-relaxed font-bold">
-             Small and medium enterprises form the backbone of our economy, yet often face disproportionate insurance challenges. We specialise in delivering cost-effective, comprehensive coverage that scales with your business ambitions.
+              Small and medium enterprises form the backbone of our economy, yet
+              often face disproportionate insurance challenges. We specialise in
+              delivering cost-effective, comprehensive coverage that scales with
+              your business ambitions.
             </p>
-           
           </div>
 
           <div className="flex-1 w-full max-w-md bg-blue-800 rounded-[3rem] p-12 relative shadow-2xl overflow-hidden group">
@@ -94,7 +96,6 @@ export default function MSMEPage() {
         </div>
       </section>
 
-  
       {/* 3. CORE SUPPORT GRID */}
       <section className="py-10 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
@@ -124,7 +125,6 @@ export default function MSMEPage() {
                   <p className="text-slate-500 text-sm leading-relaxed mb-8">
                     {sector.desc}
                   </p>
-              
                 </div>
               );
             })}
@@ -140,8 +140,15 @@ export default function MSMEPage() {
               From Micro , To Massive.
             </h2>
             <p className="font-black text-white mb-8 tracking-tighter bold">
-              Our SME insurance programmes are specifically designed to address the unique vulnerabilities of smaller operations. Whether you're a retail establishment, professional service firm, or manufacturing unit, we structure policies that provide maximum protection without unnecessary complexity or expense.
-We negotiate with insurers who understand the SME sector, securing favourable terms and flexible payment structures. Our approach includes regular policy reviews to ensure your cover evolves alongside your business growth and changing risk profile.
+              Our SME insurance programmes are specifically designed to address
+              the unique vulnerabilities of smaller operations. Whether
+              you&apos;re a retail establishment, professional service firm, or
+              manufacturing unit, we structure policies that provide maximum
+              protection without unnecessary complexity or expense. We negotiate
+              with insurers who understand the SME sector, securing favourable
+              terms and flexible payment structures. Our approach includes
+              regular policy reviews to ensure your cover evolves alongside your
+              business growth and changing risk profile.
             </p>
             {/* <div className="space-y-4">
               {[

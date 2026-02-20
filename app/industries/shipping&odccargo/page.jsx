@@ -137,43 +137,29 @@ export default function ShippingODCPage() {
               <motion.div
                 key={item.title}
                 variants={fadeUp}
-                whileHover={{ y: -8 }}
-                transition={{ type: "spring", stiffness: 220, damping: 18 }}
-                className="group bg-white rounded-2xl overflow-hidden
-                  flex flex-col
-                  border border-[#1C2A7D]/10
-                  shadow-[0_14px_35px_rgba(28,42,125,0.14)]
-                  hover:shadow-[0_28px_60px_rgba(28,42,125,0.25)]
-                  transition"
+                whileHover={{ y: -6 }}
+                className="group bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-md hover:shadow-xl transition"
               >
-                {/* IMAGE */}
-                <div
-                  className="w-full min-h-[200px] bg-[#F7F8FC]
-                flex items-center justify-center p-4"
-                >
+                {/* ✅ Image Top */}
+                <div className="w-full h-[320px] overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.title}
                     className="
-      max-h-[200px]
-      w-auto
-      object-contain
-      transition-transform
-      duration-500
-      group-hover:scale-[1.03]
-    "
+                     w-full h-full
+                     object-cover
+                     transition-transform duration-500
+                     group-hover:scale-100
+                   "
                   />
                 </div>
 
-                <div className="p-6 mt-auto">
-                  <h3 className="text-lg font-semibold text-[#1C2A7D] text-center">
+                {/* ✅ Text Bottom */}
+                <div className="p-5 text-center">
+                  <h3 className="text-xl font-semibold text-[#1C2A7D]">
                     {item.title}
                   </h3>
-                </div>
-                <div className="p-1 mt-auto">
-                  <h3 className="text-lg font-semibold text-black text-center">
-                    {item.desc}
-                  </h3>
+                  <p className="text-lg text-slate-600 mt-2">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
