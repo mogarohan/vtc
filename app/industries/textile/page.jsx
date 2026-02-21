@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Scissors,
   Layers,
@@ -57,49 +58,44 @@ export default function TextileIndustryPage() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
       {/* 1. HERO SECTION: The Fabric of Innovation */}
-      <section className="relative bg-[#0F172A] pt-32 pb-24 px-6 overflow-hidden">
-        {/* Subtle Vertical Thread Pattern Overlay */}
-        <div
-          className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{
-            backgroundImage: `repeating-linear-gradient(90deg, #3b82f6 0px, #3b82f6 1px, transparent 1px, transparent 20px)`,
-          }}
-        ></div>
-
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
-          <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-600 text-white text-[10px] font-black uppercase tracking-[0.2em] mb-6">
-              <Factory size={14} /> Weaving Sustainable Fashion
-            </div>
-            <h1 className="text-5xl md:text-8xl font-black text-white mb-8 leading-[1.1] tracking-tighter">
-              Textile <br />
-              <span className="text-blue-500 italic"> Insurance Solutions</span>
-            </h1>
-            <p className="text-lg text-slate-400 max-w-xl mb-12 leading-relaxed font-bold">
-              Fast fashion evolution, sustainable materials innovation,
-              automation in manufacturing, direct-to-consumer models, circular
-              economy adoption, and ethical sourcing reshaping global textile
-              industry.
-            </p>
-          </div>
-
-          {/* Abstract Thread Graphic */}
-          <div className="flex-1 w-full max-w-md aspect-square bg-blue-900 rounded-[4rem] relative shadow-3xl overflow-hidden group border border-white/10">
-            <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/30 to-transparent"></div>
-            <Wind
-              size={160}
-              className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-10 group-hover:scale-125 transition-transform duration-1000"
-            />
-            <div className="absolute bottom-12 left-12">
-              <p className="text-4xl font-black text-white italic">
-                240 <span className="text-lg">GSM</span>
-              </p>
-              <p className="text-[10px] text-blue-400 font-bold uppercase tracking-widest">
-                Premium Fabric Weight
-              </p>
-            </div>
-          </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/texttile.jpeg"
+            className="w-full h-full object-cover opacity-20"
+            alt="Hero Background"
+          />
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-6"
+        >
+          <span className="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-lg">
+            Weaving Sustainable Fashion
+          </span>
+          <h1 className="text-3xl md:text-6xl font-black text-[#070B7F] mb-6 tracking-tighter uppercase leading-tight">
+            Textile
+            <br />{" "}
+            <span className="text-blue-600 italic">Insurance Solutions</span>
+          </h1>
+          <h3 className="text-xs md:text-xl font-light text-slate-600 mb-10 uppercase tracking-[0.3em]">
+            Fast fashion evolution, sustainable materials innovation, automation
+            in manufacturing, direct-to-consumer models, circular economy
+            adoption, and ethical sourcing reshaping global textile industry.
+          </h3>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
+            Explore Solutions
+          </button>
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, 15, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-10 text-blue-600"
+        ></motion.div>
       </section>
 
       {/* 3. PRODUCT SEGMENTS */}

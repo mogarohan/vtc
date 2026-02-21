@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Factory,
   Settings,
@@ -53,60 +54,46 @@ export default function PaperMillPage() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 overflow-x-hidden">
       {/* ---------------- HERO ---------------- */}
-      <section className="relative bg-[#020617] pt-16 sm:pt-24 lg:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 overflow-hidden">
-        {/* Texture */}
-        <div
-          className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{
-            backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`,
-            backgroundSize: "30px 30px",
-          }}
-        />
-
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 sm:gap-16 relative z-10">
-          {/* TEXT */}
-          <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-500/10 text-blue-400 text-[10px] sm:text-xs font-black uppercase tracking-widest mb-4 sm:mb-6 border border-blue-500/20">
-              <Factory size={14} />
-              Industrial Excellence
-            </div>
-
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white mb-4 sm:mb-8 leading-tight">
-              Paper Mills <br />
-              <span className="text-blue-500 italic underline decoration-blue-900 decoration-4 sm:decoration-8 underline-offset-4">
-                Industry Solutions
-              </span>
-            </h1>
-
-            <p className="text-sm sm:text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-10 leading-relaxed">
-              Paper mill manufacturers play a critical role in the circular
-              economy, producing materials for packaging, construction,
-              furniture, and consumer goods. Sustainability mandates, water and
-              energy reduction targets, and regulatory compliance add
-              operational complexity.
-            </p>
-
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-5">
-              <button className="bg-blue-600 hover:bg-blue-500 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-md font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-blue-900/30">
-                Technical Audit <ArrowRight size={18} />
-              </button>
-
-              <button className="border border-slate-700 text-white px-6 sm:px-10 py-3 sm:py-4 rounded-md font-bold hover:bg-white/5 transition-all uppercase tracking-widest text-xs">
-                View Mill Specs
-              </button>
-            </div>
-          </div>
-
-          {/* GRAPHIC */}
-          <div className="flex-1 w-full h-[240px] sm:h-[380px] lg:h-[500px] bg-slate-900 rounded-2xl sm:rounded-[4rem] relative overflow-hidden shadow-xl border border-white/5">
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent"></div>
-
-            <Waves
-              size={90}
-              className="text-blue-500 opacity-10 absolute -bottom-6 -left-6 sm:-bottom-10 sm:-left-10"
-            />
-          </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/papermills.png"
+            className="w-full h-full object-cover opacity-20"
+            alt="Hero Background"
+          />
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-6"
+        >
+          <span className="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-lg">
+            Industrial Excellence
+          </span>
+          <h1 className="text-3xl md:text-6xl font-black text-[#070B7F] mb-6 tracking-tighter uppercase leading-tight">
+            Paper Mills
+            <br />{" "}
+            <span className="text-blue-600 italic">Industry Solutions</span>
+          </h1>
+          <h3 className="text-xs md:text-xl font-light text-slate-600 mb-10 uppercase tracking-[0.3em]">
+            Paper mill manufacturers play a critical role in the circular
+            economy, producing materials for packaging, construction, furniture,
+            and consumer goods. Sustainability mandates, water and energy
+            reduction targets, and regulatory compliance add operational
+            complexity.
+          </h3>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
+            Explore Solutions
+          </button>
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, 15, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-10 text-blue-600"
+        ></motion.div>
       </section>
 
       {/* ---------------- KEY THREATS ---------------- */}

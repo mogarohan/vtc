@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Package,
   Truck,
@@ -56,66 +57,44 @@ export default function PackagingPage() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-blue-100 overflow-x-hidden">
       {/* ---------------- HERO ---------------- */}
-      <section className="relative bg-slate-50 pt-16 sm:pt-24 lg:pt-32 pb-14 sm:pb-20 lg:pb-24 px-4 sm:px-6 overflow-hidden">
-        {/* Pattern */}
-        <div
-          className="absolute inset-0 opacity-5 pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm20 20h20v20H20V20z' fill='%232563eb' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
-          }}
-        />
-
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10 sm:gap-16 relative z-10">
-          {/* TEXT */}
-          <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-blue-600 text-white text-[10px] sm:text-xs font-black uppercase tracking-widest mb-4 sm:mb-6 shadow">
-              <Package size={14} />
-              Material Engineering 4.0
-            </div>
-
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-blue-900 mb-5 sm:mb-8 leading-tight">
-              Packaging Industry <br />
-              <span className="text-blue-600 italic">Insurance Solutions</span>
-            </h1>
-
-            <p className="text-base sm:text-xl text-slate-500 max-w-xl mx-auto lg:mx-0 mb-4 sm:mb-6 font-bold">
-              Protecting the Backbone of Global Commerce.
-            </p>
-
-            <p className="text-sm sm:text-lg text-slate-600 mb-6 sm:mb-10 leading-relaxed">
-              The packaging industry is essential to modern supply chains,
-              ensuring product safety, shelf appeal, and logistics efficiency
-              across food, pharmaceuticals, consumer goods, and e-commerce.
-            </p>
-
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 sm:px-10 py-3 sm:py-5 rounded-lg sm:rounded-xl font-bold transition-all flex items-center justify-center gap-2 shadow-lg">
-                Get Custom Specs <ArrowRight size={18} />
-              </button>
-
-              <button className="bg-white border-2 border-blue-100 text-blue-600 px-6 sm:px-10 py-3 sm:py-5 rounded-lg sm:rounded-xl font-bold hover:bg-blue-50 transition-all">
-                Material Catalog
-              </button>
-            </div>
-          </div>
-
-          {/* GRAPHIC */}
-          <div className="flex-1 w-full max-w-[240px] sm:max-w-md aspect-square bg-blue-900 rounded-3xl sm:rounded-[3.5rem] relative shadow-xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/30 to-transparent"></div>
-
-            <Layers
-              size={90}
-              className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20"
-            />
-
-            <div className="absolute bottom-4 sm:bottom-10 left-4 sm:left-10 text-white text-left">
-              <p className="text-xl sm:text-4xl font-black italic">ISO 14001</p>
-              <p className="text-[10px] sm:text-sm font-bold text-blue-300 uppercase tracking-widest">
-                Certified Sustainability
-              </p>
-            </div>
-          </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/packaging.png"
+            className="w-full h-full object-cover opacity-20"
+            alt="Hero Background"
+          />
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-6"
+        >
+          <span className="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-lg">
+            Material Engineering 4.0
+          </span>
+          <h1 className="text-3xl md:text-6xl font-black text-[#070B7F] mb-6 tracking-tighter uppercase leading-tight">
+            Packaging Industry
+            <br />{" "}
+            <span className="text-blue-600 italic">Insurance Solutions</span>
+          </h1>
+          <h3 className="text-xs md:text-xl font-light text-slate-600 mb-10 uppercase tracking-[0.3em]">
+            The packaging industry is essential to modern supply chains,
+            ensuring product safety, shelf appeal, and logistics efficiency
+            across food, pharmaceuticals, consumer goods, and e-commerce.
+          </h3>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
+            Explore Solutions
+          </button>
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, 15, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-10 text-blue-600"
+        ></motion.div>
       </section>
 
       {/* ---------------- KEY THREATS ---------------- */}

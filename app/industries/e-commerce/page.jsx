@@ -71,29 +71,43 @@ const IndustrialMarketplace = () => {
       className="bg-white text-slate-900 overflow-hidden"
     >
       {/* ================= HERO ================= */}
-      <section className="relative flex items-center justify-center bg-[#0F172A] pt-24 pb-24">
-        <div className="relative z-10 text-center px-6 max-w-6xl">
-          <motion.div style={{ y, opacity }}>
-            <div className="inline-flex items-center gap-2 px-5 py-2 mb-8 border border-blue-400/20 rounded-full bg-blue-500/5 text-blue-400 text-xs font-black uppercase tracking-widest">
-              <Sparkles size={14} />
-              The Speed Commerce Era
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5rem] font-black text-white leading-tight uppercase">
-              Revolutionizing
-              <br />
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 text-transparent bg-clip-text">
-                Retail Delivery
-              </span>
-            </h1>
-
-            <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mt-6">
-              10-minute delivery revolution, dark store networks, hyperlocal
-              fulfillment, AI-powered personalization, and seamless omnichannel
-              experiences.
-            </p>
-          </motion.div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/ecommerce.jpeg"
+            className="w-full h-full object-cover opacity-20"
+            alt="Hero Background"
+          />
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-6"
+        >
+          <span className="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-lg">
+            The Speed Commerce Era
+          </span>
+          <h1 className="text-3xl md:text-6xl font-black text-[#070B7F] mb-6 tracking-tighter uppercase leading-tight">
+            Revolutionizing
+            <br /> <span className="text-blue-600 italic">Retail Delivery</span>
+          </h1>
+          <h3 className="text-xs md:text-xl font-light text-slate-600 mb-10 uppercase tracking-[0.3em]">
+            10-minute delivery revolution, dark store networks, hyperlocal
+            fulfillment, AI-powered personalization, and seamless omnichannel
+            experiences.
+          </h3>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
+            Explore Solutions
+          </button>
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, 15, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-10 text-blue-600"
+        ></motion.div>
       </section>
 
       {/* ================= SECTION TITLE ================= */}

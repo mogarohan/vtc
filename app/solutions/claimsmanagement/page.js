@@ -74,11 +74,11 @@ const ClaimsManagement = () => {
           />
         </div>
 
-        <div className="container mx-auto px-6 md:px-12 z-20 relative py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+        <div className="container mx-auto px-6 md:px-12 z-20 relative py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-16">
           {/* TEXT */}
           <motion.div
             style={{ y, opacity }}
-            className="max-w-2xl text-white text-center md:text-left"
+            className="max-w-2xl text-white text-center lg:text-left"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -88,14 +88,14 @@ const ClaimsManagement = () => {
               <Sparkles size={16} /> FAST & TRANSPARENT
             </motion.div>
 
-            <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
               Claims{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                 Management.
               </span>
             </h1>
 
-            <p className="text-lg text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed">
+            <p className="text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               Reimagine your claims experience with Vestigo. We deliver
               high-speed, error-free processing through automated digital
               workflows.
@@ -106,12 +106,12 @@ const ClaimsManagement = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="relative z-30 w-full md:w-auto"
+            className="relative z-30 w-full lg:w-auto"
           >
             <img
               src="/claims_hero.jpeg"
               alt="Claims"
-              className="rounded-[2.5rem] md:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-md md:max-w-none mx-auto transition-all duration-700"
+              className="rounded-[2.5rem] lg:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-md lg:max-w-none mx-auto transition-all duration-700"
             />
           </motion.div>
         </div>

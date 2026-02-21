@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import {
   Zap,
   Recycle,
@@ -57,61 +58,45 @@ export default function PlasticIndustryPage() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
       {/* 1. HERO SECTION: Synthetic Excellence */}
-      <section className="relative bg-slate-800 pt-32 pb-24 px-6 overflow-hidden">
-        {/* Hexagonal Molecular Pattern Overlay */}
-        <div
-          className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M25 0l21.65 12.5v25L25 50 3.35 37.5v-25z' fill='none' stroke='%23ffffff' stroke-width='1'/%3E%3C/svg%3E")`,
-          }}
-        ></div>
-
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
-          <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-600 text-white text-[10px] font-black uppercase tracking-[0.2em] mb-6">
-              <Layers size={14} />
-              Innovating for a Sustainable Tomorrow
-            </div>
-            <h1 className="text-5xl md:text-6x2 font-black text-white mb-8 leading-[1.1] tracking-tighter">
-              Plastic <br />
-              <span className="text-blue-500 italic">
-                Industry Insurance Solutions
-              </span>
-            </h1>
-            <p className="text-lg text-slate-300 max-w-xl mb-12 leading-relaxed font-bold">
-              The plastic and wood industries are undergoing significant
-              transformation as they balance traditional manufacturing with
-              sustainability imperatives. From bio-based plastics and recycled
-              polymers to certified sustainable timber and engineered wood
-              products, these sectors are innovating to meet environmental
-              standards while maintaining performance and cost-effectiveness.
-              Advanced extrusion technologies, precision woodworking machinery,
-              and automated production systems are driving efficiency, but raw
-              material price volatility, regulatory pressures, and fire risks
-              remain critical challenges.
-            </p>
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4">
-              <button className="bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-xl font-bold transition-all flex items-center gap-3 shadow-xl shadow-blue-900/40">
-                Get Material Specs <ArrowRight size={18} />
-              </button>
-              <button className="border border-slate-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-white/5 transition-all">
-                Sample Catalog
-              </button>
-            </div>
-          </div>
-
-          {/* Abstract Injection Mold Graphic */}
-          <div className="flex-1 w-full max-w-md aspect-square bg-blue-600 rounded-full relative shadow-3xl overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/30 to-transparent"></div>
-            <Settings
-              size={160}
-              className="text-white absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 group-hover:rotate-180 transition-transform duration-[3s]"
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <Box size={100} className="text-white drop-shadow-2xl" />
-            </div>
-          </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/plastic.jpeg"
+            className="w-full h-full object-cover opacity-20"
+            alt="Hero Background"
+          />
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-6"
+        >
+          <span className="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-lg">
+            Innovating for a Sustainable Tomorrow
+          </span>
+          <h1 className="text-3xl md:text-6xl font-black text-[#070B7F] mb-6 tracking-tighter uppercase leading-tight">
+            Plastic Industry
+            <br />{" "}
+            <span className="text-blue-600 italic">Insurance Solutions</span>
+          </h1>
+          <h3 className="text-xs md:text-xl font-light text-slate-600 mb-10 uppercase tracking-[0.3em]">
+            Advanced extrusion technologies, precision woodworking machinery,
+            and automated production systems are driving efficiency, but raw
+            material price volatility, regulatory pressures, and fire risks
+            remain critical challenges.
+          </h3>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
+            Explore Solutions
+          </button>
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, 15, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-10 text-blue-600"
+        ></motion.div>
       </section>
 
       {/* 3. INDUSTRY VERTICALS */}

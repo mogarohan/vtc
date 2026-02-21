@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import { motion } from "framer-motion";
 import {
   TrendingUp,
   ShieldCheck,
@@ -42,58 +43,45 @@ export default function MSMEPage() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
       {/* 1. HERO SECTION: Empowering Growth */}
-      <section className="relative bg-white pt-32 pb-24 px-6 overflow-hidden">
-        {/* Subtle Decorative Circles */}
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-50 rounded-full opacity-50"></div>
-        <div className="absolute top-1/2 right-0 w-64 h-64 bg-blue-100/30 rounded-full blur-3xl"></div>
-
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
-          <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 text-xs font-bold mb-6 border border-blue-200 uppercase tracking-widest">
-              <Briefcase size={14} />
-              Tailored Protection for Growing Businesses
-            </div>
-            <h1 className="text-5xl md:text-7xl font-black text-blue-900 mb-8 leading-[1.1] tracking-tight">
-              SME & MSME <br />
-              <span className="text-blue-500 italic"> Insurance</span>
-            </h1>
-            <p className="text-xl text-slate-500 max-w-xl mb-10 leading-relaxed font-bold">
-              Small and medium enterprises form the backbone of our economy, yet
-              often face disproportionate insurance challenges. We specialise in
-              delivering cost-effective, comprehensive coverage that scales with
-              your business ambitions.
-            </p>
-          </div>
-
-          <div className="flex-1 w-full max-w-md bg-blue-800 rounded-[3rem] p-12 relative shadow-2xl overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-transparent"></div>
-            <TrendingUp
-              size={120}
-              className="text-white absolute -top-10 -right-10 opacity-10 group-hover:scale-110 transition-transform"
-            />
-
-            <div className="relative z-10 text-white">
-              <h4 className="text-xs font-bold uppercase tracking-[0.3em] text-blue-300 mb-2">
-                Impact Score
-              </h4>
-
-              <p className="mt-4 text-blue-100 font-light leading-relaxed text-sm">
-                Average revenue growth for MSMEs after 12 months of integration.
-              </p>
-              <div className="mt-8 flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="w-10 h-10 rounded-full border-2 border-blue-800 bg-blue-400"
-                  ></div>
-                ))}
-                <div className="w-10 h-10 rounded-full border-2 border-blue-800 bg-white flex items-center justify-center text-blue-800 text-xs font-bold">
-                  +2k
-                </div>
-              </div>
-            </div>
-          </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/sme-msme.png"
+            className="w-full h-full object-cover opacity-20"
+            alt="Hero Background"
+          />
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-6"
+        >
+          <span className="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-lg">
+            Tailored Protection for Growing Businesses
+          </span>
+          <h1 className="text-3xl md:text-6xl font-black text-[#070B7F] mb-6 tracking-tighter uppercase leading-tight">
+            SME & MSME
+            <br />{" "}
+            <span className="text-blue-600 italic">Insurance Solution</span>
+          </h1>
+          <h3 className="text-xs md:text-xl font-light text-slate-600 mb-10 uppercase tracking-[0.3em]">
+            Small and medium enterprises form the backbone of our economy, yet
+            often face disproportionate insurance challenges. We specialise in
+            delivering cost-effective, comprehensive coverage that scales with
+            your business ambitions.
+          </h3>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
+            Explore Solutions
+          </button>
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, 15, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-10 text-blue-600"
+        ></motion.div>
       </section>
 
       {/* 3. CORE SUPPORT GRID */}

@@ -110,7 +110,6 @@ const AutomobileInsurancePage = () => {
             className="w-full h-full object-cover opacity-20"
             alt="Hero Background"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f0f9ff]/50 via-transparent to-[#f0f9ff]" />
         </div>
 
         <motion.div
@@ -122,7 +121,7 @@ const AutomobileInsurancePage = () => {
           <span className="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-lg">
             Engineering Excellence
           </span>
-          <h1 className="text-5xl md:text-8xl font-black text-[#070B7F] mb-6 tracking-tighter uppercase leading-tight">
+          <h1 className="text-3xl md:text-6xl font-black text-[#070B7F] mb-6 tracking-tighter uppercase leading-tight">
             Automobile & Engineering <br />{" "}
             <span className="text-blue-600 italic">Insurance</span> Solutions
           </h1>

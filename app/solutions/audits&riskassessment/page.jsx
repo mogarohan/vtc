@@ -101,11 +101,11 @@ export default function IndustryRiskPage() {
         </div>
 
         {/* Content Container */}
-        <div className="container mx-auto px-6 md:px-12 relative z-20 py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+        <div className="container mx-auto px-6 md:px-12 relative z-20 py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 md:gap-16">
           {/* TEXT */}
           <motion.div
             style={{ y, opacity }}
-            className="max-w-2xl text-white text-center md:text-left"
+            className="max-w-2xl text-white text-center lg:text-left"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -115,14 +115,14 @@ export default function IndustryRiskPage() {
               <Sparkles size={16} /> FAST & TRANSPARENT
             </motion.div>
 
-            <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
               Audit &{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                 Risk Assessment.
               </span>
             </h1>
 
-            <p className="text-lg text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed">
+            <p className="text-lg text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               Effective insurance begins long before a claim occurs. Our risk
               management consultants conduct thorough exposure analyses,
               identifying vulnerabilities across your operations, supply chain,
@@ -134,12 +134,12 @@ export default function IndustryRiskPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="relative z-30 w-full md:w-auto"
+            className="relative z-30 w-full lg:w-auto"
           >
             <img
-              src="/risk_hero.jpeg" // ← replace with your actual image
+              src="/risk_hero.jpeg"
               alt="Risk Assessment"
-              className="rounded-[2.5rem] md:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-md md:max-w-none mx-auto transition-all duration-700"
+              className="rounded-[2.5rem] md:rounded-[3rem] lg:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-md lg:max-w-none mx-auto transition-all duration-700"
             />
           </motion.div>
         </div>

@@ -71,11 +71,11 @@ const AbilitySuite = () => {
           />
         </div>
 
-        <div className="container mx-auto px-6 md:px-12 z-20 relative py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+        <div className="container mx-auto px-6 md:px-10 lg:px-12 z-20 relative py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-16">
           {/* TEXT */}
           <motion.div
             style={{ y, opacity }}
-            className="max-w-2xl text-white text-center md:text-left"
+            className="max-w-2xl text-white text-center lg:text-left"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -85,14 +85,14 @@ const AbilitySuite = () => {
               <Zap size={16} /> DIGITAL ECOSYSTEM
             </motion.div>
 
-            <h1 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.95]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white mb-6 lg:mb-8 tracking-tighter leading-[1] lg:leading-[0.95]">
               Vestigo <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                 Ability Suite.
               </span>
             </h1>
 
-            <p className="text-xl text-slate-400 max-w-xl mx-auto md:mx-0 leading-relaxed mb-10">
+            <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8 lg:mb-10">
               A comprehensive technology stack engineered to digitize insurance
               workflows end-to-end. Scale faster, stay secure, and amplify
               productivity by 10x.
@@ -103,19 +103,19 @@ const AbilitySuite = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="relative z-30 w-full md:w-auto"
+            className="relative z-30 w-full flex justify-center"
           >
             <img
               src="/ability.jpeg"
-              alt="Hero Visual"
-              className="rounded-[2.5rem] md:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-md md:max-w-none mx-auto transition-all duration-700"
+              alt="Surety Bonds"
+              className="rounded-4xl lg:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-xs sm:max-w-sm lg:max-w-2xl mx-auto transition-all duration-700"
             />
           </motion.div>
         </div>
 
         {/* HERO SHAPE */}
         <div
-          className="absolute inset-0 bg-[#0F172A] z-10"
+          className="absolute inset-0 bg-[#0F172A] z-10 hidden lg:block"
           style={{ clipPath: "polygon(0 0, 58% 0, 42% 100%, 0% 100%)" }}
         />
       </section>

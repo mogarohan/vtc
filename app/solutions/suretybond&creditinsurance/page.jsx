@@ -70,28 +70,28 @@ const SuretyBondPage = () => {
         </div>
 
         {/* CONTENT CONTAINER */}
-        <div className="container mx-auto px-6 md:px-12 z-20 relative py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+        <div className="container mx-auto px-6 lg:px-12 z-20 relative py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-16">
           {/* TEXT */}
           <motion.div
             style={{ y, opacity }}
-            className="max-w-2xl text-white text-center md:text-left"
+            className="max-w-2xl text-white text-center lg:text-left"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 border border-indigo-400/30 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-bold mb-6 backdrop-blur-md"
+              className="inline-flex items-center gap-2 px-4 py-1.5 border border-indigo-400/30 rounded-full bg-indigo-500/10 text-indigo-400 text-sm font-bold mb-5 backdrop-blur-md"
             >
               <Sparkles size={16} /> FINANCIAL RISK MANAGEMENT
             </motion.div>
 
-            <h1 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.95]">
+            <h1 className="text-4xl sm:text-5xl lg:text-8xl font-black text-white mb-6 tracking-tighter leading-[1.05] lg:leading-[0.95]">
               Surety Bonds & <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-300">
                 Credit Insurance.
               </span>
             </h1>
 
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto md:mx-0 leading-relaxed mb-10">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-400 max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8">
               Secure your international trade and domestic contracts against
               financial uncertainty. Vestigo provides the credibility your
               business needs to scale.
@@ -102,19 +102,19 @@ const SuretyBondPage = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="relative z-30 w-full md:w-auto"
+            className="relative z-30 w-full flex justify-center lg:w-auto"
           >
             <img
-              src="/surety.jpeg" // ← replace with your image
-              alt="Life Insurance"
-              className="rounded-[2.5rem] md:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-md md:max-w-none mx-auto transition-all duration-700"
+              src="/surety.jpeg"
+              alt="Surety Bonds"
+              className="rounded-3xl lg:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto transition-all duration-700"
             />
           </motion.div>
         </div>
 
-        {/* HERO SHAPE */}
+        {/* HERO SHAPE – desktop only */}
         <div
-          className="absolute inset-0 bg-[#0F172A] z-10"
+          className="absolute inset-0 bg-[#0F172A] z-10 hidden lg:block"
           style={{ clipPath: "polygon(0 0, 58% 0, 42% 100%, 0% 100%)" }}
         />
       </section>

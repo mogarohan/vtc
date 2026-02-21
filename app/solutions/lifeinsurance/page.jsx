@@ -51,12 +51,11 @@ const LifeInsurance = () => {
     <main ref={containerRef} className="min-h-screen bg-white">
       {/* 1. PREMIUM DARK HERO SECTION - Fixed Height & Padding */}
       <section className="relative pt-10 min-h-[90vh] flex items-center overflow-hidden bg-[#0F172A]">
-        {/* Content Container */}
-        <div className="container mx-auto px-6 md:px-12 z-20 relative py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+        <div className="container mx-auto px-6 md:px-12 z-20 relative py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 md:gap-16">
           {/* TEXT */}
           <motion.div
             style={{ y, opacity }}
-            className="max-w-2xl text-white text-center md:text-left"
+            className="max-w-2xl text-white text-center lg:text-left"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -66,14 +65,14 @@ const LifeInsurance = () => {
               <Sparkles size={16} /> LIFETIME PROTECTION
             </motion.div>
 
-            <h1 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9] uppercase">
+            <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.9] uppercase">
               Secure Your <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                 Family’s Future.
               </span>
             </h1>
 
-            <p className="text-xl text-slate-400 max-w-2xl mx-auto md:mx-0 leading-relaxed mb-10">
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-10">
               Secure your family&apos;s financial future with comprehensive life
               insurance coverage designed to protect those who matter most.
               Beyond basic death benefits, we structure sophisticated protection
@@ -86,10 +85,10 @@ const LifeInsurance = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="relative z-30 w-full md:w-auto"
+            className="relative z-30 w-full lg:w-auto"
           >
             <img
-              src="/family.png" // ← replace with your image
+              src="/family.png"
               alt="Life Insurance"
               className="rounded-[2.5rem] md:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-md md:max-w-none mx-auto transition-all duration-700"
             />

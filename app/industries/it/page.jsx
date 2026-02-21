@@ -17,6 +17,7 @@ import {
   Clock,
   Scale,
   FileWarning,
+  ChevronDown,
 } from "lucide-react";
 
 const fadeUp = {
@@ -60,38 +61,45 @@ export default function ITFieldPage() {
   return (
     <div className="min-h-screen bg-white font-mono text-slate-900 selection:bg-cyan-100">
       {/* 1. HERO SECTION: The Digital Frontier */}
-      <section className="relative bg-slate-950 pt-14 sm:pt-16 md:pt-20 pb-16 sm:pb-20 md:pb-24 px-5 sm:px-6 overflow-hidden">
-        {/* Binary/Matrix Style Pattern Overlay */}
-        <div
-          className="absolute inset-0 opacity-10 pointer-events-none"
-          style={{
-            backgroundImage: `radial-gradient(#06b6d4 1px, transparent 1px)`,
-            backgroundSize: "20px 20px",
-          }}
-        ></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/it-tech.png"
+            className="w-full h-full object-cover opacity-20"
+            alt="Hero Background"
+          />
+        </div>
 
-        <div className="max-w-7xl mx-auto relative z-10">
-          <h1 className="text-4xl sm:text-5xl md:text-8xl font-black text-white mb-8 leading-[1] tracking-tighter">
-            Navigating Risk in India’s <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-cyan-400 italic">
-              IT & Technology Sector
-            </span>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-6"
+        >
+          <span className="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-lg">
+            IT Expert
+          </span>
+          <h1 className="text-3xl md:text-6xl font-black text-[#070B7F] mb-6 tracking-tighter uppercase leading-tight">
+            Navigating Risk in India’s
+            <br />{" "}
+            <span className="text-blue-600 italic">IT & Technology Sector</span>
           </h1>
-
-          <p className="text-lg text-slate-400 max-w-2xl mb-12 leading-relaxed font-sans">
+          <h3 className="text-xl md:text-2xl font-light text-slate-600 mb-10 uppercase tracking-[0.3em]">
             India’s IT and technology sector is a global powerhouse,
             contributing significantly to GDP and employing millions.
-          </p>
+          </h3>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
+            Explore Solutions
+          </button>
+        </motion.div>
 
-          <div className="flex flex-wrap gap-5">
-            <button className="bg-blue-600 hover:bg-cyan-500 text-white px-8 py-4 rounded-sm font-bold transition-all flex items-center gap-3 shadow-lg shadow-blue-600/20">
-              Start Project <ArrowRight size={18} />
-            </button>
-            <button className="border border-slate-700 text-white px-8 py-4 rounded-sm font-bold hover:bg-white/5 transition-all">
-              Tech Stack
-            </button>
-          </div>
-        </div>
+        <motion.div
+          animate={{ y: [0, 15, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-10 text-blue-600"
+        >
+          <ChevronDown size={40} />
+        </motion.div>
       </section>
 
       {/* 3. IT VERTICALS: White Cards on Blue Shadow */}

@@ -62,11 +62,11 @@ const GreenInsurance = () => {
         </div>
 
         {/* Content Container */}
-        <div className="container mx-auto px-6 md:px-12 z-20 relative py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+        <div className="container mx-auto px-6 md:px-10 lg:px-12 z-20 relative py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-10 lg:gap-16">
           {/* TEXT */}
           <motion.div
             style={{ y, opacity }}
-            className="max-w-2xl text-white text-center md:text-left"
+            className="max-w-2xl text-white text-center lg:text-left"
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
@@ -76,14 +76,14 @@ const GreenInsurance = () => {
               <Wind size={16} /> ECO-CONSCIOUS PROTECTION
             </motion.div>
 
-            <h1 className="text-5xl md:text-8xl font-black text-white mb-8 tracking-tighter leading-[0.95] uppercase">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-[1] lg:leading-[0.95] uppercase">
               Insurance that <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
                 Protects the Planet.
               </span>
             </h1>
 
-            <p className="text-xl text-slate-400 max-w-3xl leading-relaxed mb-10">
+            <p className="text-base sm:text-lg md:text-xl text-slate-400 max-w-3xl leading-relaxed mb-8 md:mb-10">
               Vestigo’s Green Insurance is designed for forward-thinking
               businesses. We provide superior coverage for assets that build a
               sustainable tomorrow.
@@ -94,19 +94,19 @@ const GreenInsurance = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="relative z-30 w-full md:w-auto"
+            className="relative z-30 w-full flex justify-center lg:justify-end"
           >
             <img
-              src="/greenenergy.png" // change to your actual image
+              src="/greenenergy.png"
               alt="Green Insurance"
-              className="rounded-[2.5rem] md:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-md md:max-w-none mx-auto transition-all duration-700"
+              className="rounded-[2rem] md:rounded-[2.5rem] lg:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-none transition-all duration-700"
             />
           </motion.div>
         </div>
 
-        {/* Angled Shape (Matches First Hero Style) */}
+        {/* Angled Shape */}
         <div
-          className="absolute inset-0 bg-[#0F172A] z-10"
+          className="absolute inset-0 bg-[#0F172A] z-10 hidden lg:block"
           style={{ clipPath: "polygon(0 0, 58% 0, 42% 100%, 0% 100%)" }}
         />
       </section>

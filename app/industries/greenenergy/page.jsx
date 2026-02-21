@@ -1,4 +1,3 @@
-
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
@@ -37,43 +36,44 @@ const BlueEngineeringPage = () => {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans">
       {/* 1. HERO SECTION: Technical & Professional */}
-      <section className="relative bg-[#020617] pt-32 pb-24 px-6 overflow-hidden">
-        {/* Technical Grid Pattern Overlay */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `linear-gradient(#2563eb 0.5px, transparent 0.5px), linear-gradient(90deg, #2563eb 0.5px, transparent 0.5px)`,
-            backgroundSize: "30px 30px",
-          }}
-        ></div>
-
-        {/* Blue Glow Effect */}
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-600/20 blur-[120px] rounded-full"></div>
-
-        <div className="max-w-7xl mx-auto relative z-10 text-center md:text-left">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-xs font-bold mb-8 border border-blue-400/20 uppercase tracking-widest">
-            <Zap size={14} className="animate-pulse" /> Energizing Sustainable Futures
-          </div>
-
-          <h1 className="text-5xl md:text-8xl font-black text-white mb-8 leading-tight tracking-tight">
-            Clean Energy. <br />
-            <span className="text-blue-500 italic"> Transition</span>
-          </h1>
-
-          <p className="text-xl text-slate-400 max-w-2xl mb-12 leading-relaxed font-light">
-           Renewable energy integration accelerating, grid modernization critical, energy storage solutions emerging, regulatory pressures increasing, decarbonization commitments driving massive infrastructure investments globally.
-          </p>
-
-         <div className="flex flex-wrap justify-left gap-4">
-            <Link
-              href="/contact"
-              className="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-2xl font-bold flex items-center gap-2 transition-all shadow-lg shadow-blue-600/20"
-            >
-              Talk to a Consultant <ArrowRight size={18} />
-            </Link>
-           
-          </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/green-energy.png"
+            className="w-full h-full object-cover opacity-20"
+            alt="Hero Background"
+          />
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-6"
+        >
+          <span className="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-lg">
+            Energizing Sustainable Futures
+          </span>
+          <h1 className="text-3xl md:text-6xl font-black text-[#070B7F] mb-6 tracking-tighter uppercase leading-tight">
+            Clean Energy.
+            <br /> <span className="text-blue-600 italic">Transition</span>
+          </h1>
+          <h3 className="text-xs md:text-xl font-light text-slate-600 mb-10 uppercase tracking-[0.3em]">
+            Renewable energy integration accelerating, grid modernization
+            critical, energy storage solutions emerging, regulatory pressures
+            increasing, decarbonization commitments driving massive
+            infrastructure investments globally.
+          </h3>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
+            Explore Solutions
+          </button>
+        </motion.div>
+
+        <motion.div
+          animate={{ y: [0, 15, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-10 text-blue-600"
+        ></motion.div>
       </section>
 
       {/* 3. TECHNOLOGY GRID: Blue Cards */}
@@ -82,7 +82,7 @@ const BlueEngineeringPage = () => {
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 text-center md:text-left">
             <div className="max-w-xl">
               <h2 className="text-4xl font-black text-slate-900 mb-4">
-               Energy Sector Risks
+                Energy Sector Risks
               </h2>
               <p className="text-slate-500">
                 Scalable renewable infrastructure designed for heavy industrial
@@ -94,37 +94,37 @@ const BlueEngineeringPage = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-                {
-    title: "Property Damage & BI",
-    icon: <Flame className="w-10 h-10 " />, 
-    desc: "Power plant fires, equipment failure, natural disasters, grid failures"
-  },
-  {
-    title: "Environmental Liability",
-    icon: <Leaf className="w-10 h-10 " />, 
-    desc: "Pollution incidents, contamination, cleanup costs, regulatory fines"
-  },
-  {
-    title: "Construction All Risk",
-    icon: <HardHat className="w-10 h-10 " />, 
-    desc: "Renewable project delays, installation damage, weather disruptions"
-  },
-  {
-    title: "Cyber & Smart Grid",
-    icon: <ShieldAlert className="w-10 h-10 " />, 
-    desc: "System breaches, SCADA attacks, grid disruptions, data theft"
-  },
-  {
-    title: "Renewable Energy Risks",
-    icon: <Zap className="w-10 h-10 " />, 
-    desc: "Solar panel damage, wind turbine failure, performance guarantees"
-  },
-  {
-    title: "Regulatory & Compliance",
-    icon: <ClipboardCheck className="w-10 h-10 " />, 
-    desc: " License violations, safety breaches, investigation costs"
-  },
-].map((tech, i) => (
+              {
+                title: "Property Damage & BI",
+                icon: <Flame className="w-10 h-10 " />,
+                desc: "Power plant fires, equipment failure, natural disasters, grid failures",
+              },
+              {
+                title: "Environmental Liability",
+                icon: <Leaf className="w-10 h-10 " />,
+                desc: "Pollution incidents, contamination, cleanup costs, regulatory fines",
+              },
+              {
+                title: "Construction All Risk",
+                icon: <HardHat className="w-10 h-10 " />,
+                desc: "Renewable project delays, installation damage, weather disruptions",
+              },
+              {
+                title: "Cyber & Smart Grid",
+                icon: <ShieldAlert className="w-10 h-10 " />,
+                desc: "System breaches, SCADA attacks, grid disruptions, data theft",
+              },
+              {
+                title: "Renewable Energy Risks",
+                icon: <Zap className="w-10 h-10 " />,
+                desc: "Solar panel damage, wind turbine failure, performance guarantees",
+              },
+              {
+                title: "Regulatory & Compliance",
+                icon: <ClipboardCheck className="w-10 h-10 " />,
+                desc: " License violations, safety breaches, investigation costs",
+              },
+            ].map((tech, i) => (
               <div
                 key={i}
                 className="group p-10 rounded-3xl bg-white border border-slate-100 hover:border-blue-200 hover:shadow-[0_20px_50px_rgba(37,99,235,0.1)] transition-all duration-500"
@@ -153,7 +153,7 @@ const BlueEngineeringPage = () => {
         </h2>
         <div className="h-1.5 w-20 bg-blue-600 mx-auto rounded-full"></div>
       </div>
-<section className="bg-[#F7F8FC] py-8">
+      <section className="bg-[#F7F8FC] py-8">
         <div className="max-w-6xl mx-auto px-6">
           <motion.h2
             variants={fadeUp}
@@ -161,9 +161,7 @@ const BlueEngineeringPage = () => {
             whileInView="visible"
             viewport={{ once: true }}
             className="text-4xl font-black text-slate-900 mb-10"
-          >
-           
-          </motion.h2>
+          ></motion.h2>
 
           <motion.div
             initial="hidden"
@@ -234,15 +232,11 @@ const BlueEngineeringPage = () => {
                     {item.title}
                   </h3>
                 </div>
-
-              
               </motion.div>
             ))}
           </motion.div>
         </div>
       </section>
-
-
     </div>
   );
 };

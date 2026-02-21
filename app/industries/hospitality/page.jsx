@@ -26,52 +26,44 @@ const BlueHospitalityPage = () => {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100 overflow-x-hidden">
       {/* ---------------- HERO ---------------- */}
-      <section className="relative bg-[#020617] pt-10 sm:pt-14 pb-14 sm:pb-20 px-4 sm:px-6 overflow-hidden">
-        {/* Pattern */}
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `radial-gradient(#2563eb 0.5px, transparent 0.5px)`,
-            backgroundSize: "40px 40px",
-          }}
-        />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/hospitality.png"
+            className="w-full h-full object-cover opacity-20"
+            alt="Hero Background"
+          />
+        </div>
 
-        {/* Glow (FIXED) */}
-        <div className="pointer-events-none absolute bottom-[-120px] right-[-80px] sm:bottom-[-180px] sm:right-[-140px] w-[280px] sm:w-[520px] h-[280px] sm:h-[520px] bg-blue-500/20 blur-[80px] sm:blur-[140px] rounded-full" />
-
-        <div className="max-w-7xl mx-auto relative z-10 text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-blue-500/10 text-blue-300 text-[10px] sm:text-xs font-bold mb-6 sm:mb-8 border border-blue-400/20 uppercase tracking-widest">
-            <Star size={12} className="text-blue-400" />
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="relative z-10 text-center px-6"
+        >
+          <span className="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-lg">
             Redefining Guest Experiences
-          </div>
-
-          {/* Heading */}
-          <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-bold italic text-white mb-5 sm:mb-8 leading-tight">
-            Hospitality & Tourism <br />
-            <span className="text-blue-500 font-black italic">
-              Insurance Solutions
-            </span>
+          </span>
+          <h1 className="text-3xl md:text-6xl font-black text-[#070B7F] mb-6 tracking-tighter uppercase leading-tight">
+            Hospitality & Tourism
+            <br />{" "}
+            <span className="text-blue-600 italic">Insurance Solutions</span>
           </h1>
-
-          {/* Description */}
-          <p className="text-sm sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-8 sm:mb-12 leading-relaxed font-light">
+          <h3 className="text-xs md:text-xl font-light text-slate-600 mb-10 uppercase tracking-[0.3em]">
             Post-pandemic recovery surge, experiential travel boom, boutique
             hospitality growth, technology-enabled service, sustainability
             focus, and wellness tourism driving transformation.
-          </p>
+          </h3>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
+            Explore Solutions
+          </button>
+        </motion.div>
 
-          {/* Buttons */}
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-5">
-            <button className="bg-blue-600 hover:bg-blue-500 text-white px-6 sm:px-10 py-3 sm:py-5 rounded-full text-sm sm:text-base font-bold transition-all flex items-center justify-center gap-2 shadow-xl shadow-blue-900/40">
-              Reserve Your Stay <Calendar size={16} />
-            </button>
-
-            <button className="bg-white/5 border border-white/20 hover:bg-white/10 text-white px-6 sm:px-10 py-3 sm:py-5 rounded-full text-sm sm:text-base font-bold transition-all backdrop-blur-md">
-              Explore Amenities
-            </button>
-          </div>
-        </div>
+        <motion.div
+          animate={{ y: [0, 15, 0] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute bottom-10 text-blue-600"
+        ></motion.div>
       </section>
 
       {/* ---------------- RISKS ---------------- */}

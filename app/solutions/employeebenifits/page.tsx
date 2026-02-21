@@ -96,14 +96,14 @@ export default function EmployeeBenefitsPage() {
     <main className="min-h-screen bg-white font-sans relative">
       {/* ---------------- HERO SECTION ---------------- */}
       <section className="relative pt-10 min-h-[85vh] flex items-center overflow-hidden bg-[#070B7F]">
-        <div className="container mx-auto px-6 md:px-12 z-20 relative py-12 flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+        <div className="container mx-auto px-6 md:px-12 z-20 relative py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-16">
           {/* TEXT */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            className="max-w-2xl text-white text-center md:text-left"
+            className="max-w-2xl text-white text-center lg:text-left"
           >
-            <div className="flex items-center justify-center md:justify-start gap-3 mb-6">
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-6">
               <div className="w-5 h-5 bg-cyan-400 rounded-full flex items-center justify-center animate-pulse">
                 <Activity size={12} className="text-[#070B7F]" />
               </div>
@@ -112,14 +112,14 @@ export default function EmployeeBenefitsPage() {
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
+            <h1 className="text-5xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
               Employee Benefits <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-300">
                 Insurance
               </span>
             </h1>
 
-            <p className="text-sm text-blue-100/70 max-w-sm mx-auto md:mx-0 leading-relaxed font-medium">
+            <p className="text-sm text-blue-100/70 max-w-sm mx-auto lg:mx-0 leading-relaxed font-medium">
               Our tailored employee benefits packages are designed to support
               your workforce&apos;s well-being and financial security, fostering
               a loyal and productive team. From health to accident cover, we
@@ -132,12 +132,12 @@ export default function EmployeeBenefitsPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="relative z-30 w-full md:w-auto"
+            className="relative z-30 w-full lg:w-auto"
           >
             <img
               src="/benefits.png"
               alt="Team"
-              className="rounded-[2.5rem] md:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-md md:max-w-none mx-auto transition-all duration-700"
+              className="rounded-[2.5rem] lg:rounded-[4rem] shadow-2xl border-8 border-white/5 w-full max-w-md lg:max-w-none mx-auto transition-all duration-700"
             />
           </motion.div>
         </div>
