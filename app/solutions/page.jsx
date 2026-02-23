@@ -1,8 +1,14 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
 import { useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import {
+  motion,
+  useScroll,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
+import {
+  Target,
   ShieldCheck,
   Briefcase,
   HeartPulse,
@@ -29,6 +35,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Solutions() {
   const videoRef = useRef(null);
   const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
+
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"],
+  });
+
+  const y = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -151,34 +167,77 @@ export default function Solutions() {
   return (
     <main className="min-h-screen bg-[#F8FAFC] overflow-hidden">
       <section
-        className="
-    relative h-[120vh] flex items-center justify-center overflow-hidden
-    
-    max-md:h-[29svh]
-    max-md:min-h-0          /* ✅ remove forced extra space */
-  "
+        ref={containerRef}
+        className="relative min-h-[85vh] bg-[#020617] overflow-hidden"
       >
-        {/* Background Video */}
-        <video
-          ref={videoRef}
-          autoPlay
-          playsInline
-          preload="auto"
-          muted={false} // ✅ allow audio first time
-          loop={false} // ✅ no loop initially
-          className="
-        absolute inset-0 w-full h-full
-        object-cover
-        max-md:object-contain
-        max-md:object-top
-      "
-        >
-          <source src="/solution.mp4" type="video/mp4" />
-        </video>
-
-        {/* Overlay Pattern */}
+        {/* ================= VIDEO ================= */}
         <div
-          className="absolute inset-0 opacity-30"
+          className="absolute top-0 left-0 w-full h-[45vh] 
+            lg:h-full lg:w-1/2 lg:left-auto lg:right-0 z-0"
+        >
+          <video
+            ref={videoRef}
+            autoPlay
+            playsInline
+            preload="auto"
+            muted={false}
+            loop={false}
+            className="
+              w-full h-full
+              
+              object-cover
+              object-center
+              
+              max-md:object-cover
+              max-md:object-center
+            "
+          >
+            <source src="/solution.mp4" type="video/mp4" />
+          </video>
+
+          {/* Desktop fade effect */}
+          <div className="hidden lg:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#020617] to-transparent" />
+        </div>
+
+        {/* ================= CONTENT ================= */}
+        <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 min-h-[85vh] px-6">
+          {/* LEFT TEXT (Adjust as needed) */}
+          <div
+            className="flex pt-[45vh] lg:pt-0
+              items-end lg:items-center"
+          >
+            <motion.div
+              style={{ y, opacity }}
+              className="max-w-xl pb-12 md:pb-0"
+            >
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 rounded-full border border-blue-400/30 bg-blue-500/10 text-blue-400 text-xs font-bold">
+                <Sparkles size={14} />
+                Innovative Digital Solutions
+              </div>
+
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
+                Our Insurance{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+                  Solutions
+                </span>
+              </h1>
+
+              <p className="text-sm sm:text-lg text-slate-300 leading-relaxed mb-8">
+                Comprehensive protection tailored to your unique needs. From
+                commercial enterprises to individual life cover, we deliver
+                integrated risk, insurance, and claims expertise to safeguard
+                what matters most.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* RIGHT EMPTY COLUMN */}
+          <div className="hidden md:block" />
+        </div>
+
+        {/* ================= OVERLAY PATTERN ================= */}
+        <div
+          className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: "radial-gradient(#3b82f6 1px, transparent 1px)",
             backgroundSize: "40px 40px",

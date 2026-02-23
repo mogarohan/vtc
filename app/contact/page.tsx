@@ -81,24 +81,16 @@ const ContactPage = () => {
           <img
             src="/contact us.jpeg"
             alt="Vestigo Advisory Team"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-contain object-center"
           />
 
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-[#0F172A]/75" />
+          <div className="absolute inset-0 bg-[#0F172A]/70" />
         </div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-7xl mx-auto text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-sm font-bold mb-6 border border-white/20"
-          >
-            Connect With Us
-          </motion.div>
-
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6">
+        <div className="relative z-10 max-w-7xl mx-auto text-center text-white mt-45">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-4">
             Let&apos;s Start a{" "}
             <span className="text-blue-400">Conversation</span>
           </h1>
@@ -111,78 +103,86 @@ const ContactPage = () => {
       </section>
 
       {/* Main Contact Content */}
-      <section className="py-24 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Left Side: Contact Info */}
-          <div className="space-y-12">
-            <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6 font-poppins">
-                Get In Touch
-              </h2>
-              <p className="text-slate-500 mb-8 leading-relaxed">
-                Share your details and our advisory team will connect with you
-                shortly.
-              </p>
-            </div>
+      <section className="py-10 md:py-14 px-6 bg-slate-50">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12">
+          {/* Left Side → Now Card */}
+          <div className="bg-gradient-to-br from-sky-100 to-white rounded-[2rem] p-6 md:p-8 shadow-lg border border-sky-200">
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2 font-poppins">
+                  Get In Touch
+                </h2>
+                <p className="text-slate-500 leading-relaxed text-sm md:text-base">
+                  Share your details and our advisory team will connect with you
+                  shortly.
+                </p>
+              </div>
 
-            <div className="space-y-8">
-              <div className="flex gap-6 group">
-                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                  <MapPin size={28} />
+              <div className="space-y-5">
+                <div className="flex gap-4 group">
+                  <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <MapPin size={22} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-sm md:text-base">
+                      Our Presence
+                    </h4>
+                    <p className="text-slate-500 italic text-sm">
+                      Ahmedabad · Vadodara · Surendranagar · Siddhpur · Mumbai
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-lg">
-                    Our Presence
-                  </h4>
-                  <p className="text-slate-500 italic">
-                    Ahmedabad · Vadodara · Surendranagar · Siddhpur · Mumbai
-                  </p>
+
+                <div className="flex gap-4 group">
+                  <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <Mail size={22} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-sm md:text-base">
+                      Email Us
+                    </h4>
+                    <p className="text-slate-500 text-sm">
+                      info@vestigoinsurance.com
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4 group">
+                  <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <Phone size={22} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-sm md:text-base">
+                      Call Support
+                    </h4>
+                    <p className="text-slate-500 text-sm">+91 97261 60360</p>
+                    <p className="text-slate-500 text-sm">+91 97378 01385</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="flex gap-6 group">
-                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                  <Mail size={28} />
+              {/* Social */}
+              <div className="pt-4">
+                <h4 className="font-bold text-slate-900 mb-3 text-sm md:text-base">
+                  Follow Us
+                </h4>
+                <div className="flex gap-3">
+                  {[Facebook, Twitter, Linkedin].map((Icon, i) => (
+                    <a
+                      key={i}
+                      href="#"
+                      className="w-10 h-10 border border-slate-200 rounded-full flex items-center justify-center text-slate-400 hover:text-blue-600 hover:border-blue-600 transition-all"
+                    >
+                      <Icon size={18} />
+                    </a>
+                  ))}
                 </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-lg">Email Us</h4>
-                  <p className="text-slate-500">info@vestigoinsurance.com</p>
-                </div>
-              </div>
-
-              <div className="flex gap-6 group">
-                <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                  <Phone size={28} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-slate-900 text-lg">
-                    Call Support
-                  </h4>
-                  <p className="text-slate-500">+91 97261 60360</p>
-                  <p className="text-slate-500">+91 97378 01385</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="pt-10">
-              <h4 className="font-bold text-slate-900 mb-4">Follow Us</h4>
-              <div className="flex gap-4">
-                {[Facebook, Twitter, Linkedin].map((Icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="w-12 h-12 border border-slate-200 rounded-full flex items-center justify-center text-slate-400 hover:text-blue-600 hover:border-blue-600 transition-all"
-                  >
-                    <Icon size={20} />
-                  </a>
-                ))}
               </div>
             </div>
           </div>
 
           {/* Right Side: Contact Form (Functional) */}
-          <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-2xl shadow-blue-500/5 border border-slate-100">
+          <div className="bg-sky-50 md:bg-sky-100 rounded-[2.5rem] p-6 md:p-8 shadow-2xl shadow-blue-500/5 border border-sky-200">
             {/* Success/Error Status Messages */}
             {status === "success" && (
               <motion.div
@@ -204,7 +204,7 @@ const ContactPage = () => {
               </motion.div>
             )}
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-bold text-slate-700 ml-1">
@@ -275,16 +275,16 @@ const ContactPage = () => {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={4}
+                  rows={3}
                   placeholder="How can we help you?"
-                  className="w-full px-6 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all resize-none"
+                  className="w-full px-6 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all resize-none"
                 ></textarea>
               </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-5 rounded-2xl shadow-lg shadow-blue-200 transition-all flex items-center justify-center gap-3 group disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-2xl shadow-lg shadow-blue-200 transition-all flex items-center justify-center gap-3 group disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>
