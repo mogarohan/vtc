@@ -58,6 +58,7 @@ const NAV_DATA = [
     href: '/company',
     icon: <Globe size={20} />,
     desc: 'Securing your future with trust since 2010.',
+    image: 'pr.png',
     subLinks: [
       { 
     name: 'Who We Are', 
@@ -84,7 +85,8 @@ const NAV_DATA = [
     name: 'Solutions',
     href: '/solutions',
     icon: <Zap size={20} />,
-    desc: 'Smart, scalable insurance solutions.',
+    desc: 'Intelligent insurance designed for confidence, Flexible solutions that secure your future.',
+     image: 's.png',
     subLinks: [
       { 
     name: 'Risk Assessment', 
@@ -131,7 +133,8 @@ const NAV_DATA = [
     name: 'Industries',
     href: '/industries',
     icon: <Briefcase size={20} />,
-    desc: 'Protection designed for every industry.',
+    desc: 'Industry-specific protection built on deep expertise, Tailored risk solutions for diverse business environments Insurance that evolves with your industry’s future.',
+    image: '02.png',
     subLinks: [
       { name: 'Automotive', href: '/industries/automobile', icon: <FontAwesomeIcon icon={faCar} /> },
       { name: 'IT & Tech', href: '/industries/it', icon: <FontAwesomeIcon icon={faLaptopCode} /> },
@@ -182,6 +185,7 @@ export default function Header() {
             {NAV_DATA.map((item) => {
               const isSectionActive = pathname === item.href || pathname.startsWith(item.href + '/');
               return (
+                
                 <div key={item.name} className="relative" onMouseEnter={() => setActiveMenu(item.name)} onMouseLeave={() => setActiveMenu(null)}>
                   <Link href={item.href} className="relative text-sm font-semibold text-slate-700 hover:text-blue-600 transition">
                     {item.name}
@@ -203,14 +207,28 @@ export default function Header() {
                       >
                         <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#E3F6FF] via-[#D7EEFF] to-[#F8FDFF] shadow-[0_30px_80px_rgba(28,42,125,0.35)] border border-[#C9D600]/30">
                           <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-br from-[#1C2A7D] to-[#2F6BFF] p-6 text-white">
-                            <div className="bg-white/20 w-10 h-10 rounded-xl flex items-center justify-center mb-4">{item.icon}</div>
+                            {/* <div className="bg-white/20 w-10 h-10 rounded-xl flex items-center justify-center mb-4">{item.icon}</div> */}
+                                                        {item.image && (
+                                        <div className="relative h-25 rounded-xl overflow-hidden">
+                                          <Image
+                                            src={`/${item.image}`}
+                                            alt={item.name}
+                                            fill
+                                            className="object-contain object-top"
+                                            priority
+                                          />
+                                        </div>
+                                              )}
                             <p className="text-sm font-medium text-white/90">{item.desc}</p>
+
+                         
                           </div>
 
                           <div className={`ml-48 p-8 grid gap-4 ${item.subLinks.length > 10 ? 'grid-cols-4' : item.subLinks.length > 5 ? 'grid-cols-3' : 'grid-cols-2'}`}>
                             {item.subLinks.map((sub) => (
                               <Link key={sub.name} href={sub.href} className="group flex flex-row items-center gap-3 p-3 rounded-xl bg-white/40 backdrop-blur-md border border-white/20 hover:bg-white/70 transition-all shadow-sm">
                                 <div className="w-8 h-8 flex-shrink-0 rounded-lg flex items-center justify-center bg-gradient-to-br from-[#4FC3F7] to-[#2F6BFF] text-white text-[14px]">
+                                
                                   {sub.icon}
                                 </div>
                                 <div className="relative">
