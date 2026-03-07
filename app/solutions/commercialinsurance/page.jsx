@@ -9,6 +9,23 @@ import {
   Briefcase,
   Sparkles,
   ArrowRight,
+  Flame,
+  Anchor,
+  Wrench,
+  Scale,
+  HardHat,
+  HeartPulse,
+  Shield,
+  Handshake,
+  User,
+  FileCheck,
+  CreditCard,
+  Clock,
+  Lock,
+  Users,
+  TrendingUp,
+  Award,
+  Umbrella,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -29,6 +46,32 @@ const CommercialInsuranceClient = () => {
       desc: "Protection against data breaches, cyber extortion, and digital operational threats.",
       icon: <Briefcase className="w-10 h-10 text-blue-600" />,
     },
+  ];
+
+  const products = [
+    { title: "Fire & Property Insurance", icon: Flame },
+    { title: "Marine Cargo & Hull", icon: Anchor },
+    { title: "Engineering & Erection", icon: Wrench },
+    { title: "Liability Insurance", icon: Scale },
+
+    { title: "Workers Compensation", icon: HardHat },
+    { title: "Group Health Insurance", icon: HeartPulse },
+    { title: "Cyber Risk Insurance", icon: Shield },
+    { title: "Trade Credit Insurance", icon: Handshake },
+
+    { title: "Key Man Insurance", icon: User },
+    { title: "Commercial Motor Fleet", icon: Truck },
+    { title: "Surety Bond", icon: FileCheck },
+    { title: "Credit Insurance", icon: CreditCard },
+
+    { title: "Business Interruption", icon: Clock },
+    { title: "Kidnap Ransom & Extortion", icon: Lock },
+    { title: "Affinity Insurance Program", icon: Users },
+    { title: "Parametric Insurance", icon: TrendingUp },
+
+    { title: "Product Warranty & Guarantee", icon: Award },
+    { title: "Group Term Life", icon: Umbrella },
+    { title: "Group Gratuity Insurance", icon: CreditCard },
   ];
 
   return (
@@ -124,6 +167,46 @@ const CommercialInsuranceClient = () => {
               </p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* PRODUCTS GRID */}
+      <section className="py-14 px-6 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black uppercase">
+              Commercial Insurance Products
+            </h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto mt-4">
+              Comprehensive protection solutions designed to safeguard every
+              aspect of your enterprise operations.
+            </p>
+            <div className="w-24 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full" />
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-5 md:gap-6">
+            {products.map((item, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -6 }}
+                className="group bg-white rounded-2xl p-7 border border-slate-200
+      shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300
+      w-full sm:w-[calc(50%-12px)] md:w-[calc(33.33%-16px)] lg:w-[calc(25%-18px)]"
+              >
+                <div
+                  className="w-12 h-12 mb-5 bg-blue-50 text-blue-600 rounded-xl 
+        flex items-center justify-center group-hover:bg-blue-600 
+        group-hover:text-white transition"
+                >
+                  <item.icon size={22} />
+                </div>
+
+                <h3 className="text-slate-800 font-semibold leading-snug">
+                  {item.title}
+                </h3>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -17,6 +17,14 @@ import {
   Globe,
   ArrowRight,
   Handshake,
+  Search,
+  Settings,
+  Glasses,
+  ClipboardCheck,
+  Megaphone,
+  ClipboardList,
+  PhoneCall,
+  FileText,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -49,11 +57,6 @@ export default function CompanyOverview() {
       description: "Insurance protection for physical and financial assets.",
       image: "/02.png",
     },
-    {
-      label: "Global Reach",
-      description: "Worldwide presence and local expertise.",
-      image: "/03.png",
-    },
   ];
 
   return (
@@ -61,8 +64,8 @@ export default function CompanyOverview() {
       {/* 1. HERO SECTION (Dark Premium Theme Restored) */}
       <section className="relative w-full flex items-center justify-center overflow-hidden">
         {/* 1. Removed fixed height on mobile (h-[85vh]) 
-    2. Added 'aspect-auto' to let the image define the space
-  */}
+          2. Added 'aspect-auto' to let the image define the space
+        */}
         <div className="relative z-0 w-full h-auto">
           <img
             src="/who.jpeg"
@@ -80,7 +83,7 @@ export default function CompanyOverview() {
 
       {/* 2. STATS/FEATURES GRID (Specific Sky Blue Cards) */}
       <section className="relative z-20 -mt-5 md:-mt-10 px-6 mb-10 md:mb-20">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {stats.map((stat, i) => (
             <motion.div
               key={i}
@@ -90,7 +93,7 @@ export default function CompanyOverview() {
               viewport={{ once: true }}
               className="bg-[#F0F9FF] p-8 md:p-12 rounded-[2.5rem] md:rounded-[3rem] shadow-[0_15px_40px_rgba(0,0,0,0.05)] border border-sky-100 flex flex-col items-center text-center group hover:bg-white hover:-translate-y-4 transition-all duration-500"
             >
-              <div className="w-24 h-24 md:w-30 md:h-30 relative mb-6 md:mb-8 transition-transform group-hover:scale-110 duration-500">
+              <div className="w-20 h-20 md:w-24 md:h-24 relative mb-6 transition-transform group-hover:scale-110 duration-500">
                 <Image
                   src={stat.image}
                   alt={stat.label}
@@ -111,6 +114,53 @@ export default function CompanyOverview() {
         </div>
       </section>
 
+      {/* WHO WE ARE */}
+      <section className="py-12 px-6 bg-white">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span className="text-blue-600 font-black tracking-[0.25em] uppercase text-xs">
+              Who We Are
+            </span>
+
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 mt-4 mb-6 leading-tight">
+              Beyond Traditional <br />
+              <span className="text-blue-600">Insurance Broking</span>
+            </h2>
+
+            <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+              Vestigo was founded on a simple but powerful conviction: insurance
+              should work when it is needed most. We combine deep industry
+              expertise, risk intelligence and strong insurer relationships to
+              design coverage that truly protects our clients.
+            </p>
+
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Our approach focuses on understanding each organization’s risk
+              environment before structuring a strategic protection program that
+              ensures confidence and long-term stability.
+            </p>
+          </div>
+
+          <div className="bg-sky-50 border border-sky-100 rounded-[2.5rem] p-10">
+            <p className="text-lg text-slate-600 leading-relaxed">
+              <b>At Vestigo,</b> a policy is not the end product.{" "}
+              <b>Peace of mind is.</b> That means we stand beside our clients
+              not just at inception, but throughout the policy lifecycle — and
+              especially at the critical moment of a claim, where our advocacy
+              makes the real difference.
+            </p>
+            <h4 className="font-black text-slate-900 text-xl mb-4 mt-6">
+              Our Core Promise
+            </h4>
+            <ul className="space-y-4 text-slate-600">
+              <li>✔ Understand Risk in Depth</li>
+              <li>✔ Structure Protection Strategically</li>
+              <li>✔ Advocate Fiercely at Claims</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       {/* 3. WHY US SECTION (Sky Blue Accents on Icons) */}
       <section className="py-20 md:py-5 px-6 bg-white">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-20 items-center">
@@ -120,19 +170,18 @@ export default function CompanyOverview() {
             viewport={{ once: true }}
           >
             <span className="text-blue-600 font-black tracking-[0.2em] uppercase text-xs">
-              The Advantage
+              OUR IMPACT
             </span>
             <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-8 mt-4 leading-none uppercase tracking-tighter">
-              Securing <br />{" "}
+              Trust Built <br />{" "}
               <span className="text-blue-600 italic font-serif lowercase">
-                everything
-              </span>{" "}
-              you build.
+                on Performance
+              </span>
             </h2>
             <p className="text-base md:text-lg text-slate-600 mb-10 leading-relaxed max-w-lg">
-              Our unique approach combines data-driven risk mapping with a
-              human-centric perspective, ensuring your enterprise is protected
-              by industry-leading standards.
+              Numbers tell a story. At Vestigo, our performance metrics reflect
+              our commitment to delivering measurable value — in coverage
+              quality, client satisfaction, and claims outcomes.
             </p>
             <Link
               href="/company/whyus"
@@ -146,36 +195,37 @@ export default function CompanyOverview() {
           <div className="grid grid-cols-2 gap-4 md:gap-5">
             {[
               {
-                title: "Fast Claims",
-                icon: <Zap />,
+                stat: "100%",
+                title: "IRDAI Compliant",
                 color: "bg-sky-100 text-sky-600",
               },
               {
-                title: "Expert Support",
-                icon: <Headphones />,
+                stat: "360°",
+                title: "Risk Coverage",
                 color: "bg-sky-100 text-sky-600",
               },
               {
-                title: "Global Trust",
-                icon: <ShieldCheck />,
+                stat: "Pan-India",
+                title: "Regional Presence",
                 color: "bg-sky-100 text-sky-600",
               },
               {
-                title: "Proven Track",
-                icon: <Trophy />,
+                stat: "1st",
+                title: "Claims Priority",
                 color: "bg-sky-100 text-sky-600",
               },
             ].map((item, i) => (
               <div
                 key={i}
-                className="p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] bg-sky-50/50 border border-sky-100 hover:bg-white hover:shadow-2xl transition-all duration-300"
+                className="p-6 md:p-10 rounded-[2rem] md:rounded-[2.5rem] bg-slate-100 border border-slate-200 hover:bg-white hover:shadow-2xl transition-all duration-300"
               >
                 <div
-                  className={`w-10 h-10 md:w-14 md:h-14 ${item.color} rounded-xl md:rounded-2xl flex items-center justify-center mb-6 shadow-sm`}
+                  className={`text-4xl md:text-5xl font-black text-blue-600 text-center mb-3 `}
                 >
-                  {React.cloneElement(item.icon, { size: 24 })}
+                  {item.stat}
                 </div>
-                <h4 className="font-black text-slate-900 uppercase tracking-tighter text-[10px] md:text-sm">
+
+                <h4 className="text-lg font-bold text-slate-900 text-center mb-3">
                   {item.title}
                 </h4>
               </div>
@@ -225,6 +275,205 @@ export default function CompanyOverview() {
               success and lasting resilience.
             </p>
             <BarChart3 className="absolute -bottom-3 ml-82 mb-23 w-24 h-24 md:w-50 md:h-50 opacity-10" />
+          </div>
+        </div>
+      </section>
+
+      {/* CORE PROMISE */}
+      <section className="py-16 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-6 uppercase">
+              Our Core Promise
+            </h2>
+            <div className="w-24 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full" />
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              "Understand Risk in Depth",
+              "Structure Protection Strategically",
+              "Advocate Fiercely at Claims",
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-white p-10 rounded-3xl border border-sky-100 shadow-sm"
+              >
+                <ShieldCheck className="text-blue-600 mb-4" size={40} />
+                <h3 className="text-lg font-black text-slate-900">{item}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PHILOSOPHY */}
+      <section className="py-14 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 uppercase">
+              Our Philosophy
+            </h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto mt-4">
+              Insurance is not just about policies. It is about safeguarding
+              enterprises, securing livelihoods, and building long-term
+              resilience.
+            </p>
+            <div className="w-24 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full" />
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Risk Intelligence",
+                desc: "We analyse operational, financial, regulatory and reputational risk to identify exposures early.",
+                icon: Glasses,
+              },
+              {
+                title: "Insurer Relationships",
+                desc: "Access to leading insurers ensures superior coverage terms and strong claims support.",
+                icon: Handshake,
+              },
+              {
+                title: "Regulatory Alignment",
+                desc: "All advisory aligns with IRDAI regulations and global insurance best practices.",
+                icon: ClipboardCheck,
+              },
+              {
+                title: "Claims Advocacy",
+                desc: "We act as your advocate during claims ensuring fair and timely settlements.",
+                icon: Megaphone,
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -8 }}
+                className="group bg-white border border-sky-100 rounded-[2rem] p-8 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-100 opacity-0 group-hover:opacity-100 transition" />
+
+                <div className="relative">
+                  <div className="w-12 h-12 mb-5 rounded-xl bg-sky-100 flex items-center justify-center text-blue-600">
+                    <item.icon size={22} />
+                  </div>
+
+                  <h3 className="font-black text-lg text-slate-900 mb-3">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROCESS */}
+      <section className="py-6 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-slate-900 uppercase mb-4">
+              Our Process
+            </h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto mt-4">
+              A structured engagement model designed to protect your business
+              through every stage of risk management.
+            </p>
+            <div className="w-24 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full" />
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Risk Discovery",
+                icon: Search,
+              },
+              {
+                title: "Coverage Engineering",
+                icon: Settings,
+              },
+              {
+                title: "Market Placement",
+                icon: Handshake,
+              },
+              {
+                title: "Ongoing Advocacy",
+                icon: ShieldCheck,
+              },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="bg-sky-50 border border-sky-100 rounded-[2rem] p-8 text-center hover:shadow-lg transition"
+              >
+                <div className="w-14 h-14 mx-auto mb-6 bg-white border border-sky-100 rounded-xl flex items-center justify-center text-blue-600">
+                  <item.icon size={28} />
+                </div>
+
+                <h3 className="font-black text-slate-900">{item.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GET STARTED */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-slate-900 uppercase mb-4">
+              Let&apos;s Build Your Risk Programme
+            </h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto mt-4">
+              Whether you are reviewing coverage or launching a new venture,
+              Vestigo provides strategic risk advisory designed for your
+              business.
+            </p>
+            <div className="w-24 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full" />
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Risk Audit",
+                desc: "Comprehensive review of your insurance programme to identify gaps and optimisation opportunities.",
+                icon: ClipboardList,
+              },
+              {
+                title: "Advisory Consultation",
+                desc: "Discuss sector-specific risks directly with a Vestigo advisor.",
+                icon: PhoneCall,
+              },
+              {
+                title: "Bespoke Proposal",
+                desc: "Receive a customised insurance programme aligned to your exposures.",
+                icon: FileText,
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -10 }}
+                className="group bg-white border border-sky-100 rounded-[2.5rem] p-10 hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-100 opacity-0 group-hover:opacity-100 transition" />
+
+                <div className="relative">
+                  <div className="w-14 h-14 mb-6 rounded-2xl bg-sky-100 flex items-center justify-center text-blue-600">
+                    <item.icon size={26} />
+                  </div>
+
+                  <h3 className="font-black text-xl text-slate-900 mb-4">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

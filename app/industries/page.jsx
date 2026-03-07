@@ -71,7 +71,7 @@ const INDUSTRIES = [
   },
   { name: "IT & Tech", href: "/industries/it", img: "/it-tech.png" },
   {
-    name: "Engineering",
+    name: "Infrastructure",
     href: "/industries/engineering",
     img: "/engineering.png",
   },
@@ -157,7 +157,7 @@ export default function IndustriesHome() {
       {/* 1. Hero Section */}
       <section
         ref={containerRef}
-        className="relative min-h-[85vh] bg-[#020617] overflow-hidden"
+        className="relative min-h-[85vh] bg-[#040a26] overflow-hidden"
       >
         {/* ================= VIDEO ================= */}
         <div

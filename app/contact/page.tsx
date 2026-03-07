@@ -40,7 +40,7 @@ const ContactPage = () => {
 
     try {
       // Ensure this URL matches your Laravel API
-      const response = await fetch("https://happy.techstrota.com/api/contact", {
+      const response = await fetch("http://127.0.0.1:8000/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -128,7 +128,7 @@ const ContactPage = () => {
                       Our Presence
                     </h4>
                     <p className="text-slate-500 italic text-sm">
-                      Ahmedabad · Vadodara · Surendranagar · Siddhpur · Mumbai
+                      Ahmedabad · Vadodara
                     </p>
                   </div>
                 </div>

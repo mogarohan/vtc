@@ -132,14 +132,6 @@ const LifeInsurance = () => {
                     </li>
                   ))}
                 </ul>
-
-                <button className="w-full py-3 rounded-xl border border-blue-600 text-blue-600 font-bold hover:bg-blue-600 hover:text-white transition-colors flex items-center justify-center gap-2 group">
-                  Plan Details{" "}
-                  <ArrowRight
-                    size={18}
-                    className="group-hover:translate-x-1 transition-transform"
-                  />
-                </button>
               </motion.div>
             ))}
           </div>

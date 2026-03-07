@@ -1,6 +1,6 @@
-import { notFound } from 'next/navigation';
+import { notFound } from "next/navigation";
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 export const dynamicParams = false;
 export const revalidate = false;
 
@@ -13,13 +13,12 @@ type Post = {
 };
 
 export async function generateStaticParams() {
-  const res = await fetch(
-    'https://happy.techstrota.com/api/blogs',
-    { cache: 'force-cache' }
-  );
+  const res = await fetch("https://happy.techstrota.com/api/blogs", {
+    cache: "force-cache",
+  });
 
   if (!res.ok) {
-    throw new Error('Failed to fetch blog slugs');
+    throw new Error("Failed to fetch blog slugs");
   }
 
   const posts = await res.json();
@@ -30,10 +29,9 @@ export async function generateStaticParams() {
 }
 
 async function getPost(slug: string): Promise<Post | null> {
-  const res = await fetch(
-    `https://happy.techstrota.com/api/blogs/${slug}`,
-    { cache: 'force-cache' }
-  );
+  const res = await fetch(`https://happy.techstrota.com/api/blogs/${slug}`, {
+    cache: "force-cache",
+  });
 
   if (!res.ok) return null;
   return res.json();

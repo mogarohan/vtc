@@ -59,7 +59,7 @@ export default function ITFieldPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white font-mono text-slate-900 selection:bg-cyan-100">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-cyan-100">
       {/* 1. HERO SECTION: The Digital Frontier */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -88,9 +88,6 @@ export default function ITFieldPage() {
             India’s IT and technology sector is a global powerhouse,
             contributing significantly to GDP and employing millions.
           </h3>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
-            Explore Solutions
-          </button>
         </motion.div>
 
         <motion.div

@@ -72,7 +72,7 @@ const INDUSTRIES = [
   },
   {
     num: "04",
-    title: "Engineering",
+    title: "Infrastructure",
     text: "Coverage for engineering and manufacturing firms.",
     img: "engineering.png",
     href: "/industries/engineering",
@@ -131,10 +131,7 @@ export default function HomePage() {
 
             <p className="text-base md:text-lg text-slate-600 mb-10">
               Vestigo Insurance Advisors empowers businesses with expert risk
-              consulting, comprehensive inspections, and policy audits. Since
-              2025, we’ve delivered tailored, cost-effective solutions to
-              optimize coverage, ensure compliance, and unlock business
-              resilience.
+              consulting, comprehensive inspections, and policy audits.
             </p>
           </div>
 
@@ -176,11 +173,8 @@ export default function HomePage() {
           <div className="text-center mb-10 md:text-left md:mb-10">
             {" "}
             {/* Margin bottom 16 se 10 kiya */}
-            <h4 className="text-blue-600 tracking-widest mb-2 font-semibold text-sm">
+            <h2 className="text-blue-600 tracking-widest mb-2 font-semibold text-2xl">
               WHAT WE OFFER
-            </h4>
-            <h2 className="text-slate-900 text-3xl md:text-5xl font-bold">
-              Financial Expertise
             </h2>
           </div>
 

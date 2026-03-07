@@ -129,12 +129,6 @@ const GreenInsurance = () => {
               <p className="text-slate-600 leading-relaxed mb-6 text-sm">
                 {item.desc}
               </p>
-              <a
-                href="#"
-                className="inline-flex items-center text-emerald-600 font-bold gap-2 hover:gap-3 transition-all text-sm uppercase tracking-wider"
-              >
-                Learn More <ArrowRight size={16} />
-              </a>
             </motion.div>
           ))}
         </div>

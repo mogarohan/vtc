@@ -110,9 +110,6 @@ const BfsisSuite = () => {
             evolution, open banking APIs, blockchain integration, and customer
             experience innovation reshaping financial services globally.
           </h3>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
-            Explore Solutions
-          </button>
         </motion.div>
 
         <motion.div
@@ -148,7 +145,7 @@ const BfsisSuite = () => {
                 <h3 className="text-xl font-bold mb-3 tracking-tight">
                   {m.title}
                 </h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
+                <p className="text-slate-500 text-md leading-relaxed">
                   {m.desc}
                 </p>
               </motion.div>

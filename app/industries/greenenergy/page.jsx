@@ -64,9 +64,6 @@ const BlueEngineeringPage = () => {
             increasing, decarbonization commitments driving massive
             infrastructure investments globally.
           </h3>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
-            Explore Solutions
-          </button>
         </motion.div>
 
         <motion.div
@@ -138,9 +135,6 @@ const BlueEngineeringPage = () => {
                 <p className="text-slate-500 leading-relaxed mb-6">
                   {tech.desc}
                 </p>
-                <div className="flex items-center gap-2 text-blue-600 font-bold text-sm cursor-pointer group-hover:gap-4 transition-all">
-                  View Case Study <ArrowRight size={16} />
-                </div>
               </div>
             ))}
           </div>
