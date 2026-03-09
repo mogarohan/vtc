@@ -196,7 +196,7 @@ export default function Solutions() {
           </video>
 
           {/* Desktop fade effect */}
-          <div className="hidden lg:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#020617] to-transparent" />
+          <div className="hidden lg:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#020617]/40 to-transparent" />
         </div>
 
         {/* ================= CONTENT ================= */}

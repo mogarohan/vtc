@@ -20,17 +20,8 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-// --- Types ---
-interface PolicySection {
-  id: string;
-  title: string;
-  icon: React.ReactNode;
-  content?: string;
-  list?: string[];
-}
-
 // --- Data: Ethics Framework & Concerns ---
-const ethicsFramework: PolicySection[] = [
+const ethicsFramework = [
   {
     id: "scope",
     title: "Policy Scope",
@@ -56,7 +47,7 @@ const ethicsFramework: PolicySection[] = [
 ];
 
 export default function WhistleblowerEthicsPolicy() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],

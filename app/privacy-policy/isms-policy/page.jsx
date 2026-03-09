@@ -22,17 +22,8 @@ import {
   MapPin,
 } from "lucide-react";
 
-// --- Types ---
-interface PolicySection {
-  id: string;
-  title: string;
-  icon: React.ReactNode;
-  content?: string;
-  list?: string[];
-}
-
 // --- Data: ISMS Commitments & Controls ---
-const ismsCommitments: PolicySection[] = [
+const ismsCommitments = [
   {
     id: "commitments",
     title: "ISMS Commitments",
@@ -59,7 +50,7 @@ const ismsCommitments: PolicySection[] = [
 ];
 
 // --- Data: Terms of Use Sections ---
-const termsSections: PolicySection[] = [
+const termsSections = [
   {
     id: "nature",
     title: "Purpose & Nature of Content",
@@ -123,7 +114,7 @@ const termsSections: PolicySection[] = [
 ];
 
 export default function ISMSPolicy() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],

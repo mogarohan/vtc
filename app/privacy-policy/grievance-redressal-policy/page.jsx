@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 export default function GrievanceCookiePolicy() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],

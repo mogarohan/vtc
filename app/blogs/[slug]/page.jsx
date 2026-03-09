@@ -4,14 +4,6 @@ export const dynamic = "force-static";
 export const dynamicParams = false;
 export const revalidate = false;
 
-type Post = {
-  id: number;
-  title: string;
-  slug: string;
-  content: string;
-  image?: string | null;
-};
-
 export async function generateStaticParams() {
   const res = await fetch("https://happy.techstrota.com/api/blogs", {
     cache: "force-cache",
@@ -23,12 +15,12 @@ export async function generateStaticParams() {
 
   const posts = await res.json();
 
-  return posts.map((post: { slug: string }) => ({
+  return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-async function getPost(slug: string): Promise<Post | null> {
+async function getPost(slug) {
   const res = await fetch(`https://happy.techstrota.com/api/blogs/${slug}`, {
     cache: "force-cache",
   });
@@ -37,11 +29,7 @@ async function getPost(slug: string): Promise<Post | null> {
   return res.json();
 }
 
-export default async function BlogDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function BlogDetailPage({ params }) {
   const { slug } = await params;
 
   const post = await getPost(slug);

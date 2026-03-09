@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
@@ -22,17 +22,8 @@ import {
   UserCheck,
 } from "lucide-react";
 
-// --- Types ---
-interface PolicySection {
-  id: string;
-  title: string;
-  icon: React.ReactNode;
-  content?: string;
-  list?: string[];
-}
-
 // --- Data ---
-const policySections: PolicySection[] = [
+const policySections = [
   {
     id: "data",
     title: "1. Personal Data We Collect",
@@ -117,7 +108,7 @@ const policySections: PolicySection[] = [
 ];
 
 export default function PrivacyPolicy() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -126,9 +117,9 @@ export default function PrivacyPolicy() {
   const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
-  const [hasPlayedOnce, setHasPlayedOnce] = React.useState(false);
+  const [hasPlayedOnce, setHasPlayedOnce] = useState(false);
 
-  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const videoRef = useRef(null);
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -181,7 +172,7 @@ export default function PrivacyPolicy() {
           </video>
 
           {/* Desktop fade effect */}
-          <div className="hidden lg:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#020617] to-transparent" />
+          <div className="hidden lg:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#020617]/40 to-transparent" />
         </div>
 
         {/* ================= CONTENT ================= */}

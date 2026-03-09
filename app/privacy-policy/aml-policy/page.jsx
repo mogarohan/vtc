@@ -18,17 +18,8 @@ import {
   ShieldAlert,
 } from "lucide-react";
 
-// --- Types ---
-interface PolicySection {
-  id: string;
-  title: string;
-  icon: React.ReactNode;
-  content?: string;
-  list?: string[];
-}
-
 // --- Data: AML Framework & Measures ---
-const amlFramework: PolicySection[] = [
+const amlFramework = [
   {
     id: "objectives",
     title: "Core Objectives",
@@ -54,7 +45,7 @@ const amlFramework: PolicySection[] = [
 ];
 
 export default function AMLPolicy() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -310,13 +301,7 @@ export default function AMLPolicy() {
 }
 
 // Re-using Lucide's Target icon which was missing in the import
-function Target({
-  className,
-  size = 24,
-}: {
-  className?: string;
-  size?: number;
-}) {
+function Target({ className, size = 24 }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
