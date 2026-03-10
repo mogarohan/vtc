@@ -54,9 +54,6 @@ const BlueHospitalityPage = () => {
             hospitality growth, technology-enabled service, sustainability
             focus, and wellness tourism driving transformation.
           </h3>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
-            Explore Solutions
-          </button>
         </motion.div>
 
         <motion.div
@@ -79,11 +76,6 @@ const BlueHospitalityPage = () => {
                 Bespoke hospitality solutions for every vertical.
               </p>
             </div>
-
-            <button className="flex items-center gap-2 text-blue-600 font-bold text-sm sm:text-base group">
-              View All Services
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </button>
           </div>
 
           {/* Grid */}

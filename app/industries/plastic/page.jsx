@@ -87,9 +87,6 @@ export default function PlasticIndustryPage() {
             material price volatility, regulatory pressures, and fire risks
             remain critical challenges.
           </h3>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
-            Explore Solutions
-          </button>
         </motion.div>
 
         <motion.div
@@ -123,7 +120,7 @@ export default function PlasticIndustryPage() {
                   <h3 className="text-2xl font-bold text-slate-800 mb-4">
                     {sector.title}
                   </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-8">
+                  <p className="text-slate-500 text-md leading-relaxed mb-8">
                     {sector.desc}
                   </p>
                 </div>

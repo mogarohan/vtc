@@ -85,9 +85,6 @@ export default function WoodLaminationPage() {
             transformation as they balance traditional manufacturing with
             sustainability imperatives.
           </h3>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
-            Explore Solutions
-          </button>
         </motion.div>
 
         <motion.div
@@ -121,7 +118,7 @@ export default function WoodLaminationPage() {
                   <h3 className="text-2xl font-bold text-blue-900 mb-4">
                     {item.title}
                   </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-8 font-bold">
+                  <p className="text-slate-500 text-md leading-relaxed mb-8 font-bold">
                     {item.desc}
                   </p>
                 </div>
@@ -140,19 +137,17 @@ export default function WoodLaminationPage() {
                 Bonding Analysis
               </h4>
               <div className="space-y-6">
-                <div className="flex justify-between items-center text-white/50 text-xs border-b border-white/5 pb-4">
+                <div className="flex justify-between items-center text-white/50 text-md border-b border-white/5 pb-4">
                   <span>Adhesive Viscosity</span>
-                  <span className="text-white font-mono uppercase">
-                    Optimal
-                  </span>
+                  <span className="text-white uppercase">Optimal</span>
                 </div>
-                <div className="flex justify-between items-center text-white/50 text-xs border-b border-white/5 pb-4">
+                <div className="flex justify-between items-center text-white/50 text-md border-b border-white/5 pb-4">
                   <span>Curing Temperature</span>
-                  <span className="text-white font-mono">140°C</span>
+                  <span className="text-white ">140°C</span>
                 </div>
-                <div className="flex justify-between items-center text-white/50 text-xs">
+                <div className="flex justify-between items-center text-white/50 text-md">
                   <span>Shear Strength</span>
-                  <span className="text-blue-400 font-mono font-bold tracking-widest">
+                  <span className="text-blue-400 font-bold tracking-widest">
                     PASSED
                   </span>
                 </div>
@@ -172,7 +167,7 @@ export default function WoodLaminationPage() {
                 <ShieldCheck className="text-blue-600 shrink-0" size={32} />
                 <div>
                   <h4 className="font-bold">Scratch & Wear Resistance</h4>
-                  <p className="text-sm text-slate-500 mt-1">
+                  <p className="text-md text-slate-500 mt-1">
                     Diamond-infused top layers providing unparalleled protection
                     against daily abrasions.
                   </p>
@@ -182,7 +177,7 @@ export default function WoodLaminationPage() {
                 <Zap className="text-blue-600 shrink-0" size={32} />
                 <div>
                   <h4 className="font-bold">Precision Calibration</h4>
-                  <p className="text-sm text-slate-500 mt-1">
+                  <p className="text-md text-slate-500 mt-1">
                     Laser-guided thickness control ensuring absolute uniformity
                     across 10,000+ sheets.
                   </p>

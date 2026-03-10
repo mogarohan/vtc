@@ -83,9 +83,6 @@ const EngineeringSuite = () => {
             PropTech revolution, and sustainable construction practices
             transforming how we build nations.
           </h3>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
-            Explore Solutions
-          </button>
         </motion.div>
 
         <motion.div
@@ -94,49 +91,6 @@ const EngineeringSuite = () => {
           className="absolute bottom-10 text-blue-600"
         ></motion.div>
       </section>
-
-      {/* 2. STATS STRIP - Client Proof */}
-      <div className="relative z-20 -mt-12 max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-px bg-white rounded-2xl shadow-2xl shadow-blue-900/10 overflow-hidden border border-slate-100">
-          {[
-            {
-              label: "Average Project Value",
-              value: "$12B",
-              sub: "Mega infrastructure and long-duration construction programs",
-            },
-            {
-              label: "Delay Risk – DSU Critical",
-              value: "156 Days",
-              sub: "Projects exposed to weather, approvals, and contractor risks",
-            },
-            {
-              label: "Completion Rate",
-              value: "99.8%",
-              sub: "Achieved with structured surety bond programs",
-            },
-            {
-              label: "Defect Claims Covered",
-              value: "$890M",
-              sub: "Post-completion structural and warranty claims",
-            },
-          ].map((stat, i) => (
-            <div
-              key={i}
-              className="p-8 text-center bg-white border-r border-slate-50 last:border-0 hover:bg-blue-50/50 transition-colors"
-            >
-              <div className="text-3xl font-black text-slate-900">
-                {stat.value}
-              </div>
-              <div className="text-[10px] text-blue-600 font-black uppercase tracking-widest mt-1">
-                {stat.label}
-              </div>
-              <div className="text-xs text-slate-400 mt-1 italic">
-                {stat.sub}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* 3. CORE MODULES - Modern Grid */}
       <section className="py-14 px-6">
@@ -235,7 +189,7 @@ const EngineeringSuite = () => {
           <div className="bg-[#0f172a] rounded-[3rem] p-8 shadow-3xl border border-slate-800 relative overflow-hidden group text-center">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
 
-            <div className="flex items-center justify-center relative z-10 text-xl text-blue-400 font-mono mt-10 mb-10">
+            <div className="flex items-center justify-center relative z-10 text-xl text-blue-400 mt-10 mb-10">
               Complete protection including Contractor&apos;s All Risk,
               Professional Indemnity, Delay in Start-Up, Structural Warranty,
               Environmental Liability, Surety Bonds, and Equipment Breakdown

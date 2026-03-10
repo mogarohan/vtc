@@ -16,6 +16,10 @@ import {
   PauseCircle,
   Activity,
   LockKeyhole,
+  Microscope,
+  Factory,
+  Truck,
+  ShoppingCart,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -71,6 +75,62 @@ const PharmaChemicalSuite = () => {
     },
   ];
 
+  const pharmaSolutions = [
+    {
+      title: "Property Insurance",
+      desc: "Protection for manufacturing plants, laboratories, warehouses, and specialized equipment against fire, explosion, and other physical damage risks.",
+      icon: Beaker,
+    },
+    {
+      title: "Business Interruption Insurance",
+      desc: "Coverage for revenue loss and operational downtime caused by unexpected disruptions in manufacturing or supply chains.",
+      icon: PauseCircle,
+    },
+    {
+      title: "Supply Chain Continuity Insurance",
+      desc: "Protection against disruption in critical raw materials, logistics breakdowns, or supplier failures impacting pharmaceutical production.",
+      icon: Layers,
+    },
+    {
+      title: "Cyber Risk Insurance",
+      desc: "Coverage against cyberattacks, data breaches, ransomware, and intellectual property theft targeting pharmaceutical research and data systems.",
+      icon: Database,
+    },
+    {
+      title: "Clinical Trial Insurance",
+      desc: "Specialized coverage protecting sponsors, researchers, and trial participants against liabilities arising from clinical trial activities.",
+      icon: ClipboardCheck,
+    },
+  ];
+
+  const pharmaSupplyChain = [
+    {
+      title: "Research",
+      icon: Microscope,
+      insurance: "IP Protection • Cyber Insurance",
+    },
+    {
+      title: "Clinical Trials",
+      icon: ClipboardCheck,
+      insurance: "Clinical Trial Insurance",
+    },
+    {
+      title: "Manufacturing",
+      icon: Factory,
+      insurance: "Property • Business Interruption",
+    },
+    {
+      title: "Distribution",
+      icon: Truck,
+      insurance: "Supply Chain Insurance",
+    },
+    {
+      title: "Market",
+      icon: ShoppingCart,
+      insurance: "Product Liability",
+    },
+  ];
+
   return (
     <main
       ref={containerRef}
@@ -106,9 +166,6 @@ const PharmaChemicalSuite = () => {
             manufacturing growth, and specialty chemicals demand driving sector
             evolution.
           </h3>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
-            Explore Solutions
-          </button>
         </motion.div>
 
         <motion.div
@@ -144,11 +201,86 @@ const PharmaChemicalSuite = () => {
                 <h3 className="text-xl font-bold mb-3 tracking-tight">
                   {m.title}
                 </h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
+                <p className="text-slate-500 text-md leading-relaxed">
                   {m.desc}
                 </p>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PHARMA INSURANCE SOLUTIONS */}
+      <section className="py-24 px-6 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-slate-900 mb-4 uppercase tracking-tight">
+              Insurance Solutions for Pharma Companies
+            </h2>
+
+            <p className="text-slate-600 max-w-3xl mx-auto text-lg leading-relaxed">
+              Pharmaceutical businesses operate in a highly regulated and
+              research-intensive environment where operational disruptions,
+              regulatory exposures, and data risks can significantly impact
+              operations. Specialized insurance solutions help safeguard
+              manufacturing infrastructure, research activities, and global
+              supply chains.
+            </p>
+            <div className="w-50 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full" />
+          </div>
+
+          {/* FIRST ROW */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {pharmaSolutions.slice(0, 3).map((item, i) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -8 }}
+                  className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all"
+                >
+                  <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                    <Icon size={26} />
+                  </div>
+
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-slate-600 text-md leading-relaxed">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          {/* SECOND ROW (CENTERED) */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+            {pharmaSolutions.slice(3).map((item, i) => {
+              const Icon = item.icon;
+
+              return (
+                <motion.div
+                  key={i}
+                  whileHover={{ y: -8 }}
+                  className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all"
+                >
+                  <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                    <Icon size={26} />
+                  </div>
+
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-slate-600 text-md leading-relaxed">
+                    {item.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -177,6 +309,58 @@ const PharmaChemicalSuite = () => {
       </section>
 
       {/* 4. INTEGRATED ECOSYSTEM SECTION */}
+      {/* PHARMA SUPPLY CHAIN PROTECTION */}
+      <section className="py-24 px-6 bg-white border-t border-slate-200">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-black text-slate-900 mb-4 uppercase tracking-tight">
+              Pharmaceutical Supply Chain Risk Protection
+            </h2>
+
+            <p className="text-slate-600 max-w-3xl mx-auto text-lg leading-relaxed">
+              Pharmaceutical innovation moves through a complex lifecycle from
+              research to global market distribution. Each stage introduces
+              operational, legal, and financial exposures that require
+              specialized insurance protection.
+            </p>
+
+            <div className="w-20 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full" />
+          </div>
+
+          <div className="flex flex-wrap lg:flex-nowrap justify-center items-center gap-10">
+            {pharmaSupplyChain.map((step, i) => {
+              const Icon = step.icon;
+
+              return (
+                <React.Fragment key={i}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.15 }}
+                    className="flex flex-col items-center text-center"
+                  >
+                    <div className="w-28 h-28 rounded-full border-[6px] border-blue-600 bg-white flex items-center justify-center shadow-lg">
+                      <Icon className="w-8 h-8 text-slate-700" />
+                    </div>
+
+                    <p className="mt-4 font-bold text-slate-900 text-sm uppercase tracking-wide">
+                      {step.title}
+                    </p>
+
+                    <p className="text-xs text-blue-600 font-semibold mt-2 max-w-[120px]">
+                      {step.insurance}
+                    </p>
+                  </motion.div>
+
+                  {i !== pharmaSupplyChain.length - 1 && (
+                    <div className="hidden lg:block w-12 h-1 bg-blue-600"></div>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* 5. PHARMA FOOTER CTA */}
       <section className="py-24 px-6 bg-slate-950 text-white text-center border-t border-blue-600/30">

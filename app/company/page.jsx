@@ -58,7 +58,7 @@ export default function CompanyOverview() {
   return (
     <main ref={containerRef} className="bg-white overflow-hidden">
       {/* ================= HERO ================= */}
-      <section className="relative min-h-[85vh] bg-[#020617] overflow-hidden">
+      <section className="relative min-h-[85vh] bg-[#040a26] overflow-hidden">
         {/* ================= VIDEO ================= */}
         <div className="absolute top-0 left-0 w-full h-[45vh] md:h-full md:w-1/2 md:left-auto md:right-0 z-0">
           <video

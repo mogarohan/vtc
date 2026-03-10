@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const slides = [
   {
@@ -84,19 +85,23 @@ export default function Hero() {
           </AnimatePresence>
 
           <div className="flex flex-col gap-3">
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              className="py-3 bg-[#070B7F] text-white text-xs font-black uppercase tracking-widest rounded-full"
-            >
-              Get Started
-            </motion.button>
+            <Link href="/contact">
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                className="w-full py-3 bg-[#070B7F] text-white text-xs font-black uppercase tracking-widest rounded-full"
+              >
+                Get Started
+              </motion.button>
+            </Link>
 
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              className="py-3 border border-white text-white text-xs font-black uppercase tracking-widest rounded-full"
-            >
-              View Solutions
-            </motion.button>
+            <Link href="/solutions">
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                className="w-full py-3 border border-white text-white text-xs font-black uppercase tracking-widest rounded-full"
+              >
+                View Solutions
+              </motion.button>
+            </Link>
           </div>
         </div>
       </div>
@@ -149,21 +154,25 @@ export default function Hero() {
             </AnimatePresence>
 
             <div className="flex gap-6 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 bg-[#070B7F] text-white text-xs font-black uppercase tracking-widest rounded-full"
-              >
-                Get Started
-              </motion.button>
+              <Link href="/contact">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-10 py-4 bg-[#070B7F] text-white text-xs font-black uppercase tracking-widest rounded-full"
+                >
+                  Get Started
+                </motion.button>
+              </Link>
 
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-10 py-4 border-2 border-white text-white text-xs font-black uppercase tracking-widest rounded-full"
-              >
-                View Solutions
-              </motion.button>
+              <Link href="/solutions">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-10 py-4 border-2 border-white text-white text-xs font-black uppercase tracking-widest rounded-full"
+                >
+                  View Solutions
+                </motion.button>
+              </Link>
             </div>
           </div>
         </div>

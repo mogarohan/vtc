@@ -370,7 +370,7 @@ export default function Footer() {
                     />
                   </div>
                   <span className="font-medium text-slate-300 group-hover:text-white transition-colors">
-                    Ahemdabad, Vadodara, Surendranagar, Siddhpur, Mumbai
+                    Ahemdabad, Vadodara
                   </span>
                 </li>
               </ul>

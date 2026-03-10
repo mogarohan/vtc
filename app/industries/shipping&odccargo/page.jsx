@@ -62,9 +62,6 @@ export default function ShippingODCPage() {
             operations, green shipping initiatives, and offshore wind farm
             installations transforming maritime and energy sectors.
           </h3>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
-            Explore Solutions
-          </button>
         </motion.div>
 
         <motion.div

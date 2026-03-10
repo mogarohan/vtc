@@ -50,7 +50,7 @@ export default function TextileIndustryPage() {
       desc: "Dye discharge, water pollution, waste handling, and adherence to chemical and environmental regulations.",
     },
     {
-      title: "Labor & Employment",
+      title: "Labour & Employment",
       Icon: Users,
       desc: "Worker safety, factory conditions, compliance audits, and wage or employment-related disputes.",
     },
@@ -86,9 +86,6 @@ export default function TextileIndustryPage() {
             in manufacturing, direct-to-consumer models, circular economy
             adoption, and ethical sourcing reshaping global textile industry.
           </h3>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
-            Explore Solutions
-          </button>
         </motion.div>
 
         <motion.div
@@ -122,7 +119,7 @@ export default function TextileIndustryPage() {
                   <h3 className="text-2xl font-bold text-slate-800 mb-4 tracking-tight">
                     {item.title}
                   </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-8">
+                  <p className="text-slate-500 text-md leading-relaxed mb-8">
                     {item.desc}
                   </p>
                 </div>

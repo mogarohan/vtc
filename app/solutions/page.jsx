@@ -168,7 +168,7 @@ export default function Solutions() {
     <main className="min-h-screen bg-[#F8FAFC] overflow-hidden">
       <section
         ref={containerRef}
-        className="relative min-h-[85vh] bg-[#020617] overflow-hidden"
+        className="relative min-h-[85vh] bg-[#040a26] overflow-hidden"
       >
         {/* ================= VIDEO ================= */}
         <div
@@ -196,7 +196,7 @@ export default function Solutions() {
           </video>
 
           {/* Desktop fade effect */}
-          <div className="hidden lg:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#020617] to-transparent" />
+          <div className="hidden lg:block absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#020617]/40 to-transparent" />
         </div>
 
         {/* ================= CONTENT ================= */}

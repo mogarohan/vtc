@@ -128,9 +128,6 @@ const AutomobileInsurancePage = () => {
           <h2 className="text-2xl md:text-3xl font-light text-slate-600 mb-10 uppercase tracking-[0.3em]">
             Driving Into an Electric Future
           </h2>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all shadow-xl hover:scale-105">
-            Explore Solutions
-          </button>
         </motion.div>
 
         <motion.div
@@ -162,7 +159,7 @@ const AutomobileInsurancePage = () => {
                   The Transformation
                 </h3>
               </div>
-              <p className="text-xl md:text-2xl text-slate-900 leading-relaxed font-medium">
+              <p className="text-lg md:text-xl text-slate-900 leading-relaxed font-medium">
                 The automobile and engineering sectors are undergoing{" "}
                 <span className="text-blue-600 font-black underline decoration-sky-400">
                   unprecedented transformation
