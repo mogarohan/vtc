@@ -132,61 +132,81 @@ const BlueHospitalityPage = () => {
       </section>
 
       {/* ---------------- COVERAGE ---------------- */}
-      <div className="text-center mt-8 sm:mt-10 mb-5 sm:mb-10 px-4">
+      <div className="text-center mt-8 sm:mt-10 mb-5 sm:mb-4 px-4">
         <h2 className="text-2xl sm:text-4xl font-black text-slate-900 mb-3">
           Complete Hospitality Coverage
         </h2>
         <div className="h-1.5 w-16 sm:w-20 bg-blue-600 mx-auto rounded-full" />
       </div>
 
-      <section className="py-2 sm:py-5 px-4 sm:px-6">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{ visible: { transition: { staggerChildren: 0.12 } } }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8"
-          >
-            {[
-              {
-                title: "Property & Business Interruption",
-                image: "/hospitality/h1.jpeg",
-              },
-              {
-                title: "General & Product Liability",
-                image: "/hospitality/h2.jpeg",
-              },
-              {
-                title: "Cyber & Data Protection",
-                image: "/hospitality/h3.jpeg",
-              },
-              { title: "Liquor Liability", image: "/hospitality/h4.jpeg" },
-              { title: "Workers Compensation", image: "/hospitality/h5.jpeg" },
-              { title: "Equipment Breakdown", image: "/hospitality/h6.jpeg" },
-            ].map((item) => (
-              <motion.div
-                key={item.title}
-                variants={fadeUp}
-                whileHover={{ y: -4, scale: 1.01 }}
-                className="bg-white rounded-xl sm:rounded-2xl overflow-hidden border border-[#1C2A7D]/10 shadow-md hover:shadow-xl transition"
-              >
-                <div className="w-full h-[150px] sm:h-[200px] bg-[#F7F8FC] flex items-center justify-center p-3">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="max-h-full w-auto object-contain"
-                  />
-                </div>
+      <section className="py-14 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-6">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                visible: { transition: { staggerChildren: 0.08 } },
+              }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+            >
+              {[
+                {
+                  title: "Property & Business Interruption",
+                  image: "/hospitality/h1.jpeg",
+                },
+                {
+                  title: "General & Product Liability",
+                  image: "/hospitality/h2.jpeg",
+                },
+                {
+                  title: "Cyber & Data Protection",
+                  image: "/hospitality/h3.jpeg",
+                },
+                { title: "Liquor Liability", image: "/hospitality/h4.jpeg" },
+                {
+                  title: "Workers Compensation",
+                  image: "/hospitality/h5.jpeg",
+                },
+                { title: "Equipment Breakdown", image: "/hospitality/h6.jpeg" },
+              ].map((item) => (
+                <motion.div
+                  key={item.title}
+                  variants={fadeUp}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 18 }}
+                  className="bg-white rounded-2xl overflow-hidden
+                              border border-[#1C2A7D]/10
+                              shadow-[0_12px_35px_rgba(28,42,125,0.15)]
+                              hover:shadow-[0_28px_60px_rgba(28,42,125,0.3)]
+                              transition"
+                >
+                  {/* IMAGE */}
+                  <div className="relative w-full">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
 
-                <div className="p-3 sm:p-5 text-center">
-                  <h3 className="font-semibold text-[#1C2A7D] text-sm sm:text-lg">
-                    {item.title}
-                  </h3>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+                  {/* CONTENT */}
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold text-[#1C2A7D] mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  {/* ACCENT BAR */}
+                  <div className="h-1 w-full bg-[#1C2A7D]" />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>

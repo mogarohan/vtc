@@ -73,7 +73,7 @@ export default function ShippingODCPage() {
       {/* Heading */}
       <div className="text-center mb-10 mt-5">
         <h2 className="text-4xl font-black text-slate-900 mb-4">
-          Marine & Offshore Risk Solutions
+          Marine & Offshore Risks
         </h2>
         <div className="h-1.5 w-55 bg-blue-600 mx-auto rounded-full"></div>
       </div>

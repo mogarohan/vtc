@@ -155,11 +155,11 @@ const AutomobileInsurancePage = () => {
             <div className="md:w-1/2">
               <div className="flex items-center gap-3 text-blue-600 mb-6">
                 <Settings size={32} />
-                <h3 className="text-2xl font-bold uppercase tracking-wider italic">
+                <h3 className="text-2xl font-bold uppercase tracking-wider">
                   The Transformation
                 </h3>
               </div>
-              <p className="text-lg md:text-xl text-slate-900 leading-relaxed font-medium">
+              <p className="text-md md:text-lg text-slate-900 leading-relaxed font-medium text-left md:text-justify">
                 The automobile and engineering sectors are undergoing{" "}
                 <span className="text-blue-600 font-black underline decoration-sky-400">
                   unprecedented transformation

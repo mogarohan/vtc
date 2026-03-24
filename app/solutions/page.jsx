@@ -81,7 +81,7 @@ export default function Solutions() {
       lightBg: "bg-blue-50",
     },
     {
-      id: "audits-riskassessment",
+      id: "audits&riskassessment",
       category: "Industrial",
       title: "Audits & Risk Assessment",
       desc: "Identify, evaluate, and mitigate operational and strategic risks proactively.",
@@ -135,7 +135,7 @@ export default function Solutions() {
       lightBg: "bg-purple-50",
     },
     {
-      id: "suretybond-creditinsurance",
+      id: "suretybond&creditinsurance",
       category: "Corporate",
       title: "Surety Bond",
       desc: "Risk transfer solutions that strengthen financial credibility.",

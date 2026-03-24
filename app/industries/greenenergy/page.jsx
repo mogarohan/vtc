@@ -147,88 +147,81 @@ const BlueEngineeringPage = () => {
         </h2>
         <div className="h-1.5 w-20 bg-blue-600 mx-auto rounded-full"></div>
       </div>
-      <section className="bg-[#F7F8FC] py-8">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.h2
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="text-4xl font-black text-slate-900 mb-10"
-          ></motion.h2>
 
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
-          >
-            {[
-              {
-                title: "Property & Business Interruption",
-                image: "/energy/e1.jpeg",
-              },
-              {
-                title: "Environmental Liability",
-                image: "/energy/e2.jpeg",
-              },
-              {
-                title: "CAR for Renewable Projects",
-                image: "/energy/e3.jpeg",
-              },
-              {
-                title: "Cyber & Smart Grid Protection",
-                image: "/energy/e4.jpeg",
-              },
-              {
-                title: "Renewable Energy Insurance",
-                image: "/energy/e5.jpeg",
-              },
-              {
-                title: "Regulatory Defense",
-                image: "/energy/e6.jpeg",
-              },
-            ].map((item) => (
-              <motion.div
-                key={item.title}
-                variants={fadeUp}
-                whileHover={{ y: -8 }}
-                transition={{ type: "spring", stiffness: 220, damping: 18 }}
-                className="group bg-white rounded-2xl overflow-hidden
-                  flex flex-col
-                  border border-[#1C2A7D]/10
-                  shadow-[0_14px_35px_rgba(28,42,125,0.14)]
-                  hover:shadow-[0_28px_60px_rgba(28,42,125,0.25)]
-                  transition"
-              >
-                {/* IMAGE */}
-                <div
-                  className="w-full min-h-[200px] bg-[#F7F8FC]
-                flex items-center justify-center p-4"
+      <section className="py-14 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-6">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{
+                visible: { transition: { staggerChildren: 0.08 } },
+              }}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"
+            >
+              {[
+                {
+                  title: "Property & Business Interruption",
+                  image: "/energy/e1.jpeg",
+                },
+                {
+                  title: "Environmental Liability",
+                  image: "/energy/e2.jpeg",
+                },
+                {
+                  title: "CAR for Renewable Projects",
+                  image: "/energy/e3.jpeg",
+                },
+                {
+                  title: "Cyber & Smart Grid Protection",
+                  image: "/energy/e4.jpeg",
+                },
+                {
+                  title: "Renewable Energy Insurance",
+                  image: "/energy/e5.jpeg",
+                },
+                {
+                  title: "Regulatory Defense",
+                  image: "/energy/e6.jpeg",
+                },
+              ].map((item) => (
+                <motion.div
+                  key={item.title}
+                  variants={fadeUp}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 220, damping: 18 }}
+                  className="bg-white rounded-2xl overflow-hidden
+                    border border-[#1C2A7D]/10
+                    shadow-[0_12px_35px_rgba(28,42,125,0.15)]
+                    hover:shadow-[0_28px_60px_rgba(28,42,125,0.3)]
+                    transition flex flex-col h-full"
                 >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="
-      max-h-[200px]
-      w-auto
-      object-contain
-      transition-transform
-      duration-500
-      group-hover:scale-[1.03]
-    "
-                  />
-                </div>
+                  {/* IMAGE */}
+                  <div className="relative w-full h-56 overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
 
-                <div className="p-6 mt-auto">
-                  <h3 className="text-lg font-semibold text-[#1C2A7D] text-center">
-                    {item.title}
-                  </h3>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+                  {/* CONTENT */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-lg font-semibold text-[#1C2A7D] mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  {/* ACCENT BAR */}
+                  <div className="h-1 w-full bg-[#1C2A7D]" />
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>

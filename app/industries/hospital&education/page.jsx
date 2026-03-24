@@ -18,10 +18,74 @@ import {
   UserRound,
   Scale,
   FileWarning,
+  GraduationCap,
+  Home,
+  Users,
+  AlertTriangle,
 } from "lucide-react";
 
 export default function InstitutionalSuite() {
   const [activeTab, setActiveTab] = useState("hospital");
+
+  const items = [
+    {
+      title: "Professional Indemnity",
+      icon: <ShieldCheck size={28} />,
+    },
+    {
+      title: "Student Safety",
+      icon: <GraduationCap size={28} />,
+    },
+    {
+      title: "Cyber & Data",
+      icon: <Lock size={28} />,
+    },
+    {
+      title: "Property Damage",
+      icon: <Home size={28} />,
+    },
+    {
+      title: "Employment Practices",
+      icon: <Users size={28} />,
+    },
+    {
+      title: "Reputation & Crisis",
+      icon: <AlertTriangle size={28} />,
+    },
+  ];
+
+  const hospitalRisks = [
+    {
+      icon: <Stethoscope className="w-7 h-7" />,
+      title: "Medical Malpractice",
+      desc: "Clinical negligence, surgical errors, misdiagnosis, treatment failures",
+    },
+    {
+      icon: <ShieldAlert className="w-7 h-7" />,
+      title: "Cyber & Data Breaches",
+      desc: "Patient records theft, HIPAA violations, ransomware attacks",
+    },
+    {
+      icon: <Pill className="w-7 h-7" />,
+      title: "Product Liability",
+      desc: "Medical device failures, pharmaceutical defects, equipment malfunctions",
+    },
+    {
+      icon: <Hospital className="w-7 h-7" />,
+      title: "Property & Equipment",
+      desc: "Facility damage, specialized equipment breakdown",
+    },
+    {
+      icon: <UserRound className="w-7 h-7" />,
+      title: "Employment Practices",
+      desc: "Staff disputes, discrimination claims",
+    },
+    {
+      icon: <Scale className="w-7 h-7" />,
+      title: "Regulatory Compliance",
+      desc: "License violations, accreditation issues",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
@@ -112,50 +176,24 @@ export default function InstitutionalSuite() {
           {/* RISKS GRID */}
           <section className="py-4 px-4 sm:px-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
-              {[
-                {
-                  icon: <Stethoscope className="w-7 h-7" />,
-                  title: "Medical Malpractice",
-                  desc: "Clinical negligence, surgical errors, misdiagnosis, treatment failures",
-                },
-                {
-                  icon: <ShieldAlert className="w-7 h-7" />,
-                  title: "Cyber & Data Breaches",
-                  desc: "Patient records theft, HIPAA violations, ransomware attacks",
-                },
-                {
-                  icon: <Pill className="w-7 h-7" />,
-                  title: "Product Liability",
-                  desc: "Medical device failures, pharmaceutical defects, equipment malfunctions",
-                },
-                {
-                  icon: <Hospital className="w-7 h-7" />,
-                  title: "Property & Equipment",
-                  desc: "Facility damage, specialized equipment breakdown",
-                },
-                {
-                  icon: <UserRound className="w-7 h-7" />,
-                  title: "Employment Practices",
-                  desc: "Staff disputes, discrimination claims",
-                },
-                {
-                  icon: <Scale className="w-7 h-7" />,
-                  title: "Regulatory Compliance",
-                  desc: "License violations, accreditation issues",
-                },
-              ].map((item, i) => (
+              {hospitalRisks.map((item, i) => (
                 <div
                   key={i}
-                  className="p-6 sm:p-10 rounded-2xl sm:rounded-[2.5rem] bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-500 text-center"
+                  className="p-6 sm:p-10 rounded-2xl sm:rounded-[2.5rem] bg-white border border-slate-200 shadow-sm text-center flex flex-col items-center"
                 >
-                  <div className="mb-4 text-blue-600 flex justify-center">
+                  {/* ICON */}
+                  <div className="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
                     {item.icon}
                   </div>
+
+                  {/* TITLE */}
                   <h3 className="text-lg sm:text-2xl font-black text-blue-900 mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm sm:text-lg text-slate-600 leading-relaxed">
-                    {item.desc}
+
+                  {/* DESC */}
+                  <p className="text-sm sm:text-lg text-slate-600">
+                    Coverage designed to protect institutions from modern risks.
                   </p>
                 </div>
               ))}
@@ -215,21 +253,22 @@ export default function InstitutionalSuite() {
           {/* GRID */}
           <section className="py-4 px-4 sm:px-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-10">
-              {[
-                "Professional Indemnity",
-                "Student Safety",
-                "Cyber & Data",
-                "Property Damage",
-                "Employment Practices",
-                "Reputation & Crisis",
-              ].map((title, i) => (
+              {items.map((item, i) => (
                 <div
                   key={i}
-                  className="p-6 sm:p-10 rounded-2xl sm:rounded-[2.5rem] bg-white border border-slate-200 shadow-sm text-center"
+                  className="p-6 sm:p-10 rounded-2xl sm:rounded-[2.5rem] bg-white border border-slate-200 shadow-sm text-center flex flex-col items-center"
                 >
+                  {/* ICON */}
+                  <div className="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                    {item.icon}
+                  </div>
+
+                  {/* TITLE */}
                   <h3 className="text-lg sm:text-2xl font-black text-blue-900 mb-2">
-                    {title}
+                    {item.title}
                   </h3>
+
+                  {/* DESC */}
                   <p className="text-sm sm:text-lg text-slate-600">
                     Coverage designed to protect institutions from modern risks.
                   </p>
