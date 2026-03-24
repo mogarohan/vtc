@@ -151,78 +151,61 @@ export default function HomePage() {
               <ShieldCheck className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 opacity-10" />
             </div>
 
-            <div className="p-8 md:p-10 bg-blue-600 rounded-3xl text-white relative overflow-hidden">
-              <h3 className="text-xl md:text-2xl font-bold mb-4">Our Vision</h3>
-              <p className="text-blue-100 text-sm md:text-base relative z-10">
-                Pioneering India&apos;s Risk Advisory Landscape. To be the
-                trusted leader in Business Insurance, delivering cutting-edge,
-                innovative & tech powered solutions that every business
-                organization can scale with certainty, security & confidence.
-              </p>
-              <BarChart3 className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 opacity-10" />
-            </div>
+           <div className="p-8 md:p-10 bg-[#0C0F7F] rounded-3xl text-white relative overflow-hidden">
+  <h3 className="text-xl md:text-2xl font-bold mb-4">Our Vision</h3>
+  <p className="text-blue-100 text-sm md:text-base relative z-10">
+    Pioneering India&apos;s Risk Advisory Landscape. To be the
+    trusted leader in Business Insurance, delivering cutting-edge,
+    innovative & tech powered solutions that every business
+    organization can scale with certainty, security & confidence.
+  </p>
+  <BarChart3 className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 opacity-10" />
+</div>
           </div>
         </div>
       </section>
 
       {/* ================= SERVICES ================= */}
       <section className="py-6 md:py-10 bg-white">
-        {" "}
-        {/* Gap kam karne ke liye yahan py-20 ko py-12 kiya */}
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-10 md:text-left md:mb-10">
-            {" "}
-            {/* Margin bottom 16 se 10 kiya */}
-            <h2 className="text-blue-600 tracking-widest mb-2 font-semibold text-2xl">
-              WHAT WE OFFER
-            </h2>
-          </div>
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="text-center mb-10 md:text-left md:mb-10">
+      <h2 className="text-blue-600 tracking-widest mb-2 font-semibold text-2xl">
+        WHAT WE OFFER
+      </h2>
+    </div>
 
-          <div className="flex flex-col md:flex-row md:h-[520px] gap-4">
-            {SERVICES.map((item, index) => {
-              const isActive = activeService === index;
-
-              return (
-                <Link
-                  key={item.id}
-                  href={item.href}
-                  onMouseEnter={() => setActiveService(index)}
-                  className={`
-                    group relative overflow-hidden rounded-3xl cursor-pointer
-                    transition-all duration-700 shadow-lg
-                    w-full
-                    md:flex ${isActive ? "md:flex-[4]" : "md:flex-[1]"}
-                  `}
-                >
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-black/50 md:bg-black/40"></div>
-                  <div className="relative z-10 h-full flex flex-col justify-end p-6 md:p-10 text-white min-h-[300px] md:min-h-0">
-                    <span className="text-blue-300 text-3xl md:text-5xl font-bold mb-3">
-                      {item.id}
-                    </span>
-                    <h3 className="text-xl md:text-3xl font-bold mb-2">
-                      {item.title}
-                    </h3>
-                    <p
-                      className={`
-                        text-sm md:text-base text-gray-100 max-w-md
-                        transition-all duration-500
-                        ${isActive ? "opacity-100 translate-y-0" : "md:opacity-0 md:translate-y-4"}
-                      `}
-                    >
-                      {item.desc}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
+    {/* Changed from flex to grid: 1 column on mobile, 2 columns on medium+ screens */}
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      {SERVICES.map((item) => (
+        <Link
+          key={item.id}
+          href={item.href}
+          className="relative overflow-hidden rounded-3xl cursor-pointer shadow-lg w-full h-[300px] md:h-[400px]"
+        >
+          <img
+            src={item.img}
+            alt={item.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/50 md:bg-black/40"></div>
+          
+          <div className="relative z-10 h-full flex flex-col justify-end p-6 md:p-10 text-white">
+            <span className="text-blue-300 text-3xl md:text-5xl font-bold mb-3">
+              {item.id}
+            </span>
+            <h3 className="text-xl md:text-3xl font-bold mb-2">
+              {item.title}
+            </h3>
+            {/* Description is now always visible */}
+            <p className="text-sm md:text-base text-gray-100 max-w-md">
+              {item.desc}
+            </p>
           </div>
-        </div>
-      </section>
+        </Link>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* ================= INDUSTRIES ================= */}
       <section className="py-10 md:py-20 bg-[#f0f9ff]">

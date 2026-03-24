@@ -258,7 +258,7 @@ export default function CompanyOverview() {
 
             <ShieldCheck className="absolute -bottom-3 -right-6 w-24 h-24 md:w-50 md:h-50 opacity-10" />
           </div>
-          <div className="p-8 md:p-14 rounded-[2.5rem] md:rounded-[4rem] bg-blue-600 shadow-3xl shadow-blue-900/50 hover:bg-blue-500 transition-colors">
+          <div className="p-8 md:p-14 rounded-[2.5rem] md:rounded-[4rem] bg-[#0C0F7F] shadow-3xl shadow-blue-900/50 hover:bg-blue-500 transition-colors">
             <div className="flex items-center gap-4 mb-6">
               <Eye className="text-white" size={40} />
               <h3 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tighter">

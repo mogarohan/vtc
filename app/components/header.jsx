@@ -237,35 +237,7 @@ const NAV_DATA = [
       },
     ],
   },
-  {
-    name: "Privacy Policy",
-    href: "/privacy-policy",
-    icon: <ShieldCheck size={20} />,
-    desc: "Governance, compliance, and regulatory policies.",
-    image: "privacy.png",
-    subLinks: [
-      {
-        name: "ISMS Policy",
-        href: "/privacy-policy/isms-policy",
-        icon: <FontAwesomeIcon icon={faFileShield} />,
-      },
-      {
-        name: "Grievance Redressal Policy",
-        href: "/privacy-policy/grievance-redressal-policy",
-        icon: <FontAwesomeIcon icon={faScaleBalanced} />,
-      },
-      {
-        name: "AML Policy",
-        href: "/privacy-policy/aml-policy",
-        icon: <FontAwesomeIcon icon={faUserSecret} />,
-      },
-      {
-        name: "Whistleblower & Ethics Policy",
-        href: "/privacy-policy/whistleblower-ethics-policy",
-        icon: <FontAwesomeIcon icon={faGavel} />,
-      },
-    ],
-  },
+  
   { name: "Insights", href: "/blogs" },
   { name: "Careers", href: "/careers" },
 ];

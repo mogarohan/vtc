@@ -381,16 +381,8 @@ export default function Footer() {
           <div className="mt-5 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-white text-[10px] uppercase tracking-widest relative">
             {/* Left Section: Copyright - Added text-center for mobile */}
             <p className="text-[14px] font-medium text-slate-300">
-              © 2026 Vestigo Insurance Advisor | Developed with{" "}
-              <span className="text-[#28A745]">🫶</span> by{" "}
-              <a
-                href="https://www.techstrota.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#28A745] transition-colors"
-              >
-                Techstrota
-              </a>
+              © 2026 Vestigo Insurance Brokers Pvt Ltd | IRDAI Regn.No:1131
+Direct Broker ( General & Life)
             </p>
 
             {/* Center Section: Social Links - Already centered by flex-col items-center on parent */}
@@ -410,21 +402,31 @@ export default function Footer() {
             </div>
 
             {/* Right Section: Links - Changed to justify-center for mobile */}
-            <div className="flex justify-center md:justify-end gap-4">
-              <Link
-                href="/privacy"
-                className="hover:text-white transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="hover:text-white transition-colors"
-              >
-                Terms of Service
-              </Link>
-            </div>
+           
+              <div className="flex justify-center md:justify-end gap-6">
+                <Link
+                  href="/privacy-policy"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  Privacy Policies
+                </Link>
+              </div>
+
           </div>
+          <div className="mt-5 w-full flex justify-center text-white uppercase tracking-widest relative">
+  <p className="text-[14px] font-medium text-slate-300 text-center">
+    Developed with{" "}
+    <span className="text-[#28A745]">🫶</span> by{" "}
+    <a
+      href="https://www.techstrota.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:text-[#28A745] transition-colors"
+    >
+      Techstrota
+    </a>
+  </p>
+</div>
         </div>
       </footer>
     </div>
