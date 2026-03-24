@@ -299,7 +299,7 @@ export default function CompanyOverview() {
                 key={i}
                 className="bg-white p-10 rounded-3xl border border-sky-100 shadow-sm"
               >
-                <ShieldCheck className="text-blue-600 mb-4" size={40} />
+                <ShieldCheck className="text-blue-600 mb-4 mx-auto" size={40} />
                 <h3 className="text-lg font-black text-slate-900">{item}</h3>
               </div>
             ))}
@@ -361,7 +361,7 @@ export default function CompanyOverview() {
                     {item.title}
                   </h3>
 
-                  <p className="text-slate-600 text-sm leading-relaxed">
+                  <p className="text-slate-600 text-md leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
@@ -468,7 +468,7 @@ export default function CompanyOverview() {
                     {item.title}
                   </h3>
 
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                  <p className="text-slate-600 text-md leading-relaxed mb-6">
                     {item.desc}
                   </p>
                 </div>

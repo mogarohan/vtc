@@ -62,9 +62,9 @@ const CareersPage = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-white pt-20">
+    <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-slate-50 py-24 px-6 border-b border-slate-100">
+      <section className="bg-slate-50 py-16 px-6 border-b border-slate-100">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -79,15 +79,12 @@ const CareersPage = () => {
               Shape the Future of Insurance Broking
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto mb-6 leading-relaxed">
             Led by visionary entrepreneurs, we’re redefining insurance broking
             with future-focused risk solutions. Join a dynamic team where
             innovation meets opportunity and your ideas help shape tomorrow’s
             insurance landscape.
           </p>
-          <button className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-2xl font-bold shadow-lg shadow-blue-200 transition-all">
-            View Open Roles
-          </button>
         </div>
       </section>
 
@@ -98,7 +95,7 @@ const CareersPage = () => {
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
               Life at Vestigo
             </h2>
-            <p className="text-slate-500">
+            <p className="text-slate-500 text-xl leading-relaxed">
               “We invest in our people, so they can deliver exceptional care to
               our clients.”
             </p>
@@ -116,7 +113,7 @@ const CareersPage = () => {
                 <h3 className="text-xl font-bold text-slate-900 mb-3">
                   {item.title}
                 </h3>
-                <p className="text-slate-500 text-sm leading-relaxed">
+                <p className="text-slate-500 text-md leading-relaxed">
                   {item.desc}
                 </p>
               </div>
@@ -129,7 +126,7 @@ const CareersPage = () => {
       <section className="py-10 px-6 bg-slate-50 rounded-[3rem] mx-4 md:mx-10 mb-24">
         <div className="mt-16 text-center p-12 bg-white rounded-[2rem] border border-dashed border-slate-300">
           <h4 className="text-xl font-bold text-slate-800 mb-2">
-            Don't see a perfect fit?
+            Don&apos;t see a perfect fit?
           </h4>
           <p className="text-slate-500 mb-6">
             “Send us your CV, and we’ll get in touch when a relevant opportunity

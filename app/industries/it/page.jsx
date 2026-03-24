@@ -18,7 +18,9 @@ import {
   Scale,
   FileWarning,
   ChevronDown,
-  Lock, Building2, Users,
+  Lock,
+  Building2,
+  Users,
 } from "lucide-react";
 
 const fadeUp = {
@@ -125,10 +127,9 @@ export default function ITFieldPage() {
                   <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
                     {sector.name}
                   </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-8 font-sans">
+                  <p className="text-slate-500 text-md leading-relaxed mb-8 font-sans">
                     {sector.desc}
                   </p>
-                  
                 </div>
               );
             })}
@@ -148,10 +149,9 @@ export default function ITFieldPage() {
                     <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
                       {sector.name}
                     </h3>
-                    <p className="text-slate-500 text-sm leading-relaxed mb-8 font-sans">
+                    <p className="text-slate-500 text-md leading-relaxed mb-8 font-sans">
                       {sector.desc}
                     </p>
-                    
                   </div>
                 );
               })}
@@ -162,91 +162,89 @@ export default function ITFieldPage() {
 
       {/* ================= INSURANCE FRAMEWORK ================= */}
       <section className="relative z-20 py-10 px-6 bg-white">
-  <div className="max-w-6xl mx-auto">
-    {/* Heading Section - Left Aligned */}
-    <div className="mb-16">
-      <h2 className="text-4xl font-black text-slate-900 mb-4 tracking-tighter uppercase">
-        Comprehensive Insurance Protection Framework
-      </h2>
-      <div className="h-1.5 w-20 bg-blue-600 rounded-full"></div>
-    </div>
+        <div className="max-w-6xl mx-auto">
+          {/* Heading Section - Left Aligned */}
+          <div className="mb-16">
+            <h2 className="text-4xl font-black text-slate-900 mb-4 tracking-tighter uppercase">
+              Comprehensive Insurance Protection Framework
+            </h2>
+            <div className="h-1.5 w-20 bg-blue-600 rounded-full"></div>
+          </div>
 
-    {/* Flex Layout - Automatically centers leftovers in the last row */}
-    <div className="flex flex-wrap justify-center gap-6">
-      {[
-        {
-          title: "Cyber Risk Insurance",
-          desc: "Protection against data breaches, cyber attacks, recovery costs, legal fees, and reputational damage.",
-          icon: <ShieldAlert size={24} />,
-          tag: "CYBER",
-        },
-        {
-          title: "Professional Indemnity",
-          desc: "Covers claims arising from professional errors, omissions, or negligence in services rendered. Essential for IT firms providing advisory or software development services.",
-          icon: <Scale size={24} />,
-          tag: "LIABILITY",
-        },
-        {
-          title: "Crime & Fidelity",
-          desc: "Guards against financial losses due to employee fraud, theft, or other dishonest acts. Protects company assets from internal and external criminal activities.",
-          icon: <Lock size={24} />,
-          tag: "FRAUD",
-        },
-        {
-          title: "Property & Business Interruption",
-          desc: "Coverage for physical offices, data centres, critical equipment, and revenue loss following property damage or operational disruption events.",
-          icon: <Building2 size={24} />,
-          tag: "PROPERTY",
-        },
-        {
-          title: "Employee-Related Covers",
-          desc: "Group health insurance, personal accident coverage, workmen's compensation, and statutory protection for your workforce across locations.",
-          icon: <Users size={24} />,
-          tag: "WORKFORCE",
-        },
-      ].map((item, i) => (
-        <motion.div
-          key={i}
-          whileHover={{ y: -10 }}
-          className="
+          {/* Flex Layout - Automatically centers leftovers in the last row */}
+          <div className="flex flex-wrap justify-center gap-6">
+            {[
+              {
+                title: "Cyber Risk Insurance",
+                desc: "Protection against data breaches, cyber attacks, recovery costs, legal fees, and reputational damage.",
+                icon: <ShieldAlert size={24} />,
+                tag: "CYBER",
+              },
+              {
+                title: "Professional Indemnity",
+                desc: "Covers claims arising from professional errors, omissions, or negligence in services rendered. Essential for IT firms providing advisory or software development services.",
+                icon: <Scale size={24} />,
+                tag: "LIABILITY",
+              },
+              {
+                title: "Crime & Fidelity",
+                desc: "Guards against financial losses due to employee fraud, theft, or other dishonest acts. Protects company assets from internal and external criminal activities.",
+                icon: <Lock size={24} />,
+                tag: "FRAUD",
+              },
+              {
+                title: "Property & Business Interruption",
+                desc: "Coverage for physical offices, data centres, critical equipment, and revenue loss following property damage or operational disruption events.",
+                icon: <Building2 size={24} />,
+                tag: "PROPERTY",
+              },
+              {
+                title: "Employee-Related Covers",
+                desc: "Group health insurance, personal accident coverage, workmen's compensation, and statutory protection for your workforce across locations.",
+                icon: <Users size={24} />,
+                tag: "WORKFORCE",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -10 }}
+                className="
             group p-8 rounded-xl border border-slate-200 bg-white 
             hover:border-blue-600/30 hover:shadow-2xl transition-all duration-500 relative overflow-hidden
             w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]
           "
-        >
-          {/* Icon Box */}
-          <div className="mb-8 p-3 rounded-lg bg-blue-50 inline-block text-blue-600">
-            {item.icon}
-          </div>
-          
-          {/* Small Blue Tag */}
-          <p className="text-[11px] font-bold text-blue-600 uppercase mb-2 tracking-widest">
-            {item.tag}
-          </p>
-          
-          {/* Title */}
-          <h3 className="text-xl font-bold mb-3 tracking-tight">
-            {item.title}
-          </h3>
-          
-          {/* Description */}
-          <p className="text-slate-500 text-md leading-relaxed">
-            {item.desc}
-          </p>
-        </motion.div>
-      ))}
-    </div>
+              >
+                {/* Icon Box */}
+                <div className="mb-8 p-3 rounded-lg bg-blue-50 inline-block text-blue-600">
+                  {item.icon}
+                </div>
 
-    {/* NOTE Section */}
-    <div
-      className="mt-12 bg-[#0F172A] border-l-4 border-blue-600 px-6 py-5 text-white font-medium rounded-r-lg"
-    >
-      Protecting your technology business requires more than standard
-      policies — it demands specialist insurance solutions designed for
-      the digital age and India&apos;s unique regulatory landscape.
-    </div>
-  </div>
-</section>
+                {/* Small Blue Tag */}
+                <p className="text-[11px] font-bold text-blue-600 uppercase mb-2 tracking-widest">
+                  {item.tag}
+                </p>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold mb-3 tracking-tight">
+                  {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-slate-500 text-md leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* NOTE Section */}
+          <div className="mt-12 bg-[#0F172A] border-l-4 border-blue-600 px-6 py-5 text-white font-medium rounded-r-lg">
+            Protecting your technology business requires more than standard
+            policies — it demands specialist insurance solutions designed for
+            the digital age and India&apos;s unique regulatory landscape.
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

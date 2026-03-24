@@ -76,15 +76,16 @@ const BlueEngineeringPage = () => {
       {/* 3. TECHNOLOGY GRID: Blue Cards */}
       <section className="py-14 px-6 bg-[#F8FAFC]">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 text-center md:text-left">
-            <div className="max-w-xl">
+          <div className="text-center mb-16 max-w-2xl mx-auto">
+            <div className="text-center mb-10">
               <h2 className="text-4xl font-black text-slate-900 mb-4">
                 Energy Sector Risks
               </h2>
-              <p className="text-slate-500">
+              <p className="text-slate-500 mb-4">
                 Scalable renewable infrastructure designed for heavy industrial
                 use.
               </p>
+              <div className="h-1.5 w-20 bg-blue-600 mx-auto rounded-full"></div>
             </div>
             <div className="h-px flex-1 bg-slate-200 mb-4 mx-8 hidden md:block"></div>
           </div>
