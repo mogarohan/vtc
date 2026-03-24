@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   ShieldCheck,
   Car,
@@ -16,6 +17,8 @@ import {
   Settings,
   ArrowRight,
 } from "lucide-react";
+
+
 
 const AutomobileInsurancePage = () => {
   // Animation Variants
@@ -233,7 +236,7 @@ const AutomobileInsurancePage = () => {
                 Comprehensive Protection
               </h3>
             </div>
-            <ArrowRight size={48} className="text-blue-600 hidden md:block" />
+          
           </div>
 
           <motion.div
@@ -282,11 +285,15 @@ const AutomobileInsurancePage = () => {
               Secure Your <br /> Industrial Future
             </h2>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <button className="bg-blue-600 hover:bg-blue-500 text-white px-12 py-5 rounded-2xl font-bold text-xl transition-all shadow-xl hover:-translate-y-2">
-                Get a Quote
-              </button>
-              <button className="bg-white/10 hover:bg-white/20 text-white border border-white/30 px-12 py-5 rounded-2xl font-bold text-xl transition-all backdrop-blur-md">
-                Talk to Expert
+              
+              <button className="bg-blue-600/50 hover:bg-white/20 text-white border border-white/30 px-12 py-5 rounded-2xl font-bold text-xl transition-all backdrop-blur-md">
+                <Link
+                  href="/contact"
+                  className="flex items-center gap-2"
+                >
+                Talk to Experts
+                <ArrowRight size={20} />
+              </Link>
               </button>
             </div>
           </div>

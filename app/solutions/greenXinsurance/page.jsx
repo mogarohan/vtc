@@ -29,17 +29,17 @@ const GreenInsurance = () => {
     {
       title: "Renewable Energy Support",
       desc: "Specialized coverage for solar panels and wind turbines, ensuring complete protection for green energy assets.",
-      icon: <Sun className="w-10 h-10 text-emerald-500" />,
+      icon: <Sun className="w-10 h-10 text-blue-600" />,
     },
     {
       title: "EV Fleet Insurance",
       desc: "Customized plans for electric vehicle fleets, designed to help businesses minimize their carbon footprint.",
-      icon: <BatteryCharging className="w-10 h-10 text-emerald-500" />,
+      icon: <BatteryCharging className="w-10 h-10 text-blue-600" />,
     },
     {
       title: "Eco-Friendly Property",
       desc: "Discounted premiums for green-certified buildings and unique sustainable damage recovery solutions.",
-      icon: <Leaf className="w-10 h-10 text-emerald-500" />,
+      icon: <Leaf className="w-10 h-10 text-blue-600" />,
     },
   ];
 
@@ -52,12 +52,12 @@ const GreenInsurance = () => {
           <motion.div
             animate={{ scale: [1, 1.2, 1], x: [0, 50, 0] }}
             transition={{ duration: 10, repeat: Infinity }}
-            className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-600/10 rounded-full blur-[100px]"
+            className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[100px]"
           />
           <motion.div
             animate={{ scale: [1, 1.3, 1], x: [0, -50, 0] }}
             transition={{ duration: 15, repeat: Infinity }}
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-teal-600/10 rounded-full blur-[100px]"
+            className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-indigo-600/10 rounded-full blur-[100px]"
           />
         </div>
 
@@ -71,14 +71,14 @@ const GreenInsurance = () => {
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 border border-emerald-400/30 rounded-full bg-emerald-500/10 text-emerald-400 text-sm font-bold mb-6 backdrop-blur-md"
+              className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 backdrop-blur-md"
             >
               <Wind size={16} /> ECO-CONSCIOUS PROTECTION
             </motion.div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-[1] lg:leading-[0.95] uppercase">
               Insurance that <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
                 Protects the Planet.
               </span>
             </h1>
@@ -118,9 +118,9 @@ const GreenInsurance = () => {
             <motion.div
               key={idx}
               whileHover={{ y: -10 }}
-              className="p-10 border border-slate-100 rounded-[2.5rem] bg-white shadow-xl shadow-slate-200/50 hover:shadow-emerald-500/10 transition-all group"
+              className="p-10 border border-slate-100 rounded-[2.5rem] bg-white shadow-xl shadow-slate-200/50 hover:shadow-blue-500/10 transition-all group"
             >
-              <div className="bg-emerald-50 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
+              <div className="bg-blue-50 w-20 h-20 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
                 {item.icon}
               </div>
               <h3 className="text-2xl font-bold text-slate-800 mb-4 tracking-tight">
@@ -145,17 +145,17 @@ const GreenInsurance = () => {
             green energy. Our framework rewards lower carbon emissions with
             enhanced benefits and competitive premiums.
           </p>
-          <div className="w-16 h-1 bg-emerald-500 mx-auto mt-8 rounded-full" />
+          <div className="w-16 h-1 bg-blue-600 mx-auto mt-8 rounded-full" />
         </div>
       </section>
 
       {/* 4. PREMIUM DARK CTA SECTION */}
       <section className="pb-32 px-6">
         <div className="max-w-6xl mx-auto bg-slate-900 rounded-[3.5rem] p-16 text-center text-white relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-600/10 rounded-full blur-[100px]" />
+          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-[100px]" />
 
           <h2 className="text-4xl md:text-5xl font-black mb-8 tracking-tighter uppercase">
-            Together for a <span className="text-emerald-400">Greener</span>{" "}
+            Together for a <span className="text-blue-400">Greener</span>{" "}
             Tomorrow
           </h2>
           <p className="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
@@ -178,7 +178,7 @@ const GreenInsurance = () => {
           <div className="relative z-10">
             <Link
               href="/contact"
-              className="inline-block bg-emerald-600 text-white px-12 py-5 rounded-2xl font-bold hover:bg-emerald-500 transition-all shadow-xl"
+              className="inline-block bg-blue-600 text-white px-12 py-5 rounded-2xl font-bold hover:bg-blue-500 transition-all shadow-xl"
             >
               Request Partnership
             </Link>

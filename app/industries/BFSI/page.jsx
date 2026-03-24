@@ -230,7 +230,14 @@ const BfsisSuite = () => {
           and military-grade security protocols.
         </p>
         <button className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-5 rounded-2xl font-bold transition-all uppercase tracking-widest text-sm shadow-lg shadow-blue-600/20 hover:scale-105 active:scale-95">
-          Contact Fintech Specialist
+          <Link
+            href="/contact"
+            className="flex items-center gap-2"
+          >
+          Request Consultation
+          <ArrowRight size={20} />
+          </Link>
+         
         </button>
       </section>
     </main>

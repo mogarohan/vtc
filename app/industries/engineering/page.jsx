@@ -13,8 +13,11 @@ import {
   PenTool,
   ChevronRight,
   Zap,
-} from "lucide-react";
+  AlertTriangle,
+  ShieldAlert,
 
+} from "lucide-react";
+import Link from "next/link";
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
   visible: {
@@ -51,6 +54,60 @@ const EngineeringSuite = () => {
       tag: "Operational",
     },
   ];
+
+   const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
+  };
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
+
+  const threats = [
+    {
+      title: "Production Disruption",
+      desc: "Fire, machinery breakdown, assembly line failures, and equipment malfunctions can halt operations, leading to significant financial losses and reputational damage.",
+
+      image: "/key/1.jpeg",
+    },
+    {
+      title: "Supply Chain Vulnerability",
+      desc: "Component shortages, logistics delays, and over-reliance on single vendors expose businesses to significant risks, impacting production schedules and market delivery.",
+
+      image: "/key/2.jpeg",
+    },
+    {
+      title: "Product Liability",
+      desc: "Defects in vehicles or engineered components, unexpected safety failures, and product recall costs pose major financial and legal challenges.",
+
+      image: "/key/3.jpeg",
+    },
+    {
+      title: "Cyber & Technology",
+      desc: "The increasing connectivity of vehicles and manufacturing systems introduces new vulnerabilities, including data breaches, intellectual property theft, and operational cyberattacks.",
+
+      image: "/key/4.jpeg",
+    },
+    {
+      title: "Environmental Compliance",
+      desc: "Evolving emissions regulations, complex waste management challenges, and potential pollution liabilities demand strict adherence and robust risk management.",
+
+      image: "/key/5.jpeg",
+    },
+    {
+      title: "Intellectual Property",
+      desc: "Protecting innovative designs, manufacturing processes, and proprietary technologies from theft, patent infringement, and trade secret breaches is paramount.",
+
+      image: "/key/6.jpeg",
+    },
+  ];
+
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
@@ -90,6 +147,54 @@ const EngineeringSuite = () => {
           transition={{ repeat: Infinity, duration: 2 }}
           className="absolute bottom-10 text-blue-600"
         ></motion.div>
+      </section>
+
+
+      <section className="py-14 px-6 bg-white/50 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 flex items-center gap-4">
+            <ShieldAlert size={40} className="text-[#070B7F]" />
+            <h3 className="text-4xl md:text-5xl font-black text-slate-950 uppercase italic tracking-tighter">
+              Key Threats
+            </h3>
+          </div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            {threats.map((threat, idx) => (
+              <motion.div
+                key={idx}
+                variants={itemVariants}
+                whileHover={{ y: -10 }}
+                className="bg-white rounded-[2rem] overflow-hidden shadow-xl border border-slate-100 group transition-all h-full flex flex-col"
+              >
+                <div className="h-52 overflow-hidden relative">
+                  <img
+                    src={threat.image}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    alt={threat.title}
+                  />
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-md p-2 rounded-xl shadow-md">
+                    <AlertTriangle className="text-amber-500" size={24} />
+                  </div>
+                </div>
+                <div className="p-8 flex-grow">
+                  <h4 className="text-2xl font-bold text-slate-950 mb-4 group-hover:text-blue-600 transition-colors uppercase tracking-tight">
+                    {threat.title}
+                  </h4>
+                  <p className="text-slate-600 font-medium leading-relaxed">
+                    {threat.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
       </section>
 
       {/* 3. CORE MODULES - Modern Grid */}
@@ -209,8 +314,14 @@ const EngineeringSuite = () => {
             Build with Vestigo.
           </h2>
           <button className="bg-slate-950 hover:bg-black text-white px-12 py-5 rounded-full font-bold transition-all flex items-center gap-3 mx-auto shadow-2xl">
+            <Link
+              href="/contact"
+              className="flex items-center gap-2"
+             >
             Request Enterprise Access{" "}
+
             <ArrowRight size={20} className="text-blue-500" />
+            </Link>
           </button>
         </div>
       </section>
