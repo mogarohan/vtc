@@ -404,13 +404,13 @@ Direct Broker ( General & Life)
             {/* Right Section: Links - Changed to justify-center for mobile */}
            
               <div className="flex justify-center md:justify-end gap-6">
-                <Link
-                  href="/privacy-policy"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  Privacy Policies
-                </Link>
-              </div>
+  <Link
+    href="/privacy-policy"
+    className="font-semibold text-blue-500 underline decoration-blue-500/40 hover:decoration-blue-400 hover:text-blue-400 underline-offset-4 transition-all duration-300"
+  >
+    Privacy Policies
+  </Link>
+</div>
 
           </div>
           <div className="mt-5 w-full flex justify-center text-white uppercase tracking-widest relative">
@@ -418,13 +418,13 @@ Direct Broker ( General & Life)
     Developed with{" "}
     <span className="text-[#28A745]">🫶</span> by{" "}
     <a
-      href="https://www.techstrota.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="hover:text-[#28A745] transition-colors"
-    >
-      Techstrota
-    </a>
+  href="https://www.techstrota.com"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 hover:scale-105 inline-block transition-all duration-300"
+>
+  Techstrota
+</a>
   </p>
 </div>
         </div>

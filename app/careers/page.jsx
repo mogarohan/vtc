@@ -102,23 +102,24 @@ const CareersPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((item, i) => (
-              <div
-                key={i}
-                className="p-8 rounded-3xl bg-white border border-slate-100 hover:shadow-xl hover:shadow-blue-500/5 transition-all group"
-              >
-                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">
-                  {item.title}
-                </h3>
-                <p className="text-slate-500 text-md leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+  {benefits.map((item, i) => (
+    <div
+      key={i}
+      // Yahan flex, items-center, aur text-center classes add ki gayi hain
+      className="p-8 rounded-3xl bg-white border border-slate-100 hover:shadow-xl hover:shadow-blue-500/5 transition-all group flex flex-col items-center text-center md:items-start md:text-left"
+    >
+      <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+        {item.icon}
+      </div>
+      <h3 className="text-xl font-bold text-slate-900 mb-3">
+        {item.title}
+      </h3>
+      <p className="text-slate-500 text-md leading-relaxed">
+        {item.desc}
+      </p>
+    </div>
+  ))}
+</div>
         </div>
       </section>
 

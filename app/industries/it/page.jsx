@@ -163,13 +163,16 @@ export default function ITFieldPage() {
       {/* ================= INSURANCE FRAMEWORK ================= */}
       <section className="relative z-20 py-10 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
+        <div className="mb-20 text-center">
           {/* Heading Section - Left Aligned */}
           <div className="mb-16">
             <h2 className="text-4xl font-black text-slate-900 mb-4 tracking-tighter uppercase">
               Comprehensive Insurance Protection Framework
             </h2>
-            <div className="h-1.5 w-20 bg-blue-600 rounded-full"></div>
+            <div className="h-1.5 ml-120 w-50 bg-blue-600 rounded-full "></div>
+            </div>
           </div>
+          
 
           {/* Flex Layout - Automatically centers leftovers in the last row */}
           <div className="flex flex-wrap justify-center gap-6">
@@ -209,8 +212,8 @@ export default function ITFieldPage() {
                 key={i}
                 whileHover={{ y: -10 }}
                 className="
-            group p-8 rounded-xl border border-slate-200 bg-white 
-            hover:border-blue-600/30 hover:shadow-2xl transition-all duration-500 relative overflow-hidden
+            group p-8 rounded-xl border border-slate-500 bg-white 
+            hover:border-blue-600/50 hover:shadow-2xl transition-all duration-500 relative overflow-hidden
             w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]
           "
               >

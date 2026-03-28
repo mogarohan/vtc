@@ -1,6 +1,5 @@
 "use client";
 import { useRef, useEffect, useState } from "react";
-import { useMemo } from "react";
 import {
   motion,
   useScroll,
@@ -64,10 +63,6 @@ export default function Solutions() {
       video.removeEventListener("ended", handleEnded);
     };
   }, []);
-
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const categories = ["All", "Corporate", "Health", "Logistics", "Industrial"];
 
   const solutions = [
     {
@@ -156,14 +151,6 @@ export default function Solutions() {
     },
   ];
 
-  const filteredSolutions = useMemo(
-    () =>
-      activeCategory === "All"
-        ? solutions
-        : solutions.filter((item) => item.category === activeCategory),
-    [activeCategory],
-  );
-
   return (
     <main className="min-h-screen bg-[#F8FAFC] overflow-hidden">
       <section
@@ -216,9 +203,9 @@ export default function Solutions() {
               </div>
 
               <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
-                Our Insurance{" "}
+                What We Do Or  {" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                  Solutions
+                  The vestigo suite line
                 </span>
               </h1>
 
@@ -245,56 +232,13 @@ export default function Solutions() {
         />
       </section>
 
-      {/* --- GRID SECTION --- */}
       <section className="max-w-7xl mx-auto px-5 pt-14 pb-10">
-        <div
-          className="
-    flex-center gap-3 p-2 bg-white/5 backdrop-blur-md 
-    rounded-[2.5rem] w-fit border border-blue/10
-    
-    ml-70                 /* Desktop unchanged */
-    
-    max-md:ml-0           /* Remove margin on mobile */
-    max-md:w-full
-    max-md:grid
-    max-md:grid-cols-2    /* 2×2 layout */
-    max-md:gap-2
-    max-md:justify-center
-  "
-        >
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`
-        relative px-10 py-3 rounded-full text-sm font-bold 
-        transition-all duration-300
-        
-        ${activeCategory === cat ? "text-black" : "text-black hover:text-black"}
-        
-        max-md:px-4        /* Better fit on mobile */
-        max-md:py-2.5
-        max-md:text-xs
-      `}
-            >
-              {activeCategory === cat && (
-                <motion.div
-                  layoutId="activeTab"
-                  className="absolute inset-0 bg-blue-600 rounded-full shadow-lg shadow-blue-500/30"
-                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
-                />
-              )}
-              <span className="relative z-10">{cat}</span>
-            </button>
-          ))}
-        </div>
-
         <motion.div
           layout
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           <AnimatePresence mode="popLayout">
-            {filteredSolutions.map((item, index) => (
+            {solutions.map((item, index) => (
               <motion.div
                 layout
                 key={item.id}
@@ -380,12 +324,14 @@ export default function Solutions() {
               bespoke plan for you from scratch.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-slate-900 px-12 py-5 rounded-[2rem] font-black text-lg hover:scale-105 transition-all shadow-2xl">
-                Consult an Underwriter
-              </button>
-              <button className="bg-white/5 border border-white/10 backdrop-blur-xl text-white px-12 py-5 rounded-[2rem] font-black text-lg hover:bg-white/10 transition-all">
+                <Link href="/contact" className="inline-block">
+                  <button className="bg-white text-slate-900 px-12 py-5 rounded-[2rem] font-black text-lg hover:scale-105 transition-all shadow-2xl w-full">
+                    Consult with Risk Management
+                  </button>
+                </Link> 
+              {/* <button className="bg-white/5 border border-white/10 backdrop-blur-xl text-white px-12 py-5 rounded-[2rem] font-black text-lg hover:bg-white/10 transition-all">
                 Download Brochure
-              </button>
+              </button> */}
             </div>
           </div>
         </motion.div>
