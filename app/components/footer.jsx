@@ -157,7 +157,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/industries/chemical-pharmaceuticals"
+                      href="/industries/chemical&pharmaceuticals"
                       className="hover:text-white transition-all hover:translate-x-1 block truncate"
                     >
                       Chemical
@@ -193,7 +193,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/industries/hospital-education"
+                      href="/industries/hospital&education"
                       className="hover:text-white transition-all hover:translate-x-1 block"
                     >
                       Education
@@ -228,7 +228,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/industries/shipping-odc-cargo"
+                      href="/industries/shipping&odccargo"
                       className="hover:text-white transition-all hover:translate-x-1 block truncate"
                     >
                       Shipping
@@ -236,7 +236,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/industries/sme-msme"
+                      href="/industries/SME&MSME"
                       className="hover:text-white transition-all hover:translate-x-1 block"
                     >
                       SME
@@ -271,7 +271,7 @@ export default function Footer() {
                   </li>
                   <li>
                     <Link
-                      href="/industries/wood-laminates"
+                      href="/industries/wood&laminates"
                       className="hover:text-white transition-all hover:translate-x-1 block truncate"
                     >
                       Wood
@@ -450,28 +450,6 @@ export default function Footer() {
                 Privacy Policies
               </Link>
             </div>
-
-            <div className="flex justify-center md:justify-end gap-6">
-              <Link
-                href="/privacy-policy"
-                className="font-semibold text-blue-500 underline decoration-blue-500/40 hover:decoration-blue-400 hover:text-blue-400 underline-offset-4 transition-all duration-300"
-              >
-                Privacy Policies
-              </Link>
-            </div>
-          </div>
-          <div className="mt-5 w-full flex justify-center text-white uppercase tracking-widest relative">
-            <p className="text-[14px] font-medium text-slate-300 text-center">
-              Developed with <span className="text-[#28A745]">🫶</span> by{" "}
-              <a
-                href="https://www.techstrota.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 hover:scale-105 inline-block transition-all duration-300"
-              >
-                Techstrota
-              </a>
-            </p>
           </div>
         </div>
       </footer>
