@@ -32,13 +32,13 @@ const GreenInsurance = () => {
       icon: <Sun className="w-10 h-10 text-blue-600" />,
     },
     {
-      title: "EV Fleet Insurance",
+      title: "EV Insurance",
       desc: "Customized plans for electric vehicle fleets, designed to help businesses minimize their carbon footprint.",
       icon: <BatteryCharging className="w-10 h-10 text-blue-600" />,
     },
     {
       title: "Eco-Friendly Property",
-      desc: "Discounted premiums for green-certified buildings and unique sustainable damage recovery solutions.",
+      desc: "Premiums for green-certified buildings and unique sustainable damage recovery solutions.",
       icon: <Leaf className="w-10 h-10 text-blue-600" />,
     },
   ];
@@ -76,10 +76,10 @@ const GreenInsurance = () => {
               <Wind size={16} /> ECO-CONSCIOUS PROTECTION
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-[1] lg:leading-[0.95] uppercase">
-              Insurance that <br />
+            <h1 className="text-1xl sm:text-1xl md:text-6xl lg:text-4xl font-black text-white mb-6 md:mb-8 tracking-tighter leading-[1] lg:leading-[0.95] uppercase">
+              Specialised Insurance for Renewable Energy Projects and <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
-                Protects the Planet.
+                Green Infrastructure Assets.
               </span>
             </h1>
 

@@ -81,6 +81,9 @@ export default function Hero() {
               <p className="text-sm text-[#D1D5DB] leading-relaxed mb-8">
                 {slides[index].desc}
               </p>
+              <p className="text-xl text-gray-300 mb-6 font-medium tracking-wide">
+                IRDAI Licensed Direct Broker | Regn. No. 1131 | General & Life
+              </p>
             </motion.div>
           </AnimatePresence>
 
@@ -90,7 +93,7 @@ export default function Hero() {
                 whileTap={{ scale: 0.95 }}
                 className="w-full py-3 bg-[#070B7F] text-white text-xs font-black uppercase tracking-widest rounded-full"
               >
-                Get Started
+                Speak to an Advisor
               </motion.button>
             </Link>
 
@@ -150,6 +153,10 @@ export default function Hero() {
                 <p className="text-lg text-[#D1D5DB] leading-relaxed max-w-2xl mx-auto mb-12">
                   {slides[index].desc}
                 </p>
+
+                <p className="text-md text-gray-300 mb-10 font-medium tracking-wide">
+                  IRDAI Licensed Direct Broker | Regn. No. 1131 | General & Life
+                </p>
               </motion.div>
             </AnimatePresence>
 
@@ -160,7 +167,7 @@ export default function Hero() {
                   whileTap={{ scale: 0.95 }}
                   className="px-10 py-4 bg-[#070B7F] text-white text-xs font-black uppercase tracking-widest rounded-full"
                 >
-                  Get Started
+                  Speak to an Advisor
                 </motion.button>
               </Link>
 

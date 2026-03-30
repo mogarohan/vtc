@@ -43,7 +43,7 @@ const imagePartners = [
 ];
 
 /* infinite scroll */
-const LOOP_PARTNERS = [...imagePartners, ...imagePartners];
+const LOOP_PARTNERS = imagePartners;
 
 export default function Partners() {
   const containerRef = useRef(null);
@@ -160,7 +160,7 @@ export default function Partners() {
       {/* ================= PARTNER MARQUEE ================= */}
       <section className="relative py-10 bg-[#F0F7FF] border-y border-blue-100 overflow-hidden">
         <motion.div
-          animate={{ x: ["0%", "-50%"] }}
+          animate={{ x: ["0%", "-100%"] }}
           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
           className="flex gap-24 items-center w-max"
         >

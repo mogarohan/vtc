@@ -108,7 +108,7 @@ const NAV_DATA = [
     subLinks: [
       {
         name: "Risk Assessment",
-        href: "/solutions/audits&riskassessment",
+        href: "/solutions/audits-risk-assessment",
         icon: <FontAwesomeIcon icon={faClipboardCheck} />,
       },
       {
@@ -123,7 +123,7 @@ const NAV_DATA = [
       },
       {
         name: "Employee Benefits",
-        href: "/solutions/employeebenifits",
+        href: "/solutions/employee-benefits",
         icon: <FontAwesomeIcon icon={faUsersGear} />,
       },
       {
@@ -133,7 +133,7 @@ const NAV_DATA = [
       },
       {
         name: "Green Energy Insurance",
-        href: "/solutions/greenXinsurance",
+        href: "/solutions/green-insurance",
         icon: <FontAwesomeIcon icon={faLeaf} />,
       },
       {
@@ -177,7 +177,7 @@ const NAV_DATA = [
       },
       {
         name: "BFSI",
-        href: "/industries/BFSI",
+        href: "/industries/bfsi",
         icon: <FontAwesomeIcon icon={faLandmark} />,
       },
       {
@@ -187,12 +187,12 @@ const NAV_DATA = [
       },
       {
         name: "Hospital & Education",
-        href: "/industries/hospital&education",
+        href: "/industries/hospital-education",
         icon: <FontAwesomeIcon icon={faHospitalUser} />,
       },
       {
         name: "Shipping",
-        href: "/industries/shipping&odccargo",
+        href: "/industries/shipping-odc-cargo",
         icon: <FontAwesomeIcon icon={faShip} />,
       },
       {
@@ -207,7 +207,7 @@ const NAV_DATA = [
       },
       {
         name: "Chemical & Pharmacy",
-        href: "/industries/chemical&pharmaceuticals",
+        href: "/industries/chemical-pharmaceuticals",
         icon: <FontAwesomeIcon icon={faFlaskVial} />,
       },
       {
@@ -227,17 +227,17 @@ const NAV_DATA = [
       },
       {
         name: "SME & MSME",
-        href: "/industries/SME&MSME",
+        href: "/industries/sme-msme",
         icon: <FontAwesomeIcon icon={faIndustry} />,
       },
       {
         name: "Wood & Laminates",
-        href: "/industries/wood&laminates",
+        href: "/industries/wood-laminates",
         icon: <FontAwesomeIcon icon={faTree} />,
       },
     ],
   },
-  
+
   { name: "Insights", href: "/blogs" },
   { name: "Careers", href: "/careers" },
 ];

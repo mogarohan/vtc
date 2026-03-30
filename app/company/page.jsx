@@ -20,14 +20,14 @@ import Link from "next/link";
 
 /* ================= DATA ================= */
 const partners = [
-  { src: "/p1.jpeg", name: "Infra Market" },
-  { src: "/p2.jpeg", name: "Shiva" },
-  { src: "/p3.jpeg", name: "Nitco Limited" },
-  { src: "/p4.png", name: "Satishbgol" },
-  { src: "/p5.png", name: "Jayant Agro" },
-  { src: "/p6.jpeg", name: "Royal Castor" },
-  { src: "/p7.png", name: "Shalimar Paints" },
-  { src: "/p8.png", name: "Apicore" },
+  { src: "/p1.jpeg" },
+  { src: "/p2.jpeg" },
+  { src: "/p3.jpeg" },
+  { src: "/p4.png" },
+  { src: "/p5.png" },
+  { src: "/p6.jpeg" },
+  { src: "/p7.png" },
+  { src: "/p8.png" },
 ];
 
 const team = [
@@ -50,9 +50,8 @@ export default function CompanyOverview() {
 
   const stats = [
     { label: "Years Experience", value: "15+", icon: <Trophy size={20} /> },
-    { label: "Clients Globally", value: "500+", icon: <Users size={20} /> },
+    { label: "Business Protected", value: "500+", icon: <Users size={20} /> },
     { label: "Expert Advisors", value: "50+", icon: <Building2 size={20} /> },
-    { label: "Global Presence", value: "10+", icon: <Globe size={20} /> },
   ];
 
   return (
@@ -109,11 +108,17 @@ export default function CompanyOverview() {
 
       {/* ================= STATS ================= */}
       <section className="relative z-20 -mt-10 sm:-mt-16 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 justify-items-center">
           {stats.map((stat, i) => (
             <div
               key={i}
-              className="bg-[#F0F9FF] p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-sm border border-blue-100 flex flex-col items-center text-center hover:-translate-y-1 transition-all hover:bg-white hover:shadow-lg"
+              className={`
+                w-full max-w-[220px]
+                bg-[#F0F9FF] p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem]
+                shadow-sm border border-blue-100 flex flex-col items-center text-center
+                hover:-translate-y-1 transition-all hover:bg-white hover:shadow-lg
+                ${i === 2 ? "col-span-2 justify-self-center md:col-span-1" : ""}
+              `}
             >
               <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-white flex items-center justify-center text-blue-600 mb-3 shadow-sm">
                 {stat.icon}
@@ -267,8 +272,8 @@ export default function CompanyOverview() {
             Let’s Build Resilience <br className="hidden sm:block" /> Together
           </h2>
           <p className="text-blue-100 text-base sm:text-xl mb-8 sm:mb-12 max-w-2xl mx-auto font-medium">
-            Discover why 500+ clients trust Vestigo for risk protection and
-            long-term business continuity.
+            Discover why 500+ Business Protected trust Vestigo for risk
+            protection and long-term business continuity.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
             <Link

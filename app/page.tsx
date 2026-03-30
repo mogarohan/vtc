@@ -21,13 +21,13 @@ const SERVICES = [
     title: "Risk Assessment",
     desc: "Identify, analyze, and reduce financial risks before they impact your business growth.",
     img: "risk.png",
-    href: "/solutions/audits&riskassessment",
+    href: "/solutions/audits-risk-assessment",
   },
   {
     id: "02",
     title: "Claims Management",
     desc: "Fast, transparent, and efficient claims handling with complete client confidence.",
-    img: "clamis.png",
+    img: "claims.png",
     href: "/solutions/claimsmanagement",
   },
   {
@@ -35,7 +35,7 @@ const SERVICES = [
     title: "Employee Benefits",
     desc: "Custom benefit programs that improve retention and enhance workforce satisfaction.",
     img: "benefits.png",
-    href: "/solutions/employeebenifits",
+    href: "/solutions/employee-benefits",
   },
   {
     id: "04",
@@ -61,7 +61,7 @@ const INDUSTRIES = [
     title: "BFSI",
     text: "Banking, financial services and insurance advisory.",
     img: "bfsi.png",
-    href: "/industries/BFSI",
+    href: "/industries/bfsi",
   },
   {
     num: "03",
@@ -89,7 +89,7 @@ const INDUSTRIES = [
     title: "Chemical & Pharma",
     text: "Insurance for chemical and pharmaceutical sectors.",
     img: "chemical-pharma.png",
-    href: "/industries/chemical&pharmaceuticals",
+    href: "/industries/chemical-pharmaceuticals",
   },
   {
     num: "07",
@@ -103,7 +103,7 @@ const INDUSTRIES = [
     title: "SME & MSME",
     text: "Tailored solutions for small and medium enterprises.",
     img: "sme-msme.png",
-    href: "/industries/SME&MSME",
+    href: "/industries/sme-msme",
   },
 ];
 
@@ -151,61 +151,61 @@ export default function HomePage() {
               <ShieldCheck className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 opacity-10" />
             </div>
 
-           <div className="p-8 md:p-10 bg-[#0C0F7F] rounded-3xl text-white relative overflow-hidden">
-  <h3 className="text-xl md:text-2xl font-bold mb-4">Our Vision</h3>
-  <p className="text-blue-100 text-sm md:text-base relative z-10">
-    Pioneering India&apos;s Risk Advisory Landscape. To be the
-    trusted leader in Business Insurance, delivering cutting-edge,
-    innovative & tech powered solutions that every business
-    organization can scale with certainty, security & confidence.
-  </p>
-  <BarChart3 className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 opacity-10" />
-</div>
+            <div className="p-8 md:p-10 bg-[#0C0F7F] rounded-3xl text-white relative overflow-hidden">
+              <h3 className="text-xl md:text-2xl font-bold mb-4">Our Vision</h3>
+              <p className="text-blue-100 text-sm md:text-base relative z-10">
+                Pioneering India&apos;s Risk Advisory Landscape. To be the
+                trusted leader in Business Insurance, delivering cutting-edge,
+                innovative & tech powered solutions that every business
+                organization can scale with certainty, security & confidence.
+              </p>
+              <BarChart3 className="absolute -bottom-6 -right-6 w-24 h-24 md:w-32 md:h-32 opacity-10" />
+            </div>
           </div>
         </div>
       </section>
 
       {/* ================= SERVICES ================= */}
       <section className="py-6 md:py-10 bg-white">
-  <div className="max-w-7xl mx-auto px-6">
-    <div className="text-center mb-10 md:text-left md:mb-10">
-      <h2 className="text-blue-600 tracking-widest mb-2 font-semibold text-2xl">
-        WHAT WE OFFER
-      </h2>
-    </div>
-
-    {/* Changed from flex to grid: 1 column on mobile, 2 columns on medium+ screens */}
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-      {SERVICES.map((item) => (
-        <Link
-          key={item.id}
-          href={item.href}
-          className="relative overflow-hidden rounded-3xl cursor-pointer shadow-lg w-full h-[300px] md:h-[400px]"
-        >
-          <img
-            src={item.img}
-            alt={item.title}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50 md:bg-black/40"></div>
-          
-          <div className="relative z-10 h-full flex flex-col justify-end p-6 md:p-10 text-white">
-            <span className="text-blue-300 text-3xl md:text-5xl font-bold mb-3">
-              {item.id}
-            </span>
-            <h3 className="text-xl md:text-3xl font-bold mb-2">
-              {item.title}
-            </h3>
-            {/* Description is now always visible */}
-            <p className="text-sm md:text-base text-gray-100 max-w-md">
-              {item.desc}
-            </p>
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-10 md:text-left md:mb-10">
+            <h2 className="text-blue-600 tracking-widest mb-2 font-semibold text-2xl">
+              WHAT WE OFFER
+            </h2>
           </div>
-        </Link>
-      ))}
-    </div>
-  </div>
-</section>
+
+          {/* Changed from flex to grid: 1 column on mobile, 2 columns on medium+ screens */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {SERVICES.map((item) => (
+              <Link
+                key={item.id}
+                href={item.href}
+                className="relative overflow-hidden rounded-3xl cursor-pointer shadow-lg w-full h-[300px] md:h-[400px]"
+              >
+                <img
+                  src={item.img}
+                  alt={item.title}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/50 md:bg-black/40"></div>
+
+                <div className="relative z-10 h-full flex flex-col justify-end p-6 md:p-10 text-white">
+                  <span className="text-blue-300 text-3xl md:text-5xl font-bold mb-3">
+                    {item.id}
+                  </span>
+                  <h3 className="text-xl md:text-3xl font-bold mb-2">
+                    {item.title}
+                  </h3>
+                  {/* Description is now always visible */}
+                  <p className="text-sm md:text-base text-gray-100 max-w-md">
+                    {item.desc}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ================= INDUSTRIES ================= */}
       <section className="py-10 md:py-20 bg-[#f0f9ff]">

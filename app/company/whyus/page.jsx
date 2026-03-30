@@ -247,8 +247,8 @@ export default function CompanyOverview() {
             Start Your Journey With Us
           </h2>
           <p className="text-blue-100 text-lg mb-12 max-w-2xl mx-auto relative z-10">
-            Explore the different facets of our company and see why 500+ clients
-            trust Vestigo for their security.
+            Explore the different facets of our company and see why 500+
+            Business Protected trust Vestigo for their security.
           </p>
           <div className="flex flex-wrap justify-center gap-6 relative z-10">
             <Link

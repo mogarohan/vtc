@@ -63,7 +63,7 @@ const INDUSTRIES = [
     href: "/industries/automobile",
     img: "/automotive.png",
   },
-  { name: "BFSI", href: "/industries/BFSI", img: "/bfsi.png" },
+  { name: "BFSI", href: "/industries/bfsi", img: "/bfsi.png" },
   {
     name: "E-Commerce",
     href: "/industries/e-commerce",
@@ -77,12 +77,12 @@ const INDUSTRIES = [
   },
   {
     name: "Shipping",
-    href: "/industries/shipping&odccargo",
+    href: "/industries/shipping-odc-cargo",
     img: "/shipping.jpeg",
   },
   {
     name: "Chemical & Pharmacy",
-    href: "/industries/chemical&pharmaceuticals",
+    href: "/industries/chemical-pharmaceuticals",
     img: "/chemical-pharma.png",
   },
   {
@@ -92,7 +92,7 @@ const INDUSTRIES = [
   },
   {
     name: "Hospital & Education",
-    href: "/industries/hospital&education",
+    href: "/industries/hospital-education",
     img: "/hospital.jpeg",
   },
   {
@@ -108,10 +108,10 @@ const INDUSTRIES = [
   },
   { name: "Plastic", href: "/industries/plastic", img: "/plastic.jpeg" },
   { name: "Textile", href: "/industries/textile", img: "/texttile.jpeg" },
-  { name: "SME & MSME", href: "/industries/SME&MSME", img: "/sme-msme.png" },
+  { name: "SME & MSME", href: "/industries/sme-msme", img: "/sme-msme.png" },
   {
     name: "Wood & Laminates",
-    href: "/industries/wood&laminates",
+    href: "/industries/wood-laminates",
     img: "/wood.jpeg",
   },
 ];

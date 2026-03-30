@@ -113,7 +113,7 @@ const CommercialInsuranceClient = () => {
               transition={{ delay: 0.2 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 border border-blue-400/30 rounded-full bg-blue-500/10 text-blue-400 text-sm font-bold mb-6 backdrop-blur-md"
             >
-              <Sparkles size={16} /> FAST & TRANSPARENT
+              <Sparkles size={16} /> COMPREHENSIVE COMMERCIAL RISK SOLUTIONS
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-8">
@@ -224,16 +224,14 @@ const CommercialInsuranceClient = () => {
             management support to minimise vulnerabilities.
           </p>
           <Link href="/contact" className="inline-block">
-                  <button className="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-blue-600 hover:text-white transition-all">
-                    Riquest Consultation
-                    
-                  </button>
-                </Link> 
+            <button className="inline-flex items-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-blue-600 hover:text-white transition-all">
+              Riquest Consultation
+            </button>
+          </Link>
           <div className="absolute top-0 left-0 -ml-20 -mt-20 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 -mr-20 -mb-20 w-64 h-64 bg-indigo-600/20 rounded-full blur-3xl"></div>
         </div>
       </section>
-            
     </div>
   );
 };

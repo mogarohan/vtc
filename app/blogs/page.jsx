@@ -20,41 +20,52 @@ export default async function BlogPage() {
   const posts = await getPosts();
 
   return (
-    <div className="max-w-6xl mx-auto p-8 pt-30">
-      <h1 className="text-4xl font-bold mb-8">Our Blog</h1>
+    <div className="max-w-6xl mx-auto p-8 pt-20">
+      <h1 className="text-4xl font-bold mb-8">
+        Risk Insights & Insurance Intelligence | Vestigo Advisory
+      </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {posts.map((post) => (
-          <div
-            key={post.id}
-            className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
-          >
-            {post.image && (
-              <img
-                src={post.image}
-                alt={post.title}
-                className="w-full h-48 object-cover"
-              />
-            )}
+      {posts.length === 0 ? (
+        <div className="text-center py-20">
+          <p className="text-lg text-gray-600 max-w-xl mx-auto">
+            Insights from our advisors on risk, compliance, and industry
+            developments — coming soon.
+          </p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {posts.map((post) => (
+            <div
+              key={post.id}
+              className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition"
+            >
+              {post.image && (
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-48 object-cover"
+                />
+              )}
 
-            <div className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+              <div className="p-4">
+                <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
 
-              <div
-                className="text-gray-600 line-clamp-3 mb-4"
-                dangerouslySetInnerHTML={{ __html: post.content }}
-              />
+                <div
+                  className="text-gray-600 line-clamp-3 mb-4"
+                  dangerouslySetInnerHTML={{ __html: post.content }}
+                />
 
-              <Link
-                href={`/blogs/${post.slug}`}
-                className="text-blue-600 font-medium hover:underline"
-              >
-                Read more →
-              </Link>
+                <Link
+                  href={`/blogs/${post.slug}`}
+                  className="text-blue-600 font-medium hover:underline"
+                >
+                  Read more →
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

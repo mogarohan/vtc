@@ -42,25 +42,25 @@ const AbilitySuite = () => {
       title: "Core Engine",
       desc: "A powerful central system designed to automate your business operations and core insurance logic.",
       icon: <Cpu className="w-10 h-10 text-blue-500" />,
-      tag: "Automation",
+      tag: "Risk Intelligence",
     },
     {
       title: "Global Connectivity",
       desc: "Seamlessly connect with global partners and legacy platforms via our production-ready API stack.",
       icon: <Globe className="w-10 h-10 text-blue-500" />,
-      tag: "API Ready",
+      tag: "Coverage Engineering",
     },
     {
       title: "Real-time Analytics",
       desc: "Drive growth with advanced data-driven insights through our integrated live reporting dashboards.",
       icon: <BarChart3 className="w-10 h-10 text-blue-500" />,
-      tag: "Big Data",
+      tag: "Claims Advocacy",
     },
     {
       title: "Enterprise Security",
       desc: "Bank-grade encryption and multi-layer data protection to safeguard your most sensitive information.",
       icon: <Lock className="w-10 h-10 text-blue-500" />,
-      tag: "Secure",
+      tag: "IRDAI Compliant",
     },
   ];
 
@@ -598,8 +598,8 @@ const AbilitySuite = () => {
             Empower Your Global Team
           </h2>
           <p className="text-blue-100 text-lg mb-10 max-w-2xl mx-auto relative z-10">
-            Convert your legacy workflows into a high-speed digital future with
-            the Ability Suite. Request a personalized walkthrough today.
+            Vestigo structures your complete risk protection — from discovery to
+            claims resolution. Speak to a specialist today.
           </p>
           <div className="relative z-10">
             <Link
