@@ -15,17 +15,7 @@ import Image from "next/image";
 
 /* ================= IMAGE PARTNERS (NO CHANGE) ================= */
 const imagePartners = [
-  { src: "/p1.jpeg", alt: "Infra Market" },
-  { src: "/p2.jpeg", alt: "Shiva" },
-  { src: "/p3.jpeg", alt: "Nitco Limited" },
-  { src: "/p4.png", alt: "Satishbel" },
-  { src: "/p5.png", alt: "Jayant Agro Organics" },
-  { src: "/p6.jpeg", alt: "Royal Castor Products" },
-  { src: "/p7.png", alt: "Shalimar Paints" },
-  { src: "/p8.png", alt: "Apicore" },
-  { src: "/p9.png", alt: "Finecure Pharmaceuticals" },
-  { src: "/p10.jpeg", alt: "Airolam" },
-  { src: "/p11.png", alt: "Chemco" },
+  
   { src: "/p12.png", alt: "LIC" },
   { src: "/p13.png", alt: "HDFC Life" },
   { src: "/p14.jpg", alt: "ICICI Prudential" },
@@ -196,72 +186,7 @@ export default function Partners() {
           <div className="w-60 h-1 bg-sky-500 mx-auto mt-6 rounded-full" />
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            {
-              id: "1",
-              title: "Mega Risk Policy: Turbine Breakdown",
-              desc: "Successfully processed a turbine breakdown claim of INR 6 Cr under a comprehensive mega risk policy.",
-              amount: "INR 6 Cr",
-            },
-            {
-              id: "2",
-              title: "IAR Policy: Explosion & Business Interruption",
-              desc: "Managed an explosion claim with INR 50 Cr material damage and INR 25 Cr business interruption under an Industrial All Risk (IAR) policy.",
-              amount: "INR 75 Cr",
-            },
-            {
-              id: "3",
-              title: "Crime Policy: Payment Related Fraud",
-              desc: "Resolved a payment-related fraud claim of INR 3 Cr, providing crucial protection under a Crime Policy.",
-              amount: "INR 3 Cr",
-            },
-            {
-              id: "4",
-              title: "Contractors All Risk: Flood Damage",
-              desc: "Handled a road damage claim of INR 1.25 Cr due to severe flooding under a Contractors All Risk (CAR) policy.",
-              amount: "INR 1.25 Cr",
-            },
-            {
-              id: "5",
-              title: "Marine Insurance: Forwarding Charges",
-              desc: "Successfully secured a forwarding charges claim of INR 1 Cr under marine insurance due to a shipping line’s bankruptcy.",
-              amount: "INR 1 Cr",
-            },
-            {
-              id: "6",
-              title: "Product Recall: Contamination Issue",
-              desc: "Managed a product recall claim worth INR 3 Cr, triggered by contamination found in a cargo of psyllium husk.",
-              amount: "INR 3 Cr",
-            },
-          ].map((item, i) => (
-            <motion.div
-              key={i}
-              whileHover={{ y: -8 }}
-              className="p-10 bg-sky-100 rounded-[2.5rem] border border-sky-200 transition-all duration-300 flex flex-col h-full"
-            >
-              {/* Number Badge */}
-              <div className="w-12 h-12 bg-sky-600 text-white rounded-xl flex items-center justify-center mb-6 shadow-md font-bold text-lg">
-                {item.id}
-              </div>
-
-              <h3 className="text-xl font-bold text-sky-900 mb-4 leading-tight">
-                {item.title}
-              </h3>
-
-              <p className="text-sky-800/80 font-medium leading-relaxed mb-6 flex-grow">
-                {item.desc}
-              </p>
-
-              {/* Amount Tag */}
-              <div className="pt-4 border-t border-sky-200/50">
-                <span className="text-sky-600 font-black text-2xl tracking-tight">
-                  {item.amount}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        
       </section>
 
       {/* ================= CTA ================= */}

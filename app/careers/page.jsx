@@ -5,20 +5,19 @@ import { motion } from "framer-motion";
 import {
   Briefcase,
   Rocket,
-  Heart,
   TrendingUp,
   FlaskConical,
-  Coffee,
   Handshake,
-  Star,
   ArrowRight,
   MapPin,
   Clock,
 } from "lucide-react";
 
 const CareersPage = () => {
+  // Audit ke hisaab se abhi array empty rakha hai taaki "No active openings" ka message aaye.
+  // Jab future mein jobs add karni ho, bas in comments ko hata dijiyega.
   const jobs = [
-    {
+    /* {
       title: "Senior Risk Analyst",
       dept: "Insurance Strategy",
       type: "Full-Time",
@@ -36,13 +35,14 @@ const CareersPage = () => {
       type: "Full-Time",
       location: "Remote",
     },
+    */
   ];
 
   const benefits = [
     {
       title: "Dynamic Leadership",
       icon: <Rocket className="text-rose-500" />,
-      desc: "Young entrepreneurs driving innovation",
+      desc: "Experienced & Young leadership committed to developing industry-ready insurance professionals",
     },
     {
       title: "Career Growth",
@@ -105,11 +105,13 @@ const CareersPage = () => {
             {benefits.map((item, i) => (
               <div
                 key={i}
-                // Yahan flex, items-center, aur text-center classes add ki gayi hain
-                className="p-8 rounded-3xl bg-white border border-slate-300 hover:shadow-xl hover:shadow-blue-500/5 transition-all group flex flex-col items-center text-center md:items-start md:text-left"
+
+                className="p-8 rounded-3xl bg-white border border-slate-100 hover:shadow-xl hover:shadow-blue-500/5 transition-all group flex flex-col items-center text-center md:items-start md:text-left"
               >
-                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                  {item.icon}
+                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto md:mx-0 mb-6 group-hover:scale-110 transition-transform">
+
+                
+               
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">
                   {item.title}
@@ -123,22 +125,89 @@ const CareersPage = () => {
         </div>
       </section>
 
-      {/* Job Openings List */}
-      <section className="py-10 px-6 bg-slate-50 rounded-[3rem] mx-4 md:mx-10 mb-24">
-        <div className="mt-16 text-center p-12 bg-white rounded-[2rem] border border-dashed border-slate-300">
-          <h4 className="text-xl font-bold text-slate-800 mb-2">
-            Don&apos;t see a perfect fit?
-          </h4>
-          <p className="text-slate-500 mb-6">
-            “Send us your CV, and we’ll get in touch when a relevant opportunity
-            opens up.”
-          </p>
-          <a
-            href="mailto:info@vestigoinsurance.com"
-            className="text-blue-600 font-bold hover:underline underline-offset-4"
-          >
-            info@vestigoinsurance.com
-          </a>
+      {/* Current Openings Section */}
+      <section className="py-16 px-6 bg-slate-50 rounded-[3rem] mx-4 md:mx-10 mb-24">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              Current Openings
+            </h2>
+            <p className="text-slate-500 text-lg">
+              Explore opportunities to grow and make an impact with us.
+            </p>
+          </div>
+
+          {/* Dynamic Rendering: Show Jobs OR the "Vacant" Message */}
+          {jobs.length > 0 ? (
+            <div className="grid gap-6">
+              {jobs.map((job, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white p-6 md:p-8 rounded-2xl border border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-6 hover:shadow-lg transition-shadow"
+                >
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3">
+                      {job.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-4 text-sm font-medium text-slate-500">
+                      <span className="flex items-center gap-1.5">
+                        <Briefcase size={16} className="text-blue-500" />{" "}
+                        {job.dept}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <MapPin size={16} className="text-blue-500" />{" "}
+                        {job.location}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <Clock size={16} className="text-blue-500" /> {job.type}
+                      </span>
+                    </div>
+                  </div>
+                  <a
+                    href="mailto:careers@vestigoinsurance.com"
+                    className="inline-flex items-center justify-center gap-2 bg-blue-600 text-white px-8 py-3.5 rounded-xl font-bold hover:bg-blue-700 transition-colors whitespace-nowrap"
+                  >
+                    Apply Now <ArrowRight size={18} />
+                  </a>
+                </div>
+              ))}
+            </div>
+          ) : (
+            /* Required Fallback for No Active Openings */
+            <div className="text-center p-10 md:p-16 bg-white rounded-[2rem] border border-dashed border-slate-300">
+              <h4 className="text-xl md:text-2xl font-bold text-slate-800 mb-4">
+                No active openings at this time.
+              </h4>
+              <p className="text-slate-500 text-lg mb-6">
+                We welcome exceptional professionals — send your CV to our careers team.
+              </p>
+              <a
+                href="mailto:careers@vestigoinsurance.com"
+                className="inline-block text-blue-600 font-bold hover:underline underline-offset-4 text-lg md:text-xl"
+              >
+                careers@vestigoinsurance.com
+              </a>
+            </div>
+          )}
+
+          {/* "Don't see a perfect fit?" box appears only when jobs ARE listed */}
+          {jobs.length > 0 && (
+            <div className="mt-12 text-center p-10 bg-white rounded-[2rem] border border-dashed border-slate-300">
+              <h4 className="text-xl font-bold text-slate-800 mb-2">
+                Don&apos;t see a perfect fit?
+              </h4>
+              <p className="text-slate-500 mb-6">
+                “Send us your CV, and we’ll get in touch when a relevant opportunity
+                opens up.”
+              </p>
+              <a
+                href="mailto:careers@vestigoinsurance.com"
+                className="text-blue-600 font-bold hover:underline underline-offset-4"
+              >
+                careers@vestigoinsurance.com
+              </a>
+            </div>
+          )}
         </div>
       </section>
     </main>

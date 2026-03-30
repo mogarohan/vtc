@@ -36,12 +36,12 @@ import {
 const featuredSectors = [
   {
     title: "Manufacturing",
-    desc: "Industry 4.0 aur IoT integration.",
+    desc: "Industry 4.0 and IoT integration.",
     icon: <FontAwesomeIcon icon={faIndustry} className="text-3xl" />,
   },
   {
     title: "Energy & Power",
-    desc: "Smart grid aur resource management.",
+    desc: "Smart grid and resource management.",
     icon: <FontAwesomeIcon icon={faBolt} className="text-3xl" />,
   },
   {
@@ -59,7 +59,7 @@ const featuredSectors = [
 // 16 industries
 const INDUSTRIES = [
   {
-    name: "Automotive",
+    name: "Automobile",
     href: "/industries/automobile",
     img: "/automotive.png",
   },
@@ -117,7 +117,7 @@ const INDUSTRIES = [
 ];
 
 // Duplicate for seamless loop
-const LOOP_INDUSTRIES = [...INDUSTRIES, ...INDUSTRIES];
+const LOOP_INDUSTRIES = [...INDUSTRIES,];
 
 export default function IndustriesHome() {
   const containerRef = useRef(null);
@@ -239,11 +239,10 @@ export default function IndustriesHome() {
         <div className="max-w-6xl mx-auto">
           <div className="container mx-auto px-12 text-center mb-20">
             <h2 className="text-[15px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">
-              Core Strengths
+              Insurance-Focused Strengths 
             </h2>
             <p className="text-4xl font-black uppercase tracking-tighter text-[#070B7F]">
-              Precision
-              <br /> & Protection
+              Precision & Protection
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
@@ -313,7 +312,7 @@ export default function IndustriesHome() {
               transform: translateX(0);
             }
             100% {
-              transform: translateX(-50%);
+              transform: translateX(-100%);
             }
           }
         `}</style>
@@ -343,17 +342,7 @@ export default function IndustriesHome() {
                     </p>
                   </div>
                 </div>
-                <div className="flex gap-4 items-start">
-                  <div className="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-lg text-blue-600">
-                    <FontAwesomeIcon icon={faGlobe} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-2xl">40+</h4>
-                    <p className="text-xs text-slate-500 uppercase font-bold">
-                      Countries
-                    </p>
-                  </div>
-                </div>
+                
               </div>
             </div>
             <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
@@ -366,10 +355,9 @@ export default function IndustriesHome() {
               </h4>
               <ul className="space-y-4">
                 {[
-                  "End-to-end data encryption",
-                  "24/7 Security Operations Center",
-                  "Multi-region cloud hosting",
-                  "Zero-trust architecture",
+                  "IRDAI Compliant Advisory",
+                  "360-degree Risk Coverage",
+                  "Claims Priority Commitment",
                 ].map((item, idx) => (
                   <li
                     key={idx}
@@ -392,15 +380,15 @@ export default function IndustriesHome() {
           <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-8">
             Ready to modernize your Industry?
           </h2>
-          <p className="text-slate-500 text-lg mb-12">
-            “Digitize your operations and take productivity to new heights.”
+          <p className="text-slate-500 text-sm mb-10">
+            “Every industry carries unique risks. Vestigo structures protection that matches your sector's real exposure profile.”
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/contact"
               className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 rounded-full font-bold transition-all shadow-xl shadow-blue-600/20 text-center flex items-center justify-center gap-3"
             >
-              Start Free Trial <FontAwesomeIcon icon={faArrowRight} />
+              Request a Risk Consultation <FontAwesomeIcon icon={faArrowRight} />
             </Link>
             <Link
               href="/contact"

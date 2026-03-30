@@ -76,7 +76,7 @@ export default function Footer() {
 
         {/* --- 2. MAIN LINKS CONTENT --- */}
         <div className="relative z-5 mt-0 max-w-7xl mx-auto py-10 px-6 md:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5  items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7  items-start">
             {/* ---------- TABLET ONLY (md to lg) ---------- */}
 
             {/* Company Section */}
@@ -88,7 +88,7 @@ export default function Footer() {
                 </h3>
               </Link>
               {/* Desktop par dikhega, Mobile par hidden */}
-              <ul className="hidden lg:block space-y-2 text-[15px]">
+              <ul className="hidden lg:block space-y-2 text-[13px]">
                 <li>
                   <Link
                     href="/company/whoweare"
@@ -130,26 +130,26 @@ export default function Footer() {
                 href="/industries"
                 className="lg:pointer-events-none md:text-left"
               >
-                <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block lg:ml-20 md:ml-0">
-                  Industries Works
+                <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block lg:ml-10 md:ml-0">
+                  Industries We Serve
                   <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
                 </h3>
               </Link>
 
               {/* Desktop → grid | Tablet & Mobile → hidden */}
               <div className="hidden lg:grid grid-cols-4 gap-x-2 text-[11px]">
-                <ul className="space-y-2 text-[15px]">
+                <ul className="space-y-2 text-[13px]">
                   <li>
                     <Link
                       href="/industries/automobile"
                       className="hover:text-white transition-all hover:translate-x-1 block truncate"
                     >
-                      Auto Mobile
+                      Automobile
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/industries/BFSI"
+                      href="/industries/bfsi"
                       className="hover:text-white transition-all hover:translate-x-1 block"
                     >
                       BFSI
@@ -166,14 +166,15 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/industries/e-commerce"
-                      className="hover:text-white transition-all hover:translate-x-1 block"
+                      // 'whitespace-nowrap' add kiya gaya hai
+                      className="hover:text-white transition-all hover:translate-x-1 block whitespace-nowrap"
                     >
                       E-Commerce
                     </Link>
                   </li>
                 </ul>
 
-                <ul className="space-y-2 text-[15px]">
+                <ul className="space-y-2 text-[13px]">
                   <li>
                     <Link
                       href="/industries/engineering"
@@ -201,14 +202,14 @@ export default function Footer() {
                   <li>
                     <Link
                       href="/industries/hospitality"
-                      className="hover:text-white transition-all hover:translate-x-1 block"
+                      className="hover:text-white transition-all hover:translate-x-1 block ml-2"
                     >
                       Hospitality
                     </Link>
                   </li>
                 </ul>
 
-                <ul className="space-y-2 text-[15px]">
+                <ul className="space-y-2 text-[13px]">
                   <li>
                     <Link
                       href="/industries/it"
@@ -243,7 +244,7 @@ export default function Footer() {
                   </li>
                 </ul>
 
-                <ul className="space-y-2 text-[15px]">
+                <ul className="space-y-2 text-[13px]">
                   <li>
                     <Link
                       href="/industries/papermills"
@@ -265,7 +266,7 @@ export default function Footer() {
                       href="/industries/texttile"
                       className="hover:text-white transition-all hover:translate-x-1 block"
                     >
-                      TextTile
+                      Texttile
                     </Link>
                   </li>
                   <li>
@@ -281,19 +282,21 @@ export default function Footer() {
             </div>
 
             {/* Services / Solutions Section */}
-            <div className="lg:col-span-1 md:col-span-2 lg:col-span-1">
+            <div className="col-span-1 md:col-span-2 lg:col-span-1">
               <Link href="/solutions" className="lg:pointer-events-none">
-                <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block">
+                {/* ml-5 ko lg:ml-5 kar diya hai mobile alignment ke liye */}
+                <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 lg:ml-5 relative inline-block">
                   Services
                   <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
                 </h3>
               </Link>
-              {/* Desktop par dikhega, Mobile par hidden */}
-              <ul className="hidden lg:block space-y-1 text-[15px]">
+
+              {/* Desktop par dikhega, Mobile par hidden. Yahan bhi lg:ml-5 lagaya hai */}
+              <ul className="hidden lg:block space-y-2 text-[13px] lg:ml-5">
                 <li>
                   <Link
                     href="/solutions"
-                    className="hover:text-white transition-all hover:translate-x-1 block"
+                    className="hover:text-white transition-all hover:translate-x-1 block whitespace-nowrap"
                   >
                     Risk Solutions
                   </Link>
@@ -301,7 +304,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/industries"
-                    className="hover:text-white transition-all hover:translate-x-1 block"
+                    className="hover:text-white transition-all hover:translate-x-1 block whitespace-nowrap"
                   >
                     Industries
                   </Link>
@@ -309,7 +312,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/blogs"
-                    className="hover:text-white transition-all hover:translate-x-1 block"
+                    className="hover:text-white transition-all hover:translate-x-1 block whitespace-nowrap"
                   >
                     Latest Insights
                   </Link>
@@ -317,7 +320,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/careers"
-                    className="hover:text-white transition-all hover:translate-x-1 block"
+                    className="hover:text-white transition-all hover:translate-x-1 block whitespace-nowrap"
                   >
                     Careers
                   </Link>
@@ -357,7 +360,8 @@ export default function Footer() {
                         className="text-white group-hover:text-[#4169E1]"
                       />
                     </div>
-                    <span className="font-medium truncate ">
+                    {/* 'whitespace-nowrap' text ko ek hi line mein lock kar dega */}
+                    <span className="font-medium whitespace-nowrap text-[12px] xl:text-[13px]">
                       info@vestigoinsurance.com
                     </span>
                   </a>
@@ -370,17 +374,52 @@ export default function Footer() {
                     />
                   </div>
                   <span className="font-medium text-slate-300 group-hover:text-white transition-colors">
-                    Ahemdabad, Vadodara
+                    Ahmedabad , Vadodara
                   </span>
                 </li>
               </ul>
+            </div>
+
+            <div className="lg:col-span-2 text-gray-300">
+              {/* Mobile par normal rahega, Desktop par lg:ml-10 apply hoga */}
+              <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block lg:ml-10">
+                Full Address
+                <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
+              </h3>
+
+              {/* Mobile par upar-niche (flex-col) aur bina left margin ke rahega. Desktop par side-by-side aur lg:ml-9 */}
+              <div className="flex flex-col lg:flex-row gap-6 lg:ml-10">
+                {/* Vadodara Branch */}
+                <address className="not-italic">
+                  <h4 className="text-white font-semibold text-[14px] mb-1">
+                    Vadodara Office
+                  </h4>
+                  <p className="text-gray-300 text-[13px] leading-6 max-w-full lg:max-w-[190px] break-words">
+                    SF 201, Status Complex, Opp. Amrapali Complex, <br />
+                    Pani Tanki Road, Karelibaug, <br />
+                    Vadodara - 390018
+                  </p>
+                </address>
+
+                {/* Ahmedabad Branch */}
+                <address className="not-italic">
+                  <h4 className="text-white font-semibold text-[14px] mb-1">
+                    Ahmedabad Office
+                  </h4>
+                  <p className="text-gray-300 text-[13px] leading-6 max-w-full lg:max-w-[190px] break-words">
+                    229, Platinum Plaza, Above HDFC Bank, <br />
+                    Judges Bunglows Road, Bodakdev, <br />
+                    Ahmedabad - 380054
+                  </p>
+                </address>
+              </div>
             </div>
           </div>
 
           {/* Bottom Bar with Gradient Background */}
           <div className="mt-5 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-white text-[10px] uppercase tracking-widest relative">
             {/* Left Section: Copyright - Added text-center for mobile */}
-            <p className="text-[14px] font-medium text-slate-300">
+            <p className="text-[8px] font-medium text-slate-300">
               © 2026 Vestigo Insurance Brokers Pvt Ltd | IRDAI Regn.No:1131
               Direct Broker ( General & Life)
             </p>
@@ -402,6 +441,15 @@ export default function Footer() {
             </div>
 
             {/* Right Section: Links - Changed to justify-center for mobile */}
+
+            <div className="flex justify-center md:justify-end gap-6">
+              <Link
+                href="/privacy-policy"
+                className="font-semibold text-blue-500 underline decoration-blue-500/40 hover:decoration-blue-400 hover:text-blue-400 underline-offset-4 transition-all duration-300"
+              >
+                Privacy Policies
+              </Link>
+            </div>
 
             <div className="flex justify-center md:justify-end gap-6">
               <Link
