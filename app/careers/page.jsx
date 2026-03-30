@@ -105,9 +105,16 @@ const CareersPage = () => {
             {benefits.map((item, i) => (
               <div
                 key={i}
+<<<<<<< HEAD
                 className="p-8 rounded-3xl bg-white border border-slate-100 hover:shadow-xl hover:shadow-blue-500/5 transition-all group flex flex-col items-center text-center md:items-start md:text-left"
               >
                 <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto md:mx-0 mb-6 group-hover:scale-110 transition-transform">
+=======
+                // Yahan flex, items-center, aur text-center classes add ki gayi hain
+                className="p-8 rounded-3xl bg-white border border-slate-300 hover:shadow-xl hover:shadow-blue-500/5 transition-all group flex flex-col items-center text-center md:items-start md:text-left"
+              >
+                <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
+>>>>>>> 62585d4c209aed42d3c129cb630b328e49811536
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">
