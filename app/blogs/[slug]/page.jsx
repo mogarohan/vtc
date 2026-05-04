@@ -2,23 +2,6 @@ import { notFound } from "next/navigation";
 
 export const dynamic = "force-static";
 
-export async function generateStaticParams() {
-  const res = await fetch("http://127.0.0.1:8000/api/blogs", {
-    cache: "force-cache",
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch blog slugs");
-  }
-
-  const result = await res.json();
-  const posts = result.data; // ✅ FIX
-
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
-}
-
 async function getPost(slug) {
   const res = await fetch(`http://127.0.0.1:8000/api/blogs/${slug}`, {
     cache: "force-cache",
