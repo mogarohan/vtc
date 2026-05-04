@@ -1,11 +1,13 @@
+import { output } from "framer-motion/client";
+
 const nextConfig = {
+  output: "export",
   images: {
     unoptimized: true,
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "127.0.0.1",
-        port: "8000",
+        protocol: "https",
+        hostname: "admin.techstrota.com",
         pathname: "/storage/**",
       },
     ],

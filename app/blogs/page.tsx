@@ -6,17 +6,28 @@ import { ArrowRight, Calendar, User, BookOpen } from "lucide-react";
 // This forces the page to be treated as a static build
 export const dynamic = "force-static";
 
+type Blog = {
+  id: number;
+  title: string;
+  content: string;
+  image: string;
+  slug: string;
+};
+
 // 1. Function to fetch data from Laravel
-async function getPosts() {
-  const res = await fetch("http://127.0.0.1:8000/api/blogs");
+async function getPosts(): Promise<Blog[]> {
+  try {
+    const res = await fetch("https://admin.techstrota.com/api/blogs");
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch posts");
+    if (!res.ok) return [];
+
+    const result = await res.json();
+
+    return result || []; // ✅ always return array
+  } catch (err) {
+    console.error("Fetch error:", err);
+    return []; // ✅ fallback
   }
-
-  const result = await res.json();
-
-  return result.data; // ✅ THIS IS THE FIX
 }
 
 export default async function BlogPage() {
@@ -42,7 +53,7 @@ export default async function BlogPage() {
           </p>
         </header>
 
-        {posts.length === 0 ? (
+        {!posts || posts.length === 0 ? (
           <div className="text-center py-32 border border-dashed border-slate-800 rounded-[3rem]">
             <p className="text-xl text-slate-500 max-w-xl mx-auto italic">
               Insights from our advisors on risk, compliance, and industry
@@ -51,7 +62,7 @@ export default async function BlogPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map((post, index) => (
+            {posts.map((post: Blog, index: number) => (
               <div
                 key={post.id}
                 className="group relative flex flex-col bg-[#0F172A] border border-slate-800 rounded-[2.5rem] overflow-hidden hover:border-indigo-500/50 transition-all duration-500 shadow-2xl shadow-black/50"
