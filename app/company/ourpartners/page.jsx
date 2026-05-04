@@ -15,7 +15,6 @@ import Image from "next/image";
 
 /* ================= IMAGE PARTNERS (NO CHANGE) ================= */
 const imagePartners = [
-  
   { src: "/p12.png", alt: "LIC" },
   { src: "/p13.png", alt: "HDFC Life" },
   { src: "/p14.jpg", alt: "ICICI Prudential" },
@@ -185,8 +184,6 @@ export default function Partners() {
           </p>
           <div className="w-60 h-1 bg-sky-500 mx-auto mt-6 rounded-full" />
         </div>
-
-        
       </section>
 
       {/* ================= CTA ================= */}

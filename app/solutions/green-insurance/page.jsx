@@ -32,11 +32,6 @@ const GreenInsurance = () => {
       icon: <Sun className="w-10 h-10 text-blue-600" />,
     },
     {
-      title: "EV Insurance",
-      desc: "Customized plans for electric vehicle fleets, designed to help businesses minimize their carbon footprint.",
-      icon: <BatteryCharging className="w-10 h-10 text-blue-600" />,
-    },
-    {
       title: "Eco-Friendly Property",
       desc: "Premiums for green-certified buildings and unique sustainable damage recovery solutions.",
       icon: <Leaf className="w-10 h-10 text-blue-600" />,
@@ -113,7 +108,7 @@ const GreenInsurance = () => {
 
       {/* 2. INITIATIVES GRID (Floating over Hero) */}
       <section id="initiatives" className="relative z-20 -mt-10 px-6 pb-24">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
           {initiatives.map((item, idx) => (
             <motion.div
               key={idx}

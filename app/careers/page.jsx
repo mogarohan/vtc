@@ -105,13 +105,10 @@ const CareersPage = () => {
             {benefits.map((item, i) => (
               <div
                 key={i}
-
-                className="p-8 rounded-3xl bg-white border border-slate-100 hover:shadow-xl hover:shadow-blue-500/5 transition-all group flex flex-col items-center text-center md:items-start md:text-left"
+                className="p-8 rounded-3xl bg-white border border-slate-400 hover:shadow-xl hover:shadow-blue-500/5 transition-all group flex flex-col items-center text-center md:items-start md:text-left"
               >
                 <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center mx-auto md:mx-0 mb-6 group-hover:scale-110 transition-transform">
-
-                
-               
+                  {item.icon}
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">
                   {item.title}
@@ -179,7 +176,8 @@ const CareersPage = () => {
                 No active openings at this time.
               </h4>
               <p className="text-slate-500 text-lg mb-6">
-                We welcome exceptional professionals — send your CV to our careers team.
+                We welcome exceptional professionals — send your CV to our
+                careers team.
               </p>
               <a
                 href="mailto:careers@vestigoinsurance.com"
@@ -197,8 +195,8 @@ const CareersPage = () => {
                 Don&apos;t see a perfect fit?
               </h4>
               <p className="text-slate-500 mb-6">
-                “Send us your CV, and we’ll get in touch when a relevant opportunity
-                opens up.”
+                “Send us your CV, and we’ll get in touch when a relevant
+                opportunity opens up.”
               </p>
               <a
                 href="mailto:careers@vestigoinsurance.com"

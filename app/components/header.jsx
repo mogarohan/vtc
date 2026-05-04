@@ -137,9 +137,14 @@ const NAV_DATA = [
         icon: <FontAwesomeIcon icon={faLeaf} />,
       },
       {
-        name: "Surity Bond",
-        href: "/solutions/suretybond&creditinsurance",
+        name: "Surety Bond",
+        href: "/solutions/surety-bond",
         icon: <FontAwesomeIcon icon={faFileContract} />,
+      },
+      {
+        name: "Credit Insurance",
+        href: "/solutions/credit-insurance",
+        icon: <FontAwesomeIcon icon={faFileShield} />,
       },
       {
         name: "Ability Suite",

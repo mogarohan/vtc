@@ -20,6 +20,9 @@ import {
   ArrowRight,
   Sparkles,
   Layers,
+  Building2,
+  Cpu,
+  FileCheck,
 } from "lucide-react";
 
 import {
@@ -35,26 +38,47 @@ import {
 
 const featuredSectors = [
   {
-    title: "Manufacturing",
-    desc: "Industry 4.0 and IoT integration.",
-    icon: <FontAwesomeIcon icon={faIndustry} className="text-3xl" />,
+    title: "Client-First Insurance Advisory",
+    desc: "We act in the client’s interest, focusing on right coverage, practical protection, and long-term claim outcomes—not just premium comparison.",
+    icon: <ShieldCheck className="w-8 h-8" />,
   },
   {
-    title: "Energy & Power",
-    desc: "Smart grid and resource management.",
-    icon: <FontAwesomeIcon icon={faBolt} className="text-3xl" />,
+    title: "Risk Intelligence - Driven Solutions",
+    desc: "We identify hidden gaps, exposures, warranties, exclusions, and claim-sensitive conditions before they become disputes.",
+    icon: <Target className="w-8 h-8" />,
   },
   {
-    title: "Infrastructure",
-    icon: <FontAwesomeIcon icon={faBuilding} className="text-3xl" />,
-    desc: "Large-scale project tracking tools.",
+    title: "Technical Expertise in Corporate Insurance",
+    desc: "Strong practitioner-level understanding of Property, Marine, Liability, Engineering, Health, Life, and other commercial insurance programs.",
+    icon: <Building2 className="w-8 h-8" />,
   },
   {
-    title: "BFSI",
-    icon: <FontAwesomeIcon icon={faLandmark} className="text-3xl" />,
-    desc: "High-security financial digital shields.",
+    title: "Claims-Focused Policy Structuring",
+    desc: "Every policy is reviewed from the claim lens, ensuring that sums insured, clauses, deductibles, sub-limits, and warranties are aligned with real loss scenarios.",
+    icon: <FileCheck className="w-8 h-8" />,
+  },
+  {
+    title: "Technology Oriented Service Model",
+    desc: "We are building a structured, tech-enabled servicing ecosystem for renewals, declarations, documents, endorsements, claims tracking, and client communication.",
+    icon: <Cpu className="w-8 h-8" />,
   },
 ];
+
+const Card = ({ s }) => (
+  <div className="group p-8 rounded-2xl border border-slate-100 bg-white hover:bg-blue-600 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-600/20">
+    <div className="w-16 h-16 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+      {s.icon}
+    </div>
+
+    <h3 className="text-xl font-bold mb-3 group-hover:text-white">{s.title}</h3>
+
+    <p className="text-slate-500 text-sm group-hover:text-blue-100 mb-6 leading-relaxed">
+      {s.desc}
+    </p>
+
+    <div className="h-1 w-0 group-hover:w-full bg-white/30 transition-all duration-500 rounded-full"></div>
+  </div>
+);
 
 // 16 industries
 const INDUSTRIES = [
@@ -117,7 +141,7 @@ const INDUSTRIES = [
 ];
 
 // Duplicate for seamless loop
-const LOOP_INDUSTRIES = [...INDUSTRIES,];
+const LOOP_INDUSTRIES = [...INDUSTRIES];
 
 export default function IndustriesHome() {
   const containerRef = useRef(null);
@@ -239,30 +263,28 @@ export default function IndustriesHome() {
         <div className="max-w-6xl mx-auto">
           <div className="container mx-auto px-12 text-center mb-20">
             <h2 className="text-[15px] font-black uppercase tracking-[0.4em] text-blue-600 mb-4">
-              Insurance-Focused Strengths 
+              Core Strengths
             </h2>
             <p className="text-4xl font-black uppercase tracking-tighter text-[#070B7F]">
               Precision & Protection
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-20">
-            {featuredSectors.map((s, i) => (
-              <div
-                key={i}
-                className="group p-8 rounded-2xl border border-slate-100 bg-white hover:bg-blue-600 transition-all duration-300 shadow-sm hover:shadow-xl hover:shadow-blue-600/20"
-              >
-                <div className="w-16 h-16 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors">
-                  {s.icon}
+          <div className="max-w-6xl mx-auto">
+            {/* Top 3 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {featuredSectors.slice(0, 3).map((s, i) => (
+                <Card key={i} s={s} />
+              ))}
+            </div>
+
+            {/* Bottom 2 centered */}
+            <div className="flex justify-center gap-6 mt-6 flex-wrap">
+              {featuredSectors.slice(3).map((s, i) => (
+                <div key={i} className="w-full md:w-[48%] lg:w-[30%]">
+                  <Card s={s} />
                 </div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-white">
-                  {s.title}
-                </h3>
-                <p className="text-slate-500 text-sm group-hover:text-blue-100 mb-6">
-                  {s.desc}
-                </p>
-                <div className="h-1 w-0 group-hover:w-full bg-white/30 transition-all duration-500 rounded-full"></div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -342,7 +364,6 @@ export default function IndustriesHome() {
                     </p>
                   </div>
                 </div>
-                
               </div>
             </div>
             <div className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
@@ -381,14 +402,16 @@ export default function IndustriesHome() {
             Ready to modernize your Industry?
           </h2>
           <p className="text-slate-500 text-sm mb-10">
-            “Every industry carries unique risks. Vestigo structures protection that matches your sector's real exposure profile.”
+            “Every industry carries unique risks. Vestigo structures protection
+            that matches your sector&apos;s real exposure profile.”
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/contact"
               className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-4 rounded-full font-bold transition-all shadow-xl shadow-blue-600/20 text-center flex items-center justify-center gap-3"
             >
-              Request a Risk Consultation <FontAwesomeIcon icon={faArrowRight} />
+              Request a Risk Consultation{" "}
+              <FontAwesomeIcon icon={faArrowRight} />
             </Link>
             <Link
               href="/contact"

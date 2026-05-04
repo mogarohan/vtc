@@ -1,11 +1,9 @@
 import { notFound } from "next/navigation";
 
 export const dynamic = "force-static";
-export const dynamicParams = false;
-export const revalidate = false;
 
 export async function generateStaticParams() {
-  const res = await fetch("https://happy.techstrota.com/api/blogs", {
+  const res = await fetch("http://127.0.0.1:8000/api/blogs", {
     cache: "force-cache",
   });
 
@@ -13,7 +11,8 @@ export async function generateStaticParams() {
     throw new Error("Failed to fetch blog slugs");
   }
 
-  const posts = await res.json();
+  const result = await res.json();
+  const posts = result.data; // ✅ FIX
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -21,12 +20,14 @@ export async function generateStaticParams() {
 }
 
 async function getPost(slug) {
-  const res = await fetch(`https://happy.techstrota.com/api/blogs/${slug}`, {
+  const res = await fetch(`http://127.0.0.1:8000/api/blogs/${slug}`, {
     cache: "force-cache",
   });
 
   if (!res.ok) return null;
-  return res.json();
+
+  const result = await res.json();
+  return result.data;
 }
 
 export default async function BlogDetailPage({ params }) {

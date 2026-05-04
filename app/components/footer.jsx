@@ -17,19 +17,14 @@ import {
 export default function Footer() {
   const socialLinks = [
     {
-      name: "Facebook",
-      icon: <Facebook size={18} />,
-      href: "https://facebook.com",
-    },
-    {
       name: "Instagram",
       icon: <Instagram size={18} />,
-      href: "https://instagram.com",
+      href: "https://www.instagram.com/vestigoinsurance?igsh=dHFxYmFlN2RtbHVp",
     },
     {
       name: "LinkedIn",
       icon: <Linkedin size={18} />,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/company/vestigo-insurance-brokers-pvt-ltd/",
     },
   ];
 
@@ -266,7 +261,7 @@ export default function Footer() {
                       href="/industries/texttile"
                       className="hover:text-white transition-all hover:translate-x-1 block"
                     >
-                      Texttile
+                      Textile
                     </Link>
                   </li>
                   <li>

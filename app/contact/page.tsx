@@ -11,6 +11,7 @@ import {
   Twitter,
   Facebook,
   Loader2,
+  Instagram,
 } from "lucide-react";
 
 const ContactPage = () => {
@@ -29,6 +30,17 @@ const ContactPage = () => {
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const socialLinks = [
+    {
+      icon: Instagram,
+      url: "https://www.instagram.com/vestigoinsurance?igsh=dHFxYmFlN2RtbHVp",
+    },
+    {
+      icon: Linkedin,
+      url: "https://www.linkedin.com/company/vestigo-insurance-brokers-pvt-ltd/",
+    },
+  ];
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -143,16 +155,23 @@ const ContactPage = () => {
 
               <div className="pt-6 border-t border-sky-200">
                 <h4 className="font-bold text-slate-900 mb-4">Follow Us</h4>
+
                 <div className="flex gap-4">
-                  {[Facebook, Twitter, Linkedin].map((Icon, i) => (
-                    <a
-                      key={i}
-                      href="#"
-                      className="w-12 h-12 border border-slate-200 rounded-full flex items-center justify-center text-slate-400 hover:text-blue-600 hover:border-blue-600 transition-all shadow-sm"
-                    >
-                      <Icon size={20} />
-                    </a>
-                  ))}
+                  {socialLinks.map((item, i) => {
+                    const Icon = item.icon;
+
+                    return (
+                      <a
+                        key={i}
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 border border-slate-200 rounded-full flex items-center justify-center text-slate-400 hover:text-blue-600 hover:border-blue-600 transition-all shadow-sm"
+                      >
+                        <Icon size={20} />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -166,8 +185,8 @@ const ContactPage = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="mb-8 p-4 bg-green-50 text-green-700 rounded-xl border border-green-200 flex items-center gap-2"
               >
-                <span className="font-bold">Success!</span> Message sent. We
-                will contact you soon.
+                <span className="font-bold">Thank you.</span> A Vestigo advisor
+                will contact you within 24 hours.
               </motion.div>
             )}
             {status === "error" && (
@@ -192,7 +211,7 @@ const ContactPage = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    placeholder="John Doe"
+                    placeholder="Enter your full name"
                     className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none"
                   />
                 </div>
@@ -206,7 +225,7 @@ const ContactPage = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    placeholder="john@example.com"
+                    placeholder="Enter your email address"
                     className="w-full px-5 py-4 rounded-xl bg-slate-50 border border-slate-200 focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all outline-none"
                   />
                 </div>
@@ -275,7 +294,7 @@ const ContactPage = () => {
                   </>
                 )}
               </button>
-              <p className="text-xs text-slate-400 text-center mt-4">
+              <p className="text-md text-slate-400 text-center mt-4">
                 Our advisors typically respond within 4 business hours.
               </p>
             </form>

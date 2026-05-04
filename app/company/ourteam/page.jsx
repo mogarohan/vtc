@@ -48,6 +48,47 @@ export default function OurTeam() {
     },
   ];
 
+  const team = [
+    {
+      name: "Bhavit Acharya",
+      role: "Director & Principal Officer",
+      image: "/member1.jpg",
+      socials: [
+        {
+          icon: Linkedin,
+          link: "https://www.linkedin.com/in/bhavit-acharya-fiii-b44b88b2",
+        },
+        {
+          icon: Instagram,
+          link: "#",
+        },
+        {
+          icon: Mail,
+          link: "#",
+        },
+      ],
+    },
+    {
+      name: "Riya Shah",
+      role: "Director",
+      image: "/member2.png",
+      socials: [
+        {
+          icon: Linkedin,
+          link: "https://www.linkedin.com/in/riya-shah-601b73128/",
+        },
+        {
+          icon: Instagram,
+          link: "#",
+        },
+        {
+          icon: Mail,
+          link: "#",
+        },
+      ],
+    },
+  ];
+
   return (
     <main ref={containerRef} className="bg-white overflow-x-hidden">
       {/* ================= HERO ================= */}
@@ -90,8 +131,8 @@ export default function OurTeam() {
                 {...fadeInUp}
                 className="text-5xl font-bold text-slate-900 mb-8"
               >
-                Our Team
-                <div className="w-30 h-1.5 bg-blue-600 mb-5 mt-2 ml-8 rounded-full" />
+                Our Leadership
+                <div className="w-50 h-1.5 bg-blue-600 mb-5 mt-2 ml-8 rounded-full" />
               </motion.h3>
               <motion.p
                 {...fadeInUp}
@@ -265,15 +306,20 @@ export default function OurTeam() {
                   guidance when outcomes matter most.
                 </p>
                 <div className="flex gap-4">
-                  {[Linkedin, Instagram, Mail].map((Icon, i) => (
-                    <a
-                      key={i}
-                      href="#"
-                      className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-all"
-                    >
-                      <Icon size={20} />
-                    </a>
-                  ))}
+                  {team[0].socials.map((item, i) => {
+                    const Icon = item.icon;
+                    return (
+                      <a
+                        key={i}
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-all"
+                      >
+                        <Icon size={20} />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -318,15 +364,20 @@ export default function OurTeam() {
                   and assured throughout their association with Vestigo.
                 </p>
                 <div className="flex gap-4 lg:justify-end">
-                  {[Linkedin, Instagram, Mail].map((Icon, i) => (
-                    <a
-                      key={i}
-                      href="#"
-                      className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-all"
-                    >
-                      <Icon size={20} />
-                    </a>
-                  ))}
+                  {team[1].socials.map((item, i) => {
+                    const Icon = item.icon;
+                    return (
+                      <a
+                        key={i}
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 rounded-full border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-blue-600 hover:text-white transition-all"
+                      >
+                        <Icon size={20} />
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
             </div>
