@@ -378,7 +378,7 @@ export default function Footer() {
             <div className="lg:col-span-2 text-gray-300">
               {/* Mobile par normal rahega, Desktop par lg:ml-10 apply hoga */}
               <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block lg:ml-10">
-                Full Address
+                Address
                 <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
               </h3>
 
@@ -387,7 +387,7 @@ export default function Footer() {
                 {/* Vadodara Branch */}
                 <address className="not-italic">
                   <h4 className="text-white font-semibold text-[14px] mb-1">
-                    Vadodara Office
+                    Corporate & Regd Office
                   </h4>
                   <p className="text-gray-300 text-[13px] leading-6 max-w-full lg:max-w-[190px] break-words">
                     SF 201, Status Complex, Opp. Amrapali Complex, <br />
@@ -399,7 +399,7 @@ export default function Footer() {
                 {/* Ahmedabad Branch */}
                 <address className="not-italic">
                   <h4 className="text-white font-semibold text-[14px] mb-1">
-                    Ahmedabad Office
+                    Branch Office
                   </h4>
                   <p className="text-gray-300 text-[13px] leading-6 max-w-full lg:max-w-[190px] break-words">
                     229, Platinum Plaza, Above HDFC Bank, <br />
@@ -414,9 +414,9 @@ export default function Footer() {
           {/* Bottom Bar with Gradient Background */}
           <div className="mt-5 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-white text-[10px] uppercase tracking-widest relative">
             {/* Left Section: Copyright - Added text-center for mobile */}
-            <p className="text-[8px] font-medium text-slate-300">
-              © 2026 Vestigo Insurance Brokers Pvt Ltd | IRDAI Regn.No:1131
-              Direct Broker ( General & Life)
+            <p className="text-[9px] font-medium text-slate-300 leading-5 text-center md:text-left max-w-[300px] md:max-w-full">
+              © 2026 Vestigo Insurance Brokers Pvt Ltd | <br /> IRDAI Regn. No:
+              1131 Direct Broker (General & Life)
             </p>
 
             {/* Center Section: Social Links - Already centered by flex-col items-center on parent */}

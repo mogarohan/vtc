@@ -17,16 +17,22 @@ type Blog = {
 // 1. Function to fetch data from Laravel
 async function getPosts(): Promise<Blog[]> {
   try {
-    const res = await fetch("https://admin.techstrota.com/api/blogs");
+    const res = await fetch("http://127.0.0.1:8000/api/blogs", {
+      cache: "no-store", // better for dev
+    });
 
     if (!res.ok) return [];
 
     const result = await res.json();
 
-    return result || []; // ✅ always return array
+    // ✅ Handle BOTH cases safely
+    if (Array.isArray(result)) return result;
+    if (Array.isArray(result?.data)) return result.data;
+
+    return [];
   } catch (err) {
     console.error("Fetch error:", err);
-    return []; // ✅ fallback
+    return [];
   }
 }
 

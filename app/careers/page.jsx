@@ -180,29 +180,10 @@ const CareersPage = () => {
                 careers team.
               </p>
               <a
-                href="mailto:careers@vestigoinsurance.com"
-                className="inline-block text-blue-600 font-bold hover:underline underline-offset-4 text-lg md:text-xl"
+                href="mailto:opportunity@vestigoinsurance.com"
+                className="inline-block text-blue-600 font-bold hover:underline underline-offset-4 text-[12px] md:text-xl break-all leading-relaxed max-w-full"
               >
-                careers@vestigoinsurance.com
-              </a>
-            </div>
-          )}
-
-          {/* "Don't see a perfect fit?" box appears only when jobs ARE listed */}
-          {jobs.length > 0 && (
-            <div className="mt-12 text-center p-10 bg-white rounded-[2rem] border border-dashed border-slate-300">
-              <h4 className="text-xl font-bold text-slate-800 mb-2">
-                Don&apos;t see a perfect fit?
-              </h4>
-              <p className="text-slate-500 mb-6">
-                “Send us your CV, and we’ll get in touch when a relevant
-                opportunity opens up.”
-              </p>
-              <a
-                href="mailto:careers@vestigoinsurance.com"
-                className="text-blue-600 font-bold hover:underline underline-offset-4"
-              >
-                careers@vestigoinsurance.com
+                opportunity@vestigoinsurance.com
               </a>
             </div>
           )}

@@ -13,13 +13,19 @@ type Blog = {
 
 async function getAllSlugs(): Promise<Blog[]> {
   try {
-    const res = await fetch("https://admin.techstrota.com/api/blogs", {
-      // Revalidate every 60 seconds so new blogs appear shortly after being added
-      cache: "force-cache",
+    const res = await fetch("http://127.0.0.1:8000/api/blogs", {
+      cache: "no-store", // important for dev
     });
 
-    if (!res.ok) return [];
+    if (!res.ok) {
+      console.error("API failed:", res.status);
+      return [];
+    }
+
     const result = await res.json();
+
+    console.log("BLOG LIST:", result); // 👈 debug
+
     return Array.isArray(result) ? result : [];
   } catch (err) {
     console.error("Fetch error:", err);
@@ -30,29 +36,30 @@ async function getAllSlugs(): Promise<Blog[]> {
 export async function generateStaticParams() {
   const posts = await getAllSlugs();
 
-  if (!posts || posts.length === 0) return [];
+  if (!posts.length) {
+    console.warn("No blogs found, using fallback slug");
 
-  return posts
-    .filter((post) => post && post.slug) // Ensure post and slug exist
-    .map((post) => ({
-      slug: String(post.slug).trim(), // Clean string
-    }));
+    return [
+      { slug: "test" }, // 👈 MUST exist in your DB
+    ];
+  }
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
 async function getPost(slug: string): Promise<Blog | null> {
   try {
     // decodeURIComponent handles slugs with spaces or special chars
     const decodedSlug = decodeURIComponent(slug);
-    const res = await fetch(
-      `https://admin.techstrota.com/api/blogs/${decodedSlug}`,
-      {
-        cache: "force-cache",
-      },
-    );
+    const res = await fetch(`http://127.0.0.1:8000/api/blogs/${decodedSlug}`, {
+      cache: "force-cache",
+    });
 
     if (!res.ok) return null;
     const result = await res.json();
-    return result.data;
+    return result?.data || null;
   } catch (error) {
     return null;
   }
@@ -93,7 +100,9 @@ export default async function BlogDetailPage({ params }: PageProps) {
 
       <div
         className="prose max-w-none"
-        dangerouslySetInnerHTML={{ __html: post.content }}
+        dangerouslySetInnerHTML={{
+          __html: typeof post.content === "string" ? post.content : "",
+        }}
       />
     </article>
   );

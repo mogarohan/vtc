@@ -6,8 +6,8 @@ const nextConfig = {
     unoptimized: true,
     remotePatterns: [
       {
-        protocol: "https",
-        hostname: "admin.techstrota.com",
+        protocol: "http",
+        hostname: "127.0.0.1",
         pathname: "/storage/**",
       },
     ],

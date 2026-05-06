@@ -48,7 +48,7 @@ const ContactPage = () => {
     setStatus(null);
 
     try {
-      const response = await fetch("https://admin.techstrota.com/api/contact", {
+      const response = await fetch("http://127.0.0.1:8000/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,11 +91,11 @@ const ContactPage = () => {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto text-center text-white mt-20 md:mt-32">
-          <h1 className="text-3xl md:text-5xl font-extrabold mb-6">
+          <h1 className="text-2xl md:text-4xl font-extrabold mb-6">
             Contact Vestigo Insurance Brokers Pvt Ltd |{" "}
             <span className="text-blue-400">IRDAI Broker</span>
           </h1>
-          <p className="text-lg text-slate-200 max-w-2xl mx-auto">
+          <p className="text-md text-slate-200 max-w-2xl mx-auto">
             Reach out today to schedule a comprehensive risk consultation and
             take a confident step toward long-term security.
           </p>
@@ -119,36 +119,31 @@ const ContactPage = () => {
               </div>
 
               <div className="space-y-6">
-                <div className="flex gap-5 group">
-                  <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                    <MapPin size={24} />
+                <div className="flex items-start gap-4 group">
+                  <div className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                    <Mail size={24} />
                   </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900">Our Presence</h4>
-                    <p className="text-slate-500 italic">
-                      Ahmedabad · Vadodara
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-bold text-slate-900">Email Us</h4>
+
+                    <p className="text-slate-500 break-all text-[15px] leading-relaxed">
+                      enquiry@vestigoinsurance.com
                     </p>
                   </div>
                 </div>
 
-                <div className="flex gap-5 group">
-                  <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
-                    <Mail size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-slate-900">Email Us</h4>
-                    <p className="text-slate-500">info@vestigoinsurance.com</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-5 group">
-                  <div className="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                <div className="flex items-start gap-4 group">
+                  <div className="w-12 h-12 md:w-14 md:h-14 flex-shrink-0 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                     <Phone size={24} />
                   </div>
-                  <div>
+                  <div className="flex-1 min-w-0">
                     <h4 className="font-bold text-slate-900">Call Support</h4>
-                    <p className="text-slate-500">+91 97261 60360</p>
-                    <p className="text-slate-500">+91 97378 01385</p>
+                    <p className="text-slate-500 break-all text-[15px] leading-relaxed">
+                      +91 97261 60360
+                    </p>
+                    <p className="text-slate-500 break-all text-[15px] leading-relaxed">
+                      +91 97378 01385
+                    </p>
                   </div>
                 </div>
               </div>

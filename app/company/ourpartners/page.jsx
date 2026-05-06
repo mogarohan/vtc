@@ -21,14 +21,7 @@ const imagePartners = [
   { src: "/p15.png", alt: "Max Life" },
   { src: "/p16.png", alt: "SBI Life" },
   { src: "/p17.png", alt: "Kotak Life" },
-  { src: "/p18.jpg", alt: "Bajaj Allianz" },
-  { src: "/p19.png", alt: "TATA AIG" },
   { src: "/p20.jpg", alt: "Aditya Birla" },
-  { src: "/p21.png", alt: "New India Assurance" },
-  { src: "/p22.png", alt: "Oriental Insurance" },
-  { src: "/p23.png", alt: "United India" },
-  { src: "/p24.jpg", alt: "ICICI Lombard" },
-  { src: "/p25.png", alt: "HDFC Ergo" },
 ];
 
 /* infinite scroll */
@@ -171,23 +164,8 @@ export default function Partners() {
         </motion.div>
       </section>
 
-      {/* ================= PARTNERSHIP TYPES ================= */}
-      <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-black text-slate-900 tracking-tight">
-            Proven Expertise: Major Claims Managed
-          </h2>
-          <p className="text-gray-600 mt-4 max-w-3xl mx-auto text-lg">
-            Our partners possess extensive experience in navigating complex
-            claim scenarios, ensuring effective resolution and minimal
-            disruption for clients across industries.
-          </p>
-          <div className="w-60 h-1 bg-sky-500 mx-auto mt-6 rounded-full" />
-        </div>
-      </section>
-
       {/* ================= CTA ================= */}
-      <section className="pb-10 px-6">
+      <section className="pb-10 px-6 py-12">
         <div className="max-w-6xl mx-auto bg-slate-900 rounded-[3.5rem] p-16 text-center text-white relative overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 w-72 h-72 bg-blue-600/20 rounded-full blur-[120px]" />
           <h2 className="text-4xl md:text-5xl font-black mb-6">
