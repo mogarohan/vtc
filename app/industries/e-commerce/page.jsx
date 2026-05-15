@@ -159,13 +159,13 @@ const IndustrialMarketplace = () => {
       </section>
 
       {/* ================= PROTECTION SUITE ================= */}
-      <section className="w-full bg-white py-16">
-        <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-12 text-slate-900 tracking-tighter uppercase">
+      <section className="w-full bg-white py-16 md:py-24">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-16 text-center text-slate-900 tracking-tighter uppercase leading-tight">
             E-Commerce Protection <span className="text-blue-600">Suite</span>
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8 max-w-5xl mx-auto">
             <CoverageItem
               icon={<ShieldAlert />}
               title="Cyber Liability & Data Breach"
@@ -191,14 +191,17 @@ const IndustrialMarketplace = () => {
   );
 };
 
+// Updated CoverageItem with vertical centering
 const CoverageItem = ({ icon, title }) => (
-  <div className="flex gap-4 items-start">
-    <div className="bg-blue-100 p-3 rounded-xl">
+  <div className="flex gap-5 items-center p-2 transition-transform hover:translate-x-2">
+    <div className="bg-blue-100 p-4 rounded-2xl shrink-0">
       {React.cloneElement(icon, {
-        className: "text-blue-600 w-5 h-5",
+        className: "text-blue-600 w-6 h-6 md:w-7 md:h-7",
       })}
     </div>
-    <h4 className="font-bold text-lg text-slate-800">{title}</h4>
+    <h4 className="font-bold text-lg md:text-xl text-slate-800 leading-tight">
+      {title}
+    </h4>
   </div>
 );
 

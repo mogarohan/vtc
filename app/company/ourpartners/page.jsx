@@ -12,20 +12,18 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 /* ================= IMAGE PARTNERS (NO CHANGE) ================= */
-const imagePartners = [
-  { src: "/p12.png", alt: "LIC" },
-  { src: "/p13.png", alt: "HDFC Life" },
-  { src: "/p14.jpg", alt: "ICICI Prudential" },
-  { src: "/p15.png", alt: "Max Life" },
-  { src: "/p16.png", alt: "SBI Life" },
-  { src: "/p17.png", alt: "Kotak Life" },
-  { src: "/p20.jpg", alt: "Aditya Birla" },
-];
-
-/* infinite scroll */
-const LOOP_PARTNERS = imagePartners;
+// const imagePartners = [
+//   { src: "/p12.png", alt: "LIC" },
+//   { src: "/p13.png", alt: "HDFC Life" },
+//   { src: "/p14.jpg", alt: "ICICI Prudential" },
+//   { src: "/p15.png", alt: "Max Life" },
+//   { src: "/p16.png", alt: "SBI Life" },
+//   { src: "/p17.png", alt: "Kotak Life" },
+//   { src: "/p20.jpg", alt: "Aditya Birla" },
+// ];
 
 export default function Partners() {
   const containerRef = useRef(null);
@@ -37,6 +35,18 @@ export default function Partners() {
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
+  const [partners, setPartners] = useState([]);
+
+  /* infinite scroll */
+  const LOOP_PARTNERS = [...partners];
+
+  useEffect(() => {
+    fetch("http://127.0.0.1:8000/api/partners")
+      .then((res) => res.json())
+      .then((data) => setPartners(data))
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
     <main ref={containerRef} className="min-h-screen bg-white overflow-hidden">
@@ -143,22 +153,18 @@ export default function Partners() {
       <section className="relative py-10 bg-[#F0F7FF] border-y border-blue-100 overflow-hidden">
         <motion.div
           animate={{ x: ["0%", "-100%"] }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
           className="flex gap-24 items-center w-max"
         >
           {LOOP_PARTNERS.map((partner, i) => (
             <div key={i} className="flex flex-col items-center gap-4">
               <div className="bg-white rounded-xl border border-blue-100 shadow-sm h-[90px] w-[180px] flex items-center justify-center px-6">
                 <img
-                  src={partner.src}
-                  alt={partner.alt}
+                  src={`http://127.0.0.1:8000/storage/${partner.logo}`}
                   className="max-h-[60px] w-auto object-contain"
                   loading="lazy"
                 />
               </div>
-              <span className="text-sm font-semibold text-slate-700 uppercase tracking-wide">
-                {partner.alt}
-              </span>
             </div>
           ))}
         </motion.div>

@@ -62,7 +62,7 @@ export default function ITFieldPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 selection:bg-cyan-100">
+    <div className="min-h-screen bg-white text-slate-900 selection:bg-cyan-100 overflow-x-hidden">
       {/* 1. HERO SECTION: The Digital Frontier */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -79,7 +79,7 @@ export default function ITFieldPage() {
           transition={{ duration: 1 }}
           className="relative z-10 text-center px-6"
         >
-          <span className="bg-blue-600 text-white px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-lg">
+          <span className="bg-blue-600 text-white px-5 py-2 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest mb-6 inline-block shadow-lg">
             IT Expert
           </span>
           <h1 className="text-3xl md:text-6xl font-black text-[#070B7F] mb-6 tracking-tighter uppercase leading-tight">
@@ -87,7 +87,7 @@ export default function ITFieldPage() {
             <br />{" "}
             <span className="text-blue-600 italic">IT & Technology Sector</span>
           </h1>
-          <h3 className="text-xl md:text-2xl font-light text-slate-600 mb-10 uppercase tracking-[0.3em]">
+          <h3 className="text-sm md:text-2xl font-light text-slate-600 mb-10 uppercase tracking-[0.1em] md:tracking-[0.3em] max-w-4xl mx-auto">
             India’s IT and technology sector is a global powerhouse,
             contributing significantly to GDP and employing millions.
           </h3>
@@ -102,80 +102,56 @@ export default function ITFieldPage() {
         </motion.div>
       </section>
 
-      {/* 3. IT VERTICALS: White Cards on Blue Shadow */}
-      <section className="py-10 sm:py-14 px-5 sm:px-6 bg-slate-50">
+      {/* 3. IT VERTICALS: Key Risks Section */}
+      <section className="py-16 md:py-24 px-5 sm:px-6 bg-slate-50">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-20 text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tighter uppercase">
+          <div className="mb-16 md:mb-20 text-center">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tighter uppercase leading-tight">
               Key Risks & Hazards Facing Indian Tech Companies
             </h2>
             <div className="h-1 w-16 bg-blue-600 mx-auto"></div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
-            {/* First Row → 3 Cards */}
-            {itSectors.slice(0, 3).map((sector, i) => {
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+            {/* First Row → Handles all sectors responsively */}
+            {itSectors.map((sector, i) => {
               const Icon = sector.Icon;
               return (
                 <div
                   key={i}
-                  className="group p-10 bg-white border-l-4 border-blue-600 shadow-sm hover:shadow-2xl transition-all duration-500"
+                  className={`group p-8 md:p-10 bg-white border-l-4 border-blue-600 shadow-sm hover:shadow-2xl transition-all duration-500 flex flex-col h-full ${
+                    i >= 3 ? "lg:translate-x-1/2" : ""
+                  } ${i === 4 ? "lg:ml-10" : ""}`}
+                  // Note: The translate logic above centers the last 2 items on Desktop
                 >
-                  <div className="w-14 h-14 bg-slate-950 text-cyan-400 flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                  <div className="w-14 h-14 bg-slate-950 text-cyan-400 flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors shrink-0">
                     <Icon size={28} />
                   </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+                  <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4 tracking-tight">
                     {sector.name}
                   </h3>
-                  <p className="text-slate-500 text-md leading-relaxed mb-8 font-sans">
+                  <p className="text-slate-500 text-sm md:text-md leading-relaxed mb-4 font-sans">
                     {sector.desc}
                   </p>
                 </div>
               );
             })}
-
-            {/* Second Row → Centered 2 Cards */}
-            <div className="md:col-span-3 flex flex-col sm:flex-row justify-center gap-6 sm:gap-10">
-              {itSectors.slice(3).map((sector, i) => {
-                const Icon = sector.Icon;
-                return (
-                  <div
-                    key={i + 3}
-                    className="group p-10 bg-white border-l-4 border-blue-600 shadow-sm hover:shadow-2xl transition-all duration-500 w-full max-w-md"
-                  >
-                    <div className="w-14 h-14 bg-slate-950 text-cyan-400 flex items-center justify-center mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                      <Icon size={28} />
-                    </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
-                      {sector.name}
-                    </h3>
-                    <p className="text-slate-500 text-md leading-relaxed mb-8 font-sans">
-                      {sector.desc}
-                    </p>
-                  </div>
-                );
-              })}
-            </div>
           </div>
         </div>
       </section>
 
       {/* ================= INSURANCE FRAMEWORK ================= */}
-      <section className="relative z-20 py-10 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-        <div className="mb-20 text-center">
-          {/* Heading Section - Left Aligned */}
-          <div className="mb-16">
-            <h2 className="text-4xl font-black text-slate-900 mb-4 tracking-tighter uppercase">
+      <section className="relative z-20 py-16 md:py-24 px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-16 md:mb-20 text-center">
+            <h2 className="text-2xl md:text-4xl font-black text-slate-900 mb-4 tracking-tighter uppercase leading-tight">
               Comprehensive Insurance Protection Framework
             </h2>
-            <div className="h-1.5 ml-120 w-50 bg-blue-600 rounded-full "></div>
-            </div>
+            <div className="h-1.5 w-24 md:w-32 bg-blue-600 rounded-full mx-auto"></div>
           </div>
-          
 
-          {/* Flex Layout - Automatically centers leftovers in the last row */}
-          <div className="flex flex-wrap justify-center gap-6">
+          {/* Flex Layout - Centers items correctly on all screens */}
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8">
             {[
               {
                 title: "Cyber Risk Insurance",
@@ -211,29 +187,25 @@ export default function ITFieldPage() {
               <motion.div
                 key={i}
                 whileHover={{ y: -10 }}
-                className="
-            group p-8 rounded-xl border border-slate-500 bg-white 
-            hover:border-blue-600/50 hover:shadow-2xl transition-all duration-500 relative overflow-hidden
-            w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]
-          "
+                className="group p-8 rounded-xl border border-slate-200 bg-white hover:border-blue-600/50 hover:shadow-2xl transition-all duration-500 relative overflow-hidden w-full md:w-[calc(50%-16px)] lg:w-[calc(33.333%-22px)] flex flex-col"
               >
                 {/* Icon Box */}
-                <div className="mb-8 p-3 rounded-lg bg-blue-50 inline-block text-blue-600">
+                <div className="mb-6 p-3 rounded-lg bg-blue-50 inline-block text-blue-600 w-fit">
                   {item.icon}
                 </div>
 
                 {/* Small Blue Tag */}
-                <p className="text-[11px] font-bold text-blue-600 uppercase mb-2 tracking-widest">
+                <p className="text-[10px] md:text-[11px] font-bold text-blue-600 uppercase mb-2 tracking-widest">
                   {item.tag}
                 </p>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold mb-3 tracking-tight">
+                <h3 className="text-lg md:text-xl font-bold mb-3 tracking-tight">
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-slate-500 text-md leading-relaxed">
+                <p className="text-slate-500 text-sm md:text-md leading-relaxed">
                   {item.desc}
                 </p>
               </motion.div>
@@ -241,7 +213,7 @@ export default function ITFieldPage() {
           </div>
 
           {/* NOTE Section */}
-          <div className="mt-12 bg-[#0F172A] border-l-4 border-blue-600 px-6 py-5 text-white font-medium rounded-r-lg">
+          <div className="mt-12 md:mt-16 bg-[#0F172A] border-l-4 border-blue-600 px-6 py-6 md:py-8 text-white font-medium rounded-r-lg shadow-xl text-sm md:text-base leading-relaxed">
             Protecting your technology business requires more than standard
             policies — it demands specialist insurance solutions designed for
             the digital age and India&apos;s unique regulatory landscape.

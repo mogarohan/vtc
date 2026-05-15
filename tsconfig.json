@@ -29,14 +29,15 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    "app/blogs/page.tsx",
+    "app/blogs/page.jsx",
     "app/contact/page.jsx",
     "app/privacy-policy/page.jsx",
-    "app/blogs/[slug]/page.tsx",
+    "app/blogs/[slug]/page.jsx",
     "app/privacy-policy/isms-policy/page.jsx",
     "app/privacy-policy/grievance-redressal-policy/page.jsx",
     "app/privacy-policy/aml-policy/page.jsx",
-    "app/privacy-policy/whistleblower-ethics-policy/page.jsx"
+    "app/privacy-policy/whistleblower-ethics-policy/page.jsx",
+    "app/privacy-policy/other-policies/page.jsx"
   ],
   "exclude": ["node_modules"]
 }

@@ -1,7 +1,6 @@
 import { output } from "framer-motion/client";
 
 const nextConfig = {
-  output: "export",
   images: {
     unoptimized: true,
     remotePatterns: [

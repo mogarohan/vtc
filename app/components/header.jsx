@@ -161,7 +161,7 @@ const NAV_DATA = [
     image: "02.png",
     subLinks: [
       {
-        name: "Automotive",
+        name: "Automobile",
         href: "/industries/automobile",
         icon: <FontAwesomeIcon icon={faCar} />,
       },

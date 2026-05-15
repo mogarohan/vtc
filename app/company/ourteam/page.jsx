@@ -268,7 +268,7 @@ export default function OurTeam() {
                 className="relative w-full lg:w-1/3 aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl"
               >
                 <Image
-                  src="/member1.jpg"
+                  src="/bhavit-acharya.jpeg"
                   alt="Bhavit Acharya"
                   fill
                   className="object-cover"
@@ -333,7 +333,7 @@ export default function OurTeam() {
                 className="relative w-full lg:w-1/3 aspect-[3/4] rounded-[3rem] overflow-hidden shadow-2xl"
               >
                 <Image
-                  src="/member2.png"
+                  src="/riya-shah.jpeg"
                   alt="Riya Shah"
                   fill
                   className="object-cover"

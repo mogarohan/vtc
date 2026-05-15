@@ -218,20 +218,27 @@ export default function CompanyOverview() {
               </Link>
             </div>
 
-            <div className="group bg-white p-12 rounded-[3rem] border border-slate-200 hover:border-emerald-300 transition-all shadow-sm flex flex-col items-center">
-              <div className="w-20 h-20 bg-emerald-50 text-emerald-600 rounded-3xl flex items-center justify-center mb-6">
-                <Handshake size={40} />
+            <div className="group bg-white p-6 md:p-12 rounded-[2rem] md:rounded-[3rem] border border-slate-200 hover:border-emerald-300 transition-all shadow-sm flex flex-col items-center text-center">
+              {/* Icon - Scaled down slightly for mobile */}
+              <div className="w-20 h-20 md:w-20 md:h-20 bg-emerald-50 text-emerald-600 rounded-2xl md:rounded-3xl flex items-center justify-center mb-6 shrink-0">
+                <Handshake className="w-8 h-8 md:w-10 md:h-10" />
               </div>
-              <h3 className="text-3xl font-bold text-slate-900 mb-4">
+
+              {/* Title - Responsive font size */}
+              <h3 className="text-3xl md:text-3xl font-bold text-slate-900 mb-4 leading-tight">
                 Strategic Alliances
               </h3>
-              <p className="text-slate-500 mb-8 text-lg text-center leading-relaxed flex-grow">
+
+              {/* Paragraph - Responsive font size and better line height */}
+              <p className="text-slate-500 mb-8 text-lg md:text-lg leading-relaxed flex-grow">
                 We work with global industry leaders and underwriters to provide
                 the most robust coverage possible.
               </p>
+
+              {/* Link - Full width on very small screens, inline on larger */}
               <Link
                 href="/company/ourpartners"
-                className="inline-flex items-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-emerald-600 transition-colors"
+                className="inline-flex items-center gap-3 bg-slate-900 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-600 transition-colors"
               >
                 Our Partners <ChevronRight size={18} />
               </Link>

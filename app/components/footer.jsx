@@ -1,18 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
-
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Globe,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   const socialLinks = [
@@ -30,64 +20,38 @@ export default function Footer() {
 
   return (
     <div className="w-full">
-      {/* Footer height ko min-h-[400px] ya content ke hisaab se auto rakha hai */}
-      <footer className="relative w-full text-slate-300 overflow-hidden min-h-[300px] flex flex-col justify-end">
+      <footer className="relative w-full text-slate-300 overflow-hidden min-h-[550px] flex flex-col justify-end">
         {/* --- BACKGROUND LAYER FIX --- */}
         <div className="absolute inset-0 z-0">
           <picture>
-            {/* Desktop */}
             <source media="(min-width: 1024px)" srcSet="/f3.jpeg" />
-
-            {/* Tablet */}
             <source media="(min-width: 768px)" srcSet="/tablet.jpeg" />
-
-            {/* Mobile */}
             <img
               src="/m.jpeg"
               alt="Footer Background"
-              className="w-full h-full object-cover brightness-[0.7]"
+              className="w-full h-full object-fill brightness-[0.6]"
             />
           </picture>
         </div>
-        {/* Aapka Content Yahan */}
-        <div className="relative z-10">{/* Text or Logo */}</div>
-        {/* --- DARK OVERLAY + BOTTOM GRADIENT --- */}
-        {/* <div className="absolute inset-0 z-0 bg-black/20 backdrop-blur-[1px]" /> */}
 
-        {/* Niche wala gradient layer */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#0B1120] to-transparent opacity-100" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/90 to-transparent opacity-100" />
 
-        {/* --- 1. CTA SECTION --- */}
-        <div className="relative z-10 w-full min-h-[100px] py-5 flex items-center justify-center text-center px-6 "></div>
-
-        {/* --- TAGLINE (CENTERED) --- */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="relative z-10 text-center py-6"
-        ></motion.div>
-
-        {/* --- 2. MAIN LINKS CONTENT --- */}
-        <div className="relative z-5 mt-0 max-w-7xl mx-auto py-10 px-6 md:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7  items-start">
-            {/* ---------- TABLET ONLY (md to lg) ---------- */}
-
-            {/* Company Section */}
-            <div className="lg:col-span-1 md:col-span-2 lg:col-span-1">
-              <Link href="/company" className="lg:pointer-events-none">
-                <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block">
-                  Company
-                  <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
-                </h3>
-              </Link>
-              {/* Desktop par dikhega, Mobile par hidden */}
+        {/* --- MAIN CONTENT CONTAINER --- */}
+        <div className="relative z-10 mt-0 max-w-[1600px] mx-auto py-12 px-6 lg:px-10 w-full">
+          {/* Main Grid: Reduced gap-y on mobile from 10 to 4 to make titles closer */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-x-4 gap-y-4 lg:gap-y-10 items-start">
+            {/* 1. Company */}
+            <div className="lg:col-span-1">
+              <h3 className="text-white font-bold text-[18px] lg:uppercase tracking-[0.1em] mb-2 lg:mb-6 relative inline-block whitespace-nowrap">
+                Company
+                <span className="absolute -bottom-2 lg:-bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
+              </h3>
+              {/* Visible only on Desktop */}
               <ul className="hidden lg:block space-y-2 text-[13px]">
                 <li>
                   <Link
                     href="/company/whoweare"
-                    className="hover:text-white transition-all hover:translate-x-1 block"
+                    className="hover:text-white transition-all"
                   >
                     Who We Are
                   </Link>
@@ -95,7 +59,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/company/whyus"
-                    className="hover:text-white transition-all hover:translate-x-1 block"
+                    className="hover:text-white transition-all"
                   >
                     Why Us
                   </Link>
@@ -103,7 +67,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/company/ourteam"
-                    className="hover:text-white transition-all hover:translate-x-1 block"
+                    className="hover:text-white transition-all"
                   >
                     Our Team
                   </Link>
@@ -111,7 +75,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/company/ourpartners"
-                    className="hover:text-white transition-all hover:translate-x-1 block"
+                    className="hover:text-white transition-all"
                   >
                     Our Partners
                   </Link>
@@ -119,179 +83,159 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Industries Works Section */}
-            <div className="lg:col-span-2 md:col-span-2 lg:col-span-2">
-              <Link
-                href="/industries"
-                className="lg:pointer-events-none md:text-left"
-              >
-                <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block lg:ml-10 md:ml-0">
-                  Industries We Serve
-                  <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
-                </h3>
-              </Link>
-
-              {/* Desktop → grid | Tablet & Mobile → hidden */}
-              <div className="hidden lg:grid grid-cols-4 gap-x-2 text-[11px]">
-                <ul className="space-y-2 text-[13px]">
+            {/* 2. Industries */}
+            <div className="lg:col-span-4 lg:pl-4">
+              <h3 className="text-white font-bold text-[18px] lg:uppercase tracking-[0.1em] mb-2 lg:mb-6 relative inline-block whitespace-nowrap">
+                Industries We Serve
+                <span className="absolute -bottom-2 lg:-bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
+              </h3>
+              {/* Visible only on Desktop */}
+              <div className="hidden lg:grid grid-cols-4 gap-x-4 gap-y-2 text-[11px]">
+                <ul className="space-y-2">
                   <li>
                     <Link
                       href="/industries/automobile"
-                      className="hover:text-white transition-all hover:translate-x-1 block truncate"
+                      className="hover:text-white"
                     >
                       Automobile
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="/industries/bfsi"
-                      className="hover:text-white transition-all hover:translate-x-1 block"
-                    >
+                    <Link href="/industries/bfsi" className="hover:text-white">
                       BFSI
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/industries/chemical&pharmaceuticals"
-                      className="hover:text-white transition-all hover:translate-x-1 block truncate"
-                    >
-                      Chemical
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/industries/e-commerce"
-                      // 'whitespace-nowrap' add kiya gaya hai
-                      className="hover:text-white transition-all hover:translate-x-1 block whitespace-nowrap"
-                    >
-                      E-Commerce
-                    </Link>
-                  </li>
-                </ul>
-
-                <ul className="space-y-2 text-[13px]">
-                  <li>
-                    <Link
-                      href="/industries/engineering"
-                      className="hover:text-white transition-all hover:translate-x-1 block"
-                    >
-                      Engineering
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/industries/greenenergy"
-                      className="hover:text-white transition-all hover:translate-x-1 block truncate"
-                    >
-                      Green Energy
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/industries/hospital&education"
-                      className="hover:text-white transition-all hover:translate-x-1 block"
-                    >
-                      Education
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/industries/hospitality"
-                      className="hover:text-white transition-all hover:translate-x-1 block ml-2"
-                    >
-                      Hospitality
-                    </Link>
-                  </li>
-                </ul>
-
-                <ul className="space-y-2 text-[13px]">
-                  <li>
-                    <Link
-                      href="/industries/it"
-                      className="hover:text-white transition-all hover:translate-x-1 block"
-                    >
-                      IT & TECH
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       href="/industries/packaging"
-                      className="hover:text-white transition-all hover:translate-x-1 block"
+                      className="hover:text-white"
                     >
                       Packaging
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/industries/shipping&odccargo"
-                      className="hover:text-white transition-all hover:translate-x-1 block truncate"
+                      href="/industries/plastic"
+                      className="hover:text-white"
                     >
-                      Shipping
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/industries/SME&MSME"
-                      className="hover:text-white transition-all hover:translate-x-1 block"
-                    >
-                      SME
+                      Plastic
                     </Link>
                   </li>
                 </ul>
-
-                <ul className="space-y-2 text-[13px]">
+                <ul className="space-y-2">
+                  <li>
+                    <Link href="/industries/it" className="hover:text-white">
+                      IT & TECH
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/industries/e-commerce"
+                      className="hover:text-white"
+                    >
+                      E-Commerce
+                    </Link>
+                  </li>
                   <li>
                     <Link
                       href="/industries/papermills"
-                      className="hover:text-white transition-all hover:translate-x-1 block truncate"
+                      className="hover:text-white whitespace-nowrap"
                     >
                       Paper Mills
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/industries/plastic"
-                      className="hover:text-white transition-all hover:translate-x-1 block"
-                    >
-                      Plastic
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="/industries/texttile"
-                      className="hover:text-white transition-all hover:translate-x-1 block"
+                      href="/industries/textile"
+                      className="hover:text-white"
                     >
                       Textile
                     </Link>
                   </li>
+                </ul>
+                <ul className="space-y-2">
                   <li>
                     <Link
-                      href="/industries/wood&laminates"
-                      className="hover:text-white transition-all hover:translate-x-1 block truncate"
+                      href="/industries/engineering"
+                      className="hover:text-white"
                     >
-                      Wood
+                      Infrastructure
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/industries/hospital-education"
+                      className="hover:text-white"
+                    >
+                      Hospital & Education
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/industries/chemical-pharmaceuticals"
+                      className="hover:text-white"
+                    >
+                      Chemical & Pharmaceuticals
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/industries/sme-msme"
+                      className="hover:text-white"
+                    >
+                      SME & MSME
+                    </Link>
+                  </li>
+                </ul>
+                <ul className="space-y-2">
+                  <li>
+                    <Link
+                      href="/industries/hospitality"
+                      className="hover:text-white"
+                    >
+                      Hospitality
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/industries/shipping-odc-cargo"
+                      className="hover:text-white"
+                    >
+                      Shipping
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/industries/greenenergy"
+                      className="hover:text-white whitespace-nowrap"
+                    >
+                      Green Energy
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/industries/wood-laminates"
+                      className="hover:text-white"
+                    >
+                      Wood & Laminates
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* Services / Solutions Section */}
-            <div className="col-span-1 md:col-span-2 lg:col-span-1">
-              <Link href="/solutions" className="lg:pointer-events-none">
-                {/* ml-5 ko lg:ml-5 kar diya hai mobile alignment ke liye */}
-                <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 lg:ml-5 relative inline-block">
-                  Services
-                  <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
-                </h3>
-              </Link>
-
-              {/* Desktop par dikhega, Mobile par hidden. Yahan bhi lg:ml-5 lagaya hai */}
-              <ul className="hidden lg:block space-y-2 text-[13px] lg:ml-5">
+            {/* 3. Services */}
+            <div className="lg:col-span-1 lg:pl-4">
+              <h3 className="text-white font-bold text-[18px] lg:uppercase tracking-[0.1em] mb-2 lg:mb-6 relative inline-block whitespace-nowrap">
+                Services
+                <span className="absolute -bottom-2 lg:-bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
+              </h3>
+              {/* Visible only on Desktop */}
+              <ul className="hidden lg:block space-y-2 text-[13px]">
                 <li>
                   <Link
                     href="/solutions"
-                    className="hover:text-white transition-all hover:translate-x-1 block whitespace-nowrap"
+                    className="hover:text-white transition-all"
                   >
                     Risk Solutions
                   </Link>
@@ -299,7 +243,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/industries"
-                    className="hover:text-white transition-all hover:translate-x-1 block whitespace-nowrap"
+                    className="hover:text-white transition-all"
                   >
                     Industries
                   </Link>
@@ -307,15 +251,15 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/blogs"
-                    className="hover:text-white transition-all hover:translate-x-1 block whitespace-nowrap"
+                    className="hover:text-white transition-all"
                   >
-                    Latest Insights
+                    Insights
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/careers"
-                    className="hover:text-white transition-all hover:translate-x-1 block whitespace-nowrap"
+                    className="hover:text-white transition-all"
                   >
                     Careers
                   </Link>
@@ -323,128 +267,124 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Contact Us */}
-            <div className="lg:col-span-1">
-              <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block">
+            {/* 4. Contact Us */}
+            <div className="lg:col-span-2 lg:pl-4">
+              <h3 className="text-white font-bold text-[18px] lg:uppercase tracking-[0.1em] mb-2 lg:mb-6 relative inline-block whitespace-nowrap">
                 Contact Us
-                <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1] hover:text-white"></span>
+                <span className="absolute -bottom-2 lg:-bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
               </h3>
-              <ul className="space-y-3 text-[13px]">
-                <li>
+              <ul className="space-y-2 lg:space-y-4 text-[12px]">
+                <li className="flex items-center gap-2">
+                  <Phone size={14} className="text-[#4169E1] flex-shrink-0" />
                   <a
-                    href="tel:+91 97261 60360"
-                    className="group flex items-center gap-2 hover:text-white transition-all"
+                    href="tel:+919726160360"
+                    className="hover:text-white whitespace-nowrap"
                   >
-                    <div className="w-7 h-7 rounded-lg bg-[#4169E1] flex items-center justify-center group-hover:bg-white transition-all border border-[#4169E1] flex-shrink-0">
-                      <Phone
-                        size={10}
-                        className="text-white group-hover:text-[#4169E1]"
-                      />
-                    </div>
-                    <span className="font-medium">+91 97261 60360</span>
+                    +91 97261 60360
                   </a>
                 </li>
-                <li>
+                <li className="flex items-center gap-2">
+                  <Mail size={14} className="text-[#4169E1] flex-shrink-0" />
                   <a
-                    href="mailto:info@vestigoinsurance.com"
-                    className="group flex items-center gap-2 hover:text-white transition-all"
+                    href="mailto:enquiry@vestigoinsurance.com"
+                    className="hover:text-white break-all"
                   >
-                    <div className="w-7 h-7 rounded-lg bg-[#4169E1] flex items-center justify-center group-hover:bg-white transition-all border border-[#4169E1] flex-shrink-0">
-                      <Mail
-                        size={10}
-                        className="text-white group-hover:text-[#4169E1]"
-                      />
-                    </div>
-                    {/* 'whitespace-nowrap' text ko ek hi line mein lock kar dega */}
-                    <span className="font-medium whitespace-nowrap text-[12px] xl:text-[13px]">
-                      info@vestigoinsurance.com
-                    </span>
+                    enquiry@vestigoinsurance.com
                   </a>
                 </li>
-                <li className="group flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-lg bg-[#4169E1] flex items-center justify-center group-hover:bg-white transition-all border border-[#4169E1] flex-shrink-0">
-                    <MapPin
-                      size={10}
-                      className="text-white group-hover:text-[#4169E1]"
-                    />
-                  </div>
-                  <span className="font-medium text-slate-300 group-hover:text-white transition-colors">
-                    Ahmedabad , Vadodara
-                  </span>
+                <li className="flex items-start gap-2">
+                  <MapPin
+                    size={14}
+                    className="text-[#4169E1] flex-shrink-0 mt-0.5"
+                  />
+                  <span>Ahmedabad, Vadodara</span>
                 </li>
               </ul>
             </div>
 
-            <div className="lg:col-span-2 text-gray-300">
-              {/* Mobile par normal rahega, Desktop par lg:ml-10 apply hoga */}
-              <h3 className="text-white font-bold text-[20px] uppercase tracking-[0.2em] mb-5 relative inline-block lg:ml-10">
+            {/* 5. Address */}
+            <div className="lg:col-span-4 lg:pl-4">
+              <h3 className="text-white font-bold text-[18px] lg:uppercase tracking-[0.1em] mb-2 lg:mb-6 relative inline-block whitespace-nowrap">
                 Address
-                <span className="absolute -bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
+                <span className="absolute -bottom-2 lg:-bottom-2 left-0 w-6 h-0.5 bg-[#4169E1]"></span>
               </h3>
-
-              {/* Mobile par upar-niche (flex-col) aur bina left margin ke rahega. Desktop par side-by-side aur lg:ml-9 */}
-              <div className="flex flex-col lg:flex-row gap-6 lg:ml-10">
-                {/* Vadodara Branch */}
-                <address className="not-italic">
-                  <h4 className="text-white font-semibold text-[14px] mb-1">
-                    Corporate & Regd Office
+              <div className="grid grid-cols-2 lg:grid-cols-2 gap-4">
+                <address className="not-italic text-[11px] leading-relaxed opacity-90">
+                  <h4 className="text-white font-semibold mb-1 uppercase tracking-wider text-[10px]">
+                    Corporate Office
                   </h4>
-                  <p className="text-gray-300 text-[13px] leading-6 max-w-full lg:max-w-[190px] break-words">
-                    SF 201, Status Complex, Opp. Amrapali Complex, <br />
-                    Pani Tanki Road, Karelibaug, <br />
-                    Vadodara - 390018
+                  <p>
+                    SF 201, Status Complex, Opp. Amrapali Complex, Pani Tanki
+                    Road, Karelibaug, Vadodara - 390018
                   </p>
                 </address>
-
-                {/* Ahmedabad Branch */}
-                <address className="not-italic">
-                  <h4 className="text-white font-semibold text-[14px] mb-1">
+                <address className="not-italic text-[11px] leading-relaxed opacity-90">
+                  <h4 className="text-white font-semibold mb-1 uppercase tracking-wider text-[10px]">
                     Branch Office
                   </h4>
-                  <p className="text-gray-300 text-[13px] leading-6 max-w-full lg:max-w-[190px] break-words">
-                    229, Platinum Plaza, Above HDFC Bank, <br />
-                    Judges Bunglows Road, Bodakdev, <br />
-                    Ahmedabad - 380054
+                  <p>
+                    229, Platinum Plaza, Above HDFC Bank, Judges Bunglows Road,
+                    Bodakdev, Ahmedabad - 380054
                   </p>
                 </address>
               </div>
             </div>
           </div>
 
-          {/* Bottom Bar with Gradient Background */}
-          <div className="mt-5 pt-4 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-white text-[10px] uppercase tracking-widest relative">
-            {/* Left Section: Copyright - Added text-center for mobile */}
-            <p className="text-[9px] font-medium text-slate-300 leading-5 text-center md:text-left max-w-[300px] md:max-w-full">
+          {/* --- POLICIES CENTERED --- */}
+          <div className="mt-8 lg:mt-6">
+            <div className="flex flex-col items-center justify-center gap-6">
+              <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-2 text-[13px] text-slate-400">
+                <Link
+                  href="/privacy-policy/isms-policy"
+                  className="text-blue-400 transition-colors"
+                >
+                  ISMS Policy
+                </Link>
+                <span className="text-white/10 hidden md:block">|</span>
+                <Link
+                  href="/privacy-policy/aml-policy"
+                  className="text-blue-400 transition-colors"
+                >
+                  AML Policy
+                </Link>
+                <span className="text-white/10 hidden md:block">|</span>
+                <Link
+                  href="/privacy-policy/other-policies"
+                  className="text-blue-400 transition-colors"
+                >
+                  Other Policies
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* --- BOTTOM BAR --- */}
+          <div className="mt-6 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-widest">
+            <p className="text-slate-400 text-center md:text-left text-[9px] leading-relaxed">
               © 2026 Vestigo Insurance Brokers Pvt Ltd | <br /> IRDAI Regn. No:
               1131 Direct Broker (General & Life)
             </p>
 
-            {/* Center Section: Social Links - Already centered by flex-col items-center on parent */}
-            <div className="flex gap-5 items-center justify-center">
+            <div className="flex gap-6">
               {socialLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-blue-400 transition-all duration-300 transform hover:scale-110"
-                  title={link.name}
+                  className="text-slate-400 hover:text-white transition-colors"
                 >
                   {link.icon}
                 </a>
               ))}
             </div>
 
-            {/* Right Section: Links - Changed to justify-center for mobile */}
-
-            <div className="flex justify-center md:justify-end gap-6">
-              <Link
-                href="/privacy-policy"
-                className="font-semibold text-blue-500 underline decoration-blue-500/40 hover:decoration-blue-400 hover:text-blue-400 underline-offset-4 transition-all duration-300"
-              >
-                Privacy Policies
-              </Link>
-            </div>
+            <Link
+              href="/privacy-policy"
+              className="text-blue-500 underline underline-offset-4 font-semibold text-[10px] hover:text-blue-400 uppercase"
+            >
+              PRIVACY POLICY
+            </Link>
           </div>
         </div>
       </footer>
